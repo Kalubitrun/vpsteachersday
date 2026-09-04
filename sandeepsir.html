@@ -503,6 +503,135 @@ footer span { color: var(--cyan); }
 }
 
 /* =========================================================
+   WEBSITE CREATORS / STUDENT CREDITS
+========================================================= */
+.creators-section {
+    padding: 100px 5%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.creators-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: -25px auto 50px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.creator-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.creator-group {
+    background: rgba(10, 14, 23, 0.72);
+    border: 1px solid rgba(0, 243, 255, 0.25);
+    padding: 28px 24px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(7px);
+    transition: 0.4s;
+}
+
+.creator-group::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    animation: creatorScan 4s linear infinite;
+}
+
+@keyframes creatorScan {
+    0% { left: -100%; }
+    100% { left: 150%; }
+}
+
+.creator-group:hover {
+    transform: translateY(-8px);
+    border-color: var(--cyan);
+    box-shadow: 0 10px 35px rgba(0, 243, 255, 0.12);
+}
+
+.creator-group h3 {
+    color: var(--cyan);
+    font-family: var(--font-tech);
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px var(--cyan-glow);
+}
+
+.creator-group h3::before {
+    content: "> ";
+    color: var(--purple);
+}
+
+.creator-list {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+}
+
+.creator-list li {
+    color: var(--text-main);
+    font-family: var(--font-tech);
+    font-size: 14px;
+    padding: 9px 12px;
+    border-left: 2px solid var(--purple);
+    background: rgba(188, 19, 254, 0.04);
+    transition: 0.3s;
+}
+
+.creator-list li:hover {
+    color: #fff;
+    border-left-color: var(--cyan);
+    background: rgba(0, 243, 255, 0.08);
+    transform: translateX(5px);
+}
+
+.creator-list li::before {
+    content: "01";
+    color: var(--purple);
+    margin-right: 10px;
+    font-size: 11px;
+}
+
+.creator-list li:nth-child(2)::before { content: "02"; }
+.creator-list li:nth-child(3)::before { content: "03"; }
+.creator-list li:nth-child(4)::before { content: "04"; }
+.creator-list li:nth-child(5)::before { content: "05"; }
+.creator-list li:nth-child(6)::before { content: "06"; }
+.creator-list li:nth-child(7)::before { content: "07"; }
+.creator-list li:nth-child(8)::before { content: "08"; }
+.creator-list li:nth-child(9)::before { content: "09"; }
+.creator-list li:nth-child(10)::before { content: "10"; }
+.creator-list li:nth-child(11)::before { content: "11"; }
+.creator-list li:nth-child(12)::before { content: "12"; }
+.creator-list li:nth-child(13)::before { content: "13"; }
+.creator-list li:nth-child(14)::before { content: "14"; }
+
+.creator-credit {
+    margin-top: 45px;
+    text-align: center;
+    color: var(--text-muted);
+    font-family: var(--font-tech);
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.creator-credit strong {
+    color: var(--green);
+    text-shadow: 0 0 8px rgba(0, 255, 102, 0.5);
+}
+
+/* =========================================================
    RESPONSIVE Adjustments
 ========================================================= */
 @media(max-width: 768px) {
@@ -613,6 +742,98 @@ footer span { color: var(--cyan); }
     </div>
 </section>
 
+<!-- WEBSITE CREATORS -->
+<section class="creators-section" id="creators">
+    <div class="section-heading">
+        <span>[ WEBSITE ARCHITECTS ]</span>
+        <h2>Students Who Created This Website</h2>
+    </div>
+
+    <p class="creators-intro">
+        This Teachers' Day tribute website was designed and created with
+        creativity, teamwork, code, and respect by the students listed below.
+    </p>
+
+    <div class="creator-groups">
+
+        <div class="creator-group">
+            <h3>11th Biology</h3>
+            <ul class="creator-list">
+                <li>Sakshi Yadav</li>
+                <li>Shivani Yadav</li>
+                <li>Ragini</li>
+                <li>Deepshikha Verma</li>
+                <li>Khushi Keshari</li>
+                <li>Ayushi Singh</li>
+                <li>Shristy Dubey</li>
+                <li>Aradhana Singh</li>
+            </ul>
+        </div>
+
+        <div class="creator-group">
+            <h3>11th Maths</h3>
+            <ul class="creator-list">
+                <li>Manshi</li>
+                <li>Sarswati</li>
+                <li>Diksha Singh</li>
+                <li>Ishita Jaiswal</li>
+            </ul>
+        </div>
+
+        <div class="creator-group">
+            <h3>11th Commerce</h3>
+            <ul class="creator-list">
+                <li>Saurav Anand</li>
+                <li>Arsalan Ansari</li>
+                <li>Annant</li>
+                <li>Pari</li>
+                <li>Ragini Modanwal</li>
+                <li>Roshni Patel</li>
+                <li>Garima Singh</li>
+            </ul>
+        </div>
+
+        <div class="creator-group">
+            <h3>11th Commerce — Boys</h3>
+            <ul class="creator-list">
+                <li>Naitik Sharma</li>
+                <li>Vishal Singh</li>
+                <li>Aashutosh</li>
+                <li>Krishn</li>
+            </ul>
+        </div>
+
+        <div class="creator-group">
+            <h3>11th Humanities</h3>
+            <ul class="creator-list">
+                <li>Gauri</li>
+            </ul>
+        </div>
+
+        <div class="creator-group">
+            <h3>12th AI</h3>
+            <ul class="creator-list">
+                <li>Adarsh Pandey</li>
+                <li>Shreyash Pandey</li>
+                <li>Ritesh Rao</li>
+                <li>Shobhit Pandey</li>
+                <li>Ishu</li>
+                <li>Shasank Gupta</li>
+                <li>Gavrav Singh</li>
+                <li>Emmanual</li>
+                <li>Kajal</li>
+                <li>Riya</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="creator-credit">
+        <strong>TEAM STATUS: CREATION COMPLETE ✓</strong><br><br>
+        Built together with HTML, CSS, JavaScript &amp; teamwork.
+    </div>
+</section>
+
 <!-- CODE TRIBUTE -->
 <section class="code-section">
     <div class="section-heading">
@@ -688,7 +909,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll(".card").forEach(card => {
+document.querySelectorAll(".card, .creator-group").forEach(card => {
     card.style.opacity = "0";
     card.style.transform = "translateY(30px)";
     observer.observe(card);
