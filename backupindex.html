@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,6 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <!-- Teachers Day final banner visibility fix -->
     <title>
         Happy Teachers' Day | Varanasi Public School
     </title>
@@ -836,181 +836,6 @@
             line-height: 1.9;
 
             font-style: italic;
-        }
-
-
-        /* =========================================================
-           SANDЕEP SIR CREDIT BANNER
-        ========================================================= */
-
-        .sandeep-banner {
-            position: relative;
-            margin: -18px auto 48px;
-            padding: 24px 30px;
-            max-width: 900px;
-            min-height: 110px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            text-align: center;
-            border-radius: 28px;
-            background:
-                linear-gradient(135deg, rgba(255,255,255,0.88), rgba(248,240,255,0.82));
-            border: 2px solid rgba(255,255,255,0.95);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 18px 45px rgba(50,30,80,0.14);
-            overflow: hidden;
-            animation: bannerEntrance 0.9s ease both, bannerFloat 4s ease-in-out 1s infinite;
-        }
-
-        .sandeep-banner::before {
-            content: "✨";
-            position: absolute;
-            left: 25px;
-            top: 12px;
-            font-size: 28px;
-            animation: sparkle 1.8s ease-in-out infinite;
-        }
-
-        .sandeep-banner::after {
-            content: "💜";
-            position: absolute;
-            right: 25px;
-            bottom: 10px;
-            font-size: 25px;
-            animation: sparkle 2.2s ease-in-out infinite reverse;
-        }
-
-        .sandeep-banner-text {
-            color: #4d4160;
-            font-size: 18px;
-            font-weight: 700;
-            letter-spacing: 0.2px;
-        }
-
-        .sandeep-banner-text strong {
-            color: var(--purple);
-            font-size: 21px;
-            font-weight: 800;
-        }
-
-        .sandeep-banner a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 9px;
-            padding: 13px 24px;
-            border-radius: 35px;
-            text-decoration: none;
-            color: white;
-            font-size: 14px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #6c3fc5, #ec407a, #ff9800);
-            background-size: 200% 200%;
-            box-shadow: 0 10px 25px rgba(108,63,197,0.28);
-            transition: 0.3s ease;
-            animation: buttonGlow 2.5s ease-in-out infinite;
-        }
-
-        .sandeep-banner a:hover {
-            transform: translateY(-5px) scale(1.06);
-            box-shadow: 0 16px 35px rgba(108,63,197,0.38);
-            animation: none;
-        }
-
-        @keyframes bannerEntrance {
-            from {
-                opacity: 0;
-                transform: translateY(25px) scale(0.94);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        @keyframes bannerFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-
-        @keyframes sparkle {
-            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
-            50% { transform: scale(1.3) rotate(12deg); opacity: 1; }
-        }
-
-        @keyframes buttonGlow {
-            0%, 100% {
-                background-position: 0% 50%;
-                box-shadow: 0 10px 25px rgba(108,63,197,0.25);
-            }
-            50% {
-                background-position: 100% 50%;
-                box-shadow: 0 14px 32px rgba(236,64,122,0.35);
-            }
-        }
-
-
-        /* Sandeep Sir banner visibility fix */
-        .sandeep-banner {
-            z-index: 20;
-            width: min(900px, calc(100% - 30px));
-            box-sizing: border-box;
-            margin: 10px auto 55px !important;
-            min-height: 125px;
-            padding: 28px 32px !important;
-            border: 2px solid rgba(108,63,197,.25);
-            box-shadow: 0 20px 55px rgba(108,63,197,.22);
-        }
-
-        .sandeep-banner-text {
-            font-size: clamp(18px, 2.2vw, 25px) !important;
-        }
-
-        .sandeep-banner-text strong {
-            font-size: clamp(22px, 2.6vw, 30px) !important;
-        }
-
-        .sandeep-banner-link {
-            position: relative;
-            z-index: 2;
-            min-width: 230px;
-            padding: 16px 28px !important;
-            font-size: 16px !important;
-            animation: buttonPulse 1.8s ease-in-out infinite !important;
-        }
-
-        .sandeep-banner-link b {
-            font-size: 22px;
-            transition: transform .3s ease;
-        }
-
-        .sandeep-banner-link:hover b {
-            transform: translateX(6px);
-        }
-
-        @keyframes buttonPulse {
-            0%, 100% {
-                transform: scale(1);
-                box-shadow: 0 10px 25px rgba(108,63,197,.28);
-            }
-            50% {
-                transform: scale(1.06);
-                box-shadow: 0 16px 38px rgba(236,64,122,.42);
-            }
-        }
-
-        @media (max-width: 700px) {
-            .sandeep-banner {
-                margin: -15px auto 35px;
-                padding: 16px 15px;
-            }
-
-            .sandeep-banner-text {
-                font-size: 13px;
-            }
         }
 
 
@@ -2079,20 +1904,6 @@
 
 
 
-
-        <!-- =====================================================
-             SANDEEP SIR CREDIT BANNER
-        ===================================================== -->
-        <div class="sandeep-banner">
-            <div class="sandeep-banner-text">
-                🤝 <span>We built this with</span> <strong>Sandeep Sir</strong>
-            </div>
-
-            <a href="sandeepsir.html" class="sandeep-banner-link">
-                ✨ <span>Click here to know us</span> <b>→</b>
-            </a>
-        </div>
-
         <!-- =====================================================
              TEACHERS HEADER
         ===================================================== -->
@@ -2136,7 +1947,7 @@
                     class="stat-number"
                     id="totalTeachers"
                 >
-                    52
+                    40
                 </span>
 
                 <span class="stat-label">
@@ -2152,7 +1963,7 @@
                     class="stat-number"
                     id="sirCount"
                 >
-                    27
+                    20
                 </span>
 
                 <span class="stat-label">
@@ -2168,7 +1979,7 @@
                     class="stat-number"
                     id="maamCount"
                 >
-                    25
+                    20
                 </span>
 
                 <span class="stat-label">
@@ -3409,114 +3220,6 @@
 
 
 
-
-            <!-- KULDEEP CHAUDHARY - LAB ATTENDANT -->
-            <a href="kuldeepchaudhary.html" class="teacher-card" data-type="sir" data-name="Kuldeep Chaudhary Lab Attendant">
-                <div class="teacher-icon">🧪</div>
-                <div class="teacher-name">Kuldeep Chaudhary</div>
-                <span class="teacher-badge badge-sir">live for dance</span>
-                <span class="visit">✨ Visit Teacher's Page →</span>
-            </a>
-
-            <!-- SUDHANSHU SIR -->
-            <a href="sudhanshusir.html" class="teacher-card" data-type="sir" data-name="Sudhanshu Sir">
-                <div class="teacher-icon">👨‍🏫</div>
-                <div class="teacher-name">Sudhanshu Sir</div>
-                <span class="teacher-badge badge-sir">Sir</span>
-                <span class="visit">✨ Visit Teacher's Page →</span>
-            </a>
-
-            <!-- ARTI SHARMA MA'AM -->
-            <a href="artisharmamaam.html" class="teacher-card" data-type="maam" data-name="Arti Sharma Ma'am">
-                <div class="teacher-icon">👩‍🏫</div>
-                <div class="teacher-name">Arti Sharma Ma'am</div>
-                <span class="teacher-badge badge-maam">Ma'am</span>
-                <span class="visit">✨ Visit Teacher's Page →</span>
-            </a>
-
-            <!-- JAY PRAKASH SIR -->
-            <a href="jayprakashsir.html" class="teacher-card" data-type="sir" data-name="Jay Prakash Sir">
-                <div class="teacher-icon">👨‍🏫</div>
-                <div class="teacher-name">Jay Prakash Sir</div>
-                <span class="teacher-badge badge-sir">Sir</span>
-                <span class="visit">✨ Visit Teacher's Page →</span>
-            </a>
-
-            <!-- ANKITA SAINI MA'AM -->
-            <a href="ankitasainimaam.html" class="teacher-card" data-type="maam" data-name="Ankita Saini Ma'am">
-                <div class="teacher-icon">👩‍🏫</div>
-                <div class="teacher-name">Ankita Saini Ma'am</div>
-                <span class="teacher-badge badge-maam">Ma'am</span>
-                <span class="visit">✨ Visit Teacher's Page →</span>
-            </a>
-
-            <!-- SANDHYA PATEL MA'AM -->
-            <a href="sandhyapatelmaam.html" class="teacher-card" data-type="maam" data-name="Sandhya Patel Ma'am">
-                <div class="teacher-icon">👩‍🏫</div>
-                <div class="teacher-name">Sandhya Patel Ma'am</div>
-                <span class="teacher-badge badge-maam">Ma'am</span>
-                <span class="visit">✨ Visit Teacher's Page →</span>
-            </a>
-
-            <!-- EGOR MOHAN SIR -->
-            <a href="egormohansir.html" class="teacher-card" data-type="sir" data-name="Egor Mohan Sir">
-                <div class="teacher-icon">👨‍🏫</div>
-                <div class="teacher-name">Egor Mohan Sir</div>
-                <span class="teacher-badge badge-sir">Sir</span>
-                <span class="visit">✨ Visit Teacher's Page →</span>
-            </a>
-
-            <!-- ANKITA SINGH -->
-            <a href="ankitasingh.html" class="teacher-card" data-type="maam" data-name="Ankita Singh">
-                <div class="teacher-icon">👩‍🏫</div>
-                <div class="teacher-name">Ankita Singh</div>
-                <span class="teacher-badge badge-maam">Ma'am</span>
-                <span class="visit">✨ Visit Teacher's Page →</span>
-            </a>
-
-            <!-- ARCHANA SINGH -->
-            <a href="archanasingh.html" class="teacher-card" data-type="maam" data-name="Archana Singh">
-                <div class="teacher-icon">👩‍🏫</div>
-                <div class="teacher-name">Archana Singh</div>
-                <span class="teacher-badge badge-maam">Ma'am</span>
-                <span class="visit">✨ Visit Teacher's Page →</span>
-            </a>
-
-            <!-- RAGINI SINGH MA'AM -->
-            <a href="raginisinghmaam.html" class="teacher-card" data-type="maam" data-name="Ragini Singh Ma'am">
-                <div class="teacher-icon">👩‍🏫</div>
-                <div class="teacher-name">Ragini Singh Ma'am</div>
-                <span class="teacher-badge badge-maam">Ma'am</span>
-                <span class="visit">✨ Visit Teacher's Page →</span>
-            </a>
-
-
-            <!-- ALOK GUPTA SIR -->
-            <a
-                href="alokguptasir.html"
-                class="teacher-card"
-                data-type="sir"
-                data-name="Alok Gupta Sir"
-            >
-                <div class="teacher-icon">👨‍🏫</div>
-                <div class="teacher-name">Alok Gupta Sir</div>
-                <span class="teacher-badge badge-sir">Sir</span>
-                <span class="visit">✨ Visit Teacher's Page →</span>
-            </a>
-
-            <!-- ALOK THE ARTIST SIR -->
-            <a
-                href="aloktheartist.html"
-                class="teacher-card"
-                data-type="sir"
-                data-name="Alok The Artist Sir"
-            >
-                <div class="teacher-icon">🎨</div>
-                <div class="teacher-name">Alok The Artist Sir</div>
-                <span class="teacher-badge badge-sir">Artist</span>
-                <span class="visit">✨ Visit Teacher's Page →</span>
-            </a>
-
         </div>
 
 <!-- NO RESULTS -->
@@ -3697,7 +3400,7 @@
             cards.forEach(card => {
 
                 const name =
-                    (card.dataset.name || card.textContent)
+                    card.dataset.name
                         .toLowerCase();
 
                 const type =
@@ -3712,53 +3415,156 @@
                     currentFilter === "all" ||
                     type === currentFilter;
 
-                const show = matchesSearch && matchesFilter;
 
-                card.style.display = show ? "" : "none";
+                if (
+                    matchesSearch &&
+                    matchesFilter
+                ) {
 
-                if (show) {
+                    card.style.display =
+                        "block";
+
                     visible++;
+
+                } else {
+
+                    card.style.display =
+                        "none";
+
                 }
+
             });
 
-            document.getElementById("noResults").style.display =
-                visible === 0 ? "block" : "none";
+
+            document
+                .getElementById("noResults")
+                .style.display =
+                    visible === 0
+                    ? "block"
+                    : "none";
+
         }
 
+
+
         /* =====================================================
-           CELEBRATE
+           CELEBRATION
         ===================================================== */
 
         function celebrate() {
-            const symbols = ["🎉", "✨", "🌟", "💐", "❤️", "🎊", "📚", "✏️"];
 
-            for (let i = 0; i < 90; i++) {
-                const piece = document.createElement("div");
-                piece.className = "confetti";
+            const emojis = [
+
+                "🌸",
+                "💖",
+                "✨",
+                "🌟",
+                "🎉",
+                "💐",
+                "🌷",
+                "❤️",
+                "⭐",
+                "🎊"
+
+            ];
+
+
+            for (
+                let i = 0;
+                i < 80;
+                i++
+            ) {
+
+                const piece =
+                    document.createElement("div");
+
+
+                piece.className =
+                    "confetti";
+
+
                 piece.textContent =
-                    symbols[Math.floor(Math.random() * symbols.length)];
+                    emojis[
+                        Math.floor(
+                            Math.random() *
+                            emojis.length
+                        )
+                    ];
 
-                piece.style.left = Math.random() * 100 + "vw";
-                piece.style.fontSize = (12 + Math.random() * 18) + "px";
-                piece.style.animationDuration = (2.5 + Math.random() * 3) + "s";
-                piece.style.animationDelay = (Math.random() * 0.8) + "s";
 
-                document.body.appendChild(piece);
+                piece.style.left =
+                    Math.random() * 100 + "vw";
 
-                setTimeout(() => piece.remove(), 6500);
+
+                piece.style.fontSize =
+                    (
+                        15 +
+                        Math.random() * 22
+                    ) + "px";
+
+
+                piece.style.animationDuration =
+                    (
+                        3 +
+                        Math.random() * 4
+                    ) + "s";
+
+
+                piece.style.animationDelay =
+                    (
+                        Math.random() * 1.5
+                    ) + "s";
+
+
+                document.body.appendChild(
+                    piece
+                );
+
+
+                setTimeout(
+                    () => piece.remove(),
+                    7000
+                );
+
             }
+
+
+            /* Scroll to teachers */
+
+            setTimeout(() => {
+
+                document
+                    .getElementById("teachersGrid")
+                    .scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+            }, 400);
+
         }
+
+
 
         /* =====================================================
            INITIALIZE
         ===================================================== */
 
-        document.addEventListener("DOMContentLoaded", () => {
-            updateTeacherStats();
-            filterTeachers();
-        });
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+                updateTeacherStats();
+                filterTeachers();
+
+            }
+        );
+
 
     </script>
 
+
 </body>
+
 </html>
+```

@@ -1,0 +1,642 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Teachers' Day - Jay Prakash Sir</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Poppins", Arial, sans-serif;
+        min-height: 100vh;
+        overflow-x: hidden;
+        background:
+            radial-gradient(circle at 20% 20%, rgba(99,102,241,.25), transparent 30%),
+            radial-gradient(circle at 80% 80%, rgba(236,72,153,.20), transparent 30%),
+            #080b18;
+        color: white;
+    }
+
+    /* Floating Maths Symbols */
+    .math-symbol {
+        position: fixed;
+        z-index: 0;
+        font-size: 30px;
+        font-weight: bold;
+        opacity: .12;
+        animation: floatMath linear infinite;
+        pointer-events: none;
+    }
+
+    @keyframes floatMath {
+        0% {
+            transform: translateY(110vh) rotate(0deg);
+        }
+        100% {
+            transform: translateY(-120vh) rotate(360deg);
+        }
+    }
+
+    .symbol1 { left: 5%; animation-duration: 13s; }
+    .symbol2 { left: 18%; animation-duration: 17s; animation-delay: 2s; }
+    .symbol3 { left: 35%; animation-duration: 12s; animation-delay: 4s; }
+    .symbol4 { left: 55%; animation-duration: 18s; animation-delay: 1s; }
+    .symbol5 { left: 72%; animation-duration: 14s; animation-delay: 3s; }
+    .symbol6 { left: 90%; animation-duration: 16s; animation-delay: 5s; }
+
+    .container {
+        position: relative;
+        z-index: 2;
+        width: min(1100px, 92%);
+        margin: auto;
+        padding: 35px 0 50px;
+    }
+
+    /* Top badge */
+    .badge {
+        width: fit-content;
+        margin: auto;
+        padding: 10px 20px;
+        border: 1px solid rgba(255,255,255,.2);
+        border-radius: 50px;
+        background: rgba(255,255,255,.08);
+        backdrop-filter: blur(10px);
+        font-size: 14px;
+        letter-spacing: 2px;
+        animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+        from { box-shadow: 0 0 10px rgba(99,102,241,.2); }
+        to { box-shadow: 0 0 30px rgba(99,102,241,.6); }
+    }
+
+    .hero {
+        text-align: center;
+        padding: 60px 20px 30px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 8vw, 85px);
+        line-height: .95;
+        margin-bottom: 20px;
+        background: linear-gradient(90deg, #fff, #a5b4fc, #f9a8d4, #fff);
+        background-size: 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientMove 5s infinite linear;
+    }
+
+    @keyframes gradientMove {
+        0% { background-position: 0%; }
+        100% { background-position: 300%; }
+    }
+
+    .hero h2 {
+        font-size: clamp(25px, 4vw, 42px);
+        color: #c7d2fe;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        max-width: 720px;
+        margin: auto;
+        color: #cbd5e1;
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    /* Teacher Card */
+    .teacher-card {
+        margin: 35px auto;
+        max-width: 850px;
+        padding: 35px;
+        border-radius: 30px;
+        background: rgba(255,255,255,.08);
+        border: 1px solid rgba(255,255,255,.16);
+        backdrop-filter: blur(18px);
+        box-shadow: 0 25px 80px rgba(0,0,0,.4);
+        text-align: center;
+        transition: .4s;
+    }
+
+    .teacher-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 90px rgba(99,102,241,.25);
+    }
+
+    /* Image placeholder */
+    .teacher-photo {
+        width: 150px;
+        height: 150px;
+        margin: auto;
+        border-radius: 50%;
+        border: 5px solid rgba(255,255,255,.7);
+        overflow: hidden;
+        background: linear-gradient(135deg, #6366f1, #ec4899);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 55px;
+        box-shadow: 0 0 40px rgba(99,102,241,.4);
+    }
+
+    .teacher-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
+    }
+
+    .teacher-card h3 {
+        margin-top: 20px;
+        font-size: 32px;
+    }
+
+    .subject {
+        color: #a5b4fc;
+        font-size: 18px;
+        margin-top: 5px;
+    }
+
+    /* Equation */
+    .equation-box {
+        margin: 35px auto;
+        max-width: 700px;
+        padding: 25px;
+        border-radius: 20px;
+        background: rgba(0,0,0,.35);
+        border: 1px solid rgba(165,180,252,.2);
+        overflow: hidden;
+    }
+
+    .equation {
+        font-family: Georgia, serif;
+        font-size: clamp(24px, 5vw, 42px);
+        color: #f8fafc;
+        animation: equationPulse 3s infinite ease-in-out;
+    }
+
+    @keyframes equationPulse {
+        0%,100% { transform: scale(1); opacity: .8; }
+        50% { transform: scale(1.05); opacity: 1; }
+    }
+
+    /* Appreciation */
+    .message {
+        text-align: center;
+        margin: 45px auto;
+        max-width: 780px;
+    }
+
+    .message h2 {
+        font-size: 34px;
+        margin-bottom: 20px;
+    }
+
+    .message p {
+        color: #dbeafe;
+        font-size: 18px;
+        line-height: 1.9;
+    }
+
+    .highlight {
+        color: #f9a8d4;
+        font-weight: bold;
+    }
+
+    /* Cards */
+    .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .feature {
+        padding: 28px 20px;
+        border-radius: 22px;
+        background: rgba(255,255,255,.07);
+        border: 1px solid rgba(255,255,255,.12);
+        text-align: center;
+        transition: .3s;
+    }
+
+    .feature:hover {
+        transform: translateY(-7px) rotate(-1deg);
+        background: rgba(255,255,255,.11);
+    }
+
+    .feature .icon {
+        font-size: 42px;
+        margin-bottom: 12px;
+    }
+
+    .feature h3 {
+        margin-bottom: 8px;
+    }
+
+    .feature p {
+        color: #aeb8cc;
+        line-height: 1.6;
+    }
+
+    /* Gift */
+    .gift-area {
+        text-align: center;
+        margin: 55px auto;
+    }
+
+    .gift {
+        width: 130px;
+        height: 110px;
+        margin: 25px auto;
+        position: relative;
+        cursor: pointer;
+        animation: giftBounce 2s infinite;
+    }
+
+    .gift-box {
+        position: absolute;
+        bottom: 0;
+        width: 130px;
+        height: 85px;
+        border-radius: 8px;
+        background: linear-gradient(135deg,#6366f1,#8b5cf6);
+    }
+
+    .gift-lid {
+        position: absolute;
+        top: 10px;
+        left: -8px;
+        width: 146px;
+        height: 28px;
+        border-radius: 7px;
+        background: #ec4899;
+    }
+
+    .ribbon-v {
+        position: absolute;
+        left: 52px;
+        top: 10px;
+        width: 25px;
+        height: 100px;
+        background: #fbbf24;
+        z-index: 2;
+    }
+
+    .gift-message {
+        display: none;
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 15px;
+        background: rgba(255,255,255,.1);
+        color: #fde68a;
+        font-size: 20px;
+        animation: appear .6s ease;
+    }
+
+    @keyframes giftBounce {
+        0%,100% { transform: translateY(0); }
+        50% { transform: translateY(-12px); }
+    }
+
+    @keyframes appear {
+        from { opacity: 0; transform: scale(.7); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Button */
+    .btn {
+        border: none;
+        padding: 15px 28px;
+        border-radius: 50px;
+        background: linear-gradient(90deg,#6366f1,#ec4899);
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: .3s;
+        box-shadow: 0 10px 30px rgba(99,102,241,.3);
+    }
+
+    .btn:hover {
+        transform: translateY(-3px) scale(1.04);
+        box-shadow: 0 15px 40px rgba(236,72,153,.35);
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 50px;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255,255,255,.1);
+        color: #94a3b8;
+    }
+
+    footer strong {
+        color: white;
+    }
+
+    /* Confetti */
+    .confetti {
+        position: fixed;
+        width: 9px;
+        height: 14px;
+        top: -20px;
+        z-index: 100;
+        pointer-events: none;
+        animation: confettiFall 3s linear forwards;
+    }
+
+    @keyframes confettiFall {
+        to {
+            transform: translateY(110vh) rotate(720deg);
+            opacity: 0;
+        }
+    }
+
+    @media(max-width: 700px) {
+        .features {
+            grid-template-columns: 1fr;
+        }
+
+        .teacher-card {
+            padding: 25px 18px;
+        }
+
+        .hero {
+            padding-top: 45px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Floating mathematics -->
+<div class="math-symbol symbol1">π</div>
+<div class="math-symbol symbol2">∑</div>
+<div class="math-symbol symbol3">√</div>
+<div class="math-symbol symbol4">∞</div>
+<div class="math-symbol symbol5">x²</div>
+<div class="math-symbol symbol6">÷</div>
+
+<div class="container">
+
+    <div class="badge">📐 TEACHERS' DAY 2026</div>
+
+    <section class="hero">
+        <h1>Happy Teachers' Day!</h1>
+        <h2>Jay Prakash Sir</h2>
+        <p>
+            To the teacher who makes numbers meaningful,
+            equations understandable and mathematics
+            a little more exciting every day.
+        </p>
+    </section>
+
+    <section class="teacher-card">
+
+        <!--
+            TO ADD SIR'S PHOTO:
+            1. Put the image inside your project, for example:
+               /images/jayprakash.jpeg
+
+            2. Change the image src below.
+
+            3. Change display:none to display:block in .teacher-photo img
+        -->
+
+        <div class="teacher-photo">
+            <span id="initial">∑</span>
+            <img id="teacherImage" src="/images/jayprakash.jpeg"
+                 alt="Jay Prakash Sir">
+        </div>
+
+        <h3>Jay Prakash Sir</h3>
+        <div class="subject">📚 Mathematics Teacher</div>
+
+        <div class="equation-box">
+            <div class="equation" id="equation">
+                x² + y² = z²
+            </div>
+        </div>
+
+        <button class="btn" onclick="changeEquation()">
+            🔢 Show Another Equation
+        </button>
+
+    </section>
+
+    <section class="message">
+        <h2>📖 A Special Thank You</h2>
+
+        <p>
+            Dear <span class="highlight">Jay Prakash Sir</span>,
+            thank you for teaching us that mathematics isn't
+            just about numbers — it's about
+            <span class="highlight">logic, patience and problem-solving.</span>
+        </p>
+
+        <br>
+
+        <p>
+            You don't just teach us how to solve an equation;
+            you teach us how to approach every problem
+            with confidence.
+        </p>
+    </section>
+
+    <section class="features">
+
+        <div class="feature">
+            <div class="icon">🧮</div>
+            <h3>Numbers</h3>
+            <p>
+                Turning confusing numbers into something
+                we can understand.
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">📐</div>
+            <h3>Logic</h3>
+            <p>
+                Helping us discover the reasoning
+                behind every answer.
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">💡</div>
+            <h3>Confidence</h3>
+            <p>
+                Teaching us to never give up on
+                a difficult problem.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="gift-area">
+
+        <h2>🎁 A Little Gift for Sir</h2>
+        <p style="color:#aeb8cc; margin-top:10px;">
+            Click the gift to reveal a special message!
+        </p>
+
+        <div class="gift" onclick="openGift()">
+            <div class="gift-lid"></div>
+            <div class="gift-box"></div>
+            <div class="ribbon-v"></div>
+        </div>
+
+        <div class="gift-message" id="giftMessage">
+            ⭐ "Thank you, Sir, for helping us find the
+            right answer — in mathematics and in life!" ⭐
+        </div>
+
+    </section>
+
+    <footer>
+        Made with ❤️ for <strong>Jay Prakash Sir</strong><br>
+        Happy Teachers' Day! 🎓📐
+    </footer>
+
+</div>
+
+<script>
+
+    /* ==========================
+       EQUATION ANIMATION
+    ========================== */
+
+    const equations = [
+        "x² + y² = z²",
+        "E = mc²",
+        "π ≈ 3.14159",
+        "a² + b² = c²",
+        "∑ n = n(n + 1) / 2",
+        "√144 = 12",
+        "2 + 2 = 4 ❤️",
+        "∞ + ∞ = ∞",
+        "sin²θ + cos²θ = 1"
+    ];
+
+    let equationIndex = 0;
+
+    function changeEquation() {
+
+        const equation = document.getElementById("equation");
+
+        equation.style.opacity = "0";
+        equation.style.transform = "scale(.5)";
+
+        setTimeout(() => {
+
+            equationIndex =
+                (equationIndex + 1) % equations.length;
+
+            equation.textContent =
+                equations[equationIndex];
+
+            equation.style.opacity = "1";
+            equation.style.transform = "scale(1)";
+
+        }, 300);
+    }
+
+
+    /* ==========================
+       GIFT
+    ========================== */
+
+    function openGift() {
+
+        const message =
+            document.getElementById("giftMessage");
+
+        if (message.style.display === "block") {
+            message.style.display = "none";
+        } else {
+            message.style.display = "block";
+            createConfetti();
+        }
+    }
+
+
+    /* ==========================
+       CONFETTI
+    ========================== */
+
+    function createConfetti() {
+
+        for (let i = 0; i < 80; i++) {
+
+            const confetti =
+                document.createElement("div");
+
+            confetti.className = "confetti";
+
+            confetti.style.left =
+                Math.random() * 100 + "vw";
+
+            confetti.style.animationDelay =
+                Math.random() * 1.5 + "s";
+
+            confetti.style.background =
+                `hsl(${Math.random() * 360}, 90%, 65%)`;
+
+            confetti.style.transform =
+                `rotate(${Math.random() * 360}deg)`;
+
+            document.body.appendChild(confetti);
+
+            setTimeout(() => {
+                confetti.remove();
+            }, 4500);
+        }
+    }
+
+
+    /* ==========================
+       PHOTO SUPPORT
+    ========================== */
+
+    const teacherImage =
+        document.getElementById("teacherImage");
+
+    const initial =
+        document.getElementById("initial");
+
+    teacherImage.onload = function () {
+        teacherImage.style.display = "block";
+        initial.style.display = "none";
+    };
+
+    teacherImage.onerror = function () {
+        teacherImage.style.display = "none";
+        initial.style.display = "block";
+    };
+
+
+    /* ==========================
+       AUTO EQUATION CHANGE
+    ========================== */
+
+    setInterval(() => {
+        changeEquation();
+    }, 5000);
+
+</script>
+
+</body>
+</html>
+```

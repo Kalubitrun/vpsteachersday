@@ -1,0 +1,552 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Teacher's Day | Kuldeep Chaudhary Sir</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at 50% 20%, #35105c 0%, transparent 35%),
+                linear-gradient(135deg, #090016, #170029, #050008);
+            color: white;
+        }
+
+        /* Background lights */
+        .light {
+            position: fixed;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: .35;
+            pointer-events: none;
+            animation: floatLight 8s infinite alternate ease-in-out;
+        }
+
+        .light.one {
+            background: #ff1493;
+            top: -100px;
+            left: -100px;
+        }
+
+        .light.two {
+            background: #7b2cff;
+            right: -100px;
+            bottom: -100px;
+            animation-delay: 2s;
+        }
+
+        @keyframes floatLight {
+            from {
+                transform: translate(0, 0) scale(1);
+            }
+            to {
+                transform: translate(80px, 50px) scale(1.2);
+            }
+        }
+
+        /* Main container */
+        .container {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px 120px;
+        }
+
+        .card {
+            position: relative;
+            width: min(900px, 95%);
+            padding: 45px 30px;
+            text-align: center;
+            border-radius: 35px;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .2);
+            backdrop-filter: blur(15px);
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, .6),
+                inset 0 0 30px rgba(255,255,255,.04);
+            overflow: hidden;
+        }
+
+        /* Spotlight */
+        .spotlight {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            left: 50%;
+            top: -300px;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,.08);
+            clip-path: polygon(50% 0, 100% 100%, 0 100%);
+            animation: spotlight 4s infinite alternate ease-in-out;
+        }
+
+        @keyframes spotlight {
+            from {
+                transform: translateX(-50%) rotate(-5deg);
+                opacity: .3;
+            }
+            to {
+                transform: translateX(-50%) rotate(5deg);
+                opacity: .7;
+            }
+        }
+
+        .small-title {
+            position: relative;
+            z-index: 2;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-size: 14px;
+            color: #ff72c8;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            position: relative;
+            z-index: 2;
+            font-size: clamp(42px, 8vw, 80px);
+            line-height: 1;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #fff, #ff5bbd, #b984ff, #fff);
+            background-size: 300%;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradientText 5s infinite linear;
+        }
+
+        @keyframes gradientText {
+            to {
+                background-position: 300%;
+            }
+        }
+
+        .teacher-name {
+            position: relative;
+            z-index: 2;
+            font-size: clamp(25px, 5vw, 45px);
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .teacher-name span {
+            color: #ff4db8;
+            text-shadow: 0 0 25px #ff1493;
+        }
+
+        /* Teacher image */
+        .teacher-photo {
+            position: relative;
+            z-index: 3;
+            width: 210px;
+            height: 210px;
+            margin: 10px auto 30px;
+            border-radius: 50%;
+            padding: 7px;
+            background: linear-gradient(135deg, #ff1493, #8a2be2, #00d9ff);
+            box-shadow:
+                0 0 25px #ff1493,
+                0 0 60px rgba(138,43,226,.5);
+            animation: photoPulse 3s infinite ease-in-out;
+        }
+
+        .teacher-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #12001e;
+        }
+
+        @keyframes photoPulse {
+            50% {
+                transform: scale(1.04);
+                box-shadow:
+                    0 0 40px #ff1493,
+                    0 0 80px rgba(138,43,226,.7);
+            }
+        }
+
+        .message {
+            position: relative;
+            z-index: 2;
+            max-width: 680px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #eee;
+        }
+
+        .dance-line {
+            position: relative;
+            z-index: 2;
+            margin: 25px auto;
+            width: 100px;
+            height: 4px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #ff1493, #9b4dff, #00d9ff);
+            box-shadow: 0 0 15px #ff1493;
+        }
+
+        /* Dancing character */
+        .dance-stage {
+            position: relative;
+            height: 180px;
+            margin-top: 30px;
+            z-index: 2;
+        }
+
+        .dancer {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 100px;
+            height: 150px;
+            transform: translateX(-50%);
+            animation: dancerMove 1.2s infinite alternate ease-in-out;
+        }
+
+        .head {
+            position: absolute;
+            top: 0;
+            left: 34px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 0 15px white;
+        }
+
+        .body {
+            position: absolute;
+            top: 35px;
+            left: 44px;
+            width: 12px;
+            height: 65px;
+            border-radius: 20px;
+            background: white;
+            transform: rotate(5deg);
+        }
+
+        .arm {
+            position: absolute;
+            width: 10px;
+            height: 60px;
+            border-radius: 20px;
+            background: white;
+            top: 40px;
+            transform-origin: top;
+        }
+
+        .arm.left {
+            left: 43px;
+            transform: rotate(55deg);
+            animation: leftArm .7s infinite alternate;
+        }
+
+        .arm.right {
+            left: 47px;
+            transform: rotate(-65deg);
+            animation: rightArm .7s infinite alternate;
+        }
+
+        .leg {
+            position: absolute;
+            width: 11px;
+            height: 65px;
+            border-radius: 20px;
+            background: white;
+            top: 92px;
+            transform-origin: top;
+        }
+
+        .leg.left {
+            left: 45px;
+            transform: rotate(35deg);
+            animation: leftLeg .7s infinite alternate;
+        }
+
+        .leg.right {
+            left: 47px;
+            transform: rotate(-40deg);
+            animation: rightLeg .7s infinite alternate;
+        }
+
+        @keyframes dancerMove {
+            from {
+                transform: translateX(-50%) rotate(-5deg) translateY(3px);
+            }
+            to {
+                transform: translateX(-50%) rotate(5deg) translateY(-10px);
+            }
+        }
+
+        @keyframes leftArm {
+            to { transform: rotate(100deg); }
+        }
+
+        @keyframes rightArm {
+            to { transform: rotate(-110deg); }
+        }
+
+        @keyframes leftLeg {
+            to { transform: rotate(55deg); }
+        }
+
+        @keyframes rightLeg {
+            to { transform: rotate(-65deg); }
+        }
+
+        /* Floating music notes */
+        .note {
+            position: fixed;
+            font-size: 30px;
+            color: #ff63c1;
+            opacity: .8;
+            pointer-events: none;
+            animation: noteFloat linear infinite;
+            z-index: 10;
+            text-shadow: 0 0 15px #ff1493;
+        }
+
+        @keyframes noteFloat {
+            0% {
+                transform: translateY(110vh) rotate(0deg);
+                opacity: 0;
+            }
+            15% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-15vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Button */
+        .dance-btn {
+            position: relative;
+            z-index: 5;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            background: linear-gradient(135deg, #ff1493, #7b2cff);
+            box-shadow: 0 0 25px rgba(255,20,147,.5);
+            transition: .3s;
+        }
+
+        .dance-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 40px rgba(255,20,147,.9);
+        }
+
+        /* Hidden surprise */
+        .surprise {
+            position: relative;
+            z-index: 3;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #ffd1ed;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: .6s;
+        }
+
+        .surprise.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            position: fixed;
+            bottom: 15px;
+            width: 100%;
+            text-align: center;
+            color: rgba(255,255,255,.55);
+            font-size: 13px;
+            z-index: 20;
+        }
+
+        @media(max-width:600px) {
+            .card {
+                padding: 35px 18px;
+            }
+
+            .teacher-photo {
+                width: 170px;
+                height: 170px;
+            }
+
+            .message {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="light one"></div>
+    <div class="light two"></div>
+
+    <!-- Floating music notes -->
+    <div class="note" style="left:5%; animation-duration:8s;">♪</div>
+    <div class="note" style="left:18%; animation-duration:11s; animation-delay:2s;">♫</div>
+    <div class="note" style="left:32%; animation-duration:9s; animation-delay:4s;">♬</div>
+    <div class="note" style="left:67%; animation-duration:12s; animation-delay:1s;">♪</div>
+    <div class="note" style="left:82%; animation-duration:9s; animation-delay:3s;">♫</div>
+    <div class="note" style="left:94%; animation-duration:13s;">♩</div>
+
+    <main class="container">
+
+        <section class="card">
+
+            <div class="spotlight"></div>
+
+            <div class="small-title">
+                ✨ A Special Tribute ✨
+            </div>
+
+            <h1>Happy Teacher's Day</h1>
+
+            <div class="teacher-name">
+                To <span>Kuldeep Chaudhary Sir</span>
+            </div>
+
+            <!--
+                ================================
+                ADD TEACHER IMAGE HERE
+                Put the image at:
+                images/kuldeep.jpg
+                ================================
+            -->
+            <div class="teacher-photo">
+                <img src="images/kuldeep.jpg"
+                     alt="Kuldeep Chaudhary Sir"
+                     onerror="this.src='https://via.placeholder.com/400x400/180025/ffffff?text=Kuldeep+Sir';">
+            </div>
+
+            <div class="dance-line"></div>
+
+            <p class="message">
+                🕺 You don't just teach us dance —
+                you teach us confidence, rhythm, expression
+                and the courage to shine on every stage.
+                <br><br>
+                Every beat becomes special when you are the one
+                guiding us. Thank you for inspiring us to
+                <strong>dance with our hearts!</strong>
+            </p>
+
+            <!-- Animated dancer -->
+            <div class="dance-stage">
+
+                <div class="dancer">
+                    <div class="head"></div>
+                    <div class="body"></div>
+
+                    <div class="arm left"></div>
+                    <div class="arm right"></div>
+
+                    <div class="leg left"></div>
+                    <div class="leg right"></div>
+                </div>
+
+            </div>
+
+            <button class="dance-btn" onclick="showSurprise()">
+                💃 Tap for a Dance Surprise 🕺
+            </button>
+
+            <div class="surprise" id="surprise">
+                🎵 Keep dancing, keep inspiring! 🎵
+                <br>
+                <strong>Happy Teacher's Day, Kuldeep Sir! ❤️</strong>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        Made with ❤️ & rhythm for Kuldeep Chaudhary Sir
+    </footer>
+
+    <script>
+
+        function showSurprise() {
+
+            const surprise = document.getElementById("surprise");
+
+            surprise.classList.toggle("show");
+
+            // Create extra dancing notes
+            for (let i = 0; i < 12; i++) {
+
+                const note = document.createElement("div");
+
+                note.className = "note";
+
+                const notes = ["♪", "♫", "♬", "♩"];
+
+                note.innerText =
+                    notes[Math.floor(Math.random() * notes.length)];
+
+                note.style.left =
+                    Math.random() * 100 + "%";
+
+                note.style.animationDuration =
+                    (3 + Math.random() * 4) + "s";
+
+                document.body.appendChild(note);
+
+                setTimeout(() => {
+                    note.remove();
+                }, 7000);
+            }
+        }
+
+        // Make the page react when the mouse moves
+        document.addEventListener("mousemove", (e) => {
+
+            const card = document.querySelector(".card");
+
+            const x = (window.innerWidth / 2 - e.clientX) / 80;
+            const y = (window.innerHeight / 2 - e.clientY) / 80;
+
+            card.style.transform =
+                `perspective(1000px) rotateY(${x}deg) rotateX(${y}deg)`;
+
+        });
+
+        document.addEventListener("mouseleave", () => {
+
+            document.querySelector(".card").style.transform =
+                "perspective(1000px) rotateY(0deg) rotateX(0deg)";
+
+        });
+
+    </script>
+
+</body>
+</html>
+```

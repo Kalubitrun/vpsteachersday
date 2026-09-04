@@ -1,0 +1,902 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Teacher's Day - Archana Singh Ma'am</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Comic Sans MS", "Trebuchet MS", Arial, sans-serif;
+            background: linear-gradient(135deg, #fff4df, #f3e8ff, #e8f7ff);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+
+        header {
+            text-align: center;
+            padding: 45px 20px;
+
+            background: linear-gradient(
+                135deg,
+                #ff7b00,
+                #ff006e,
+                #8338ec
+            );
+
+            color: white;
+
+            border-bottom-left-radius: 55px;
+            border-bottom-right-radius: 55px;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+        }
+
+        header .emoji {
+            font-size: 45px;
+            margin-bottom: 15px;
+            animation: float 2s infinite ease-in-out;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        header h2 {
+            font-size: 25px;
+            font-weight: normal;
+        }
+
+        .school {
+            margin-top: 18px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+
+        /* FLOAT ANIMATION */
+
+        @keyframes float {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+        }
+
+
+        /* TEACHER CARD */
+
+        .teacher-card {
+            width: 94%;
+            max-width: 1100px;
+
+            margin: 50px auto;
+            padding: 55px 25px;
+
+            text-align: center;
+
+            background: white;
+
+            border-radius: 35px;
+
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+
+        /* VERY BIG TEACHER PHOTO */
+
+        .teacher-photo {
+
+            width: 400px;
+            height: 400px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 12px solid #8338ec;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.30),
+                0 0 0 10px rgba(131,56,236,0.10);
+
+            margin-bottom: 30px;
+
+            transition: 0.4s;
+        }
+
+        .teacher-photo:hover {
+            transform: scale(1.04);
+        }
+
+
+        .teacher-card h2 {
+            color: #8338ec;
+            font-size: 42px;
+        }
+
+
+        .subject {
+            font-size: 24px;
+            color: #ff006e;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+
+        /* MESSAGE */
+
+        .message {
+
+            width: 92%;
+            max-width: 1000px;
+
+            margin: 35px auto;
+
+            padding: 40px;
+
+            background: white;
+
+            border-radius: 30px;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+
+        .message h2 {
+
+            text-align: center;
+
+            color: #8338ec;
+
+            font-size: 32px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .message p {
+
+            font-size: 19px;
+
+            line-height: 1.9;
+
+            margin-bottom: 16px;
+        }
+
+
+        /* SPECIAL POINTS */
+
+        .points {
+
+            width: 92%;
+            max-width: 1100px;
+
+            margin: 40px auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+
+            gap: 22px;
+        }
+
+
+        .point {
+
+            background: white;
+
+            padding: 30px 20px;
+
+            text-align: center;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,0.12);
+
+            transition: 0.3s;
+        }
+
+
+        .point:hover {
+
+            transform:
+                translateY(-8px)
+                rotate(1deg);
+        }
+
+
+        .icon {
+
+            font-size: 50px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .point h3 {
+
+            color: #ff006e;
+
+            font-size: 21px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .point p {
+
+            font-size: 16px;
+
+            line-height: 1.6;
+        }
+
+
+        /* BUTTON */
+
+        .button-area {
+
+            text-align: center;
+
+            margin: 50px 0;
+        }
+
+
+        button {
+
+            border: none;
+
+            padding: 17px 32px;
+
+            border-radius: 35px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff7b00,
+                    #ff006e,
+                    #8338ec
+                );
+
+            color: white;
+
+            font-size: 19px;
+
+            font-family: inherit;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 7px 18px rgba(0,0,0,0.2);
+
+            transition: 0.3s;
+        }
+
+
+        button:hover {
+
+            transform: scale(1.08);
+        }
+
+
+        #specialMessage {
+
+            margin-top: 25px;
+
+            min-height: 40px;
+
+            color: #8338ec;
+
+            font-size: 23px;
+
+            font-weight: bold;
+        }
+
+
+        /* FLOATING MATH STICKERS */
+
+        .sticker {
+
+            position: fixed;
+
+            font-size: 45px;
+
+            z-index: -1;
+
+            animation:
+                stickerMove
+                7s
+                infinite
+                ease-in-out;
+        }
+
+
+        .s1 {
+
+            top: 18%;
+            left: 4%;
+        }
+
+
+        .s2 {
+
+            top: 48%;
+            right: 4%;
+
+            animation-delay: 2s;
+        }
+
+
+        .s3 {
+
+            top: 75%;
+            left: 6%;
+
+            animation-delay: 4s;
+        }
+
+
+        @keyframes stickerMove {
+
+            0%, 100% {
+
+                transform:
+                    translateY(0)
+                    rotate(0);
+            }
+
+            50% {
+
+                transform:
+                    translateY(-25px)
+                    rotate(12deg);
+            }
+
+        }
+
+
+        /* FOOTER */
+
+        footer {
+
+            margin-top: 60px;
+
+            padding: 35px 20px;
+
+            text-align: center;
+
+            background: #240046;
+
+            color: white;
+
+            border-top-left-radius: 45px;
+
+            border-top-right-radius: 45px;
+        }
+
+
+        footer p {
+
+            margin: 9px;
+
+            font-size: 16px;
+        }
+
+
+        /* TABLET */
+
+        @media (max-width: 900px) {
+
+            .teacher-photo {
+                width: 480px;
+                height: 480px;
+            }
+
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            header h2 {
+                font-size: 18px;
+            }
+
+            .school {
+                font-size: 16px;
+            }
+
+
+            .teacher-card {
+                padding: 40px 15px;
+            }
+
+
+            .teacher-photo {
+
+                width: 360px;
+                height: 360px;
+
+                border-width: 9px;
+            }
+
+
+            .teacher-card h2 {
+                font-size: 30px;
+            }
+
+
+            .subject {
+                font-size: 18px;
+            }
+
+
+            .message {
+                padding: 28px 20px;
+            }
+
+
+            .message h2 {
+                font-size: 26px;
+            }
+
+
+            .message p {
+                font-size: 16px;
+            }
+
+
+            .sticker {
+                font-size: 28px;
+            }
+
+        }
+
+
+        /* SMALL PHONES */
+
+        @media (max-width: 380px) {
+
+            .teacher-photo {
+                width: 310px;
+                height: 310px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- FLOATING MATH STICKERS -->
+
+    <div class="sticker s1">
+        ➕ 📐
+    </div>
+
+    <div class="sticker s2">
+        ∑ ⭐
+    </div>
+
+    <div class="sticker s3">
+        √ π
+    </div>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="emoji">
+            ➕ 📚 ✨ 👩‍🏫 ✨ 📚 ➗
+        </div>
+
+
+        <h1>
+            Happy Teacher's Day! 🎉
+        </h1>
+
+
+        <h2>
+            To Our Wonderful Maths Teacher ➕➖✖️➗
+        </h2>
+
+
+        <div class="school">
+            VARANASI PUBLIC SCHOOL, RAJATALAB
+        </div>
+
+    </header>
+
+
+
+    <!-- TEACHER SECTION -->
+
+    <section class="teacher-card">
+
+
+        <!--
+            IMPORTANT:
+            Put your teacher photo in the same folder
+            and name it:
+
+            archana-singh.jpg
+        -->
+
+
+        <img
+
+            src="archana-singh.jpg"
+
+            alt="Archana Singh Ma'am"
+
+            class="teacher-photo"
+
+        >
+
+
+        <h2>
+            🌷 Archana Singh Ma'am 🌷
+        </h2>
+
+
+        <div class="subject">
+
+            Our Wonderful Mathematics Teacher
+            ➕ ➖ ✖️ ➗ 📐
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- SPECIAL MESSAGE -->
+
+    <section class="message">
+
+
+        <h2>
+            💖 A Special Message for You 💖
+        </h2>
+
+
+        <p>
+            Dear Archana Singh Ma'am,
+        </p>
+
+
+        <p>
+            You are not just our Maths Teacher,
+            you are someone who makes Mathematics
+            easier, clearer and more interesting for us. 📚😊
+        </p>
+
+
+        <p>
+            You teach us numbers, formulas, equations
+            and concepts, but you also teach us how
+            to think carefully and solve problems
+            step by step. 🧠➕
+        </p>
+
+
+        <p>
+            Whenever we find a difficult question,
+            your patient explanation helps us understand
+            where we went wrong and how we can improve. 🌸
+        </p>
+
+
+        <p>
+            Your classes give us confidence to face
+            difficult questions and keep trying until
+            we find the solution. 💡📐
+        </p>
+
+
+        <p>
+            Thank you for your patience, guidance,
+            encouragement and for making our Maths
+            classes enjoyable. ❤️
+        </p>
+
+
+        <p>
+            <b>
+                We are very lucky to have
+                a teacher like you!
+            </b>
+        </p>
+
+
+        <p>
+            <b>
+                Happy Teacher's Day,
+                Archana Singh Ma'am! 💐👩‍🏫
+            </b>
+        </p>
+
+
+    </section>
+
+
+
+    <!-- SPECIAL POINTS -->
+
+    <section class="points">
+
+
+        <div class="point">
+
+            <div class="icon">
+                ➕
+            </div>
+
+            <h3>
+                गणित को आसान बनाती हैं
+            </h3>
+
+            <p>
+                कठिन सवालों को भी आसान और
+                सरल तरीके से समझाती हैं।
+            </p>
+
+        </div>
+
+
+
+        <div class="point">
+
+            <div class="icon">
+                🧠
+            </div>
+
+            <h3>
+                सोचने की क्षमता
+            </h3>
+
+            <p>
+                हमें सवालों को ध्यान से
+                सोचकर हल करना सिखाती हैं।
+            </p>
+
+        </div>
+
+
+
+        <div class="point">
+
+            <div class="icon">
+                📐
+            </div>
+
+            <h3>
+                Concepts समझाती हैं
+            </h3>
+
+            <p>
+                Maths के हर concept को
+                step-by-step समझाती हैं।
+            </p>
+
+        </div>
+
+
+
+        <div class="point">
+
+            <div class="icon">
+                💡
+            </div>
+
+            <h3>
+                नई चीजें सिखाती हैं
+            </h3>
+
+            <p>
+                हर lesson में हमें कुछ नया
+                सीखने के लिए प्रेरित करती हैं।
+            </p>
+
+        </div>
+
+
+
+        <div class="point">
+
+            <div class="icon">
+                ❤️
+            </div>
+
+            <h3>
+                धैर्य से समझाती हैं
+            </h3>
+
+            <p>
+                जब हमें कोई सवाल समझ नहीं आता,
+                आप उसे फिर से patiently समझाती हैं।
+            </p>
+
+        </div>
+
+
+
+        <div class="point">
+
+            <div class="icon">
+                🏆
+            </div>
+
+            <h3>
+                सफलता की प्रेरणा
+            </h3>
+
+            <p>
+                आप हमें मेहनत करने और
+                अपने लक्ष्य को पाने के लिए प्रेरित करती हैं।
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- SURPRISE BUTTON -->
+
+    <div class="button-area">
+
+
+        <button onclick="showMessage()">
+
+            💌 एक विशेष संदेश के लिए क्लिक करें
+
+        </button>
+
+
+        <div id="specialMessage"></div>
+
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+
+        <p>
+
+            ➕ ज्ञान, गणित और सफलता के साथ 📐
+
+        </p>
+
+
+        <p>
+
+            <b>
+                The Family of VPS
+            </b>
+
+        </p>
+
+
+        <p>
+
+            Website Writer:
+
+            <b>
+                EMMANUEL CHAUHAN
+            </b>
+
+        </p>
+
+
+        <p>
+
+            VARANASI PUBLIC SCHOOL, RAJATALAB
+
+        </p>
+
+
+        <p>
+
+            🌸 Happy Teacher's Day,
+            Archana Singh Ma'am! 👩‍🏫💐❤️
+
+        </p>
+
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+
+        function showMessage() {
+
+
+            const messages = [
+
+
+                "➕ आपकी वजह से Maths सीखना बहुत आसान लगता है! ❤️",
+
+
+                "🌸 धन्यवाद मैम, हमें हमेशा धैर्य से सिखाने के लिए!",
+
+
+                "📐 आपकी कक्षा में हमें हर दिन कुछ नया सीखने को मिलता है!",
+
+
+                "🧠 आप हमें हर समस्या का समाधान ढूँढना सिखाती हैं!",
+
+
+                "🏆 आपकी मेहनत हमें हमेशा बेहतर करने के लिए प्रेरित करती है!",
+
+
+                "💐 Happy Teacher's Day, Archana Singh Ma'am! ❤️"
+
+
+            ];
+
+
+            const randomMessage =
+
+                messages[
+                    Math.floor(
+                        Math.random() * messages.length
+                    )
+                ];
+
+
+            document.getElementById(
+                "specialMessage"
+            ).innerHTML = randomMessage;
+
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
+```

@@ -1,1763 +1,740 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Happy Teachers' Day | Sandeep Sir</title>
 
 <style>
-
 /* =========================================================
-   ROOT
+   FUTURISTIC VARIABLES & ROOT
 ========================================================= */
-
-:root{
-    --bg:#020617;
-    --bg2:#050b1d;
-    --cyan:#00f5ff;
-    --blue:#3b82f6;
-    --purple:#8b5cf6;
-    --pink:#ff3cac;
-    --green:#00ff9d;
-    --white:#f8fbff;
-    --muted:#8ea3bd;
-    --glass:rgba(7,18,38,.72);
+:root {
+    --bg-main: #050505;
+    --bg-panel: #0a0e17;
+    --cyan: #00f3ff;
+    --cyan-glow: rgba(0, 243, 255, 0.6);
+    --purple: #bc13fe;
+    --purple-glow: rgba(188, 19, 254, 0.6);
+    --green: #00ff66;
+    --text-main: #e0e6ed;
+    --text-muted: #8b9bb4;
+    --font-tech: 'Courier New', Consolas, monospace;
+    --font-heading: 'Arial Black', Impact, sans-serif;
+    --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
-body{
-    background:var(--bg);
-    color:white;
-    font-family:Arial,Helvetica,sans-serif;
-    overflow-x:hidden;
-}
-
-/* =========================================================
-   BACKGROUND
-========================================================= */
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:-10;
-
-    background:
-        radial-gradient(circle at 15% 20%,rgba(0,245,255,.12),transparent 28%),
-        radial-gradient(circle at 85% 30%,rgba(139,92,246,.14),transparent 30%),
-        radial-gradient(circle at 50% 90%,rgba(255,60,172,.10),transparent 30%),
-        #020617;
-}
-
-/* GRID */
-
-.grid{
-    position:fixed;
-    inset:0;
-    z-index:-9;
-    opacity:.13;
-
-    background-image:
-        linear-gradient(rgba(0,245,255,.18) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(0,245,255,.18) 1px,transparent 1px);
-
-    background-size:50px 50px;
-
-    mask-image:linear-gradient(to bottom,black,transparent);
-}
-
-/* SCANLINES */
-
-.scanlines{
-    position:fixed;
-    inset:0;
-    z-index:9999;
-    pointer-events:none;
-    opacity:.035;
-
-    background:repeating-linear-gradient(
-        to bottom,
-        transparent 0px,
-        transparent 3px,
-        white 4px
-    );
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    overflow-x: hidden;
 }
 
 /* =========================================================
-   NAVBAR
+   CYBER BACKGROUND & GRID
 ========================================================= */
-
-nav{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-
-    padding:18px 7%;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    z-index:1000;
-
-    background:rgba(2,6,23,.72);
-    backdrop-filter:blur(18px);
-
-    border-bottom:1px solid rgba(0,245,255,.16);
+.cyber-grid {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: -10;
+    background: 
+        linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px);
+    animation: gridMove 20s linear infinite;
+    mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
-.logo{
-    font-weight:900;
-    letter-spacing:3px;
-    color:var(--cyan);
-    text-shadow:0 0 15px rgba(0,245,255,.6);
+@keyframes gridMove {
+    0% { transform: perspective(500px) rotateX(60deg) translateY(0) translateZ(-200px); }
+    100% { transform: perspective(500px) rotateX(60deg) translateY(40px) translateZ(-200px); }
 }
 
-.nav-right{
-    color:#8ea3bd;
-    font-size:11px;
-    letter-spacing:3px;
+.scanlines {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1));
+    background-size: 100% 4px;
+    opacity: 0.3;
 }
 
 /* =========================================================
-   HERO
+   HUD NAVBAR
 ========================================================= */
-
-.hero{
-    min-height:100vh;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    padding:130px 7% 80px;
-
-    position:relative;
+nav {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--cyan);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
 }
 
-.hero-content{
-    max-width:1100px;
+.logo {
+    font-family: var(--font-tech);
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--cyan);
+    text-shadow: 0 0 10px var(--cyan-glow);
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-/* TERMINAL */
-
-.terminal{
-    width:min(700px,95%);
-    margin:0 auto 35px;
-
-    text-align:left;
-
-    background:rgba(2,10,25,.82);
-
-    border:1px solid rgba(0,245,255,.22);
-
-    border-radius:14px;
-
-    box-shadow:
-        0 0 50px rgba(0,245,255,.08),
-        inset 0 0 30px rgba(0,245,255,.025);
-
-    overflow:hidden;
-
-    animation:terminalAppear 1.3s ease;
+.logo::before {
+    content: "SYS.OP";
+    font-size: 0.6rem;
+    background: var(--cyan);
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 2px;
 }
 
-.terminal-head{
-    padding:11px 15px;
-
-    background:rgba(255,255,255,.035);
-
-    border-bottom:1px solid rgba(255,255,255,.06);
-
-    display:flex;
-    align-items:center;
-    gap:7px;
-}
-
-.dot{
-    width:10px;
-    height:10px;
-    border-radius:50%;
-}
-
-.red{background:#ff5f57}
-.yellow{background:#febc2e}
-.green{background:#28c840}
-
-.terminal-body{
-    padding:20px;
-
-    font-family:"Courier New",monospace;
-
-    font-size:13px;
-    line-height:1.9;
-
-    color:#91a8c4;
-}
-
-.code-green{
-    color:var(--green);
-}
-
-.code-cyan{
-    color:var(--cyan);
-}
-
-.cursor{
-    display:inline-block;
-    width:8px;
-    height:15px;
-    background:var(--cyan);
-    animation:blink .8s infinite;
-}
-
-@keyframes blink{
-    50%{opacity:0}
-}
-
-@keyframes terminalAppear{
-    from{
-        opacity:0;
-        transform:translateY(-30px) scale(.96);
-    }
-    to{
-        opacity:1;
-        transform:none;
-    }
-}
-
-/* HERO TITLE */
-
-.eyebrow{
-    color:var(--cyan);
-
-    letter-spacing:7px;
-
-    font-size:12px;
-
-    margin-bottom:20px;
-
-    text-transform:uppercase;
-}
-
-.hero h1{
-    font-size:clamp(48px,9vw,110px);
-
-    line-height:.9;
-
-    font-weight:900;
-
-    background:
-        linear-gradient(
-            90deg,
-            white,
-            var(--cyan),
-            var(--blue),
-            var(--purple),
-            var(--pink),
-            white
-        );
-
-    background-size:400%;
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-
-    animation:gradientMove 7s linear infinite;
-}
-
-@keyframes gradientMove{
-    to{
-        background-position:400%;
-    }
-}
-
-.hero-name{
-    margin-top:30px;
-
-    font-family:Georgia,serif;
-
-    font-size:clamp(38px,6vw,70px);
-
-    color:white;
-
-    text-shadow:
-        0 0 15px rgba(0,245,255,.35),
-        0 0 35px rgba(139,92,246,.25);
-}
-
-.hero-subtitle{
-    margin:25px auto;
-
-    max-width:750px;
-
-    color:#9eb0c5;
-
-    line-height:1.9;
-
-    font-size:16px;
+.nav-right {
+    color: var(--cyan);
+    font-family: var(--font-tech);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 /* =========================================================
-   FLOATING TECH OBJECTS
+   HERO SECTION
 ========================================================= */
-
-.tech{
-    position:absolute;
-
-    font-size:50px;
-
-    opacity:.6;
-
-    pointer-events:none;
-
-    filter:
-        drop-shadow(0 0 15px rgba(0,245,255,.7));
-
-    animation:floatTech 5s ease-in-out infinite;
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 5% 50px;
+    position: relative;
 }
 
-.tech:nth-child(1){
-    left:7%;
-    top:28%;
+/* CYBER TERMINAL */
+.terminal {
+    width: min(700px, 100%);
+    background: rgba(10, 14, 23, 0.85);
+    border: 1px solid var(--purple);
+    box-shadow: 0 0 20px rgba(188, 19, 254, 0.2);
+    border-radius: 8px;
+    text-align: left;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
 }
 
-.tech:nth-child(2){
-    right:7%;
-    top:35%;
-    animation-delay:1s;
+.terminal::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%; width: 50%; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--purple), transparent);
+    animation: scanRight 3s linear infinite;
 }
 
-.tech:nth-child(3){
-    left:10%;
-    bottom:15%;
-    animation-delay:2s;
+@keyframes scanRight {
+    100% { left: 100%; }
 }
 
-.tech:nth-child(4){
-    right:10%;
-    bottom:17%;
-    animation-delay:3s;
+.terminal-head {
+    background: rgba(188, 19, 254, 0.1);
+    padding: 10px 15px;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid rgba(188, 19, 254, 0.3);
 }
 
-@keyframes floatTech{
-    0%,100%{
-        transform:translateY(0) rotate(-5deg);
-    }
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.red { background: #ff4757; }
+.yellow { background: #ffa502; }
+.green { background: #2ed573; box-shadow: 0 0 10px #2ed573; }
 
-    50%{
-        transform:translateY(-25px) rotate(7deg);
-    }
+.terminal-body {
+    padding: 20px;
+    font-family: var(--font-tech);
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-muted);
 }
+
+.code-user { color: var(--purple); font-weight: bold; }
+.code-sys { color: var(--cyan); }
+.code-success { color: var(--green); text-shadow: 0 0 5px var(--green); }
+.cursor { display: inline-block; width: 10px; height: 15px; background: var(--cyan); animation: blink 1s step-end infinite; vertical-align: middle; }
+
+@keyframes blink { 50% { opacity: 0; } }
+
+/* GLITCH TITLE */
+.eyebrow {
+    color: var(--purple);
+    font-family: var(--font-tech);
+    letter-spacing: 5px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(40px, 8vw, 90px);
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 2px 2px 0px var(--cyan), -2px -2px 0px var(--purple);
+    margin-bottom: 20px;
+}
+
+.hero-name {
+    font-family: var(--font-tech);
+    font-size: clamp(30px, 5vw, 60px);
+    color: var(--cyan);
+    text-shadow: 0 0 20px var(--cyan-glow);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero-subtitle {
+    margin: 30px auto;
+    max-width: 600px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* CYBER BUTTON */
+.cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 15px 35px;
+    background: transparent;
+    color: var(--cyan);
+    font-family: var(--font-tech);
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid var(--cyan);
+    position: relative;
+    transition: 0.3s;
+    clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+}
+
+.cta::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--cyan);
+    z-index: -1;
+    transition: transform 0.3s transform-origin 0.3s;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.cta:hover { color: #000; box-shadow: 0 0 30px var(--cyan-glow); }
+.cta:hover::before { transform: scaleX(1); transform-origin: left; }
 
 /* =========================================================
-   BUTTON
+   PERFECT 9:16 PHOTO SECTION (HUD STYLE)
 ========================================================= */
-
-.cta{
-    display:inline-flex;
-    gap:10px;
-
-    margin-top:20px;
-
-    padding:15px 28px;
-
-    border:1px solid rgba(0,245,255,.45);
-
-    border-radius:50px;
-
-    color:var(--cyan);
-
-    text-decoration:none;
-
-    background:rgba(0,245,255,.05);
-
-    transition:.35s;
-
-    box-shadow:
-        0 0 20px rgba(0,245,255,.08);
+.teacher-section {
+    padding: 100px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
-.cta:hover{
-    transform:translateY(-4px);
-
-    background:rgba(0,245,255,.12);
-
-    box-shadow:
-        0 0 35px rgba(0,245,255,.25);
+/* The exactly proportioned 9:16 container */
+.hud-frame {
+    position: relative;
+    width: min(340px, 85vw);
+    aspect-ratio: 9 / 16;
+    background: rgba(0, 243, 255, 0.03);
+    border: 2px solid rgba(0, 243, 255, 0.3);
+    padding: 12px;
+    box-shadow: inset 0 0 40px rgba(0, 243, 255, 0.1);
 }
+
+/* Cybernetic corner brackets */
+.hud-frame::before, .hud-frame::after {
+    content: ""; position: absolute; width: 40px; height: 40px; border: 3px solid var(--cyan); pointer-events: none; z-index: 5;
+}
+.hud-frame::before { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+.hud-frame::after { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+.hud-bracket-top-right, .hud-bracket-bottom-left {
+    position: absolute; width: 40px; height: 40px; border: 3px solid var(--cyan); pointer-events: none; z-index: 5;
+}
+.hud-bracket-top-right { top: -2px; right: -2px; border-left: none; border-bottom: none; }
+.hud-bracket-bottom-left { bottom: -2px; left: -2px; border-right: none; border-top: none; }
+
+/* Image styling */
+.hud-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.1) brightness(1.1);
+    border: 1px solid rgba(0, 243, 255, 0.5);
+    display: block;
+}
+
+/* Scanning Laser */
+.hud-scanner {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 3px;
+    background: var(--cyan);
+    box-shadow: 0 0 15px 5px var(--cyan-glow);
+    z-index: 10;
+    opacity: 0.8;
+    animation: scanImage 4s ease-in-out infinite;
+}
+
+@keyframes scanImage {
+    0%, 100% { top: 2%; opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
+    98% { top: 98%; opacity: 0; }
+}
+
+/* HUD Labels */
+.orbit-label {
+    position: absolute;
+    background: rgba(10, 14, 23, 0.9);
+    border: 1px solid var(--purple);
+    color: var(--purple);
+    font-family: var(--font-tech);
+    font-size: 11px;
+    padding: 6px 12px;
+    letter-spacing: 2px;
+    z-index: 15;
+    box-shadow: 0 0 10px rgba(188, 19, 254, 0.3);
+}
+
+.label-one { top: 15%; left: -10%; border-left: 3px solid var(--purple); }
+.label-two { bottom: 25%; right: -15%; border-right: 3px solid var(--purple); }
+.label-three { bottom: -5%; left: 30%; border-bottom: 3px solid var(--purple); }
 
 /* =========================================================
-   SECTION
+   CARDS / SYSTEMS ANALYSIS
 ========================================================= */
+.section { padding: 100px 5%; max-width: 1200px; margin: auto; }
 
-section{
-    position:relative;
+.section-heading { text-align: center; margin-bottom: 60px; }
+.section-heading span { color: var(--purple); font-family: var(--font-tech); font-size: 14px; letter-spacing: 5px; }
+.section-heading h2 { margin-top: 15px; font-family: var(--font-heading); font-size: clamp(28px, 4vw, 45px); text-transform: uppercase; color: #fff; }
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
 }
 
-.section{
-    padding:110px 7%;
+.card {
+    background: rgba(10, 14, 23, 0.6);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    padding: 35px 25px;
+    position: relative;
+    transition: 0.4s;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
 }
 
-.section-heading{
-    text-align:center;
-    margin-bottom:65px;
+.card::before {
+    content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--cyan); transform: scaleX(0); transform-origin: left; transition: 0.4s;
 }
 
-.section-heading span{
-    color:var(--cyan);
+.card:hover { transform: translateY(-10px); border-color: rgba(0, 243, 255, 0.5); box-shadow: 0 10px 30px rgba(0, 243, 255, 0.1); }
+.card:hover::before { transform: scaleX(1); }
 
-    font-size:11px;
-
-    letter-spacing:5px;
-
-    text-transform:uppercase;
-}
-
-.section-heading h2{
-    margin-top:12px;
-
-    font-family:Georgia,serif;
-
-    font-size:clamp(34px,5vw,60px);
-}
+.card-icon { font-size: 40px; margin-bottom: 20px; text-shadow: 0 0 15px var(--cyan-glow); }
+.card h3 { color: #fff; font-family: var(--font-tech); font-size: 20px; margin-bottom: 15px; letter-spacing: 1px; }
+.card p { color: var(--text-muted); line-height: 1.7; font-size: 15px; }
 
 /* =========================================================
-   TEACHER PHOTO
+   IDE CODE BLOCK
 ========================================================= */
-
-.teacher-section{
-    padding:100px 7% 130px;
-
-    display:flex;
-
-    justify-content:center;
-
-    text-align:center;
+.code-section { padding: 80px 5%; }
+.code-box {
+    max-width: 900px; margin: auto;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 
-.photo-wrapper{
-    width:min(560px,85vw);
-
-    position:relative;
+.ide-header {
+    background: #161b22;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #30363d;
+    font-family: var(--font-tech);
+    font-size: 13px;
+    color: #8b949e;
 }
 
-/* CIRCUIT RING */
-
-.photo-wrapper::before{
-    content:"";
-
-    position:absolute;
-
-    inset:-25px;
-
-    border-radius:50%;
-
-    border:1px solid rgba(0,245,255,.45);
-
-    box-shadow:
-        0 0 30px rgba(0,245,255,.2);
-
-    animation:spin 12s linear infinite;
+.code-content {
+    padding: 30px;
+    font-family: var(--font-tech);
+    font-size: 15px;
+    line-height: 1.8;
+    color: #c9d1d9;
+    overflow-x: auto;
 }
 
-.photo-wrapper::after{
-    content:"";
-
-    position:absolute;
-
-    inset:-45px;
-
-    border-radius:50%;
-
-    border:1px dashed rgba(139,92,246,.4);
-
-    animation:spinReverse 18s linear infinite;
-}
-
-@keyframes spin{
-    to{transform:rotate(360deg)}
-}
-
-@keyframes spinReverse{
-    to{transform:rotate(-360deg)}
-}
-
-.photo{
-    width:100%;
-    aspect-ratio:1;
-
-    object-fit:cover;
-
-    border-radius:50%;
-
-    border:9px solid #030b19;
-
-    outline:2px solid var(--cyan);
-
-    box-shadow:
-        0 0 30px rgba(0,245,255,.45),
-        0 0 100px rgba(59,130,246,.22);
-
-    position:relative;
-
-    z-index:2;
-
-    transition:.5s;
-}
-
-.photo:hover{
-    transform:scale(1.04);
-
-    box-shadow:
-        0 0 50px rgba(0,245,255,.65),
-        0 0 120px rgba(139,92,246,.3);
-}
-
-/* ORBIT LABELS */
-
-.orbit-label{
-    position:absolute;
-
-    z-index:5;
-
-    padding:8px 14px;
-
-    background:rgba(2,6,23,.9);
-
-    border:1px solid rgba(0,245,255,.35);
-
-    border-radius:20px;
-
-    color:var(--cyan);
-
-    font-size:10px;
-
-    letter-spacing:2px;
-}
-
-.label-one{
-    top:8%;
-    left:-15%;
-}
-
-.label-two{
-    bottom:12%;
-    right:-18%;
-}
-
-.label-three{
-    bottom:-8%;
-    left:35%;
-}
+.kw { color: #ff7b72; } /* Keyword */
+.str { color: #a5d6ff; } /* String */
+.func { color: #d2a8ff; } /* Function */
+.var { color: #79c0ff; } /* Variable */
+.cmt { color: #8b949e; font-style: italic; } /* Comment */
 
 /* =========================================================
-   SKILL CARDS
+   QUOTE (HOLOGRAPHIC)
 ========================================================= */
-
-.cards{
-    max-width:1100px;
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:22px;
+.quote-section { padding: 80px 5%; }
+.quote {
+    max-width: 900px; margin: auto;
+    padding: 60px 40px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(0, 243, 255, 0.05), rgba(188, 19, 254, 0.05));
+    border: 1px solid rgba(188, 19, 254, 0.3);
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
 }
 
-.card{
-    padding:35px 28px;
-
-    min-height:260px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(0,245,255,.055),
-            rgba(139,92,246,.035)
-        );
-
-    border:1px solid rgba(0,245,255,.15);
-
-    border-radius:20px;
-
-    backdrop-filter:blur(15px);
-
-    transition:.45s;
-
-    opacity:0;
-
-    transform:translateY(40px);
+.quote p {
+    font-family: var(--font-tech);
+    font-size: clamp(18px, 3vw, 24px);
+    line-height: 1.8;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.2);
 }
 
-.card:hover{
-    transform:translateY(-12px);
-
-    border-color:var(--cyan);
-
-    box-shadow:
-        0 20px 60px rgba(0,245,255,.12);
-}
-
-.card-icon{
-    font-size:43px;
-
-    margin-bottom:20px;
-
-    filter:
-        drop-shadow(0 0 12px rgba(0,245,255,.6));
-}
-
-.card h3{
-    color:var(--cyan);
-
-    margin-bottom:15px;
-}
-
-.card p{
-    color:#91a4ba;
-
-    line-height:1.8;
-
-    font-size:14px;
-}
-
-/* =========================================================
-   CODE MESSAGE
-========================================================= */
-
-.code-section{
-    padding:90px 7%;
-}
-
-.code-box{
-    width:min(1000px,100%);
-
-    margin:auto;
-
-    padding:40px;
-
-    border-radius:20px;
-
-    background:#020817;
-
-    border:1px solid rgba(0,245,255,.2);
-
-    box-shadow:
-        0 0 80px rgba(0,245,255,.06);
-}
-
-.code-title{
-    color:var(--green);
-
-    margin-bottom:25px;
-
-    font-family:monospace;
-
-    font-size:13px;
-}
-
-.code{
-    font-family:"Courier New",monospace;
-
-    line-height:2;
-
-    font-size:14px;
-
-    color:#a9bad0;
-}
-
-.keyword{
-    color:#c084fc;
-}
-
-.string{
-    color:#7dd3fc;
-}
-
-.function{
-    color:#34d399;
-}
-
-.comment{
-    color:#52677f;
-}
-
-/* =========================================================
-   QUOTE
-========================================================= */
-
-.quote-section{
-    padding:100px 7%;
-}
-
-.quote{
-    width:min(950px,100%);
-
-    margin:auto;
-
-    padding:60px 45px;
-
-    text-align:center;
-
-    border-radius:28px;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(0,245,255,.08),
-            transparent 65%
-        );
-
-    border:1px solid rgba(0,245,255,.2);
-
-    position:relative;
-}
-
-.quote-mark{
-    font-size:100px;
-
-    color:var(--cyan);
-
-    opacity:.18;
-
-    font-family:Georgia,serif;
-}
-
-.quote p{
-    font-family:Georgia,serif;
-
-    font-size:clamp(20px,3vw,29px);
-
-    line-height:1.8;
-
-    color:#dbeafe;
-}
-
-.quote strong{
-    display:block;
-
-    margin-top:25px;
-
-    color:var(--cyan);
-
-    letter-spacing:2px;
+.quote strong {
+    display: block; margin-top: 30px;
+    color: var(--cyan);
+    font-family: var(--font-tech);
+    letter-spacing: 3px;
+    font-size: 14px;
 }
 
 /* =========================================================
    FINAL MESSAGE
 ========================================================= */
-
-.final{
-    padding:80px 7% 120px;
-
-    text-align:center;
+.final { padding: 80px 5% 120px; text-align: center; }
+.final-box {
+    max-width: 800px; margin: auto;
+    position: relative;
 }
 
-.final-box{
-    width:min(950px,100%);
-
-    margin:auto;
-
-    padding:70px 40px;
-
-    border-radius:32px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(0,245,255,.08),
-            rgba(139,92,246,.07),
-            rgba(255,60,172,.05)
-        );
-
-    border:1px solid rgba(0,245,255,.2);
-
-    box-shadow:
-        0 0 100px rgba(0,245,255,.07);
+.final h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(35px, 6vw, 60px);
+    color: var(--cyan);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-shadow: 0 0 20px var(--cyan-glow);
 }
 
-.final-icon{
-    font-size:55px;
-
-    margin-bottom:25px;
+.final p {
+    color: var(--text-muted);
+    font-size: 18px;
+    line-height: 2;
 }
 
-.final h2{
-    font-family:Georgia,serif;
-
-    font-size:clamp(38px,6vw,65px);
-
-    margin-bottom:30px;
-
-    color:white;
-}
-
-.final p{
-    color:#a9b9cc;
-
-    line-height:2;
-
-    font-size:16px;
-}
-
-.highlight{
-    color:var(--cyan);
-
-    font-size:21px;
-
-    font-weight:bold;
-
-    display:block;
-
-    margin-top:25px;
-}
-
-.signature{
-    margin-top:35px;
-
-    color:#d5c6ff;
-
-    font-family:Georgia,serif;
-
-    font-size:22px;
+.final .highlight {
+    display: block;
+    margin-top: 40px;
+    font-family: var(--font-tech);
+    color: var(--purple);
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 15px var(--purple-glow);
 }
 
 /* =========================================================
    FOOTER
 ========================================================= */
-
-footer{
-    padding:30px;
-
-    text-align:center;
-
-    border-top:1px solid rgba(0,245,255,.1);
-
-    color:#52677f;
-
-    font-size:11px;
-
-    letter-spacing:2px;
+footer {
+    padding: 30px;
+    text-align: center;
+    border-top: 1px dashed rgba(0, 243, 255, 0.2);
+    background: #020305;
+    font-family: var(--font-tech);
+    font-size: 12px;
+    color: #52677f;
+    letter-spacing: 1px;
 }
-
-footer span{
-    color:var(--cyan);
-}
-
-/* =========================================================
-   PARTICLES
-========================================================= */
-
-.particle{
-    position:fixed;
-
-    width:4px;
-    height:4px;
-
-    border-radius:50%;
-
-    background:var(--cyan);
-
-    box-shadow:
-        0 0 12px var(--cyan);
-
-    pointer-events:none;
-
-    z-index:-1;
-}
+footer span { color: var(--cyan); }
 
 /* =========================================================
    CLICK EFFECTS
 ========================================================= */
-
-.ripple{
-    position:fixed;
-
-    width:15px;
-    height:15px;
-
-    border-radius:50%;
-
-    border:2px solid var(--cyan);
-
-    pointer-events:none;
-
-    z-index:9998;
-
-    transform:translate(-50%,-50%);
-
-    animation:ripple .8s ease-out forwards;
-}
-
-@keyframes ripple{
-    to{
-        width:150px;
-        height:150px;
-        opacity:0;
-    }
-}
-
-.click-symbol{
-    position:fixed;
-
-    pointer-events:none;
-
-    z-index:9999;
-
-    font-size:24px;
-
-    filter:
-        drop-shadow(0 0 10px var(--cyan));
+.click-symbol {
+    position: fixed; pointer-events: none; z-index: 9999;
+    font-size: 20px; font-family: var(--font-tech); color: var(--cyan);
+    text-shadow: 0 0 10px var(--cyan);
 }
 
 /* =========================================================
-   RESPONSIVE
+   RESPONSIVE Adjustments
 ========================================================= */
-
-@media(max-width:850px){
-
-    .nav-right{
-        display:none;
-    }
-
-    .cards{
-        grid-template-columns:1fr;
-    }
-
-    .tech{
-        font-size:35px;
-    }
-
-    .tech:nth-child(1){
-        left:3%;
-    }
-
-    .tech:nth-child(2){
-        right:3%;
-    }
-
-    .label-one{
-        left:-2%;
-    }
-
-    .label-two{
-        right:-2%;
-    }
-
-    .code-box{
-        padding:25px 18px;
-    }
-
-    .quote{
-        padding:45px 25px;
-    }
-
+@media(max-width: 768px) {
+    .nav-right { display: none; }
+    .label-one { left: 0; }
+    .label-two { right: 0; }
+    .code-content { padding: 15px; font-size: 13px; }
 }
-
-@media(max-width:500px){
-
-    .hero h1{
-        font-size:50px;
-    }
-
-    .hero-name{
-        font-size:40px;
-    }
-
-    .terminal-body{
-        font-size:11px;
-    }
-
-    .photo-wrapper{
-        width:78vw;
-    }
-
-}
-
 </style>
 </head>
-
-
 <body>
 
-<div class="grid"></div>
+<div class="cyber-grid"></div>
 <div class="scanlines"></div>
 
-
-<!-- =========================================================
-     NAVIGATION
-========================================================= -->
-
+<!-- NAVIGATION -->
 <nav>
-
-    <div class="logo">
-        &lt;/&gt; SANDEEP SIR
-    </div>
-
-    <div class="nav-right">
-        COMPUTER • AI • TECHNOLOGY
-    </div>
-
+    <div class="logo">SANDEEP_SIR</div>
+    <div class="nav-right">AI / DEV / MENTOR</div>
 </nav>
 
-
-<!-- =========================================================
-     HERO
-========================================================= -->
-
+<!-- HERO -->
 <section class="hero">
-
-    <div class="tech">💻</div>
-    <div class="tech">🤖</div>
-    <div class="tech">🧠</div>
-    <div class="tech">⚡</div>
-
-
-    <div class="hero-content">
-
-        <div class="terminal">
-
-            <div class="terminal-head">
-
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-
-            </div>
-
-            <div class="terminal-body">
-
-                <span class="code-green">
-                    sandeep@teacher
-                </span>:~$ run teachers_day.sh
-
-                <br>
-
-                Loading appreciation...
-
-                <br>
-
-                Initializing memories...
-
-                <br>
-
-                Compiling knowledge...
-
-                <br>
-
-                <span class="code-cyan">
-                    SUCCESS: Amazing Teacher Detected ✓
-                </span>
-
-                <br>
-
-                <span class="code-green">
-                    sandeep@teacher
-                </span>:~$ <span class="cursor"></span>
-
-            </div>
-
+    <div class="terminal">
+        <div class="terminal-head">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
         </div>
-
-
-        <div class="eyebrow">
-            A Special Tribute To Our Computer Teacher
+        <div class="terminal-body">
+            <span class="code-user">sandeep@teacher</span>:~$ ./boot_teachers_day.sh<br>
+            <span class="code-sys">[SYS] Loading appreciation modules...</span><br>
+            <span class="code-sys">[SYS] Compiling memories...</span><br>
+            <span class="code-sys">[SYS] Injecting gratitude logic...</span><br>
+            <span class="code-success">SUCCESS: Master Teacher Detected ✓</span><br>
+            <span class="code-user">sandeep@teacher</span>:~$ <span class="cursor"></span>
         </div>
-
-
-        <h1>
-            HAPPY<br>
-            TEACHERS' DAY
-        </h1>
-
-
-        <div class="hero-name">
-            Sandeep Sir
-        </div>
-
-
-        <p class="hero-subtitle">
-
-            You don't just teach computers.
-
-            <br>
-
-            You teach us how to think,
-            how to solve,
-            how to explore,
-            and how to create.
-
-            <br><br>
-
-            <strong style="color:#00f5ff">
-                Behind every great technology is a great teacher.
-            </strong>
-
-        </p>
-
-
-        <a href="#teacher" class="cta">
-            <span>↓</span>
-            Explore The Tribute
-        </a>
-
     </div>
 
+    <div class="eyebrow">SYSTEM OVERRIDE: TRIBUTE MODE INITIATED</div>
+    
+    <h1>HAPPY<br>TEACHERS' DAY</h1>
+    <div class="hero-name">Sandeep Sir</div>
+    
+    <p class="hero-subtitle">
+        You don't just teach syntax. You debug our minds.<br>
+        You teach us how to think, how to solve, and how to build the future.<br><br>
+        <strong style="color: var(--green);">Behind every great AI model, is a great human mentor.</strong>
+    </p>
+    
+    <a href="#teacher" class="cta">Run Tribute.exe</a>
 </section>
 
-
-<!-- =========================================================
-     PHOTO
-========================================================= -->
-
+<!-- TEACHER PHOTO (Perfectly built for 9:16 aspect ratio) -->
 <section class="teacher-section" id="teacher">
-
-    <div class="photo-wrapper">
-
-        <img
-            src="images/sandeepsir.png"
-            alt="Sandeep Sir"
-            class="photo"
-        >
-
-        <div class="orbit-label label-one">
-            COMPUTER
-        </div>
-
-        <div class="orbit-label label-two">
-            AI MENTOR
-        </div>
-
-        <div class="orbit-label label-three">
-            KNOWLEDGE
-        </div>
-
+    <div class="hud-frame">
+        <div class="hud-bracket-top-right"></div>
+        <div class="hud-bracket-bottom-left"></div>
+        <div class="hud-scanner"></div>
+        
+        <!-- Ensure your photo is placed here. It will fit exactly 9:16. -->
+        <img src="images/sandeepsir.png" alt="Sandeep Sir" class="photo">
+        
+        <div class="orbit-label label-one">CS EXPERT</div>
+        <div class="orbit-label label-two">AI MENTOR</div>
+        <div class="orbit-label label-three">SYSTEM_ARCHITECT</div>
     </div>
-
 </section>
 
-
-<!-- =========================================================
-     WHAT MAKES HIM SPECIAL
-========================================================= -->
-
+<!-- WHAT MAKES HIM SPECIAL -->
 <section class="section">
-
     <div class="section-heading">
-
-        <span>
-            SYSTEM ANALYSIS
-        </span>
-
-        <h2>
-            What Makes Sandeep Sir Special?
-        </h2>
-
+        <span>[ SYSTEM ANALYSIS ]</span>
+        <h2>Core Competencies</h2>
     </div>
-
 
     <div class="cards">
-
-
         <div class="card">
-
-            <div class="card-icon">
-                💻
-            </div>
-
-            <h3>
-                Technology Explorer
-            </h3>
-
-            <p>
-                You keep exploring new technologies,
-                new ideas and new possibilities.
-                Your curiosity reminds us that
-                learning never really stops.
-            </p>
-
+            <div class="card-icon">💻</div>
+            <h3>Tech Explorer</h3>
+            <p>You continuously parse new frameworks, models, and paradigms. Your curiosity compiles perfectly, proving learning is an infinite loop.</p>
         </div>
-
-
         <div class="card">
-
-            <div class="card-icon">
-                🧠
-            </div>
-
-            <h3>
-                Problem Solver
-            </h3>
-
-            <p>
-                Difficult problems become easier
-                when someone knows how to approach
-                them. You teach us not only the answer,
-                but the thinking behind the answer.
-            </p>
-
+            <div class="card-icon">🧠</div>
+            <h3>Logic Optimizer</h3>
+            <p>Complex algorithms become runtime-efficient when you explain them. You don't just give output; you teach the underlying architecture.</p>
         </div>
-
-
         <div class="card">
-
-            <div class="card-icon">
-                🤖
-            </div>
-
-            <h3>
-                Future Ready
-            </h3>
-
-            <p>
-                Artificial Intelligence, coding,
-                computers and modern technology
-                are shaping our future—and you
-                prepare us to become part of it.
-            </p>
-
+            <div class="card-icon">🤖</div>
+            <h3>Future Deployed</h3>
+            <p>From Machine Learning to neural networks, you prep our hardware (brains) to run tomorrow's software smoothly.</p>
         </div>
-
-
         <div class="card">
-
-            <div class="card-icon">
-                ⚡
-            </div>
-
-            <h3>
-                Always Updated
-            </h3>
-
-            <p>
-                Technology changes every day.
-                Yet you continue learning,
-                adapting and bringing fresh
-                knowledge into the classroom.
-            </p>
-
+            <div class="card-icon">⚡</div>
+            <h3>Live Environment</h3>
+            <p>Technology shifts daily, but you hot-reload your knowledge base constantly, pushing the latest updates directly to the classroom.</p>
         </div>
-
-
         <div class="card">
-
-            <div class="card-icon">
-                🔍
-            </div>
-
-            <h3>
-                Curiosity Builder
-            </h3>
-
-            <p>
-                You encourage questions.
-                And sometimes the best lesson
-                isn't the answer—it is the curiosity
-                that makes us search for one.
-            </p>
-
+            <div class="card-icon">🔍</div>
+            <h3>Query Resolver</h3>
+            <p>You accept all input queries. Often, the best lesson isn't the direct API response, but teaching us how to write better prompts.</p>
         </div>
-
-
         <div class="card">
-
-            <div class="card-icon">
-                ❤️
-            </div>
-
-            <h3>
-                Teacher First
-            </h3>
-
-            <p>
-                Technology can provide information,
-                but a teacher provides direction,
-                encouragement and confidence.
-                Thank you for giving us all three.
-            </p>
-
+            <div class="card-icon">❤️</div>
+            <h3>Human Kernel</h3>
+            <p>AI can generate code, but a teacher provides the soul, direction, and execution environment. Thank you for being our root directory.</p>
         </div>
-
     </div>
-
 </section>
 
-
-<!-- =========================================================
-     CODE TRIBUTE
-========================================================= -->
-
+<!-- CODE TRIBUTE -->
 <section class="code-section">
-
     <div class="section-heading">
-
-        <span>
-            A LITTLE CODE
-        </span>
-
-        <h2>
-            If Gratitude Were A Program
-        </h2>
-
+        <span>[ EXECUTABLE SOURCE ]</span>
+        <h2>If Gratitude Were A Script</h2>
     </div>
-
 
     <div class="code-box">
-
-        <div class="code-title">
-            // teachers_day.js
+        <div class="ide-header">
+            <span>appreciation.js</span>
+            <span>UTF-8</span>
         </div>
-
-
-        <div class="code">
-
-            <span class="keyword">const</span>
-            teacher =
-            <span class="string">"Sandeep Sir"</span>;
-
-            <br><br>
-
-            <span class="keyword">function</span>
-            <span class="function">thankYou</span>() {
-
-            <br>
-
-            &nbsp;&nbsp;
-            <span class="keyword">let</span>
-            knowledge =
-            <span class="string">"infinite"</span>;
-
-            <br>
-
-            &nbsp;&nbsp;
-            <span class="keyword">let</span>
-            inspiration =
-            <span class="string">"limitless"</span>;
-
-            <br>
-
-            &nbsp;&nbsp;
-            <span class="keyword">let</span>
-            patience =
-            <span class="string">"incredible"</span>;
-
-            <br>
-
-            &nbsp;&nbsp;
-            <span class="keyword">let</span>
-            impact =
-            <span class="string">"forever"</span>;
-
-            <br><br>
-
-            &nbsp;&nbsp;
-            <span class="keyword">return</span>
-
-            <span class="string">
-                "Thank you for teaching us how to think."
-            </span>;
-
-            <br>
-
-            }
-
-            <br><br>
-
-            <span class="comment">
-                // Output:
-            </span>
-
-            <br>
-
-            <span class="function">
-                HAPPY TEACHERS' DAY, SANDEEP SIR ❤️
-            </span>
-
+        <div class="code-content">
+            <span class="kw">const</span> <span class="var">teacher</span> = <span class="str">"Sandeep Sir"</span>;<br><br>
+            <span class="kw">async function</span> <span class="func">renderThankYou</span>() {<br>
+            &nbsp;&nbsp;<span class="kw">let</span> <span class="var">knowledge</span> = <span class="str">"infinite_loop"</span>;<br>
+            &nbsp;&nbsp;<span class="kw">let</span> <span class="var">inspiration</span> = <span class="kw">await</span> <span class="func">fetchLimitless</span>();<br>
+            &nbsp;&nbsp;<span class="kw">let</span> <span class="var">impact</span> = <span class="str">"persistent_storage"</span>;<br><br>
+            &nbsp;&nbsp;<span class="kw">return</span> <span class="str">"Thank you for teaching us how to engineer solutions."</span>;<br>
+            }<br><br>
+            <span class="cmt">// Console Output:</span><br>
+            <span class="func">console.log</span>(<span class="str">`HAPPY TEACHERS' DAY, ${teacher} 🚀`</span>);
         </div>
-
     </div>
-
 </section>
 
-
-<!-- =========================================================
-     QUOTE
-========================================================= -->
-
+<!-- QUOTE -->
 <section class="quote-section">
-
     <div class="quote">
-
-        <div class="quote-mark">
-            “
-        </div>
-
         <p>
-
-            Artificial Intelligence can teach a machine
-            to process information,
-
-            <br>
-
-            but a great teacher teaches a human
-            how to think.
-
+            "Artificial Intelligence can be trained to process vast arrays of data,<br>
+            but it takes a great teacher to train a human how to truly think."
         </p>
-
-        <strong>
-            — FOR THE TEACHER WHO TEACHES BEYOND THE SCREEN
-        </strong>
-
+        <strong>[ FOR THE TEACHER WHO GUIDES US BEYOND THE TERMINAL ]</strong>
     </div>
-
 </section>
 
-
-<!-- =========================================================
-     FINAL MESSAGE
-========================================================= -->
-
+<!-- FINAL MESSAGE -->
 <section class="final">
-
     <div class="final-box">
-
-        <div class="final-icon">
-            💻 🤖 🧠 ❤️
-        </div>
-
-
-        <h2>
-            Dear Sandeep Sir
-        </h2>
-
-
+        <h2>Dear Sandeep Sir</h2>
         <p>
-
-            On this Teachers' Day, we want to say
-            something that cannot be expressed by
-            a simple line of code.
-
-            <br><br>
-
-            Thank you for introducing us to the
-            fascinating world of computers,
-            programming and technology.
-
-            <br><br>
-
-            Thank you for answering our questions,
-            encouraging our curiosity and showing us
-            that even the most complicated problem
-            can be solved when we approach it
-            with the right mindset.
-
-            <br><br>
-
-            Technology changes every day.
-
-            <br>
-
-            New languages appear.
-            New software is created.
-            Artificial Intelligence keeps evolving.
-
-            <br><br>
-
-            But one thing remains timeless:
-
-            <br>
-
-            <strong style="color:#00f5ff">
-                The impact of a great teacher.
-            </strong>
-
-            <br><br>
-
-            You have not simply taught us
-            how computers work.
-
-            <br>
-
-            You have taught us how to
-            <strong style="color:#8b5cf6">
-                think, explore, experiment and solve.
-            </strong>
-
-            <br><br>
-
-            And those are lessons that stay with us
-            long after the computer is switched off.
-
-            <span class="highlight">
-                HAPPY TEACHERS' DAY, SANDEEP SIR! ❤️
-            </span>
-
+            On this Teachers' Day, we want to output a message that transcends binary code.<br><br>
+            Thank you for introducing us to the vast architecture of computer science and technology. 
+            Thank you for debugging our errors, compiling our fragmented ideas, and proving that the 
+            toughest logic problems just need a different perspective.<br><br>
+            Tech stacks change. Frameworks die. Hardware goes obsolete.<br>
+            But the foundation you've installed in us is platform-independent.<br><br>
+            You haven't just taught us to write code. You’ve taught us how to explore, scale, and build. 
+            Those functions will keep executing for the rest of our lives.
         </p>
-
-
-        <div class="signature">
-
-            With Respect, Gratitude & Endless Appreciation
-
-            <br>
-
-            🌟 💻 🤖 🌸
-
-        </div>
-
+        <span class="highlight">SYSTEM LOG: HAPPY TEACHERS' DAY, SANDEEP SIR! ❤️</span>
     </div>
-
 </section>
 
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
+<!-- FOOTER -->
 <footer>
-
-    <span>&lt;/&gt;</span>
-    Built with HTML + CSS + JavaScript
-
-    <br><br>
-
-    Made specially for
-    <span>Sandeep Sir</span>
-
-    <br><br>
-
-    Happy Teachers' Day ❤️
-
+    <span>&lt;sys_end&gt;</span> Built with HTML, CSS, JS & Respect.<br><br>
+    Compiled specially for <span>Sandeep Sir</span>.<br><br>
+    Happy Teachers' Day 🚀
 </footer>
 
-
 <script>
-
 /* =========================================================
-   PARTICLES
+   SCROLL REVEAL LOGIC
 ========================================================= */
-
-function createParticle(){
-
-    const p=document.createElement("div");
-
-    p.className="particle";
-
-    p.style.left=Math.random()*100+"vw";
-
-    p.style.bottom="-10px";
-
-    document.body.appendChild(p);
-
-    const duration=
-        Math.random()*7000+5000;
-
-    p.animate(
-
-        [
-            {
-                transform:"translateY(0) scale(0)",
-                opacity:0
-            },
-
-            {
-                opacity:.8
-            },
-
-            {
-                transform:
-                    "translateY(-110vh) scale(1)",
-                opacity:0
-            }
-        ],
-
-        {
-            duration:duration,
-            easing:"linear"
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
         }
+    });
+}, { threshold: 0.1 });
 
-    ).onfinish=()=>p.remove();
-
-}
-
-setInterval(createParticle,500);
-
-
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
-
-const cards=
-    document.querySelectorAll(".card");
-
-const observer=
-    new IntersectionObserver(
-
-        entries=>{
-
-            entries.forEach(entry=>{
-
-                if(entry.isIntersecting){
-
-                    entry.target.style.opacity="1";
-
-                    entry.target.style.transform=
-                        "translateY(0)";
-
-                }
-
-            });
-
-        },
-
-        {
-            threshold:.15
-        }
-
-    );
-
-
-cards.forEach(card=>{
+document.querySelectorAll(".card").forEach(card => {
+    card.style.opacity = "0";
+    card.style.transform = "translateY(30px)";
     observer.observe(card);
 });
 
-
 /* =========================================================
-   CLICK RIPPLE + CODE PARTICLES
+   CYBER CLICK BURST
 ========================================================= */
+document.addEventListener("click", function(e) {
+    const symbols = ["</>", "01", "SYS", "AI", "{}", "★"];
+    for(let i = 0; i < 5; i++){
+        const symbol = document.createElement("div");
+        symbol.className = "click-symbol";
+        symbol.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+        symbol.style.left = e.clientX + "px";
+        symbol.style.top = e.clientY + "px";
+        document.body.appendChild(symbol);
 
-document.addEventListener(
-    "click",
-    function(e){
+        const angle = (Math.PI * 2 / 5) * i;
+        const distance = 40 + Math.random() * 60;
+        const x = Math.cos(angle) * distance;
+        const y = Math.sin(angle) * distance;
 
-        const ripple=
-            document.createElement("div");
-
-        ripple.className="ripple";
-
-        ripple.style.left=
-            e.clientX+"px";
-
-        ripple.style.top=
-            e.clientY+"px";
-
-        document.body.appendChild(ripple);
-
-        setTimeout(
-            ()=>ripple.remove(),
-            800
-        );
-
-
-        const symbols=[
-            "</>",
-            "{}",
-            "01",
-            "AI",
-            "★",
-            "⚡",
-            "🤖"
-        ];
-
-
-        for(let i=0;i<6;i++){
-
-            const symbol=
-                document.createElement("div");
-
-            symbol.className=
-                "click-symbol";
-
-            symbol.innerHTML=
-                symbols[
-                    Math.floor(
-                        Math.random()*symbols.length
-                    )
-                ];
-
-            symbol.style.left=
-                e.clientX+"px";
-
-            symbol.style.top=
-                e.clientY+"px";
-
-            document.body.appendChild(symbol);
-
-
-            const angle=
-                (Math.PI*2/6)*i;
-
-            const distance=
-                70+Math.random()*100;
-
-            const x=
-                Math.cos(angle)*distance;
-
-            const y=
-                Math.sin(angle)*distance;
-
-
-            symbol.animate(
-
-                [
-
-                    {
-                        transform:
-                            "translate(-50%,-50%) scale(0)",
-                        opacity:0
-                    },
-
-                    {
-                        transform:
-                            "translate(-50%,-50%) scale(1)",
-                        opacity:1
-                    },
-
-  ❤️ Thank you, Sir!
-========================================
-`
-);
-
+        symbol.animate([
+            { transform: "translate(-50%, -50%) scale(0)", opacity: 0 },
+            { transform: "translate(-50%, -50%) scale(1)", opacity: 1, offset: 0.2 },
+            { transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(0)`, opacity: 0 }
+        ], {
+            duration: 800 + Math.random() * 400,
+            easing: "cubic-bezier(0.25, 1, 0.5, 1)"
+        }).onfinish = () => symbol.remove();
+    }
+});
 
 /* =========================================================
    IMAGE ERROR HANDLER
 ========================================================= */
-
-const teacherPhoto=
-    document.querySelector(".photo");
-
-teacherPhoto.addEventListener(
-    "error",
-    function(){
-
-        this.style.background=
-            "linear-gradient(135deg,#06152b,#111827)";
-
-        this.alt=
-            "Please place images/sandeepsir.png in the images folder.";
-
-    }
-);
-
+const teacherPhoto = document.querySelector(".photo");
+if(teacherPhoto){
+    teacherPhoto.addEventListener("error", function(){
+        this.style.background = "linear-gradient(135deg, #0a0e17, #161b22)";
+        this.alt = "[IMAGE_NOT_FOUND] Place your 9:16 portrait in 'images/sandeepsir.png'";
+        // Draw a temporary glitchy box
+        this.style.border = "1px dashed #ff4757";
+    });
+}
 </script>
-
 </body>
-</``
+</html>

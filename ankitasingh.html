@@ -1,0 +1,582 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>शिक्षक दिवस - अंकिता सिंह </title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Noto Sans Devanagari", "Mangal", Arial, sans-serif;
+            background: linear-gradient(135deg, #fff0f6, #fff8dc, #e9f7ff);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            padding: 45px 20px;
+            background: linear-gradient(135deg, #ff7b9c, #ffb703);
+            color: white;
+            border-bottom-left-radius: 55px;
+            border-bottom-right-radius: 55px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+        }
+
+        header .emoji {
+            font-size: 42px;
+            margin-bottom: 15px;
+            animation: float 2s infinite ease-in-out;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        header h2 {
+            font-size: 24px;
+            font-weight: normal;
+        }
+
+        .school {
+            margin-top: 18px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* ANIMATION */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* TEACHER CARD */
+        .teacher-card {
+            width: 92%;
+            max-width: 950px;
+            margin: 50px auto;
+            padding: 45px 25px;
+            text-align: center;
+            background: white;
+            border-radius: 35px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        /* LARGE PHOTO */
+        .teacher-photo {
+            width: 380px;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 10px solid #ff8fab;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+            margin-bottom: 25px;
+            transition: 0.4s;
+        }
+
+        .teacher-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .teacher-card h2 {
+            color: #e63970;
+            font-size: 36px;
+        }
+
+        .subject {
+            font-size: 22px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        /* MESSAGE */
+        .message {
+            width: 92%;
+            max-width: 950px;
+            margin: 35px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .message h2 {
+            text-align: center;
+            color: #e63970;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        .message p {
+            font-size: 19px;
+            line-height: 1.9;
+            margin-bottom: 16px;
+        }
+
+        /* POINTS */
+        .points {
+            width: 92%;
+            max-width: 1000px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 22px;
+        }
+
+        .point {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+
+        .point:hover {
+            transform: translateY(-8px);
+        }
+
+        .icon {
+            font-size: 50px;
+            margin-bottom: 12px;
+        }
+
+        .point h3 {
+            color: #ff7b00;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .point p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* BUTTON */
+        .button-area {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        button {
+            border: none;
+            padding: 17px 32px;
+            border-radius: 35px;
+            background: linear-gradient(135deg, #e63970, #ffb703);
+            color: white;
+            font-size: 19px;
+            font-family: inherit;
+            cursor: pointer;
+            box-shadow: 0 7px 18px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+        }
+
+        #specialMessage {
+            margin-top: 25px;
+            min-height: 40px;
+            color: #e63970;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        /* STICKERS */
+        .sticker {
+            position: fixed;
+            font-size: 40px;
+            z-index: -1;
+            animation: stickerMove 7s infinite ease-in-out;
+        }
+
+        .s1 {
+            top: 18%;
+            left: 4%;
+        }
+
+        .s2 {
+            top: 48%;
+            right: 4%;
+            animation-delay: 2s;
+        }
+
+        .s3 {
+            top: 75%;
+            left: 6%;
+            animation-delay: 4s;
+        }
+
+        @keyframes stickerMove {
+            0%, 100% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(-25px) rotate(12deg);
+            }
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 60px;
+            padding: 35px 20px;
+            text-align: center;
+            background: #343a40;
+            color: white;
+            border-top-left-radius: 45px;
+            border-top-right-radius: 45px;
+        }
+
+        footer p {
+            margin: 9px;
+            font-size: 16px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            header h2 {
+                font-size: 18px;
+            }
+
+            .school {
+                font-size: 16px;
+            }
+
+            .teacher-photo {
+                width: 280px;
+                height: 280px;
+            }
+
+            .teacher-card h2 {
+                font-size: 28px;
+            }
+
+            .subject {
+                font-size: 18px;
+            }
+
+            .message {
+                padding: 28px 20px;
+            }
+
+            .message h2 {
+                font-size: 26px;
+            }
+
+            .message p {
+                font-size: 16px;
+            }
+
+            .sticker {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- सुंदर स्टिकर -->
+    <div class="sticker s1">🌸📚</div>
+    <div class="sticker s2">⭐🖊️</div>
+    <div class="sticker s3">🎈💖</div>
+
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="emoji">
+            🌸 📖 ✨ 👩‍🏫 ✨ 📖 🌸
+        </div>
+
+        <h1>
+            शिक्षक दिवस की हार्दिक शुभकामनाएँ! 🎉
+        </h1>
+
+        <h2>
+            हमारी प्यारी हिंदी शिक्षिका के लिए 💐
+        </h2>
+
+        <div class="school">
+            VARANASI PUBLIC SCHOOL, RAJATALAB
+        </div>
+
+    </header>
+
+
+    <!-- TEACHER SECTION -->
+    <section class="teacher-card">
+
+        <!--
+            अपनी फोटो का नाम:
+            ankita-singh.jpg
+
+            और इसे index.html के साथ
+            उसी folder में रखें।
+        -->
+
+        <img
+            src="ankita-singh.jpg"
+            alt="अंकिता सिंह जी"
+            class="teacher-photo"
+        >
+
+        <h2>
+            🌷 अंकिता सिंह जी 🌷
+        </h2>
+
+        <div class="subject">
+            हमारी प्रिय हिंदी शिक्षिका 📖❤️
+        </div>
+
+    </section>
+
+
+    <!-- SPECIAL MESSAGE -->
+    <section class="message">
+
+        <h2>
+            💖 आपके लिए एक प्यारा संदेश 💖
+        </h2>
+
+        <p>
+            आदरणीय अंकिता सिंह जी,
+        </p>
+
+        <p>
+            आप हमारे लिए केवल एक शिक्षिका नहीं हैं,
+            बल्कि हमारी सीखने की यात्रा की एक प्यारी मार्गदर्शक हैं। 🌸
+        </p>
+
+        <p>
+            आपने हमें हिंदी के सुंदर शब्दों के साथ-साथ
+            अच्छे संस्कार, धैर्य और दूसरों का सम्मान करना भी सिखाया है। 📚❤️
+        </p>
+
+        <p>
+            जब हमें कोई बात समझ नहीं आती, तो आप हमें
+            प्यार और धैर्य से दोबारा समझाती हैं। 😊
+        </p>
+
+        <p>
+            आपकी कक्षा में पढ़ना हमारे लिए केवल पढ़ाई नहीं,
+            बल्कि एक सुंदर अनुभव होता है। ✨
+        </p>
+
+        <p>
+            आपकी मुस्कान हमारे दिन को और भी अच्छा बना देती है
+            और आपके अच्छे शब्द हमें आगे बढ़ने की प्रेरणा देते हैं। 🌟
+        </p>
+
+        <p>
+            <b>
+                हमें आप जैसी शिक्षिका पाकर बहुत खुशी और गर्व है। ❤️
+            </b>
+        </p>
+
+        <p>
+            <b>
+                शिक्षक दिवस की हार्दिक शुभकामनाएँ,
+                अंकिता सिंह जी! 💐👩‍🏫
+            </b>
+        </p>
+
+    </section>
+
+
+    <!-- SPECIAL POINTS -->
+    <section class="points">
+
+        <div class="point">
+
+            <div class="icon">📖</div>
+
+            <h3>
+                आप हमें ज्ञान देती हैं
+            </h3>
+
+            <p>
+                आपकी कक्षा में हमें हर दिन कुछ नया
+                सीखने को मिलता है।
+            </p>
+
+        </div>
+
+
+        <div class="point">
+
+            <div class="icon">🌸</div>
+
+            <h3>
+                आप हमें प्यार से समझाती हैं
+            </h3>
+
+            <p>
+                हमारी गलतियों पर हमें डाँटने के बजाय
+                आप हमें सही रास्ता दिखाती हैं।
+            </p>
+
+        </div>
+
+
+        <div class="point">
+
+            <div class="icon">😊</div>
+
+            <h3>
+                आप हमें खुश रखती हैं
+            </h3>
+
+            <p>
+                आपकी प्यारी मुस्कान हमारी कक्षा को
+                और भी सुंदर बना देती है।
+            </p>
+
+        </div>
+
+
+        <div class="point">
+
+            <div class="icon">💡</div>
+
+            <h3>
+                आप हमें प्रेरणा देती हैं
+            </h3>
+
+            <p>
+                आपके अच्छे विचार हमें जीवन में
+                आगे बढ़ने की प्रेरणा देते हैं।
+            </p>
+
+        </div>
+
+
+        <div class="point">
+
+            <div class="icon">❤️</div>
+
+            <h3>
+                आप हमारा ध्यान रखती हैं
+            </h3>
+
+            <p>
+                आप हमारी छोटी-छोटी बातों को समझती हैं
+                और हमेशा हमारा साथ देती हैं।
+            </p>
+
+        </div>
+
+
+        <div class="point">
+
+            <div class="icon">🏆</div>
+
+            <h3>
+                आप हमारी प्रेरणास्रोत हैं
+            </h3>
+
+            <p>
+                आपके मार्गदर्शन से हम बेहतर विद्यार्थी
+                और अच्छे इंसान बनने की कोशिश करते हैं।
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SURPRISE BUTTON -->
+    <div class="button-area">
+
+        <button onclick="showMessage()">
+            💌 एक विशेष संदेश के लिए क्लिक करें
+        </button>
+
+        <div id="specialMessage"></div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            🌸 स्नेह, सम्मान और धन्यवाद के साथ 🌸
+        </p>
+
+        <p>
+            <b>
+                The Family of VPS
+            </b>
+        </p>
+
+        <p>
+            वेबसाइट लेखक:
+            <b>EMMANUEL CHAUHAN</b>
+        </p>
+
+        <p>
+            VARANASI PUBLIC SCHOOL, RAJATALAB
+        </p>
+
+        <p>
+            📚 शिक्षक दिवस की हार्दिक शुभकामनाएँ! 👩‍🏫💐❤️
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        function showMessage() {
+
+            const messages = [
+
+                "🌸 आपकी वजह से पढ़ाई और भी सुंदर लगती है! ❤️",
+
+                "📚 धन्यवाद मैम, हमें हमेशा प्रोत्साहित करने के लिए! 😊",
+
+                "🌟 आप हमारे लिए एक बहुत अच्छी शिक्षिका हैं!",
+
+                "💐 हमें आप जैसी शिक्षिका पाकर बहुत खुशी है!",
+
+                "❤️ शिक्षक दिवस की बहुत-बहुत शुभकामनाएँ, अंकिता सिंह जी!"
+
+            ];
+
+            const randomMessage =
+                messages[Math.floor(Math.random() * messages.length)];
+
+            document.getElementById("specialMessage").innerHTML =
+                randomMessage;
+
+        }
+
+    </script>
+
+</body>
+</html>
+```

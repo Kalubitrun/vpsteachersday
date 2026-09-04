@@ -1,0 +1,1763 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Teachers' Day | Sandeep Sir</title>
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+    --bg:#020617;
+    --bg2:#050b1d;
+    --cyan:#00f5ff;
+    --blue:#3b82f6;
+    --purple:#8b5cf6;
+    --pink:#ff3cac;
+    --green:#00ff9d;
+    --white:#f8fbff;
+    --muted:#8ea3bd;
+    --glass:rgba(7,18,38,.72);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:white;
+    font-family:Arial,Helvetica,sans-serif;
+    overflow-x:hidden;
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-10;
+
+    background:
+        radial-gradient(circle at 15% 20%,rgba(0,245,255,.12),transparent 28%),
+        radial-gradient(circle at 85% 30%,rgba(139,92,246,.14),transparent 30%),
+        radial-gradient(circle at 50% 90%,rgba(255,60,172,.10),transparent 30%),
+        #020617;
+}
+
+/* GRID */
+
+.grid{
+    position:fixed;
+    inset:0;
+    z-index:-9;
+    opacity:.13;
+
+    background-image:
+        linear-gradient(rgba(0,245,255,.18) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(0,245,255,.18) 1px,transparent 1px);
+
+    background-size:50px 50px;
+
+    mask-image:linear-gradient(to bottom,black,transparent);
+}
+
+/* SCANLINES */
+
+.scanlines{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    pointer-events:none;
+    opacity:.035;
+
+    background:repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 3px,
+        white 4px
+    );
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    padding:18px 7%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    z-index:1000;
+
+    background:rgba(2,6,23,.72);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(0,245,255,.16);
+}
+
+.logo{
+    font-weight:900;
+    letter-spacing:3px;
+    color:var(--cyan);
+    text-shadow:0 0 15px rgba(0,245,255,.6);
+}
+
+.nav-right{
+    color:#8ea3bd;
+    font-size:11px;
+    letter-spacing:3px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:130px 7% 80px;
+
+    position:relative;
+}
+
+.hero-content{
+    max-width:1100px;
+}
+
+/* TERMINAL */
+
+.terminal{
+    width:min(700px,95%);
+    margin:0 auto 35px;
+
+    text-align:left;
+
+    background:rgba(2,10,25,.82);
+
+    border:1px solid rgba(0,245,255,.22);
+
+    border-radius:14px;
+
+    box-shadow:
+        0 0 50px rgba(0,245,255,.08),
+        inset 0 0 30px rgba(0,245,255,.025);
+
+    overflow:hidden;
+
+    animation:terminalAppear 1.3s ease;
+}
+
+.terminal-head{
+    padding:11px 15px;
+
+    background:rgba(255,255,255,.035);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+}
+
+.red{background:#ff5f57}
+.yellow{background:#febc2e}
+.green{background:#28c840}
+
+.terminal-body{
+    padding:20px;
+
+    font-family:"Courier New",monospace;
+
+    font-size:13px;
+    line-height:1.9;
+
+    color:#91a8c4;
+}
+
+.code-green{
+    color:var(--green);
+}
+
+.code-cyan{
+    color:var(--cyan);
+}
+
+.cursor{
+    display:inline-block;
+    width:8px;
+    height:15px;
+    background:var(--cyan);
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0}
+}
+
+@keyframes terminalAppear{
+    from{
+        opacity:0;
+        transform:translateY(-30px) scale(.96);
+    }
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+/* HERO TITLE */
+
+.eyebrow{
+    color:var(--cyan);
+
+    letter-spacing:7px;
+
+    font-size:12px;
+
+    margin-bottom:20px;
+
+    text-transform:uppercase;
+}
+
+.hero h1{
+    font-size:clamp(48px,9vw,110px);
+
+    line-height:.9;
+
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            90deg,
+            white,
+            var(--cyan),
+            var(--blue),
+            var(--purple),
+            var(--pink),
+            white
+        );
+
+    background-size:400%;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:gradientMove 7s linear infinite;
+}
+
+@keyframes gradientMove{
+    to{
+        background-position:400%;
+    }
+}
+
+.hero-name{
+    margin-top:30px;
+
+    font-family:Georgia,serif;
+
+    font-size:clamp(38px,6vw,70px);
+
+    color:white;
+
+    text-shadow:
+        0 0 15px rgba(0,245,255,.35),
+        0 0 35px rgba(139,92,246,.25);
+}
+
+.hero-subtitle{
+    margin:25px auto;
+
+    max-width:750px;
+
+    color:#9eb0c5;
+
+    line-height:1.9;
+
+    font-size:16px;
+}
+
+/* =========================================================
+   FLOATING TECH OBJECTS
+========================================================= */
+
+.tech{
+    position:absolute;
+
+    font-size:50px;
+
+    opacity:.6;
+
+    pointer-events:none;
+
+    filter:
+        drop-shadow(0 0 15px rgba(0,245,255,.7));
+
+    animation:floatTech 5s ease-in-out infinite;
+}
+
+.tech:nth-child(1){
+    left:7%;
+    top:28%;
+}
+
+.tech:nth-child(2){
+    right:7%;
+    top:35%;
+    animation-delay:1s;
+}
+
+.tech:nth-child(3){
+    left:10%;
+    bottom:15%;
+    animation-delay:2s;
+}
+
+.tech:nth-child(4){
+    right:10%;
+    bottom:17%;
+    animation-delay:3s;
+}
+
+@keyframes floatTech{
+    0%,100%{
+        transform:translateY(0) rotate(-5deg);
+    }
+
+    50%{
+        transform:translateY(-25px) rotate(7deg);
+    }
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.cta{
+    display:inline-flex;
+    gap:10px;
+
+    margin-top:20px;
+
+    padding:15px 28px;
+
+    border:1px solid rgba(0,245,255,.45);
+
+    border-radius:50px;
+
+    color:var(--cyan);
+
+    text-decoration:none;
+
+    background:rgba(0,245,255,.05);
+
+    transition:.35s;
+
+    box-shadow:
+        0 0 20px rgba(0,245,255,.08);
+}
+
+.cta:hover{
+    transform:translateY(-4px);
+
+    background:rgba(0,245,255,.12);
+
+    box-shadow:
+        0 0 35px rgba(0,245,255,.25);
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+section{
+    position:relative;
+}
+
+.section{
+    padding:110px 7%;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:65px;
+}
+
+.section-heading span{
+    color:var(--cyan);
+
+    font-size:11px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+}
+
+.section-heading h2{
+    margin-top:12px;
+
+    font-family:Georgia,serif;
+
+    font-size:clamp(34px,5vw,60px);
+}
+
+/* =========================================================
+   TEACHER PHOTO
+========================================================= */
+
+.teacher-section{
+    padding:100px 7% 130px;
+
+    display:flex;
+
+    justify-content:center;
+
+    text-align:center;
+}
+
+.photo-wrapper{
+    width:min(560px,85vw);
+
+    position:relative;
+}
+
+/* CIRCUIT RING */
+
+.photo-wrapper::before{
+    content:"";
+
+    position:absolute;
+
+    inset:-25px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(0,245,255,.45);
+
+    box-shadow:
+        0 0 30px rgba(0,245,255,.2);
+
+    animation:spin 12s linear infinite;
+}
+
+.photo-wrapper::after{
+    content:"";
+
+    position:absolute;
+
+    inset:-45px;
+
+    border-radius:50%;
+
+    border:1px dashed rgba(139,92,246,.4);
+
+    animation:spinReverse 18s linear infinite;
+}
+
+@keyframes spin{
+    to{transform:rotate(360deg)}
+}
+
+@keyframes spinReverse{
+    to{transform:rotate(-360deg)}
+}
+
+.photo{
+    width:100%;
+    aspect-ratio:1;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:9px solid #030b19;
+
+    outline:2px solid var(--cyan);
+
+    box-shadow:
+        0 0 30px rgba(0,245,255,.45),
+        0 0 100px rgba(59,130,246,.22);
+
+    position:relative;
+
+    z-index:2;
+
+    transition:.5s;
+}
+
+.photo:hover{
+    transform:scale(1.04);
+
+    box-shadow:
+        0 0 50px rgba(0,245,255,.65),
+        0 0 120px rgba(139,92,246,.3);
+}
+
+/* ORBIT LABELS */
+
+.orbit-label{
+    position:absolute;
+
+    z-index:5;
+
+    padding:8px 14px;
+
+    background:rgba(2,6,23,.9);
+
+    border:1px solid rgba(0,245,255,.35);
+
+    border-radius:20px;
+
+    color:var(--cyan);
+
+    font-size:10px;
+
+    letter-spacing:2px;
+}
+
+.label-one{
+    top:8%;
+    left:-15%;
+}
+
+.label-two{
+    bottom:12%;
+    right:-18%;
+}
+
+.label-three{
+    bottom:-8%;
+    left:35%;
+}
+
+/* =========================================================
+   SKILL CARDS
+========================================================= */
+
+.cards{
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:22px;
+}
+
+.card{
+    padding:35px 28px;
+
+    min-height:260px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0,245,255,.055),
+            rgba(139,92,246,.035)
+        );
+
+    border:1px solid rgba(0,245,255,.15);
+
+    border-radius:20px;
+
+    backdrop-filter:blur(15px);
+
+    transition:.45s;
+
+    opacity:0;
+
+    transform:translateY(40px);
+}
+
+.card:hover{
+    transform:translateY(-12px);
+
+    border-color:var(--cyan);
+
+    box-shadow:
+        0 20px 60px rgba(0,245,255,.12);
+}
+
+.card-icon{
+    font-size:43px;
+
+    margin-bottom:20px;
+
+    filter:
+        drop-shadow(0 0 12px rgba(0,245,255,.6));
+}
+
+.card h3{
+    color:var(--cyan);
+
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#91a4ba;
+
+    line-height:1.8;
+
+    font-size:14px;
+}
+
+/* =========================================================
+   CODE MESSAGE
+========================================================= */
+
+.code-section{
+    padding:90px 7%;
+}
+
+.code-box{
+    width:min(1000px,100%);
+
+    margin:auto;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    background:#020817;
+
+    border:1px solid rgba(0,245,255,.2);
+
+    box-shadow:
+        0 0 80px rgba(0,245,255,.06);
+}
+
+.code-title{
+    color:var(--green);
+
+    margin-bottom:25px;
+
+    font-family:monospace;
+
+    font-size:13px;
+}
+
+.code{
+    font-family:"Courier New",monospace;
+
+    line-height:2;
+
+    font-size:14px;
+
+    color:#a9bad0;
+}
+
+.keyword{
+    color:#c084fc;
+}
+
+.string{
+    color:#7dd3fc;
+}
+
+.function{
+    color:#34d399;
+}
+
+.comment{
+    color:#52677f;
+}
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.quote-section{
+    padding:100px 7%;
+}
+
+.quote{
+    width:min(950px,100%);
+
+    margin:auto;
+
+    padding:60px 45px;
+
+    text-align:center;
+
+    border-radius:28px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0,245,255,.08),
+            transparent 65%
+        );
+
+    border:1px solid rgba(0,245,255,.2);
+
+    position:relative;
+}
+
+.quote-mark{
+    font-size:100px;
+
+    color:var(--cyan);
+
+    opacity:.18;
+
+    font-family:Georgia,serif;
+}
+
+.quote p{
+    font-family:Georgia,serif;
+
+    font-size:clamp(20px,3vw,29px);
+
+    line-height:1.8;
+
+    color:#dbeafe;
+}
+
+.quote strong{
+    display:block;
+
+    margin-top:25px;
+
+    color:var(--cyan);
+
+    letter-spacing:2px;
+}
+
+/* =========================================================
+   FINAL MESSAGE
+========================================================= */
+
+.final{
+    padding:80px 7% 120px;
+
+    text-align:center;
+}
+
+.final-box{
+    width:min(950px,100%);
+
+    margin:auto;
+
+    padding:70px 40px;
+
+    border-radius:32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0,245,255,.08),
+            rgba(139,92,246,.07),
+            rgba(255,60,172,.05)
+        );
+
+    border:1px solid rgba(0,245,255,.2);
+
+    box-shadow:
+        0 0 100px rgba(0,245,255,.07);
+}
+
+.final-icon{
+    font-size:55px;
+
+    margin-bottom:25px;
+}
+
+.final h2{
+    font-family:Georgia,serif;
+
+    font-size:clamp(38px,6vw,65px);
+
+    margin-bottom:30px;
+
+    color:white;
+}
+
+.final p{
+    color:#a9b9cc;
+
+    line-height:2;
+
+    font-size:16px;
+}
+
+.highlight{
+    color:var(--cyan);
+
+    font-size:21px;
+
+    font-weight:bold;
+
+    display:block;
+
+    margin-top:25px;
+}
+
+.signature{
+    margin-top:35px;
+
+    color:#d5c6ff;
+
+    font-family:Georgia,serif;
+
+    font-size:22px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    padding:30px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(0,245,255,.1);
+
+    color:#52677f;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+}
+
+footer span{
+    color:var(--cyan);
+}
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.particle{
+    position:fixed;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    box-shadow:
+        0 0 12px var(--cyan);
+
+    pointer-events:none;
+
+    z-index:-1;
+}
+
+/* =========================================================
+   CLICK EFFECTS
+========================================================= */
+
+.ripple{
+    position:fixed;
+
+    width:15px;
+    height:15px;
+
+    border-radius:50%;
+
+    border:2px solid var(--cyan);
+
+    pointer-events:none;
+
+    z-index:9998;
+
+    transform:translate(-50%,-50%);
+
+    animation:ripple .8s ease-out forwards;
+}
+
+@keyframes ripple{
+    to{
+        width:150px;
+        height:150px;
+        opacity:0;
+    }
+}
+
+.click-symbol{
+    position:fixed;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    font-size:24px;
+
+    filter:
+        drop-shadow(0 0 10px var(--cyan));
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:850px){
+
+    .nav-right{
+        display:none;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .tech{
+        font-size:35px;
+    }
+
+    .tech:nth-child(1){
+        left:3%;
+    }
+
+    .tech:nth-child(2){
+        right:3%;
+    }
+
+    .label-one{
+        left:-2%;
+    }
+
+    .label-two{
+        right:-2%;
+    }
+
+    .code-box{
+        padding:25px 18px;
+    }
+
+    .quote{
+        padding:45px 25px;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .hero h1{
+        font-size:50px;
+    }
+
+    .hero-name{
+        font-size:40px;
+    }
+
+    .terminal-body{
+        font-size:11px;
+    }
+
+    .photo-wrapper{
+        width:78vw;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="grid"></div>
+<div class="scanlines"></div>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav>
+
+    <div class="logo">
+        &lt;/&gt; SANDEEP SIR
+    </div>
+
+    <div class="nav-right">
+        COMPUTER • AI • TECHNOLOGY
+    </div>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <div class="tech">💻</div>
+    <div class="tech">🤖</div>
+    <div class="tech">🧠</div>
+    <div class="tech">⚡</div>
+
+
+    <div class="hero-content">
+
+        <div class="terminal">
+
+            <div class="terminal-head">
+
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+
+            </div>
+
+            <div class="terminal-body">
+
+                <span class="code-green">
+                    sandeep@teacher
+                </span>:~$ run teachers_day.sh
+
+                <br>
+
+                Loading appreciation...
+
+                <br>
+
+                Initializing memories...
+
+                <br>
+
+                Compiling knowledge...
+
+                <br>
+
+                <span class="code-cyan">
+                    SUCCESS: Amazing Teacher Detected ✓
+                </span>
+
+                <br>
+
+                <span class="code-green">
+                    sandeep@teacher
+                </span>:~$ <span class="cursor"></span>
+
+            </div>
+
+        </div>
+
+
+        <div class="eyebrow">
+            A Special Tribute To Our Computer Teacher
+        </div>
+
+
+        <h1>
+            HAPPY<br>
+            TEACHERS' DAY
+        </h1>
+
+
+        <div class="hero-name">
+            Sandeep Sir
+        </div>
+
+
+        <p class="hero-subtitle">
+
+            You don't just teach computers.
+
+            <br>
+
+            You teach us how to think,
+            how to solve,
+            how to explore,
+            and how to create.
+
+            <br><br>
+
+            <strong style="color:#00f5ff">
+                Behind every great technology is a great teacher.
+            </strong>
+
+        </p>
+
+
+        <a href="#teacher" class="cta">
+            <span>↓</span>
+            Explore The Tribute
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PHOTO
+========================================================= -->
+
+<section class="teacher-section" id="teacher">
+
+    <div class="photo-wrapper">
+
+        <img
+            src="images/sandeepsir.png"
+            alt="Sandeep Sir"
+            class="photo"
+        >
+
+        <div class="orbit-label label-one">
+            COMPUTER
+        </div>
+
+        <div class="orbit-label label-two">
+            AI MENTOR
+        </div>
+
+        <div class="orbit-label label-three">
+            KNOWLEDGE
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHAT MAKES HIM SPECIAL
+========================================================= -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span>
+            SYSTEM ANALYSIS
+        </span>
+
+        <h2>
+            What Makes Sandeep Sir Special?
+        </h2>
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                💻
+            </div>
+
+            <h3>
+                Technology Explorer
+            </h3>
+
+            <p>
+                You keep exploring new technologies,
+                new ideas and new possibilities.
+                Your curiosity reminds us that
+                learning never really stops.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🧠
+            </div>
+
+            <h3>
+                Problem Solver
+            </h3>
+
+            <p>
+                Difficult problems become easier
+                when someone knows how to approach
+                them. You teach us not only the answer,
+                but the thinking behind the answer.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🤖
+            </div>
+
+            <h3>
+                Future Ready
+            </h3>
+
+            <p>
+                Artificial Intelligence, coding,
+                computers and modern technology
+                are shaping our future—and you
+                prepare us to become part of it.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                ⚡
+            </div>
+
+            <h3>
+                Always Updated
+            </h3>
+
+            <p>
+                Technology changes every day.
+                Yet you continue learning,
+                adapting and bringing fresh
+                knowledge into the classroom.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🔍
+            </div>
+
+            <h3>
+                Curiosity Builder
+            </h3>
+
+            <p>
+                You encourage questions.
+                And sometimes the best lesson
+                isn't the answer—it is the curiosity
+                that makes us search for one.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                ❤️
+            </div>
+
+            <h3>
+                Teacher First
+            </h3>
+
+            <p>
+                Technology can provide information,
+                but a teacher provides direction,
+                encouragement and confidence.
+                Thank you for giving us all three.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CODE TRIBUTE
+========================================================= -->
+
+<section class="code-section">
+
+    <div class="section-heading">
+
+        <span>
+            A LITTLE CODE
+        </span>
+
+        <h2>
+            If Gratitude Were A Program
+        </h2>
+
+    </div>
+
+
+    <div class="code-box">
+
+        <div class="code-title">
+            // teachers_day.js
+        </div>
+
+
+        <div class="code">
+
+            <span class="keyword">const</span>
+            teacher =
+            <span class="string">"Sandeep Sir"</span>;
+
+            <br><br>
+
+            <span class="keyword">function</span>
+            <span class="function">thankYou</span>() {
+
+            <br>
+
+            &nbsp;&nbsp;
+            <span class="keyword">let</span>
+            knowledge =
+            <span class="string">"infinite"</span>;
+
+            <br>
+
+            &nbsp;&nbsp;
+            <span class="keyword">let</span>
+            inspiration =
+            <span class="string">"limitless"</span>;
+
+            <br>
+
+            &nbsp;&nbsp;
+            <span class="keyword">let</span>
+            patience =
+            <span class="string">"incredible"</span>;
+
+            <br>
+
+            &nbsp;&nbsp;
+            <span class="keyword">let</span>
+            impact =
+            <span class="string">"forever"</span>;
+
+            <br><br>
+
+            &nbsp;&nbsp;
+            <span class="keyword">return</span>
+
+            <span class="string">
+                "Thank you for teaching us how to think."
+            </span>;
+
+            <br>
+
+            }
+
+            <br><br>
+
+            <span class="comment">
+                // Output:
+            </span>
+
+            <br>
+
+            <span class="function">
+                HAPPY TEACHERS' DAY, SANDEEP SIR ❤️
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     QUOTE
+========================================================= -->
+
+<section class="quote-section">
+
+    <div class="quote">
+
+        <div class="quote-mark">
+            “
+        </div>
+
+        <p>
+
+            Artificial Intelligence can teach a machine
+            to process information,
+
+            <br>
+
+            but a great teacher teaches a human
+            how to think.
+
+        </p>
+
+        <strong>
+            — FOR THE TEACHER WHO TEACHES BEYOND THE SCREEN
+        </strong>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL MESSAGE
+========================================================= -->
+
+<section class="final">
+
+    <div class="final-box">
+
+        <div class="final-icon">
+            💻 🤖 🧠 ❤️
+        </div>
+
+
+        <h2>
+            Dear Sandeep Sir
+        </h2>
+
+
+        <p>
+
+            On this Teachers' Day, we want to say
+            something that cannot be expressed by
+            a simple line of code.
+
+            <br><br>
+
+            Thank you for introducing us to the
+            fascinating world of computers,
+            programming and technology.
+
+            <br><br>
+
+            Thank you for answering our questions,
+            encouraging our curiosity and showing us
+            that even the most complicated problem
+            can be solved when we approach it
+            with the right mindset.
+
+            <br><br>
+
+            Technology changes every day.
+
+            <br>
+
+            New languages appear.
+            New software is created.
+            Artificial Intelligence keeps evolving.
+
+            <br><br>
+
+            But one thing remains timeless:
+
+            <br>
+
+            <strong style="color:#00f5ff">
+                The impact of a great teacher.
+            </strong>
+
+            <br><br>
+
+            You have not simply taught us
+            how computers work.
+
+            <br>
+
+            You have taught us how to
+            <strong style="color:#8b5cf6">
+                think, explore, experiment and solve.
+            </strong>
+
+            <br><br>
+
+            And those are lessons that stay with us
+            long after the computer is switched off.
+
+            <span class="highlight">
+                HAPPY TEACHERS' DAY, SANDEEP SIR! ❤️
+            </span>
+
+        </p>
+
+
+        <div class="signature">
+
+            With Respect, Gratitude & Endless Appreciation
+
+            <br>
+
+            🌟 💻 🤖 🌸
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <span>&lt;/&gt;</span>
+    Built with HTML + CSS + JavaScript
+
+    <br><br>
+
+    Made specially for
+    <span>Sandeep Sir</span>
+
+    <br><br>
+
+    Happy Teachers' Day ❤️
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+function createParticle(){
+
+    const p=document.createElement("div");
+
+    p.className="particle";
+
+    p.style.left=Math.random()*100+"vw";
+
+    p.style.bottom="-10px";
+
+    document.body.appendChild(p);
+
+    const duration=
+        Math.random()*7000+5000;
+
+    p.animate(
+
+        [
+            {
+                transform:"translateY(0) scale(0)",
+                opacity:0
+            },
+
+            {
+                opacity:.8
+            },
+
+            {
+                transform:
+                    "translateY(-110vh) scale(1)",
+                opacity:0
+            }
+        ],
+
+        {
+            duration:duration,
+            easing:"linear"
+        }
+
+    ).onfinish=()=>p.remove();
+
+}
+
+setInterval(createParticle,500);
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const cards=
+    document.querySelectorAll(".card");
+
+const observer=
+    new IntersectionObserver(
+
+        entries=>{
+
+            entries.forEach(entry=>{
+
+                if(entry.isIntersecting){
+
+                    entry.target.style.opacity="1";
+
+                    entry.target.style.transform=
+                        "translateY(0)";
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold:.15
+        }
+
+    );
+
+
+cards.forEach(card=>{
+    observer.observe(card);
+});
+
+
+/* =========================================================
+   CLICK RIPPLE + CODE PARTICLES
+========================================================= */
+
+document.addEventListener(
+    "click",
+    function(e){
+
+        const ripple=
+            document.createElement("div");
+
+        ripple.className="ripple";
+
+        ripple.style.left=
+            e.clientX+"px";
+
+        ripple.style.top=
+            e.clientY+"px";
+
+        document.body.appendChild(ripple);
+
+        setTimeout(
+            ()=>ripple.remove(),
+            800
+        );
+
+
+        const symbols=[
+            "</>",
+            "{}",
+            "01",
+            "AI",
+            "★",
+            "⚡",
+            "🤖"
+        ];
+
+
+        for(let i=0;i<6;i++){
+
+            const symbol=
+                document.createElement("div");
+
+            symbol.className=
+                "click-symbol";
+
+            symbol.innerHTML=
+                symbols[
+                    Math.floor(
+                        Math.random()*symbols.length
+                    )
+                ];
+
+            symbol.style.left=
+                e.clientX+"px";
+
+            symbol.style.top=
+                e.clientY+"px";
+
+            document.body.appendChild(symbol);
+
+
+            const angle=
+                (Math.PI*2/6)*i;
+
+            const distance=
+                70+Math.random()*100;
+
+            const x=
+                Math.cos(angle)*distance;
+
+            const y=
+                Math.sin(angle)*distance;
+
+
+            symbol.animate(
+
+                [
+
+                    {
+                        transform:
+                            "translate(-50%,-50%) scale(0)",
+                        opacity:0
+                    },
+
+                    {
+                        transform:
+                            "translate(-50%,-50%) scale(1)",
+                        opacity:1
+                    },
+
+  ❤️ Thank you, Sir!
+========================================
+`
+);
+
+
+/* =========================================================
+   IMAGE ERROR HANDLER
+========================================================= */
+
+const teacherPhoto=
+    document.querySelector(".photo");
+
+teacherPhoto.addEventListener(
+    "error",
+    function(){
+
+        this.style.background=
+            "linear-gradient(135deg,#06152b,#111827)";
+
+        this.alt=
+            "Please place images/sandeepsir.png in the images folder.";
+
+    }
+);
+
+</script>
+
+</body>
+</``

@@ -1,0 +1,680 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Teacher's Day - Egor Mohan Sir</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Trebuchet MS", Arial, sans-serif;
+        min-height: 100vh;
+        overflow-x: hidden;
+        background:
+            radial-gradient(circle at 15% 20%, #fff7a8 0 5%, transparent 6%),
+            radial-gradient(circle at 85% 15%, #ffc8dd 0 6%, transparent 7%),
+            linear-gradient(135deg, #fff8dc, #e8f8ff, #ffe8f1);
+        color: #333;
+    }
+
+    /* Background Art */
+    .paint-splash {
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(1px);
+        opacity: .45;
+        z-index: -2;
+        animation: float 7s ease-in-out infinite;
+    }
+
+    .splash1 {
+        width: 230px;
+        height: 230px;
+        background: #ffcf56;
+        top: -70px;
+        left: -60px;
+    }
+
+    .splash2 {
+        width: 260px;
+        height: 260px;
+        background: #ff8fab;
+        right: -80px;
+        top: 25%;
+        animation-delay: 1s;
+    }
+
+    .splash3 {
+        width: 190px;
+        height: 190px;
+        background: #8bd3dd;
+        bottom: -50px;
+        left: 10%;
+        animation-delay: 2s;
+    }
+
+    @keyframes float {
+        0%,100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-25px) rotate(8deg); }
+    }
+
+    /* Floating Art */
+    .art {
+        position: fixed;
+        z-index: -1;
+        font-size: 35px;
+        animation: drift 8s linear infinite;
+        opacity: .8;
+    }
+
+    .a1 { left: 5%; top: 25%; }
+    .a2 { right: 7%; top: 55%; animation-delay: 2s; }
+    .a3 { left: 12%; bottom: 12%; animation-delay: 4s; }
+    .a4 { right: 15%; top: 10%; animation-delay: 1s; }
+    .a5 { left: 45%; top: 5%; animation-delay: 3s; }
+
+    @keyframes drift {
+        0% { transform: translateY(0) rotate(0); }
+        50% { transform: translateY(-25px) rotate(15deg); }
+        100% { transform: translateY(0) rotate(0); }
+    }
+
+    /* Main Container */
+    .container {
+        width: min(1100px, 92%);
+        margin: auto;
+        padding: 35px 0 60px;
+    }
+
+    /* Header */
+    .top-note {
+        text-align: center;
+        font-size: 15px;
+        letter-spacing: 2px;
+        color: #777;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+    }
+
+    .title {
+        text-align: center;
+        font-size: clamp(42px, 8vw, 85px);
+        line-height: .95;
+        color: #ef476f;
+        text-shadow: 4px 4px 0 #ffd166;
+        transform: rotate(-2deg);
+    }
+
+    .subtitle {
+        text-align: center;
+        margin-top: 18px;
+        font-size: clamp(20px, 4vw, 32px);
+        color: #118ab2;
+        font-weight: bold;
+    }
+
+    /* Teacher Card */
+    .teacher-card {
+        margin: 45px auto 30px;
+        max-width: 850px;
+        background: rgba(255,255,255,.88);
+        border: 5px solid #333;
+        border-radius: 30px;
+        padding: 35px;
+        box-shadow: 12px 12px 0 #ffd166;
+        position: relative;
+    }
+
+    .teacher-card::before {
+        content: "✂️";
+        position: absolute;
+        right: 25px;
+        top: -28px;
+        font-size: 48px;
+        transform: rotate(-20deg);
+    }
+
+    .teacher-content {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+    }
+
+    /* Photo */
+    .photo-wrap {
+        flex-shrink: 0;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        padding: 8px;
+        background: #ef476f;
+        box-shadow: 8px 8px 0 #06d6a0;
+        transform: rotate(-3deg);
+    }
+
+    .photo-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 5px solid white;
+    }
+
+    .photo-placeholder {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: #eee;
+        border: 5px dashed #555;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+        color: #666;
+        font-size: 15px;
+    }
+
+    .teacher-info h2 {
+        font-size: clamp(32px, 5vw, 55px);
+        color: #073b4c;
+        margin-bottom: 8px;
+    }
+
+    .role {
+        display: inline-block;
+        background: #06d6a0;
+        color: white;
+        padding: 8px 18px;
+        border-radius: 30px;
+        font-weight: bold;
+        transform: rotate(2deg);
+        margin-bottom: 18px;
+    }
+
+    .teacher-info p {
+        font-size: 18px;
+        line-height: 1.7;
+        color: #555;
+    }
+
+    /* Message */
+    .message {
+        margin: 35px auto;
+        max-width: 800px;
+        text-align: center;
+        background: #fff;
+        padding: 35px;
+        border-radius: 25px;
+        border: 3px dashed #ef476f;
+        position: relative;
+    }
+
+    .message h3 {
+        color: #ef476f;
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .message p {
+        font-size: 19px;
+        line-height: 1.8;
+    }
+
+    /* Art Supplies */
+    .supplies {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 30px auto;
+        max-width: 800px;
+    }
+
+    .supply {
+        padding: 15px 20px;
+        background: white;
+        border-radius: 18px;
+        box-shadow: 4px 5px 0 #333;
+        font-size: 17px;
+        font-weight: bold;
+        animation: wiggle 3s infinite;
+    }
+
+    .supply:nth-child(2) { animation-delay: .3s; }
+    .supply:nth-child(3) { animation-delay: .6s; }
+    .supply:nth-child(4) { animation-delay: .9s; }
+    .supply:nth-child(5) { animation-delay: 1.2s; }
+
+    @keyframes wiggle {
+        0%,100% { transform: rotate(0); }
+        50% { transform: rotate(4deg) translateY(-5px); }
+    }
+
+    /* Gift */
+    .gift-section {
+        text-align: center;
+        margin-top: 45px;
+    }
+
+    .gift-section h3 {
+        color: #118ab2;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .gift {
+        width: 145px;
+        height: 115px;
+        margin: auto;
+        position: relative;
+        cursor: pointer;
+        transition: .4s;
+    }
+
+    .gift:hover {
+        transform: scale(1.08) rotate(-3deg);
+    }
+
+    .gift-box {
+        position: absolute;
+        bottom: 0;
+        width: 145px;
+        height: 85px;
+        background: #ef476f;
+        border: 4px solid #333;
+        border-radius: 8px;
+    }
+
+    .gift-box::after {
+        content: "";
+        position: absolute;
+        left: 58px;
+        height: 100%;
+        width: 25px;
+        background: #ffd166;
+    }
+
+    .gift-lid {
+        position: absolute;
+        top: 20px;
+        left: -7px;
+        width: 159px;
+        height: 30px;
+        background: #ff6b8a;
+        border: 4px solid #333;
+        border-radius: 8px;
+        z-index: 2;
+    }
+
+    .ribbon {
+        position: absolute;
+        top: -2px;
+        left: 60px;
+        width: 20px;
+        height: 32px;
+        background: #ffd166;
+        z-index: 3;
+    }
+
+    .bow {
+        position: absolute;
+        top: -28px;
+        left: 43px;
+        font-size: 50px;
+        z-index: 4;
+    }
+
+    .gift-message {
+        display: none;
+        margin: 25px auto;
+        max-width: 600px;
+        padding: 25px;
+        background: #fff7b2;
+        border: 3px solid #333;
+        border-radius: 20px;
+        font-size: 20px;
+        line-height: 1.6;
+        animation: pop .5s ease;
+    }
+
+    @keyframes pop {
+        from { transform: scale(.5); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        margin-top: 50px;
+        font-size: 16px;
+        color: #666;
+    }
+
+    .heart {
+        color: #ef476f;
+        animation: heartbeat 1s infinite;
+        display: inline-block;
+    }
+
+    @keyframes heartbeat {
+        50% { transform: scale(1.3); }
+    }
+
+    /* Confetti */
+    .confetti {
+        position: fixed;
+        width: 10px;
+        height: 15px;
+        top: -20px;
+        z-index: 20;
+        pointer-events: none;
+        animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+        to {
+            transform: translateY(110vh) rotate(720deg);
+        }
+    }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+        .container {
+            padding-top: 25px;
+        }
+
+        .teacher-card {
+            padding: 22px;
+        }
+
+        .teacher-content {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .photo-wrap {
+            width: 180px;
+            height: 180px;
+        }
+
+        .teacher-info p {
+            font-size: 16px;
+        }
+
+        .message {
+            padding: 25px 18px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Background -->
+<div class="paint-splash splash1"></div>
+<div class="paint-splash splash2"></div>
+<div class="paint-splash splash3"></div>
+
+<div class="art a1">🎨</div>
+<div class="art a2">🖌️</div>
+<div class="art a3">✏️</div>
+<div class="art a4">🧵</div>
+<div class="art a5">⭐</div>
+
+<div class="container">
+
+    <div class="top-note">A little handmade surprise for an amazing teacher</div>
+
+    <h1 class="title">Happy Teacher's Day!</h1>
+
+    <div class="subtitle">
+        🎨 For Our Wonderful Art & Craft Teacher 🎨
+    </div>
+
+    <!-- Teacher Card -->
+    <section class="teacher-card">
+
+        <div class="teacher-content">
+
+            <!--
+                PHOTO:
+                Replace the src below with your teacher's image.
+
+                Example:
+                src="/images/egor-mohan.jpg"
+            -->
+            <div class="photo-wrap">
+                <img src="/images/egor-mohan.jpg"
+                     alt="Egor Mohan Sir"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                <div class="photo-placeholder" style="display:none;">
+                    📸<br><br>
+                    Add Egor Mohan Sir's photo here
+                </div>
+            </div>
+
+            <div class="teacher-info">
+                <h2>Egor Mohan Sir</h2>
+
+                <div class="role">
+                    🎨 Art & Craft Teacher
+                </div>
+
+                <p>
+                    The teacher who turns simple paper, colors and imagination
+                    into something beautiful!
+                </p>
+
+                <p>
+                    Thank you, Sir, for teaching us that creativity has no limits
+                    and that every blank page is a new adventure. ✨
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Message -->
+    <section class="message">
+        <h3>🖍️ A Handmade Thank You 🖍️</h3>
+
+        <p>
+            Dear <strong>Egor Mohan Sir</strong>,<br><br>
+
+            You don't just teach us how to draw, paint or create crafts —
+            you teach us how to see the world differently. 🌈
+            <br><br>
+
+            Thank you for filling our classrooms with colors,
+            creativity and imagination.
+            <br><br>
+
+            <strong>Happy Teacher's Day, Sir! 💐</strong>
+        </p>
+    </section>
+
+    <!-- Art Supplies -->
+    <div class="supplies">
+        <div class="supply">🎨 Paint</div>
+        <div class="supply">🖌️ Brushes</div>
+        <div class="supply">✂️ Scissors</div>
+        <div class="supply">📄 Paper</div>
+        <div class="supply">✨ Creativity</div>
+    </div>
+
+    <!-- Gift -->
+    <section class="gift-section">
+
+        <h3>🎁 A Little Gift for You!</h3>
+
+        <div class="gift" onclick="openGift()">
+
+            <div class="bow">🎀</div>
+
+            <div class="gift-lid"></div>
+
+            <div class="ribbon"></div>
+
+            <div class="gift-box"></div>
+
+        </div>
+
+        <div class="gift-message" id="giftMessage">
+            🎉 Surprise! 🎉
+            <br><br>
+            Our greatest gift to you is our <strong>THANK YOU</strong>
+            for making creativity a part of our lives! ❤️
+            <br><br>
+            Keep inspiring us to create, imagine and dream. 🎨✨
+        </div>
+
+    </section>
+
+    <footer>
+        Made with <span class="heart">♥</span> and lots of creativity
+        for <strong>Egor Mohan Sir</strong>
+        <br>
+        Happy Teacher's Day! 🌷
+    </footer>
+
+</div>
+
+<script>
+
+    /* ==========================
+       GIFT INTERACTION
+    ========================== */
+
+    function openGift() {
+
+        const message = document.getElementById("giftMessage");
+
+        if (message.style.display === "block") {
+            message.style.display = "none";
+            return;
+        }
+
+        message.style.display = "block";
+
+        createConfetti();
+    }
+
+
+    /* ==========================
+       CONFETTI
+    ========================== */
+
+    function createConfetti() {
+
+        const symbols = [
+            "🎨",
+            "✨",
+            "⭐",
+            "🌈",
+            "✂️",
+            "🖌️",
+            "💖",
+            "🎉"
+        ];
+
+        for (let i = 0; i < 45; i++) {
+
+            const piece = document.createElement("div");
+
+            piece.className = "confetti";
+
+            piece.textContent =
+                symbols[Math.floor(Math.random() * symbols.length)];
+
+            piece.style.left =
+                Math.random() * 100 + "vw";
+
+            piece.style.fontSize =
+                (12 + Math.random() * 20) + "px";
+
+            piece.style.animationDuration =
+                (2 + Math.random() * 3) + "s";
+
+            piece.style.animationDelay =
+                Math.random() * .8 + "s";
+
+            document.body.appendChild(piece);
+
+            setTimeout(() => {
+                piece.remove();
+            }, 5500);
+        }
+    }
+
+
+    /* ==========================
+       PAGE LOAD EFFECT
+    ========================== */
+
+    window.addEventListener("load", () => {
+
+        setTimeout(() => {
+            createConfetti();
+        }, 700);
+
+    });
+
+
+    /* ==========================
+       CLICK ANYWHERE FOR SMALL
+       ART SPARKS
+    ========================== */
+
+    document.addEventListener("click", function(e) {
+
+        if (e.target.closest(".gift")) return;
+
+        const spark = document.createElement("div");
+
+        spark.textContent = "✨";
+
+        spark.style.position = "fixed";
+        spark.style.left = e.clientX + "px";
+        spark.style.top = e.clientY + "px";
+        spark.style.fontSize = "24px";
+        spark.style.pointerEvents = "none";
+        spark.style.zIndex = "30";
+
+        document.body.appendChild(spark);
+
+        spark.animate(
+            [
+                {
+                    transform: "translate(-50%, -50%) scale(.5)",
+                    opacity: 1
+                },
+                {
+                    transform: "translate(-50%, -100px) scale(1.5)",
+                    opacity: 0
+                }
+            ],
+            {
+                duration: 700,
+                easing: "ease-out"
+            }
+        );
+
+        setTimeout(() => spark.remove(), 700);
+
+    });
+
+</script>
+
+</body>
+</html>
+```
