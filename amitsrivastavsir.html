@@ -355,6 +355,28 @@ section{
   overflow:hidden;
   box-shadow:0 0 60px rgba(92,225,230,.08);
 }
+.portrait-photo img.teacher-photo{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  border-radius:5px;
+  position:relative;
+  z-index:2;
+}
+.portrait-photo .photo-fallback{
+  display:none;
+  position:absolute;
+  inset:0;
+  z-index:1;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:10px;
+  color:var(--ink-faint);
+  text-align:center;
+}
 .portrait-photo::after{
   content:"";
   position:absolute;
@@ -846,14 +868,26 @@ footer{
         <div class="orbit-glyph" style="animation-duration:48s; animation-direction:reverse;"><span style="display:block;transform:translate(-120px,110px)">Σ</span></div>
         <div class="orbit-glyph" style="animation-duration:56s;"><span style="display:block;transform:translate(-148px,-70px)">θ</span></div>
         <div class="portrait-photo">
-          <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--ink-faint)"><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-width="1.4"/><circle cx="12" cy="8" r="4" stroke-width="1.4"/></svg>
-          <span class="ph-label">Photograph of Amit Srivastav<br>replace this placeholder</span>
+          <img
+            src="./images/amitsrivastavsir.jpeg"
+            alt="Amit Srivastav Sir"
+            class="teacher-photo"
+            loading="eager"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          >
+          <div class="photo-fallback" aria-hidden="true">
+            <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="color:var(--ink-faint)">
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-width="1.4"/>
+              <circle cx="12" cy="8" r="4" stroke-width="1.4"/>
+            </svg>
+            <span class="ph-label">Photo not found</span>
+          </div>
         </div>
       </div>
       <h2 class="portrait-name">Amit Srivastav</h2>
       <p class="portrait-role">Our Mathematics Teacher</p>
       <p class="portrait-quote">"The teacher who turned difficult problems into exciting challenges."</p>
-      <div class="photo-note">Placeholder for the teacher's photograph. To use a real photo, save it beside this file as <code>teacher-photo.jpg</code> and replace the <code>.portrait-photo</code> block's contents with <code>&lt;img src="teacher-photo.jpg" alt="Amit Srivastav"&gt;</code> in the HTML.</div>
+      <div class="photo-note">Amit Srivastav Sir's photograph is loaded from <code>./images/amitsrivastavsir.jpeg</code>.</div>
     </div>
   </section>
 

@@ -10,541 +10,581 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    min-height:100vh;
-    font-family:'Inter',sans-serif;
-    color:#fff;
-    background:#050914;
-    overflow-x:hidden;
+body {
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    background: #050914;
+    overflow-x: hidden;
 }
 
 /* ================= BACKGROUND ================= */
 
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:-5;
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -5;
 
     background:
-        radial-gradient(circle at 15% 20%,rgba(30,100,255,.18),transparent 30%),
-        radial-gradient(circle at 85% 75%,rgba(255,183,77,.12),transparent 30%),
-        linear-gradient(135deg,#030611,#081224 55%,#02050c);
+        radial-gradient(circle at 15% 20%, rgba(30,100,255,.18), transparent 30%),
+        radial-gradient(circle at 85% 75%, rgba(255,183,77,.12), transparent 30%),
+        linear-gradient(135deg, #030611, #081224 55%, #02050c);
 }
 
-.grid{
-    position:fixed;
-    inset:0;
-    z-index:-4;
-    opacity:.12;
+.grid {
+    position: fixed;
+    inset: 0;
+    z-index: -4;
+    opacity: .12;
 
     background-image:
-        linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
+        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
 
-    background-size:55px 55px;
-
-    mask-image:linear-gradient(to bottom,black,transparent);
+    background-size: 55px 55px;
+    mask-image: linear-gradient(to bottom, black, transparent);
 }
 
-/* ================= FLOATING LIGHTS ================= */
+/* ================= LIGHTS ================= */
 
-.light{
-    position:fixed;
-    border-radius:50%;
-    filter:blur(80px);
-    z-index:-3;
-    pointer-events:none;
+.light {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -3;
+    pointer-events: none;
 }
 
-.light.one{
-    width:280px;
-    height:280px;
-    background:#155eef;
-    top:-100px;
-    left:-100px;
+.light.one {
+    width: 280px;
+    height: 280px;
+    background: #155eef;
+    top: -100px;
+    left: -100px;
 }
 
-.light.two{
-    width:250px;
-    height:250px;
-    background:#d99220;
-    right:-100px;
-    bottom:5%;
+.light.two {
+    width: 250px;
+    height: 250px;
+    background: #d99220;
+    right: -100px;
+    bottom: 5%;
 }
 
 /* ================= NAVBAR ================= */
 
-nav{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    padding:28px 7%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:20;
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 28px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 20;
 }
 
-.logo{
-    font-size:14px;
-    letter-spacing:4px;
-    font-weight:700;
-    color:#e8c77b;
+.logo {
+    font-size: 14px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    color: #e8c77b;
 }
 
-.nav-date{
-    font-size:12px;
-    letter-spacing:2px;
-    color:rgba(255,255,255,.55);
+.nav-date {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,.55);
 }
 
 /* ================= HERO ================= */
 
-.hero{
-    min-height:100vh;
-    padding:130px 7% 70px;
+.hero {
+    min-height: 100vh;
+    padding: 130px 7% 70px;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.hero-inner{
-    width:100%;
-    max-width:1200px;
+.hero-inner {
+    width: 100%;
+    max-width: 1200px;
 
-    display:grid;
-    grid-template-columns:1.05fr .95fr;
-    gap:80px;
-    align-items:center;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+
+    gap: 80px;
+    align-items: center;
 }
 
-/* ================= LEFT ================= */
+/* ================= LEFT CONTENT ================= */
 
-.eyebrow{
-    display:flex;
-    align-items:center;
-    gap:14px;
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
 
-    color:#e8c77b;
-    font-size:13px;
-    font-weight:700;
-    letter-spacing:4px;
-    text-transform:uppercase;
+    color: #e8c77b;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
 
-    margin-bottom:24px;
+    margin-bottom: 24px;
 }
 
-.eyebrow::before{
-    content:"";
-    width:45px;
-    height:1px;
-    background:#e8c77b;
+.eyebrow::before {
+    content: "";
+    width: 45px;
+    height: 1px;
+    background: #e8c77b;
 }
 
-h1{
-    font-family:'DM Serif Display',serif;
-    font-size:clamp(58px,7vw,105px);
-    line-height:.92;
-    font-weight:400;
-    letter-spacing:-3px;
+h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(58px, 7vw, 105px);
+    line-height: .92;
+    font-weight: 400;
+    letter-spacing: -3px;
 }
 
-h1 span{
-    display:block;
-    color:#e8c77b;
+h1 span {
+    display: block;
+    color: #e8c77b;
 }
 
-.intro{
-    margin-top:30px;
-    max-width:570px;
+.intro {
+    margin-top: 30px;
+    max-width: 570px;
 
-    font-size:18px;
-    line-height:1.9;
-    font-weight:300;
-    color:rgba(255,255,255,.67);
+    font-size: 18px;
+    line-height: 1.9;
+    font-weight: 300;
+
+    color: rgba(255,255,255,.67);
 }
 
-.teacher-name{
-    margin-top:35px;
+.teacher-name {
+    margin-top: 35px;
 
-    font-size:clamp(30px,4vw,48px);
-    font-weight:700;
-    letter-spacing:-1px;
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 700;
+    letter-spacing: -1px;
 }
 
-.teacher-role{
-    margin-top:8px;
+.teacher-role {
+    margin-top: 8px;
 
-    color:#e8c77b;
-    font-size:14px;
-    letter-spacing:3px;
-    text-transform:uppercase;
+    color: #e8c77b;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 /* ================= PHOTO ================= */
 
-.photo-area{
-    display:flex;
-    justify-content:center;
-    position:relative;
+.photo-area {
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
-.photo-card{
-    width:min(390px,85vw);
-    height:500px;
+.photo-card {
+    width: min(390px, 85vw);
+    height: 500px;
 
-    position:relative;
+    position: relative;
+    padding: 10px;
 
-    padding:10px;
-
-    border-radius:24px;
+    border-radius: 24px;
 
     background:
-        linear-gradient(145deg,
-        rgba(232,199,123,.9),
-        rgba(255,255,255,.15) 35%,
-        rgba(232,199,123,.4));
+        linear-gradient(
+            145deg,
+            rgba(232,199,123,.9),
+            rgba(255,255,255,.15) 35%,
+            rgba(232,199,123,.4)
+        );
 
     box-shadow:
         0 40px 100px rgba(0,0,0,.6),
         0 0 80px rgba(232,199,123,.08);
 
-    transform:rotate(2deg);
-
-    transition:.6s ease;
+    transform: rotate(2deg);
+    transition: .6s ease;
 }
 
-.photo-card:hover{
-    transform:rotate(0deg) translateY(-10px);
+.photo-card:hover {
+    transform: rotate(0deg) translateY(-10px);
 }
 
-.photo-inner{
-    height:100%;
-    width:100%;
+.photo-inner {
+    height: 100%;
+    width: 100%;
 
-    overflow:hidden;
-    border-radius:17px;
+    overflow: hidden;
+    border-radius: 17px;
 
-    background:#111827;
-    position:relative;
+    background: #111827;
+    position: relative;
 }
 
-.photo-inner::after{
-    content:"";
-    position:absolute;
-    inset:0;
+/* Image */
+
+.teacher-photo {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center top;
+
+    display: block;
+
+    transition: transform 1s ease;
+}
+
+.photo-card:hover .teacher-photo {
+    transform: scale(1.04);
+}
+
+/* Dark gradient over image */
+
+.photo-inner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
 
     background:
         linear-gradient(
             to bottom,
-            transparent 55%,
-            rgba(0,0,0,.7)
+            transparent 50%,
+            rgba(0,0,0,.75)
         );
+
+    pointer-events: none;
 }
 
-.teacher-photo{
-    width:100%;
-    height:100%;
+/* Image label */
 
-    object-fit:cover;
-    object-position:center top;
+.photo-label {
+    position: absolute;
+    bottom: 25px;
+    left: 28px;
 
-    display:block;
-
-    transition:transform 1s ease;
+    z-index: 5;
 }
 
-.photo-card:hover .teacher-photo{
-    transform:scale(1.04);
+.photo-label small {
+    display: block;
+
+    color: #e8c77b;
+    letter-spacing: 3px;
+    font-size: 10px;
+
+    margin-bottom: 5px;
 }
 
-/* photo label */
-
-.photo-label{
-    position:absolute;
-    bottom:25px;
-    left:28px;
-    z-index:5;
+.photo-label strong {
+    font-size: 22px;
 }
 
-.photo-label small{
-    display:block;
-    color:#e8c77b;
-    letter-spacing:3px;
-    font-size:10px;
-    margin-bottom:5px;
-}
+/* ================= NUMBER ================= */
 
-.photo-label strong{
-    font-size:22px;
-}
+.number {
+    position: absolute;
+    top: -40px;
+    right: -25px;
 
-/* ================= DECORATION ================= */
+    font-family: 'DM Serif Display', serif;
+    font-size: 130px;
 
-.number{
-    position:absolute;
-    top:-40px;
-    right:-25px;
+    color: rgba(255,255,255,.025);
 
-    font-family:'DM Serif Display',serif;
-    font-size:130px;
-
-    color:rgba(255,255,255,.025);
-
-    pointer-events:none;
+    pointer-events: none;
 }
 
 /* ================= MESSAGE ================= */
 
-.message-section{
-    padding:80px 7% 120px;
+.message-section {
+    padding: 80px 7% 120px;
 }
 
-.message-box{
-    max-width:1000px;
-    margin:auto;
+.message-box {
+    max-width: 1000px;
+    margin: auto;
 
-    padding:70px;
+    padding: 70px;
 
-    border-top:1px solid rgba(232,199,123,.35);
-    border-bottom:1px solid rgba(232,199,123,.2);
+    border-top: 1px solid rgba(232,199,123,.35);
+    border-bottom: 1px solid rgba(232,199,123,.2);
 
-    text-align:center;
+    text-align: center;
 }
 
-.message-box .small{
-    color:#e8c77b;
-    font-size:12px;
-    letter-spacing:4px;
-    text-transform:uppercase;
+.message-box .small {
+    color: #e8c77b;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
 }
 
-.message-box h2{
-    margin-top:20px;
+.message-box h2 {
+    margin-top: 20px;
 
-    font-family:'DM Serif Display',serif;
-    font-size:clamp(38px,5vw,62px);
-    font-weight:400;
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 400;
 }
 
-.message-box p{
-    max-width:760px;
-    margin:28px auto 0;
+.message-box p {
+    max-width: 760px;
+    margin: 28px auto 0;
 
-    font-size:17px;
-    line-height:2;
+    font-size: 17px;
+    line-height: 2;
 
-    color:rgba(255,255,255,.62);
+    color: rgba(255,255,255,.62);
 }
 
 /* ================= QUOTE ================= */
 
-.quote{
-    padding:100px 7%;
-
-    text-align:center;
+.quote {
+    padding: 100px 7%;
+    text-align: center;
 }
 
-.quote-mark{
-    font-family:'DM Serif Display',serif;
-    font-size:100px;
-    line-height:.5;
-    color:#e8c77b;
-    opacity:.5;
+.quote-mark {
+    font-family: 'DM Serif Display', serif;
+    font-size: 100px;
+    line-height: .5;
+
+    color: #e8c77b;
+    opacity: .5;
 }
 
-.quote p{
-    max-width:800px;
-    margin:20px auto;
+.quote p {
+    max-width: 800px;
+    margin: 20px auto;
 
-    font-family:'DM Serif Display',serif;
-    font-size:clamp(25px,4vw,42px);
-    line-height:1.35;
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(25px, 4vw, 42px);
+    line-height: 1.35;
 }
 
-.quote span{
-    color:#e8c77b;
-    font-size:12px;
-    letter-spacing:4px;
+.quote span {
+    color: #e8c77b;
+    font-size: 12px;
+    letter-spacing: 4px;
 }
 
 /* ================= BUTTON ================= */
 
-.button-area{
-    text-align:center;
-    padding-bottom:100px;
+.button-area {
+    text-align: center;
+    padding-bottom: 100px;
 }
 
-.celebrate{
-    position:relative;
+.celebrate {
+    border: 1px solid rgba(232,199,123,.6);
+    background: rgba(232,199,123,.06);
 
-    border:1px solid rgba(232,199,123,.6);
-    background:rgba(232,199,123,.06);
+    color: #e8c77b;
 
-    color:#e8c77b;
+    padding: 17px 34px;
 
-    padding:17px 34px;
+    border-radius: 50px;
 
-    border-radius:50px;
+    font-family: inherit;
+    font-weight: 600;
+    letter-spacing: 1px;
 
-    font-family:inherit;
-    font-weight:600;
-    letter-spacing:1px;
+    cursor: pointer;
 
-    cursor:pointer;
-
-    transition:.4s ease;
+    transition: .4s ease;
 }
 
-.celebrate:hover{
-    background:#e8c77b;
-    color:#07101e;
+.celebrate:hover {
+    background: #e8c77b;
+    color: #07101e;
 
     box-shadow:
         0 0 35px rgba(232,199,123,.25);
 
-    transform:translateY(-3px);
+    transform: translateY(-3px);
 }
 
 /* ================= FOOTER ================= */
 
-footer{
-    text-align:center;
+footer {
+    text-align: center;
 
-    padding:30px;
+    padding: 30px;
 
-    border-top:1px solid rgba(255,255,255,.06);
+    border-top: 1px solid rgba(255,255,255,.06);
 
-    color:rgba(255,255,255,.35);
+    color: rgba(255,255,255,.35);
 
-    font-size:12px;
-    letter-spacing:1px;
+    font-size: 12px;
+    letter-spacing: 1px;
 }
 
 /* ================= PARTICLES ================= */
 
-.particle{
-    position:fixed;
+.particle {
+    position: fixed;
 
-    width:3px;
-    height:3px;
+    width: 3px;
+    height: 3px;
 
-    border-radius:50%;
+    border-radius: 50%;
 
-    background:#e8c77b;
+    background: #e8c77b;
 
-    pointer-events:none;
-    z-index:-1;
+    pointer-events: none;
+    z-index: -1;
 
-    animation:rise linear forwards;
+    animation: rise linear forwards;
 }
 
-@keyframes rise{
-    from{
-        transform:translateY(0);
-        opacity:0;
+@keyframes rise {
+
+    from {
+        transform: translateY(0);
+        opacity: 0;
     }
 
-    15%{
-        opacity:.8;
+    15% {
+        opacity: .8;
     }
 
-    to{
-        transform:translateY(-100vh);
-        opacity:0;
+    to {
+        transform: translateY(-100vh);
+        opacity: 0;
     }
 }
 
 /* ================= REVEAL ================= */
 
-.reveal{
-    opacity:0;
-    transform:translateY(35px);
-    transition:1s ease;
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: 1s ease;
 }
 
-.reveal.show{
-    opacity:1;
-    transform:translateY(0);
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= IMAGE ERROR MESSAGE ================= */
+
+.image-error {
+    position: absolute;
+    inset: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 30px;
+
+    background: #111827;
+    color: #e8c77b;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    z-index: 10;
+}
+
+.image-error strong {
+    display: block;
+    color: white;
+    font-size: 22px;
+    margin-bottom: 10px;
 }
 
 /* ================= MOBILE ================= */
 
-@media(max-width:850px){
+@media(max-width:850px) {
 
-    nav{
-        padding:22px 6%;
+    nav {
+        padding: 22px 6%;
     }
 
-    .nav-date{
-        display:none;
+    .nav-date {
+        display: none;
     }
 
-    .hero{
-        padding:120px 6% 70px;
+    .hero {
+        padding: 120px 6% 70px;
     }
 
-    .hero-inner{
-        grid-template-columns:1fr;
-        gap:60px;
-        text-align:center;
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
     }
 
-    .eyebrow{
-        justify-content:center;
+    .eyebrow {
+        justify-content: center;
     }
 
-    .intro{
-        margin-left:auto;
-        margin-right:auto;
+    .intro {
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .teacher-role{
-        margin-bottom:10px;
+    .teacher-role {
+        margin-bottom: 10px;
     }
 
-    .photo-area{
-        order:-1;
+    .photo-area {
+        order: -1;
     }
 
-    .photo-card{
-        height:430px;
+    .photo-card {
+        height: 430px;
     }
 
-    .message-box{
-        padding:55px 20px;
+    .message-box {
+        padding: 55px 20px;
     }
 }
 
-@media(max-width:450px){
+@media(max-width:450px) {
 
-    h1{
-        font-size:53px;
+    h1 {
+        font-size: 53px;
     }
 
-    .photo-card{
-        height:390px;
+    .photo-card {
+        height: 390px;
     }
 
-    .intro{
-        font-size:16px;
+    .intro {
+        font-size: 16px;
     }
 
-    .message-box h2{
-        font-size:38px;
+    .message-box h2 {
+        font-size: 38px;
     }
 }
 </style>
@@ -569,61 +609,82 @@ footer{
 
 <section class="hero">
 
-<div class="hero-inner">
+    <div class="hero-inner">
 
-    <!-- TEXT -->
+        <!-- TEXT -->
 
-    <div class="hero-text reveal">
+        <div class="hero-text reveal">
 
-        <div class="eyebrow">
-            Teachers' Day
+            <div class="eyebrow">
+                Teachers' Day
+            </div>
+
+            <h1>
+                Happy
+                <span>Teacher's Day</span>
+            </h1>
+
+            <p class="intro">
+                To the teacher who turns lines of code into ideas,
+                problems into possibilities, and classrooms into
+                places where curiosity comes alive.
+            </p>
+
+            <div class="teacher-name">
+                Shivam Sir
+            </div>
+
+            <div class="teacher-role">
+                Computer Teacher
+            </div>
+
         </div>
 
-        <h1>
-            Happy
-            <span>Teacher's Day</span>
-        </h1>
 
-        <p class="intro">
-            To the teacher who turns lines of code into ideas,
-            problems into possibilities, and classrooms into
-            places where curiosity comes alive.
-        </p>
+        <!-- PHOTO -->
 
-        <div class="teacher-name">
-            Shivam Sir
-        </div>
+        <div class="photo-area reveal">
 
-        <div class="teacher-role">
-            Computer Teacher
-        </div>
+            <div class="number">
+                05
+            </div>
 
-    </div>
+            <div class="photo-card">
 
+                <div class="photo-inner">
 
-    <!-- PHOTO -->
+                    <!--
+                    IMPORTANT:
+                    Keep your image here:
 
-    <div class="photo-area reveal">
+                    project/
+                    ├── index.html
+                    └── images/
+                        └── shivamsir.jpeg
+                    -->
 
-        <div class="number">
-            05
-        </div>
+                    <img
+                        src="images/shivamsir.jpeg"
+                        alt="Shivam Sir"
+                        class="teacher-photo"
+                        onerror="showImageError()"
+                    >
 
-        <div class="photo-card">
+                    <!-- Error message appears only if image cannot be found -->
 
-            <div class="photo-inner">
+                    <div class="image-error" id="imageError">
+                        <div>
+                            <strong>Photo Not Found</strong>
+                            Please check that your image is named:<br>
+                            <b>shivamsir.jpeg</b><br><br>
+                            and is inside the <b>images</b> folder.
+                        </div>
+                    </div>
 
-                <img
-                    src="/images/shivam.jpg"
-                    alt="Shivam Sir"
-                    class="teacher-photo"
-                >
-
-                <div class="photo-label">
-
-                    <small>WITH GRATITUDE</small>
-
-                    <strong>Shivam Sir</strong>
+                    <div class="photo-label">
+                        <small>WITH GRATITUDE</small>
+                        <strong>Shivam Sir</strong>
+                    </div>
 
                 </div>
 
@@ -633,8 +694,6 @@ footer{
 
     </div>
 
-</div>
-
 </section>
 
 
@@ -642,28 +701,30 @@ footer{
 
 <section class="message-section reveal">
 
-<div class="message-box">
+    <div class="message-box">
 
-    <div class="small">
-        A Message From Your Students
+        <div class="small">
+            A Message From Your Students
+        </div>
+
+        <h2>
+            Thank You For Inspiring Us.
+        </h2>
+
+        <p>
+            Dear Shivam Sir, your lessons go beyond computers and
+            technology. You encourage us to ask questions, solve
+            problems, experiment with new ideas and never be afraid
+            of making mistakes.
+
+            <br><br>
+
+            Your patience, guidance and dedication make a difference
+            every single day. We are grateful for everything you teach
+            us — both inside and outside the classroom.
+        </p>
+
     </div>
-
-    <h2>
-        Thank You For Inspiring Us.
-    </h2>
-
-    <p>
-        Dear Shivam Sir, your lessons go beyond computers and
-        technology. You encourage us to ask questions, solve
-        problems, experiment with new ideas and never be afraid
-        of making mistakes.
-        <br><br>
-        Your patience, guidance and dedication make a difference
-        every single day. We are grateful for everything you teach
-        us — both inside and outside the classroom.
-    </p>
-
-</div>
 
 </section>
 
@@ -672,7 +733,9 @@ footer{
 
 <section class="quote reveal">
 
-    <div class="quote-mark">“</div>
+    <div class="quote-mark">
+        “
+    </div>
 
     <p>
         The best teachers don't just teach lessons.
@@ -680,7 +743,9 @@ footer{
         they teach.
     </p>
 
-    <span>— WITH RESPECT & GRATITUDE</span>
+    <span>
+        — WITH RESPECT & GRATITUDE
+    </span>
 
 </section>
 
@@ -696,6 +761,8 @@ footer{
 </div>
 
 
+<!-- FOOTER -->
+
 <footer>
     MADE WITH ❤️ FOR SHIVAM SIR • HAPPY TEACHER'S DAY
 </footer>
@@ -705,209 +772,282 @@ footer{
 
 /* ================= PAGE REVEAL ================= */
 
-const reveals =
-document.querySelectorAll(".reveal");
+const reveals = document.querySelectorAll(".reveal");
 
-const observer =
-new IntersectionObserver(
-(entries)=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
-        }
-    });
-},
-{
-    threshold:.15
-});
+const observer = new IntersectionObserver(
+    (entries) => {
 
-reveals.forEach(el=>{
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+
+        });
+
+    },
+    {
+        threshold: .15
+    }
+);
+
+reveals.forEach(el => {
     observer.observe(el);
 });
 
 
+/* ================= IMAGE ERROR ================= */
+
+function showImageError() {
+
+    const image = document.querySelector(".teacher-photo");
+    const error = document.getElementById("imageError");
+
+    image.style.display = "none";
+    error.style.display = "flex";
+}
+
+
 /* ================= FLOATING PARTICLES ================= */
 
-function createParticle(){
+function createParticle() {
 
-    const p =
-    document.createElement("div");
+    const p = document.createElement("div");
 
-    p.className="particle";
+    p.className = "particle";
 
     p.style.left =
-    Math.random()*100+"vw";
+        Math.random() * 100 + "vw";
 
-    p.style.bottom="-10px";
+    p.style.bottom = "-10px";
 
     const size =
-    Math.random()*3+1;
+        Math.random() * 3 + 1;
 
-    p.style.width=size+"px";
-    p.style.height=size+"px";
+    p.style.width = size + "px";
+    p.style.height = size + "px";
 
     p.style.animationDuration =
-    (5+Math.random()*7)+"s";
+        (5 + Math.random() * 7) + "s";
 
     document.body.appendChild(p);
 
-    setTimeout(()=>{
+    setTimeout(() => {
         p.remove();
-    },12000);
+    }, 12000);
 }
 
-setInterval(createParticle,500);
+setInterval(createParticle, 500);
 
 
 /* ================= CELEBRATION ================= */
 
-function celebrate(){
+function celebrate() {
 
-    const messages=[
+    const messages = [
         "Thank You, Shivam Sir ❤️",
         "You Inspire Us ✨",
         "Happy Teacher's Day 🎓",
         "You're An Amazing Teacher 🌟"
     ];
 
-    const popup=
-    document.createElement("div");
+    const popup = document.createElement("div");
 
-    popup.innerHTML=`
-        <div style="
-            position:fixed;
-            inset:0;
-            z-index:1000;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            background:rgba(2,5,12,.82);
-            backdrop-filter:blur(12px);
-            animation:fadeIn .4s ease;
-        ">
+    popup.innerHTML = `
 
-            <div style="
-                text-align:center;
-                padding:55px 30px;
-                max-width:600px;
-                width:90%;
-                border:1px solid rgba(232,199,123,.5);
-                border-radius:25px;
-                background:linear-gradient(
-                    145deg,
-                    rgba(255,255,255,.09),
-                    rgba(255,255,255,.025)
-                );
-                box-shadow:0 30px 100px rgba(0,0,0,.6);
-            ">
+        <div class="popup-overlay">
 
-                <div style="
-                    font-size:55px;
-                    margin-bottom:20px;
-                ">
+            <div class="popup-box">
+
+                <div class="popup-icon">
                     🎓
                 </div>
 
-                <h2 style="
-                    font-family:'DM Serif Display',serif;
-                    font-size:clamp(34px,6vw,55px);
-                    font-weight:400;
-                    color:#e8c77b;
-                    margin-bottom:20px;
-                ">
-                    ${messages[
-                        Math.floor(
-                            Math.random()*messages.length
-                        )
-                    ]}
+                <h2>
+                    ${
+                        messages[
+                            Math.floor(
+                                Math.random() * messages.length
+                            )
+                        ]
+                    }
                 </h2>
 
-                <p style="
-                    color:rgba(255,255,255,.65);
-                    line-height:1.8;
-                    font-size:16px;
-                ">
+                <p>
                     Thank you for making learning
                     exciting, meaningful and unforgettable.
                 </p>
 
-                <button onclick="this.closest('div[style]').parentElement.remove()"
-                style="
-                    margin-top:30px;
-                    padding:12px 28px;
-                    border-radius:30px;
-                    border:1px solid #e8c77b;
-                    background:transparent;
-                    color:#e8c77b;
-                    cursor:pointer;
-                    font-weight:600;
-                ">
+                <button onclick="this.closest('.popup-overlay').remove()">
                     Close
                 </button>
 
             </div>
 
         </div>
+
     `;
 
     document.body.appendChild(popup);
 
-    /* Confetti */
 
-    for(let i=0;i<80;i++){
+    /* CONFETTI */
 
-        const confetti=
-        document.createElement("div");
+    for (let i = 0; i < 80; i++) {
 
-        confetti.style.position="fixed";
-        confetti.style.width="6px";
-        confetti.style.height="6px";
-        confetti.style.left="50%";
-        confetti.style.top="50%";
-        confetti.style.zIndex="1100";
-        confetti.style.background=
-        `hsl(${Math.random()*360},80%,65%)`;
-        confetti.style.borderRadius="50%";
+        const confetti =
+            document.createElement("div");
 
-        const angle=
-        Math.random()*Math.PI*2;
+        confetti.style.position = "fixed";
+        confetti.style.width = "6px";
+        confetti.style.height = "6px";
 
-        const distance=
-        100+Math.random()*500;
+        confetti.style.left = "50%";
+        confetti.style.top = "50%";
 
-        const x=
-        Math.cos(angle)*distance;
+        confetti.style.zIndex = "1100";
 
-        const y=
-        Math.sin(angle)*distance;
+        confetti.style.background =
+            `hsl(${Math.random() * 360},80%,65%)`;
+
+        confetti.style.borderRadius = "50%";
+
+        const angle =
+            Math.random() * Math.PI * 2;
+
+        const distance =
+            100 + Math.random() * 500;
+
+        const x =
+            Math.cos(angle) * distance;
+
+        const y =
+            Math.sin(angle) * distance;
 
         confetti.animate(
             [
                 {
-                    transform:"translate(0,0) scale(1)",
-                    opacity:1
+                    transform:
+                        "translate(0,0) scale(1)",
+                    opacity: 1
                 },
+
                 {
                     transform:
-                    `translate(${x}px,${y}px) rotate(720deg)`,
-                    opacity:0
+                        `translate(${x}px,${y}px) rotate(720deg)`,
+                    opacity: 0
                 }
             ],
             {
-                duration:1000+Math.random()*1000,
-                easing:"cubic-bezier(.1,.7,.2,1)"
+                duration:
+                    1000 + Math.random() * 1000,
+
+                easing:
+                    "cubic-bezier(.1,.7,.2,1)"
             }
         );
 
         document.body.appendChild(confetti);
 
-        setTimeout(()=>{
+        setTimeout(() => {
             confetti.remove();
-        },2200);
+        }, 2200);
     }
 }
 
 </script>
+
+
+<style>
+
+/* ================= POPUP ================= */
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(2,5,12,.82);
+
+    backdrop-filter: blur(12px);
+}
+
+.popup-box {
+    text-align: center;
+
+    padding: 55px 30px;
+
+    max-width: 600px;
+    width: 90%;
+
+    border: 1px solid rgba(232,199,123,.5);
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.025)
+        );
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.6);
+}
+
+.popup-icon {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.popup-box h2 {
+    font-family: 'DM Serif Display', serif;
+
+    font-size: clamp(34px,6vw,55px);
+
+    font-weight: 400;
+
+    color: #e8c77b;
+
+    margin-bottom: 20px;
+}
+
+.popup-box p {
+    color: rgba(255,255,255,.65);
+
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.popup-box button {
+    margin-top: 30px;
+
+    padding: 12px 28px;
+
+    border-radius: 30px;
+
+    border: 1px solid #e8c77b;
+
+    background: transparent;
+
+    color: #e8c77b;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+.popup-box button:hover {
+    background: #e8c77b;
+    color: #07101e;
+}
+
+</style>
 
 </body>
 </html>

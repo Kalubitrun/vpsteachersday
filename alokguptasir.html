@@ -201,6 +201,35 @@
       border: 1px solid var(--gold-primary);
     }
 
+    .teacher-photo {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 7px;
+      position: relative;
+      z-index: 2;
+      background: var(--bg-deep-blue);
+    }
+
+    .photo-fallback {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .photo-fallback span {
+      font-size: 0.75rem;
+      color: #A0AEC0;
+      margin-top: 5px;
+    }
+
     .portrait-placeholder-text {
       color: var(--gold-light);
       font-family: 'Cinzel', serif;
@@ -369,10 +398,7 @@
 
   <!-- AUDIO CONTROL -->
   <button class="audio-control" id="audioToggle">▶ PLAY TRIBUTE MUSIC</button>
-  <audio id="bgAudio" loop>
-    <!-- Placeholder ambient track link -->
-    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=soft-piano-10839.mp3" type="audio/mpeg">
-  </audio>
+  <audio id="bgAudio" loop preload="none" aria-label="Tribute music"></audio>
 
   <!-- MAIN CONTENT -->
 
@@ -411,12 +437,21 @@
         <!-- PORTRAIT PLACEHOLDER -->
         <div class="portrait-wrapper">
           <div class="portrait-inner">
-            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#E2B755" stroke-width="1.5">
-              <path d="M12 14c4 0 7 2 7 6H5c0-4 3-6 7-6z"/>
-              <circle cx="12" cy="8" r="4"/>
-            </svg>
-            <div class="portrait-placeholder-text">ALOK SIR</div>
-            <span style="font-size: 0.75rem; color: #A0AEC0; margin-top: 5px;">[ Insert Photo Here ]</span>
+            <img
+              src="./images/alokguptasir.jpeg"
+              alt="Alok Sir"
+              class="teacher-photo"
+              loading="eager"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="photo-fallback" aria-hidden="true">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#E2B755" stroke-width="1.5">
+                <path d="M12 14c4 0 7 2 7 6H5c0-4 3-6 7-6z"/>
+                <circle cx="12" cy="8" r="4"/>
+              </svg>
+              <div class="portrait-placeholder-text">ALOK SIR</div>
+              <span>Photo not found</span>
+            </div>
           </div>
         </div>
       </div>
@@ -503,6 +538,8 @@
     window.addEventListener('resize', () => {
       width = wordCanvas.width = window.innerWidth;
       height = wordCanvas.height = window.innerHeight;
+      flowerCanvas.width = window.innerWidth;
+      flowerCanvas.height = window.innerHeight;
     });
 
     const vocabulary = [

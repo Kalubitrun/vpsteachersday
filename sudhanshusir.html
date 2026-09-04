@@ -1,0 +1,518 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Teachers' Day | Sudhanshu Sir</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(0,255,200,.12), transparent 30%),
+        radial-gradient(circle at 80% 80%, rgba(0,150,255,.12), transparent 30%),
+        #061014;
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Floating particles */
+.particle {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    background: #55ffe1;
+    border-radius: 50%;
+    opacity: .6;
+    animation: float 8s linear infinite;
+    z-index: 0;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(100vh) scale(.5);
+        opacity: 0;
+    }
+    20% { opacity: .7; }
+    80% { opacity: .7; }
+    to {
+        transform: translateY(-10vh) scale(1.4);
+        opacity: 0;
+    }
+}
+
+/* Main container */
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: auto;
+    padding: 35px 20px 60px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.lab-icon {
+    font-size: 70px;
+    animation: flask 2s ease-in-out infinite;
+}
+
+@keyframes flask {
+    0%,100% { transform: rotate(-6deg); }
+    50% { transform: rotate(6deg); }
+}
+
+.badge {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 18px;
+    border: 1px solid #55ffe1;
+    border-radius: 30px;
+    color: #55ffe1;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+h1 {
+    margin-top: 18px;
+    font-size: clamp(42px, 8vw, 82px);
+    line-height: 1;
+    background: linear-gradient(90deg, #ffffff, #55ffe1, #62b8ff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    margin-top: 18px;
+    font-size: 20px;
+    color: #b9d6d8;
+}
+
+/* Teacher card */
+.teacher-card {
+    margin: 20px auto;
+    max-width: 850px;
+    padding: 45px 30px;
+    text-align: center;
+    background: rgba(8, 25, 30, .82);
+    border: 1px solid rgba(85,255,225,.4);
+    border-radius: 25px;
+    box-shadow:
+        0 0 30px rgba(0,255,220,.1),
+        inset 0 0 30px rgba(0,255,220,.03);
+    backdrop-filter: blur(12px);
+}
+
+.teacher-card h2 {
+    font-size: 42px;
+    color: #55ffe1;
+    margin-bottom: 10px;
+}
+
+.teacher-card p {
+    color: #c9dfe1;
+    font-size: 18px;
+}
+
+/* Science grid */
+.science-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.science-card {
+    padding: 28px 20px;
+    background: rgba(255,255,255,.035);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 18px;
+    text-align: center;
+    transition: .3s;
+}
+
+.science-card:hover {
+    transform: translateY(-8px);
+    border-color: #55ffe1;
+    box-shadow: 0 10px 30px rgba(0,255,220,.12);
+}
+
+.science-card .icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.science-card h3 {
+    color: #55ffe1;
+    margin-bottom: 8px;
+}
+
+.science-card p {
+    color: #a8c0c3;
+    line-height: 1.5;
+}
+
+/* Experiment */
+.experiment {
+    margin-top: 45px;
+    padding: 35px 25px;
+    text-align: center;
+    background: linear-gradient(
+        145deg,
+        rgba(0,255,220,.06),
+        rgba(0,100,255,.05)
+    );
+    border-radius: 25px;
+    border: 1px solid rgba(85,255,225,.18);
+}
+
+.experiment h2 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.experiment-intro {
+    color: #9db6b9;
+    margin-bottom: 25px;
+}
+
+/* Beaker */
+.lab {
+    height: 230px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.beaker {
+    width: 150px;
+    height: 170px;
+    border: 5px solid #bdebea;
+    border-top: 0;
+    border-radius: 0 0 25px 25px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(85,255,225,.15);
+}
+
+.liquid {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    background: linear-gradient(
+        to top,
+        rgba(0,220,255,.8),
+        rgba(85,255,225,.4)
+    );
+    animation: liquid 2s ease-in-out infinite alternate;
+}
+
+@keyframes liquid {
+    from { height: 48%; }
+    to { height: 58%; }
+}
+
+/* Bubbles */
+.bubble {
+    position: absolute;
+    bottom: 20px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+    animation: bubble 3s linear infinite;
+}
+
+@keyframes bubble {
+    from {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    20% { opacity: 1; }
+    to {
+        transform: translateY(-130px);
+        opacity: 0;
+    }
+}
+
+.b1 { left: 35px; animation-delay: .2s; }
+.b2 { left: 70px; animation-delay: 1s; }
+.b3 { left: 100px; animation-delay: 1.8s; }
+
+/* Button */
+button {
+    margin-top: 25px;
+    padding: 13px 25px;
+    border: 1px solid #55ffe1;
+    border-radius: 30px;
+    background: transparent;
+    color: #55ffe1;
+    cursor: pointer;
+    font-size: 16px;
+    transition: .3s;
+}
+
+button:hover {
+    background: #55ffe1;
+    color: #061014;
+    box-shadow: 0 0 25px rgba(85,255,225,.5);
+}
+
+/* Message */
+.message {
+    max-width: 800px;
+    margin: 45px auto 0;
+    text-align: center;
+    padding: 35px 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,.04);
+}
+
+.message h2 {
+    color: #55ffe1;
+    margin-bottom: 18px;
+}
+
+.message p {
+    color: #d1e0e1;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Final */
+.final {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.final h2 {
+    font-size: 34px;
+}
+
+.final span {
+    color: #55ffe1;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #71898d;
+    font-size: 13px;
+}
+
+/* Mobile */
+@media(max-width:600px) {
+    .teacher-card {
+        padding: 35px 18px;
+    }
+
+    .teacher-card h2 {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 17px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating science particles -->
+<div class="particle" style="left:5%;animation-delay:0s;"></div>
+<div class="particle" style="left:15%;animation-delay:2s;"></div>
+<div class="particle" style="left:28%;animation-delay:4s;"></div>
+<div class="particle" style="left:42%;animation-delay:1s;"></div>
+<div class="particle" style="left:57%;animation-delay:3s;"></div>
+<div class="particle" style="left:70%;animation-delay:5s;"></div>
+<div class="particle" style="left:82%;animation-delay:2s;"></div>
+<div class="particle" style="left:94%;animation-delay:4s;"></div>
+
+<div class="container">
+
+<header>
+    <div class="lab-icon">🧪</div>
+
+    <div class="badge">
+        SCIENCE • EXPERIMENTS • DISCOVERY
+    </div>
+
+    <h1>Happy Teachers' Day</h1>
+
+    <p class="subtitle">
+        Celebrating a teacher who turns science from theory into experience.
+    </p>
+</header>
+
+<section class="teacher-card">
+
+    <h2>Sudhanshu Sir</h2>
+
+    <p>
+        <strong>Science Teacher</strong> • Practical Learning Specialist
+    </p>
+
+    <div class="science-grid">
+
+        <div class="science-card">
+            <div class="icon">🔬</div>
+            <h3>Observe</h3>
+            <p>
+                Encouraging students to observe science happening around them.
+            </p>
+        </div>
+
+        <div class="science-card">
+            <div class="icon">🧪</div>
+            <h3>Experiment</h3>
+            <p>
+                Turning scientific concepts into practical experiments.
+            </p>
+        </div>
+
+        <div class="science-card">
+            <div class="icon">💡</div>
+            <h3>Understand</h3>
+            <p>
+                Making difficult concepts easier through demonstrations.
+            </p>
+        </div>
+
+        <div class="science-card">
+            <div class="icon">🚀</div>
+            <h3>Discover</h3>
+            <p>
+                Inspiring students to ask questions and discover answers.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="experiment">
+
+    <h2>🧪 A Little Practical Science</h2>
+
+    <p class="experiment-intro">
+        Because with Sudhanshu Sir, science isn't only something we read —
+        it's something we experience.
+    </p>
+
+    <div class="lab">
+
+        <div class="beaker">
+
+            <div class="liquid"></div>
+
+            <div class="bubble b1"></div>
+            <div class="bubble b2"></div>
+            <div class="bubble b3"></div>
+
+        </div>
+
+    </div>
+
+    <button onclick="runExperiment()">
+        ⚡ Start Experiment
+    </button>
+
+    <p id="experimentText" style="margin-top:18px;color:#55ffe1;">
+        Ready for the experiment...
+    </p>
+
+</section>
+
+<section class="message">
+
+    <h2>Dear Sudhanshu Sir ❤️</h2>
+
+    <p>
+        Thank you for showing us that science is not just about
+        remembering formulas and definitions. You make it something
+        we can <strong>see, touch, test and understand</strong>.
+        <br><br>
+        Your practical approach makes every experiment an opportunity
+        to learn something new. You teach us to stay curious,
+        ask questions and never be afraid to experiment.
+        <br><br>
+        Thank you for making science an experience rather than
+        just a subject.
+    </p>
+
+</section>
+
+<div class="final">
+
+    <h2>
+        Happy Teachers' Day,
+        <span>Sudhanshu Sir!</span> 🧪🔬
+    </h2>
+
+    <p style="margin-top:15px;color:#9db6b9;">
+        Keep inspiring curious minds. ✨
+    </p>
+
+</div>
+
+<footer>
+    Made with ❤️ to celebrate a wonderful science teacher
+</footer>
+
+</div>
+
+<script>
+
+function runExperiment() {
+
+    const text = document.getElementById("experimentText");
+
+    const messages = [
+        "🧪 Mixing the chemicals...",
+        "⚗️ Reaction started...",
+        "🫧 Bubbles forming...",
+        "🔬 Observing the reaction...",
+        "💡 Science in action!",
+        "🚀 Experiment complete — curiosity never ends!"
+    ];
+
+    let i = 0;
+
+    text.textContent = messages[i];
+
+    const interval = setInterval(() => {
+
+        i++;
+
+        if (i >= messages.length) {
+            clearInterval(interval);
+            return;
+        }
+
+        text.textContent = messages[i];
+
+    }, 900);
+}
+
+</script>
+
+</body>
+</html>
+```

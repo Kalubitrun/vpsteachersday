@@ -348,6 +348,23 @@
       z-index: 2;
     }
 
+    /* Teacher's actual photo */
+    .photo-placeholder .teacher-photo {
+      display: block !important;
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+
+    /* Only visible if the image path is incorrect/missing */
+    .photo-placeholder .image-fallback {
+      display: none;
+    }
+
     .placeholder-content {
       z-index: 1;
     }
@@ -792,13 +809,20 @@
             <div class="photo-placeholder">
               <div class="scan-line"></div>
               
-              <div class="placeholder-content">
+              <img
+                src="./images/rashmisrivastavmaam.jpeg"
+                alt="Rashami Srivastav Ma'am"
+                class="teacher-photo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; console.error('Teacher image not found: ./images/rashmisrivastavmaam.jpeg');"
+              >
+
+              <div class="placeholder-content image-fallback">
                 <div style="font-size: 3rem; margin-bottom: 10px;">👩‍🔬</div>
                 <div style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--cyan-glow);">
                   RASHAMI SRIVASTAV
                 </div>
                 <div style="font-size: 0.8rem; color: var(--text-dim); margin-top: 5px;">
-                  [ Insert Photo Here ]
+                  Photo not found
                 </div>
               </div>
 
