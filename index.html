@@ -733,11 +733,11 @@
 
             border-radius: 50%;
 
-            display: grid;
+            display: block;
 
-            place-items: center;
+            object-fit: cover;
 
-            font-size: 72px;
+            object-position: center;
 
             background:
                 linear-gradient(
@@ -1996,8 +1996,6 @@
                 width: 135px;
 
                 height: 135px;
-
-                font-size: 60px;
             }
 
 
@@ -2267,11 +2265,12 @@
 
         <section class="principal">
 
-            <div class="principal-photo">
-
-                👨‍🏫
-
-            </div>
+            <img
+                class="principal-photo"
+                src="images/principal.jpeg"
+                alt="Principal Sir"
+                loading="eager"
+            >
 
 
             <div class="principal-content">
