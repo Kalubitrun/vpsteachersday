@@ -1,0 +1,792 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Teacher's Day | Anamika Ma'am 🐼</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: "Comic Sans MS", "Trebuchet MS", sans-serif;
+    background:
+        radial-gradient(circle at 15% 15%, #ffffff 0 8px, transparent 9px),
+        radial-gradient(circle at 85% 30%, #ffffff 0 6px, transparent 7px),
+        linear-gradient(135deg, #ffe6f2, #e8ddff, #dff8ff);
+    color: #333;
+}
+
+/* Floating Decorations */
+.float {
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+    animation: floatAround 7s ease-in-out infinite;
+}
+
+.panda1 {
+    top: 10%;
+    left: 4%;
+    font-size: 55px;
+}
+
+.panda2 {
+    right: 4%;
+    top: 17%;
+    font-size: 48px;
+    animation-delay: 1.5s;
+}
+
+.panda3 {
+    left: 5%;
+    bottom: 12%;
+    font-size: 42px;
+    animation-delay: 3s;
+}
+
+.panda4 {
+    right: 5%;
+    bottom: 10%;
+    font-size: 52px;
+    animation-delay: 2s;
+}
+
+.star1 {
+    left: 20%;
+    top: 12%;
+    font-size: 30px;
+    animation-delay: 1s;
+}
+
+.star2 {
+    right: 20%;
+    bottom: 20%;
+    font-size: 35px;
+    animation-delay: 2.5s;
+}
+
+@keyframes floatAround {
+    0%,100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-22px) rotate(7deg);
+    }
+}
+
+/* Main */
+.container {
+    position: relative;
+    z-index: 2;
+    width: min(950px, 94%);
+    margin: auto;
+    padding: 35px 0 60px;
+    text-align: center;
+}
+
+/* Top Badge */
+.badge {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 50px;
+    background: white;
+    color: #7254c7;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(80,50,120,.12);
+    transform: rotate(-2deg);
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: clamp(40px, 8vw, 76px);
+    line-height: 1.05;
+    color: #7557cf;
+    text-shadow:
+        4px 4px white,
+        7px 7px rgba(117,87,207,.12);
+}
+
+.main-subtitle {
+    margin-top: 12px;
+    font-size: clamp(18px, 3vw, 25px);
+    color: #555;
+}
+
+/* Main Card */
+.card {
+    margin: 35px auto 0;
+    padding: 38px 30px;
+    background: rgba(255,255,255,.9);
+    border: 5px solid white;
+    border-radius: 38px;
+    box-shadow:
+        0 25px 70px rgba(70,50,110,.18),
+        0 8px 20px rgba(0,0,0,.07);
+    backdrop-filter: blur(8px);
+}
+
+/* Panda Header */
+.panda-header {
+    font-size: 60px;
+    margin-bottom: 8px;
+    animation: pandaBounce 2s infinite;
+}
+
+@keyframes pandaBounce {
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Photo */
+.photo-ring {
+    width: 245px;
+    height: 245px;
+    margin: 5px auto 25px;
+    padding: 9px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #222, #8066d9, #ff9ac0);
+    box-shadow: 0 15px 35px rgba(70,50,100,.2);
+}
+
+.teacher-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid white;
+    background: #f5f5f5;
+}
+
+/* If photo missing */
+.photo-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 6px solid white;
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+}
+
+.photo-placeholder .emoji {
+    font-size: 58px;
+}
+
+.photo-placeholder small {
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+/* Name */
+.teacher-name {
+    font-size: clamp(32px, 6vw, 52px);
+    color: #4e3c91;
+    margin-bottom: 7px;
+}
+
+.role {
+    display: inline-block;
+    background: #ffe4ef;
+    color: #d34c7a;
+    padding: 9px 18px;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* Message */
+.message {
+    max-width: 720px;
+    margin: 28px auto;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.message strong {
+    color: #6950b8;
+}
+
+.quote {
+    margin: 25px 0;
+    padding: 20px;
+    border-radius: 22px;
+    background: #f1edff;
+    border: 3px dashed #aa94eb;
+    color: #574a8c;
+    font-size: 18px;
+    font-style: italic;
+}
+
+/* Panda Facts */
+.panda-section {
+    margin: 30px auto;
+    max-width: 700px;
+}
+
+.panda-title {
+    font-size: 27px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.panda-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.panda-box {
+    padding: 18px 10px;
+    background: white;
+    border-radius: 22px;
+    box-shadow: 0 8px 20px rgba(60,40,100,.1);
+    transition: .3s;
+}
+
+.panda-box:hover {
+    transform: translateY(-8px) rotate(2deg);
+}
+
+.panda-box .icon {
+    font-size: 40px;
+}
+
+.panda-box p {
+    margin-top: 7px;
+    color: #666;
+    font-size: 14px;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+/* Gift */
+.gift-area {
+    margin-top: 38px;
+    padding-top: 30px;
+    border-top: 2px dashed #ddd;
+}
+
+.gift-heading {
+    color: #e7537d;
+    font-size: 28px;
+}
+
+.gift-instruction {
+    color: #777;
+    font-family: "Trebuchet MS", sans-serif;
+    margin: 7px 0 30px;
+}
+
+/* Gift Box */
+.gift {
+    width: 160px;
+    height: 145px;
+    position: relative;
+    margin: auto;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.gift:hover {
+    transform: scale(1.08);
+}
+
+.box {
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    width: 130px;
+    height: 95px;
+    background: linear-gradient(135deg, #8a6be0, #6d4cc9);
+    border-radius: 8px 8px 15px 15px;
+    box-shadow: 0 14px 25px rgba(80,60,150,.25);
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    left: 55px;
+    background: #ffd65a;
+}
+
+.lid {
+    position: absolute;
+    z-index: 5;
+    top: 35px;
+    left: 4px;
+    width: 152px;
+    height: 30px;
+    border-radius: 8px;
+    background: #7959d6;
+    transition: .8s;
+    box-shadow: 0 5px 10px rgba(0,0,0,.15);
+}
+
+.lid::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    left: 66px;
+    background: #ffd65a;
+}
+
+/* Bow */
+.bow-left,
+.bow-right {
+    position: absolute;
+    z-index: 7;
+    top: 8px;
+    width: 48px;
+    height: 34px;
+    background: #ffd65a;
+    border-radius: 50%;
+}
+
+.bow-left {
+    left: 38px;
+    transform: rotate(25deg);
+}
+
+.bow-right {
+    right: 38px;
+    transform: rotate(-25deg);
+}
+
+.bow-center {
+    position: absolute;
+    z-index: 8;
+    left: 70px;
+    top: 18px;
+    width: 19px;
+    height: 19px;
+    background: #f1b92e;
+    border-radius: 50%;
+}
+
+/* Open */
+.gift.open .lid {
+    transform: translateY(-75px) rotate(-7deg);
+}
+
+/* Gift Message */
+.gift-message {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: 1s ease;
+    max-width: 650px;
+    margin: auto;
+}
+
+.gift.open ~ .gift-message {
+    max-height: 400px;
+    opacity: 1;
+    margin-top: 25px;
+}
+
+.gift-note {
+    padding: 25px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #fff4c7, #ffe3ef);
+    border: 3px solid #ffd05a;
+}
+
+.gift-note h3 {
+    color: #df4f75;
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.gift-note p {
+    font-family: "Trebuchet MS", sans-serif;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* Footer */
+.footer {
+    margin-top: 30px;
+    font-family: "Trebuchet MS", sans-serif;
+    color: #777;
+    font-size: 14px;
+}
+
+.heart {
+    color: #ed557c;
+    display: inline-block;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+    50% {
+        transform: scale(1.3);
+    }
+}
+
+/* Confetti */
+.confetti {
+    position: fixed;
+    top: -20px;
+    z-index: 100;
+    pointer-events: none;
+    animation: confettiFall 4s linear forwards;
+}
+
+@keyframes confettiFall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Mobile */
+@media(max-width: 650px) {
+
+    .card {
+        padding: 28px 15px;
+        border-radius: 28px;
+    }
+
+    .photo-ring {
+        width: 195px;
+        height: 195px;
+    }
+
+    .panda-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .float {
+        opacity: .7;
+    }
+
+    .panda1,
+    .panda2 {
+        font-size: 38px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating Pandas & Decorations -->
+<div class="float panda1">🐼</div>
+<div class="float panda2">🐼</div>
+<div class="float panda3">🐼</div>
+<div class="float panda4">🐼</div>
+
+<div class="float star1">⭐</div>
+<div class="float star2">✨</div>
+
+
+<div class="container">
+
+    <div class="badge">
+        🌸 5th September • Teacher's Day 🌸
+    </div>
+
+    <h1>Happy Teacher's Day!</h1>
+
+    <div class="main-subtitle">
+        A special wish for our amazing teacher 💜
+    </div>
+
+
+    <div class="card">
+
+        <div class="panda-header">🐼</div>
+
+        <!-- ==========================================
+             ADD ANAMIKA MAAM'S PHOTO HERE
+
+             Put the photo at:
+             images/anamika.jpg
+             ========================================== -->
+
+        <div class="photo-ring">
+
+            <img
+                src="images/anamika.jpeg"
+                alt="Anamika Ma'am"
+                class="teacher-photo"
+                onerror="
+                    this.style.display='none';
+                    document.getElementById('photoPlaceholder').style.display='flex';
+                "
+            >
+
+            <div
+                class="photo-placeholder"
+                id="photoPlaceholder"
+                style="display:none;"
+            >
+                <div class="emoji">👩‍🏫</div>
+                <b>Add Anamika Ma'am's Photo</b>
+                <small>images/anamika.jpg</small>
+            </div>
+
+        </div>
+
+
+        <h2 class="teacher-name">
+            Anamika Ma'am 🌷
+        </h2>
+
+        <div class="role">
+            🐼 Our Wonderful Teacher 🐼
+        </div>
+
+
+        <div class="message">
+
+            <p>
+                Dear <strong>Anamika Ma'am</strong>,
+            </p>
+
+            <br>
+
+            <p>
+                On this special day, we want to say a big
+                <strong>THANK YOU</strong> for making every lesson
+                more interesting, every day more enjoyable,
+                and every little achievement more special. 🌟
+            </p>
+
+            <br>
+
+            <p>
+                Just like a panda makes everyone smile,
+                your kindness, patience and cheerful nature
+                bring happiness to your students. 🐼💜
+            </p>
+
+            <div class="quote">
+                "The best teachers don't just teach lessons —
+                they leave little pieces of inspiration in our hearts." 🌸
+            </div>
+
+            <p>
+                Thank you for always encouraging us,
+                helping us learn and believing in us.
+                We are lucky to have a teacher like you! ❤️
+            </p>
+
+        </div>
+
+
+        <!-- Panda Section -->
+        <div class="panda-section">
+
+            <div class="panda-title">
+                🐼 A Little Panda Love For You 🐼
+            </div>
+
+            <div class="panda-cards">
+
+                <div class="panda-box">
+                    <div class="icon">🐼</div>
+                    <b>Kind</b>
+                    <p>Always caring and supportive.</p>
+                </div>
+
+                <div class="panda-box">
+                    <div class="icon">🎓</div>
+                    <b>Inspiring</b>
+                    <p>Helping students grow every day.</p>
+                </div>
+
+                <div class="panda-box">
+                    <div class="icon">💜</div>
+                    <b>Special</b>
+                    <p>A teacher we will always remember.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Gift -->
+        <div class="gift-area">
+
+            <div class="gift-heading">
+                🎁 A Special Gift For You!
+            </div>
+
+            <div class="gift-instruction">
+                Click the gift box to discover your surprise 💝
+            </div>
+
+
+            <div class="gift" id="gift">
+
+                <div class="bow-left"></div>
+                <div class="bow-right"></div>
+                <div class="bow-center"></div>
+
+                <div class="lid"></div>
+
+                <div class="box"></div>
+
+            </div>
+
+
+            <div class="gift-message">
+
+                <div class="gift-note">
+
+                    <h3>
+                        🐼 Surprise, Anamika Ma'am! 🌷
+                    </h3>
+
+                    <p>
+                        This little gift carries a BIG thank you!
+                        Thank you for your patience, your kindness,
+                        your guidance and all the wonderful memories
+                        you create in the classroom.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        May you always have reasons to smile,
+                        wonderful students to be proud of,
+                        and lots of happiness in your life! ✨
+                    </p>
+
+                    <br>
+
+                    <p>
+                        <strong>
+                            Happy Teacher's Day, Anamika Ma'am! ❤️
+                        </strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+            Made with <span class="heart">♥</span>
+            and lots of panda love 🐼
+            for Anamika Ma'am
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* ==========================================
+   INTERACTIVE GIFT
+   ========================================== */
+
+const gift = document.getElementById("gift");
+
+gift.addEventListener("click", function () {
+
+    this.classList.toggle("open");
+
+    if (this.classList.contains("open")) {
+        createConfetti();
+    }
+
+});
+
+
+/* ==========================================
+   CONFETTI
+   ========================================== */
+
+function createConfetti() {
+
+    const emojis = [
+        "🐼",
+        "❤️",
+        "💜",
+        "⭐",
+        "✨",
+        "🌸",
+        "🎉",
+        "🎁"
+    ];
+
+    for (let i = 0; i < 70; i++) {
+
+        const piece = document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.innerText =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+        piece.style.fontSize =
+            (12 + Math.random() * 18) + "px";
+
+        piece.style.animationDuration =
+            (2.5 + Math.random() * 3) + "s";
+
+        piece.style.animationDelay =
+            Math.random() * .7 + "s";
+
+        document.body.appendChild(piece);
+
+        setTimeout(() => {
+            piece.remove();
+        }, 5500);
+    }
+}
+
+
+/* ==========================================
+   LITTLE PANDA CLICK EFFECT
+   ========================================== */
+
+document.querySelectorAll(".panda-box").forEach(box => {
+
+    box.addEventListener("click", () => {
+
+        box.style.transform = "scale(1.08) rotate(3deg)";
+
+        setTimeout(() => {
+            box.style.transform = "";
+        }, 400);
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
+```

@@ -1,0 +1,671 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Teacher's Day | Ashish Maurya Sir</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #07111f;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(0, 210, 255, 0.15), transparent 30%),
+                radial-gradient(circle at 80% 80%, rgba(255, 193, 7, 0.12), transparent 30%),
+                linear-gradient(135deg, #07111f, #0c1d32, #07111f);
+        }
+
+        .grid {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            opacity: 0.12;
+            background-image:
+                linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* Floating economics symbols */
+        .symbol {
+            position: fixed;
+            color: rgba(255, 193, 7, 0.15);
+            font-size: 45px;
+            animation: float 7s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        .s1 { left: 8%; top: 20%; }
+        .s2 { right: 10%; top: 25%; animation-delay: 1s; }
+        .s3 { left: 15%; bottom: 15%; animation-delay: 2s; }
+        .s4 { right: 18%; bottom: 20%; animation-delay: 3s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(8deg); }
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .hero-content {
+            max-width: 950px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid rgba(255,193,7,.5);
+            border-radius: 50px;
+            color: #ffd54f;
+            background: rgba(255,193,7,.08);
+            backdrop-filter: blur(10px);
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: clamp(45px, 8vw, 90px);
+            line-height: 1;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #fff, #ffd54f, #00d9ff, #fff);
+            background-size: 300%;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradient 5s linear infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0%; }
+            100% { background-position: 300%; }
+        }
+
+        .sir {
+            color: #ffd54f;
+            font-size: clamp(28px, 5vw, 48px);
+            margin-bottom: 25px;
+        }
+
+        .subtitle {
+            color: #b9c9da;
+            font-size: 19px;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        .btn {
+            margin-top: 35px;
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #ffc107, #ff9800);
+            color: #101010;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 10px 35px rgba(255,193,7,.25);
+            transition: .3s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 15px 45px rgba(255,193,7,.4);
+        }
+
+        /* Sections */
+        section {
+            padding: 90px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #ffd54f;
+        }
+
+        /* Teacher Card */
+        .teacher-card {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 50px;
+            align-items: center;
+            padding: 35px;
+            border: 1px solid rgba(255,255,255,.1);
+            background: rgba(255,255,255,.05);
+            border-radius: 30px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 70px rgba(0,0,0,.3);
+        }
+
+        .photo-wrapper {
+            position: relative;
+        }
+
+        .teacher-photo {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 25px;
+            border: 4px solid #ffd54f;
+            box-shadow:
+                0 0 0 8px rgba(255,193,7,.08),
+                0 20px 50px rgba(0,0,0,.4);
+        }
+
+        .photo-wrapper::after {
+            content: "ECONOMICS";
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
+            padding: 10px;
+            text-align: center;
+            background: rgba(0,0,0,.65);
+            border-radius: 12px;
+            color: #ffd54f;
+            letter-spacing: 3px;
+            font-weight: bold;
+            backdrop-filter: blur(8px);
+        }
+
+        .teacher-info h2 {
+            font-size: 42px;
+            margin-bottom: 8px;
+        }
+
+        .teacher-info .subject {
+            color: #00d9ff;
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .teacher-info p {
+            color: #c6d2df;
+            line-height: 1.9;
+            font-size: 17px;
+        }
+
+        /* Economics cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            padding: 30px;
+            border-radius: 22px;
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(255,255,255,.09);
+            text-align: center;
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255,193,7,.5);
+            background: rgba(255,193,7,.07);
+        }
+
+        .icon {
+            font-size: 50px;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            color: #ffd54f;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #aebdcb;
+            line-height: 1.7;
+        }
+
+        /* Graph */
+        .graph-box {
+            margin-top: 60px;
+            padding: 30px;
+            background: rgba(255,255,255,.04);
+            border-radius: 25px;
+            border: 1px solid rgba(255,255,255,.08);
+        }
+
+        .graph {
+            height: 260px;
+            position: relative;
+            border-left: 2px solid #607080;
+            border-bottom: 2px solid #607080;
+            margin: 30px 20px 10px;
+            overflow: hidden;
+        }
+
+        .graph::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(
+                    to bottom,
+                    transparent 0,
+                    transparent 49px,
+                    rgba(255,255,255,.07) 50px
+                );
+        }
+
+        .curve {
+            position: absolute;
+            width: 85%;
+            height: 180px;
+            left: 7%;
+            top: 35px;
+            border-top: 4px solid #00d9ff;
+            transform: rotate(-12deg);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0,217,255,.5);
+        }
+
+        .graph-label {
+            color: #8fa2b5;
+            font-size: 13px;
+        }
+
+        /* Message */
+        .message {
+            text-align: center;
+            max-width: 850px;
+            margin: auto;
+            padding: 55px 35px;
+            border-radius: 30px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,193,7,.08),
+                    rgba(0,217,255,.06)
+                );
+            border: 1px solid rgba(255,193,7,.25);
+        }
+
+        .quote {
+            font-size: clamp(25px, 4vw, 38px);
+            line-height: 1.5;
+            color: white;
+        }
+
+        .quote span {
+            color: #ffd54f;
+        }
+
+        .heart {
+            font-size: 55px;
+            margin: 25px 0;
+            animation: heartbeat 1.4s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            color: #718397;
+            border-top: 1px solid rgba(255,255,255,.08);
+        }
+
+        footer strong {
+            color: #ffd54f;
+        }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            width: 9px;
+            height: 14px;
+            top: -20px;
+            z-index: 999;
+            pointer-events: none;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(720deg);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+            .teacher-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .photo-wrapper {
+                max-width: 330px;
+                margin: auto;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .teacher-info h2 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+PARI GUPTA
+
+    <div class="background"></div>
+    <div class="grid"></div>
+
+    <!-- Economics floating symbols -->
+    <div class="symbol s1">₹</div>
+    <div class="symbol s2">📈</div>
+    <div class="symbol s3">%</div>
+    <div class="symbol s4">💰</div>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-content">
+
+            <div class="badge">5 SEPTEMBER • TEACHER'S DAY</div>
+
+            <h1>Happy Teacher's Day</h1>
+
+            <div class="sir">
+                Ashish Maurya Sir
+            </div>
+
+            <p class="subtitle">
+                To the teacher who makes Economics more than just a subject —
+                you make it a way of understanding the world.
+            </p>
+
+            <a href="#teacher" class="btn">
+                Discover the Inspiration ↓
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- TEACHER -->
+    <section id="teacher">
+        <div class="container">
+
+            <h2 class="section-title">
+                Meet Our <span>Inspiration</span>
+            </h2>
+
+            <div class="teacher-card">
+
+                <div class="photo-wrapper">
+
+                    <!--
+                        REPLACE "teacher-photo.jpg"
+                        WITH YOUR TEACHER'S PHOTO
+                    -->
+                    <img
+                        src="images/ashish.jpg"
+                        alt="Ashish Maurya Sir"
+                        class="teacher-photo"
+                    >
+
+                </div>
+
+                <div class="teacher-info">
+
+                    <h2>Ashish Maurya Sir</h2>
+
+                    <div class="subject">
+                        📊 Economics Teacher
+                    </div>
+
+                    <p>
+                        Some teachers teach from books, but great teachers
+                        teach us how to think. Ashish Maurya Sir has a special
+                        way of making Economics interesting, understandable
+                        and connected to real life.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        His smart teaching, confidence, knowledge and
+                        wonderful personality make every class memorable.
+                        He doesn't just explain concepts — he inspires
+                        students to look at the world differently.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ECONOMICS -->
+    <section>
+        <div class="container">
+
+            <h2 class="section-title">
+                Economics <span>with Sir</span>
+            </h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="icon">📈</div>
+                    <h3>Growth</h3>
+                    <p>
+                        Just like economic growth, Sir helps his students
+                        grow in knowledge, confidence and understanding.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">💡</div>
+                    <h3>Smart Thinking</h3>
+                    <p>
+                        Economics teaches us to think logically, and Sir
+                        makes every concept easier with his smart teaching.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">₹</div>
+                    <h3>Real World</h3>
+                    <p>
+                        From inflation to markets, Sir connects classroom
+                        concepts with the world around us.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Animated graph -->
+            <div class="graph-box">
+
+                <h3 style="color:#ffd54f; text-align:center;">
+                    📊 The "Knowledge Curve"
+                </h3>
+
+                <div class="graph">
+                    <div class="curve"></div>
+                </div>
+
+                <div style="display:flex; justify-content:space-between;">
+                    <span class="graph-label">Beginning</span>
+                    <span class="graph-label">Learning</span>
+                    <span class="graph-label">Success</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- WISH -->
+    <section>
+
+        <div class="container">
+
+            <div class="message">
+
+                <div class="heart">❤️</div>
+
+                <div class="quote">
+                    "A great teacher doesn't just teach a subject,
+                    <span>they leave an impact.</span>"
+                </div>
+
+                <br>
+
+                <p style="color:#b8c6d5; line-height:1.8;">
+                    Dear Ashish Maurya Sir, thank you for your patience,
+                    guidance, knowledge and for making every Economics
+                    lesson something worth remembering.
+                </p>
+
+                <br>
+
+                <h2 style="color:#ffd54f;">
+                    Happy Teacher's Day, Sir! 🎓
+                </h2>
+
+                <p style="margin-top:15px; color:#9fb0c1;">
+                    May your knowledge continue to inspire hundreds of
+                    students and your smile continue to brighten every class.
+                </p>
+
+                <button class="btn" onclick="celebrate()">
+                    🎉 Celebrate Teacher's Day
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        Made with ❤️ &nbsp; for <strong>Ashish Maurya Sir</strong>
+        <br><br>
+        📊 Economics • Knowledge • Inspiration • Success
+    </footer>
+
+
+    <script>
+
+        // Teacher's Day celebration
+        function celebrate() {
+
+            const colors = [
+                "#ffd54f",
+                "#00d9ff",
+                "#ff4081",
+                "#ffffff",
+                "#7cff6b"
+            ];
+
+            for (let i = 0; i < 100; i++) {
+
+                const confetti = document.createElement("div");
+
+                confetti.classList.add("confetti");
+
+                confetti.style.left =
+                    Math.random() * 100 + "vw";
+
+                confetti.style.background =
+                    colors[Math.floor(Math.random() * colors.length)];
+
+                confetti.style.animationDuration =
+                    (Math.random() * 3 + 2) + "s";
+
+                confetti.style.transform =
+                    `rotate(${Math.random() * 360}deg)`;
+
+                document.body.appendChild(confetti);
+
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5500);
+            }
+
+            // Change button text
+            const button = document.querySelector(".message .btn");
+
+            button.innerHTML = "❤️ Thank You, Sir!";
+
+            setTimeout(() => {
+                button.innerHTML = "🎉 Celebrate Teacher's Day";
+            }, 3000);
+        }
+
+
+        // Small welcome effect when page loads
+        window.addEventListener("load", () => {
+
+            document.body.style.opacity = "0";
+
+            setTimeout(() => {
+                document.body.style.transition = "opacity 1.2s ease";
+                document.body.style.opacity = "1";
+            }, 100);
+
+        });
+
+    </script>
+
+</body>
+</html>
+```

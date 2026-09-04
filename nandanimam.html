@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Teachers' Day | Nandani Patel Ma'am</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Poppins", "Segoe UI", sans-serif;
+        min-height: 100vh;
+        overflow-x: hidden;
+        background:
+            radial-gradient(circle at top left, #ffd6ef, transparent 35%),
+            radial-gradient(circle at bottom right, #d9b3ff, transparent 35%),
+            linear-gradient(135deg, #ffedf8, #eadcff, #ffd8ef);
+        color: #4b174f;
+        cursor: pointer;
+    }
+
+    /* Animated background */
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        background:
+            radial-gradient(circle, rgba(255,255,255,.5) 2px, transparent 3px);
+        background-size: 45px 45px;
+        animation: backgroundMove 12s linear infinite;
+    }
+
+    @keyframes backgroundMove {
+        from { background-position: 0 0; }
+        to { background-position: 90px 90px; }
+    }
+
+    /* Floating hearts */
+    .heart {
+        position: fixed;
+        bottom: -30px;
+        color: #ff65ad;
+        font-size: 22px;
+        animation: floatUp 7s linear infinite;
+        opacity: .65;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    @keyframes floatUp {
+        0% {
+            transform: translateY(0) rotate(0);
+            opacity: 0;
+        }
+        15% {
+            opacity: .7;
+        }
+        100% {
+            transform: translateY(-110vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    .container {
+        width: min(1100px, 94%);
+        margin: auto;
+        padding: 35px 0 70px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Header */
+    .badge {
+        display: inline-block;
+        padding: 10px 25px;
+        border-radius: 50px;
+        background: rgba(255,255,255,.55);
+        border: 1px solid rgba(255,255,255,.8);
+        backdrop-filter: blur(10px);
+        color: #8c2b87;
+        font-weight: 700;
+        letter-spacing: 2px;
+        box-shadow: 0 8px 25px rgba(133, 48, 130, .15);
+        animation: pulse 2.5s infinite;
+    }
+
+    @keyframes pulse {
+        50% {
+            transform: scale(1.05);
+        }
+    }
+
+    h1 {
+        margin-top: 18px;
+        font-size: clamp(2.8rem, 8vw, 6rem);
+        line-height: 1;
+        background: linear-gradient(90deg, #e72f91, #8b3dcc, #d52e91);
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: titleGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes titleGlow {
+        50% {
+            filter: drop-shadow(0 0 15px rgba(218, 53, 154, .45));
+        }
+    }
+
+    .subtitle {
+        font-size: clamp(1rem, 3vw, 1.4rem);
+        margin: 18px auto 30px;
+        max-width: 750px;
+        color: #693565;
+    }
+
+    /* Teacher card */
+    .teacher-card {
+        width: min(850px, 100%);
+        margin: 35px auto;
+        padding: 35px 25px;
+        border-radius: 35px;
+        background: rgba(255,255,255,.38);
+        border: 2px solid rgba(255,255,255,.7);
+        backdrop-filter: blur(18px);
+        box-shadow: 0 25px 70px rgba(113, 37, 113, .18);
+        animation: cardAppear 1.2s ease;
+    }
+
+    @keyframes cardAppear {
+        from {
+            opacity: 0;
+            transform: translateY(40px) scale(.95);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    /* Curly/wavy photo */
+    .photo-frame {
+        width: 245px;
+        height: 245px;
+        margin: auto;
+        padding: 8px;
+        position: relative;
+        background: linear-gradient(135deg, #ff54a7, #8b43dc, #ff8aca);
+        border-radius: 48% 52% 46% 54% / 55% 43% 57% 45%;
+        animation: wavy 5s ease-in-out infinite, photoGlow 3s infinite;
+    }
+
+    @keyframes wavy {
+        0%,100% {
+            border-radius: 48% 52% 46% 54% / 55% 43% 57% 45%;
+        }
+        50% {
+            border-radius: 55% 45% 53% 47% / 45% 58% 42% 55%;
+        }
+    }
+
+    @keyframes photoGlow {
+        50% {
+            box-shadow: 0 0 40px rgba(218, 54, 168, .55);
+        }
+    }
+
+    .photo-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: inherit;
+        border: 6px solid white;
+        display: block;
+    }
+
+    .photo-hint {
+        margin-top: 12px;
+        color: #8b4b8c;
+        font-size: .8rem;
+    }
+
+    .teacher-name {
+        margin-top: 20px;
+        font-size: clamp(2rem, 5vw, 3rem);
+        color: #762577;
+    }
+
+    .subject {
+        margin-top: 5px;
+        font-size: 1.1rem;
+        color: #d22c87;
+        font-weight: 700;
+    }
+
+    /* Creators */
+    .creators {
+        margin-top: 20px;
+        font-size: .95rem;
+        color: #693565;
+    }
+
+    .creators strong {
+        color: #922e89;
+    }
+
+    /* Sports decoration */
+    .sports {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin: 25px 0;
+    }
+
+    .sport-item {
+        width: 65px;
+        height: 65px;
+        border-radius: 20px;
+        display: grid;
+        place-items: center;
+        font-size: 2rem;
+        background: rgba(255,255,255,.55);
+        box-shadow: 0 10px 25px rgba(110,40,120,.15);
+        animation: sportFloat 3s ease-in-out infinite;
+    }
+
+    .sport-item:nth-child(2) { animation-delay: .4s; }
+    .sport-item:nth-child(3) { animation-delay: .8s; }
+    .sport-item:nth-child(4) { animation-delay: 1.2s; }
+    .sport-item:nth-child(5) { animation-delay: 1.6s; }
+
+    @keyframes sportFloat {
+        50% {
+            transform: translateY(-10px) rotate(5deg);
+        }
+    }
+
+    /* Quote */
+    .quote {
+        width: min(760px, 100%);
+        margin: 35px auto;
+        padding: 30px;
+        border-radius: 28px;
+        background: linear-gradient(135deg, rgba(255,255,255,.7), rgba(255,221,244,.6));
+        border-left: 6px solid #d52e91;
+        box-shadow: 0 15px 40px rgba(112, 42, 116, .15);
+        position: relative;
+    }
+
+    .quote::before {
+        content: "❝";
+        position: absolute;
+        left: 15px;
+        top: -20px;
+        font-size: 5rem;
+        color: #ed6aaf;
+        opacity: .3;
+    }
+
+    .quote p {
+        font-size: clamp(1.1rem, 3vw, 1.45rem);
+        font-style: italic;
+        line-height: 1.7;
+        color: #61325f;
+    }
+
+    .quote .quote-author {
+        margin-top: 12px;
+        font-style: normal;
+        font-size: .9rem;
+        color: #a12c85;
+        font-weight: bold;
+    }
+
+    /* Surprise section */
+    .surprise-title {
+        color: #762577;
+        margin: 45px 0 20px;
+        font-size: 2rem;
+    }
+
+    .boxes {
+        display: flex;
+        justify-content: center;
+        gap: 22px;
+        flex-wrap: wrap;
+    }
+
+    .box {
+        width: 180px;
+        height: 150px;
+        border: none;
+        cursor: pointer;
+        background: transparent;
+        perspective: 800px;
+    }
+
+    .box-inner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition: transform .7s;
+        transform-style: preserve-3d;
+    }
+
+    .box.open .box-inner {
+        transform: rotateY(180deg);
+    }
+
+    .box-front,
+    .box-back {
+        position: absolute;
+        inset: 0;
+        border-radius: 25px;
+        backface-visibility: hidden;
+        display: grid;
+        place-items: center;
+        padding: 15px;
+        box-shadow: 0 15px 35px rgba(115, 42, 123, .18);
+    }
+
+    .box-front {
+        background: linear-gradient(135deg, #ff6cb5, #a344dc);
+        color: white;
+        font-size: 2.7rem;
+    }
+
+    .box-front small {
+        display: block;
+        font-size: .75rem;
+        margin-top: 5px;
+    }
+
+    .box-back {
+        background: white;
+        color: #762577;
+        transform: rotateY(180deg);
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+        margin-top: 45px;
+        padding: 25px;
+        color: #663461;
+    }
+
+    footer .class-name {
+        color: #9a2c89;
+        font-weight: 800;
+        font-size: 1.1rem;
+    }
+
+    /* Tulips */
+    .tulip {
+        position: fixed;
+        pointer-events: none;
+        z-index: 100;
+        font-size: 42px;
+        animation: tulipPop 2.5s ease-out forwards;
+    }
+
+    @keyframes tulipPop {
+        0% {
+            transform: scale(0) rotate(-20deg);
+            opacity: 0;
+        }
+        25% {
+            transform: scale(1.3) rotate(10deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-130px) scale(.75) rotate(-10deg);
+            opacity: 0;
+        }
+    }
+
+    /* Sparkles */
+    .sparkle {
+        position: fixed;
+        pointer-events: none;
+        z-index: 90;
+        color: #fff;
+        font-size: 20px;
+        animation: sparkle 1.2s ease-out forwards;
+    }
+
+    @keyframes sparkle {
+        0% {
+            transform: scale(0);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(2) translateY(-50px);
+            opacity: 0;
+        }
+    }
+
+    /* Click message */
+    .click-message {
+        font-size: .9rem;
+        color: #8d438a;
+        margin-top: 10px;
+        animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+        50% { opacity: .45; }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+        .container {
+            padding-top: 25px;
+        }
+
+        .teacher-card {
+            padding: 25px 15px;
+        }
+
+        .photo-frame {
+            width: 200px;
+            height: 200px;
+        }
+
+        .box {
+            width: 145px;
+            height: 130px;
+        }
+
+        .sports {
+            gap: 10px;
+        }
+
+        .sport-item {
+            width: 55px;
+            height: 55px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="badge">🌸 A SPECIAL TRIBUTE 🌸</div>
+
+    <h1>Happy Teachers' Day! 💗</h1>
+
+    <p class="subtitle">
+        To a teacher who teaches us not only how to move,
+        but also how to believe, grow, and never give up.
+    </p>
+
+    <!-- Teacher Card -->
+    <section class="teacher-card">
+
+        <div class="photo-frame">
+            <!-- Replace teacher.jpg with your teacher's photo -->
+            <img src="images/nandinimaam.jpeg" alt="Nandani Patel Ma'am">
+        </div>
+
+        <p class="photo-hint">
+            📸 Our wonderful teacher
+        </p>
+
+        <h2 class="teacher-name">
+            Nandani Patel Ma'am
+        </h2>
+
+        <p class="subject">
+            🏃 Physical Education Teacher 🏆
+        </p>
+
+        <div class="creators">
+            Created with 💗 by<br>
+            <strong>Sakshi Yadav • Shivani Yadav • Ragini</strong>
+        </div>
+
+        <div class="class-name">
+            Class 11th Biology
+        </div>
+
+    </section>
+
+
+    <!-- Sports Materials -->
+    <div class="sports">
+        <div class="sport-item">🏀</div>
+        <div class="sport-item">⚽</div>
+        <div class="sport-item">🏸</div>
+        <div class="sport-item">🏆</div>
+        <div class="sport-item">🏃‍♀️</div>
+        <div class="sport-item">🎾</div>
+    </div>
+
+
+    <!-- Quote -->
+    <section class="quote">
+
+        <p>
+            "A great Physical Education teacher doesn't just train
+            the body — they build confidence, discipline,
+            teamwork, and the courage to keep moving forward."
+        </p>
+
+        <div class="quote-author">
+            — With gratitude to Nandani Ma'am 💜
+        </div>
+
+    </section>
+
+
+    <!-- Surprise Boxes -->
+    <h2 class="surprise-title">
+        🎁 Open Your Little Surprises 🎁
+    </h2>
+
+    <p class="click-message">
+        Click each gift box to reveal a message!
+    </p>
+
+    <div class="boxes">
+
+        <button class="box" onclick="openBox(this)">
+            <div class="box-inner">
+                <div class="box-front">
+                    🎁
+                    <small>Surprise 1</small>
+                </div>
+
+                <div class="box-back">
+                    🌷 Thank you for inspiring us
+                    to become stronger every day!
+                </div>
+            </div>
+        </button>
+
+
+        <button class="box" onclick="openBox(this)">
+            <div class="box-inner">
+                <div class="box-front">
+                    🎀
+                    <small>Surprise 2</small>
+                </div>
+
+                <div class="box-back">
+                    🏆 You taught us that
+                    every effort is a victory!
+                </div>
+            </div>
+        </button>
+
+
+        <button class="box" onclick="openBox(this)">
+            <div class="box-inner">
+                <div class="box-front">
+                    💝
+                    <small>Surprise 3</small>
+                </div>
+
+                <div class="box-back">
+                    💜 Your lessons will stay
+                    with us long after the game ends.
+                </div>
+            </div>
+        </button>
+
+    </div>
+
+
+    <footer>
+
+        <p>
+            Made with endless gratitude, smiles & love 💕
+        </p>
+
+        <p class="class-name">
+            Sakshi Yadav • Shivani Yadav • Ragini
+        </p>
+
+        <p>
+            Class 11th Biology 🌸
+        </p>
+
+        <br>
+
+        <p>
+            🌷 Happy Teachers' Day, Nandani Ma'am! 🌷
+        </p>
+
+    </footer>
+
+</div>
+
+
+<script>
+
+    /* --------------------------------
+       Surprise Box
+    -------------------------------- */
+
+    function openBox(box) {
+
+        box.classList.toggle("open");
+
+        createSparkles(
+            window.innerWidth / 2,
+            window.innerHeight / 2
+        );
+    }
+
+
+    /* --------------------------------
+       Tulips when screen is clicked
+    -------------------------------- */
+
+    document.addEventListener("click", function(event) {
+
+        // Don't create tulips when clicking a surprise box
+        // because it already creates sparkles.
+        if (event.target.closest(".box")) {
+            return;
+        }
+
+        createTulip(event.clientX, event.clientY);
+
+        // A few extra sparkles
+        for (let i = 0; i < 3; i++) {
+            setTimeout(() => {
+                createSparkles(
+                    event.clientX + random(-30, 30),
+                    event.clientY + random(-30, 30)
+                );
+            }, i * 100);
+        }
+    });
+
+
+    function createTulip(x, y) {
+
+        const tulip = document.createElement("div");
+
+        tulip.className = "tulip";
+
+        const flowers = ["🌷", "🌷", "🌷", "💐"];
+
+        tulip.innerHTML =
+            flowers[Math.floor(Math.random() * flowers.length)];
+
+        tulip.style.left =
+            (x - 20 + random(-20, 20)) + "px";
+
+        tulip.style.top =
+            (y - 20 + random(-10, 10)) + "px";
+
+        document.body.appendChild(tulip);
+
+        setTimeout(() => {
+            tulip.remove();
+        }, 2600);
+    }
+
+
+    /* --------------------------------
+       Sparkles
+    -------------------------------- */
+
+    function createSparkles(x, y) {
+
+        const sparkle = document.createElement("div");
+
+        sparkle.className = "sparkle";
+
+        sparkle.innerHTML =
+            ["✨", "⭐", "💖", "✦"][Math.floor(Math.random() * 4)];
+
+        sparkle.style.left =
+            (x + random(-25, 25)) + "px";
+
+        sparkle.style.top =
+            (y + random(-25, 25)) + "px";
+
+        document.body.appendChild(sparkle);
+
+        setTimeout(() => {
+            sparkle.remove();
+        }, 1300);
+    }
+
+
+    function random(min, max) {
+        return Math.floor(
+            Math.random() * (max - min + 1)
+        ) + min;
+    }
+
+
+    /* --------------------------------
+       Floating Hearts
+    -------------------------------- */
+
+    function createHeart() {
+
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.innerHTML =
+            ["♥", "♡", "💗", "💜"][Math.floor(Math.random() * 4)];
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+        heart.style.animationDuration =
+            (5 + Math.random() * 5) + "s";
+
+        heart.style.fontSize =
+            (15 + Math.random() * 25) + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 10000);
+    }
+
+
+    // Create hearts continuously
+    setInterval(createHeart, 900);
+
+
+    /* --------------------------------
+       Initial sparkle effect
+    -------------------------------- */
+
+    window.addEventListener("load", () => {
+
+        for (let i = 0; i < 15; i++) {
+
+            setTimeout(() => {
+
+                createSparkles(
+                    Math.random() * window.innerWidth,
+                    Math.random() * window.innerHeight
+                );
+
+            }, i * 120);
+
+        }
+
+    });
+
+</script>
+
+</body>
+</html>

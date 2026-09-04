@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>शिक्षक दिवस की शुभकामनाएँ | रंजना देवी जी</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@300;400;600;700&family=Kalam:wght@300;400;700&family=Rozha+One&family=Yatra+One&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. CORE DESIGN SYSTEM & CUSTOM PROPERTIES
+       ========================================================================== */
+    :root {
+      --bg-midnight: #0b1021;
+      --bg-deep-indigo: #121936;
+      --bg-card: rgba(20, 29, 61, 0.65);
+      
+      --gold-primary: #f4c430;
+      --gold-light: #ffe58f;
+      --gold-glow: rgba(244, 196, 48, 0.4);
+      --saffron: #ff8c00;
+      
+      --text-cream: #fdfbf7;
+      --text-muted: #c8d3f5;
+      
+      --flower-pink: #ff7597;
+      --flower-red: #e63946;
+      --flower-orange: #ffaa00;
+      --leaf-green: #2a9d8f;
+
+      --font-display: 'Rozha One', 'Yatra One', serif;
+      --font-body: 'Anek Devanagari', sans-serif;
+      --font-handwritten: 'Kalam', cursive;
+
+      --border-radius: 16px;
+      --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-midnight);
+      color: var(--text-cream);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      font-size: 16px;
+    }
+
+    body {
+      position: relative;
+      min-height: 100vh;
+      line-height: 1.8;
+      background: radial-gradient(circle at 50% 0%, #1a2550 0%, var(--bg-midnight) 70%);
+      background-attachment: fixed;
+    }
+
+    /* Selection */
+    ::selection {
+      background: var(--saffron);
+      color: var(--bg-midnight);
+    }
+
+    /* Typography Utilities */
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      line-height: 1.3;
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+    }
+
+    /* Background Devanagari Texture Overlay */
+    .paper-texture {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='30' fill='%20%23ffffff' font-family='serif' font-size='20'%3Eअ आ इ ई उ ऊ ऋ ए ऐ ओ औ%3C/text%3E%3Ctext x='10' y='80' fill='%20%23ffffff' font-family='serif' font-size='18'%3Ek ख ग घ ङ च छ ज झ ञ%3C/text%3E%3Ctext x='10' y='130' fill='%20%23ffffff' font-family='serif' font-size='20'%3Eसत्यम शिवम सुंदरम%3C/text%3E%3Ctext x='10' y='180' fill='%20%23ffffff' font-family='serif' font-size='18'%3Eविद्या ददाति विनयम%3C/text%3E%3C/svg%3E");
+    }
+
+    /* ==========================================================================
+       2. CANVAS LAYERS (Petals, Particles, Floating Words)
+       ========================================================================== */
+    #petals-canvas, #particles-canvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    #particles-canvas {
+      z-index: 1;
+    }
+
+    .floating-words-container {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .floating-word {
+      position: absolute;
+      font-family: var(--font-display);
+      color: var(--gold-light);
+      white-space: nowrap;
+      user-select: none;
+      opacity: 0;
+      filter: drop-shadow(0 0 8px var(--gold-glow));
+      animation: floatWord linear infinite;
+    }
+
+    @keyframes floatWord {
+      0% {
+        transform: translateY(105vh) rotate(0deg) scale(0.9);
+        opacity: 0;
+      }
+      15% {
+        opacity: var(--target-opacity, 0.25);
+      }
+      85% {
+        opacity: var(--target-opacity, 0.25);
+      }
+      100% {
+        transform: translateY(-10vh) rotate(var(--target-rotate, 10deg)) scale(1.1);
+        opacity: 0;
+      }
+    }
+
+    /* ==========================================================================
+       3. LIVING FLORAL BORDER
+       ========================================================================== */
+    .floral-border-frame {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 10;
+      border: 12px solid transparent;
+    }
+
+    .border-corner {
+      position: fixed;
+      width: 140px;
+      height: 140px;
+      z-index: 11;
+      pointer-events: none;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+    }
+
+    .border-corner.top-left { top: 0; left: 0; }
+    .border-corner.top-right { top: 0; right: 0; transform: scaleX(-1); }
+    .border-corner.bottom-left { bottom: 0; left: 0; transform: scaleY(-1); }
+    .border-corner.bottom-right { bottom: 0; right: 0; transform: scale(-1); }
+
+    /* ==========================================================================
+       4. CONTAINER & SECTION LAYOUT
+       ========================================================================== */
+    .content-wrapper {
+      position: relative;
+      z-index: 3;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.8rem;
+      color: var(--gold-primary);
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 3.5rem auto;
+      font-size: 1.1rem;
+    }
+
+    /* Decorative Divider */
+    .hindi-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin: 2rem 0;
+      color: var(--saffron);
+    }
+
+    .hindi-divider::before, .hindi-divider::after {
+      content: '';
+      height: 1px;
+      width: 80px;
+      background: linear-gradient(90deg, transparent, var(--saffron), transparent);
+    }
+
+    /* ==========================================================================
+       5. HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 20px;
+      border-radius: 50px;
+      background: rgba(244, 196, 48, 0.1);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 15px var(--gold-glow);
+      animation: pulseGlow 3s infinite alternate;
+    }
+
+    .hero-title {
+      font-size: 4.5rem;
+      color: var(--text-cream);
+      margin-bottom: 1rem;
+      text-shadow: 0 0 25px rgba(244, 196, 48, 0.3);
+      line-height: 1.15;
+    }
+
+    .hero-title .name-highlight {
+      display: block;
+      background: linear-gradient(135deg, #ffffff 0%, var(--gold-light) 50%, var(--saffron) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 5.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .hero-poetic-sub {
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 1.5rem auto;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    .hero-english-sub {
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      opacity: 0.8;
+      margin-bottom: 3rem;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 36px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--saffron), #d43f00);
+      color: var(--text-cream);
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(230, 81, 0, 0.4), 0 0 15px var(--gold-glow);
+      transition: transform 0.3s var(--transition-smooth), box-shadow 0.3s ease;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(230, 81, 0, 0.6), 0 0 25px var(--gold-primary);
+    }
+
+    /* ==========================================================================
+       6. TEACHER PORTRAIT SECTION
+       ========================================================================== */
+    .portrait-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .portrait-frame-wrapper {
+      position: relative;
+      width: 320px;
+      height: 400px;
+      margin: 2rem 0;
+      border-radius: 200px 200px 20px 20px;
+      padding: 12px;
+      background: linear-gradient(135deg, var(--gold-primary), var(--saffron), var(--gold-light));
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 30px var(--gold-glow);
+      transition: transform 0.5s var(--transition-smooth);
+    }
+
+    .portrait-frame-wrapper:hover {
+      transform: translateY(-8px) scale(1.01);
+    }
+
+    .portrait-placeholder {
+      width: 100%;
+      height: 100%;
+      border-radius: 190px 190px 12px 12px;
+      background: var(--bg-deep-indigo);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      border: 2px dashed rgba(244, 196, 48, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portrait-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+      opacity: 0.5;
+    }
+
+    .portrait-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 10px var(--gold-primary));
+    }
+
+    .portrait-text-main {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+      z-index: 1;
+    }
+
+    .portrait-text-sub {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      z-index: 1;
+    }
+
+    .portrait-hover-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(18, 25, 54, 0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      border-radius: 190px 190px 12px 12px;
+    }
+
+    .portrait-frame-wrapper:hover .portrait-hover-overlay {
+      opacity: 1;
+    }
+
+    .portrait-hover-text {
+      font-family: var(--font-handwritten);
+      font-size: 1.3rem;
+      color: var(--gold-light);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       7. TRIBUTE LETTER SECTION
+       ========================================================================== */
+    .letter-card {
+      background: rgba(18, 25, 54, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(244, 196, 48, 0.25);
+      border-radius: var(--border-radius);
+      padding: 3.5rem;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .letter-card::before {
+      content: '‘‘';
+      position: absolute;
+      top: -20px;
+      left: 20px;
+      font-family: var(--font-display);
+      font-size: 10rem;
+      color: var(--gold-primary);
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    .letter-heading {
+      font-size: 2.2rem;
+      color: var(--gold-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .letter-body {
+      font-size: 1.2rem;
+      line-height: 2;
+      color: var(--text-cream);
+    }
+
+    .letter-body p {
+      margin-bottom: 1.5rem;
+      color: #e2e8f0;
+    }
+
+    /* Ink writing highlight animation box */
+    .ink-highlight-box {
+      margin: 2.5rem 0;
+      padding: 2rem;
+      background: rgba(244, 196, 48, 0.05);
+      border-left: 4px solid var(--saffron);
+      border-radius: 0 12px 12px 0;
+      position: relative;
+    }
+
+    .ink-text {
+      font-family: var(--font-handwritten);
+      font-size: 1.8rem;
+      color: var(--gold-light);
+      line-height: 1.6;
+      display: inline-block;
+    }
+
+    /* ==========================================================================
+       8. LESSONS CARDS SECTION ("आपसे हमने क्या सीखा?")
+       ========================================================================== */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .lesson-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      transition: all 0.4s var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lesson-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .lesson-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(244, 196, 48, 0.3);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5), 0 0 15px rgba(244, 196, 48, 0.1);
+    }
+
+    .lesson-card:hover::after {
+      opacity: 1;
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .card-title {
+      font-size: 1.6rem;
+      color: var(--gold-light);
+      margin-bottom: 0.8rem;
+    }
+
+    .card-quote {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    /* ==========================================================================
+       9. HINDI LITERATURE / LIBRARY SECTION
+       ========================================================================== */
+    .library-wrapper {
+      background: radial-gradient(circle, rgba(26, 37, 80, 0.8) 0%, rgba(11, 16, 33, 0.95) 100%);
+      border-radius: var(--border-radius);
+      padding: 4rem 2rem;
+      border: 1px solid rgba(244, 196, 48, 0.15);
+      text-align: center;
+      position: relative;
+    }
+
+    .literature-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 2.5rem;
+    }
+
+    .lit-pill {
+      padding: 12px 28px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(244, 196, 48, 0.2);
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--text-cream);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      backdrop-filter: blur(5px);
+    }
+
+    .lit-pill:hover {
+      background: rgba(244, 196, 48, 0.15);
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+      transform: scale(1.08) translateY(-3px);
+      box-shadow: 0 5px 15px var(--gold-glow);
+    }
+
+    /* ==========================================================================
+       10. STUDENT GRATITUDE WALL
+       ========================================================================== */
+    .wall-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .note-card {
+      background: #fdfbf7;
+      color: #1a202c;
+      padding: 1.8rem;
+      border-radius: 4px 4px 18px 4px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      transform: rotate(var(--note-rotate, -1deg));
+      transition: all 0.3s var(--transition-smooth);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .note-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-width: 0 16px 16px 0;
+      border-style: solid;
+      border-color: #e2e8f0 #0b1021;
+      box-shadow: -2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .note-card:hover {
+      transform: scale(1.05) rotate(0deg) !important;
+      z-index: 5;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    }
+
+    .note-text {
+      font-family: var(--font-handwritten);
+      font-size: 1.35rem;
+      line-height: 1.6;
+      color: #2d3748;
+    }
+
+    /* Note Modal Overlay */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 16, 33, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: #fdfbf7;
+      color: #111;
+      padding: 3rem;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      transform: scale(0.8);
+      transition: transform 0.3s var(--transition-smooth);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    }
+
+    .modal-overlay.active .modal-card {
+      transform: scale(1);
+    }
+
+    .modal-text {
+      font-family: var(--font-handwritten);
+      font-size: 1.8rem;
+      line-height: 1.6;
+      color: #1a202c;
+      margin-bottom: 2rem;
+    }
+
+    .close-modal-btn {
+      padding: 10px 24px;
+      border-radius: 50px;
+      background: var(--bg-midnight);
+      color: var(--gold-light);
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       11. FINAL TRIBUTE & CINEMATIC FINALE
+       ========================================================================== */
+    .final-section {
+      text-align: center;
+      padding: 8rem 0 6rem 0;
+    }
+
+    .diya-container {
+      margin: 0 auto 3rem auto;
+      width: 100px;
+      height: 100px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .diya-flame {
+      width: 24px;
+      height: 45px;
+      background: linear-gradient(to top, #ff4500, #ffaa00, #ffffff);
+      border-radius: 50% 50% 35% 35%;
+      filter: drop-shadow(0 0 15px #ffaa00) drop-shadow(0 0 30px #ff4500);
+      animation: flameFlicker 0.15s infinite alternate ease-in-out;
+      transform-origin: center bottom;
+    }
+
+    .diya-base {
+      position: absolute;
+      bottom: 10px;
+      width: 70px;
+      height: 25px;
+      background: linear-gradient(135deg, #b8860b, #d2691e);
+      border-radius: 0 0 50px 50px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    }
+
+    .finale-trigger-btn {
+      margin-top: 3rem;
+      padding: 14px 32px;
+      background: transparent;
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .finale-trigger-btn:hover {
+      background: rgba(244, 196, 48, 0.15);
+      box-shadow: 0 0 20px var(--gold-glow);
+    }
+
+    /* Fullscreen Finale Curtain */
+    .finale-overlay {
+      position: fixed;
+      inset: 0;
+      background: #050811;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1.5s ease;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .finale-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .finale-symbol {
+      font-family: var(--font-display);
+      font-size: 6rem;
+      color: var(--gold-primary);
+      text-shadow: 0 0 40px var(--gold-glow);
+      margin-bottom: 1.5rem;
+      animation: pulseGlow 2s infinite alternate;
+    }
+
+    .finale-title {
+      font-size: 3.5rem;
+      color: var(--text-cream);
+      margin-bottom: 1rem;
+    }
+
+    .finale-sub {
+      font-size: 1.8rem;
+      color: var(--gold-light);
+      font-family: var(--font-handwritten);
+    }
+
+    /* ==========================================================================
+       12. KEYFRAME ANIMATIONS
+       ========================================================================== */
+    @keyframes pulseGlow {
+      from { transform: scale(1); box-shadow: 0 0 10px var(--gold-glow); }
+      to { transform: scale(1.03); box-shadow: 0 0 25px var(--gold-primary); }
+    }
+
+    @keyframes flameFlicker {
+      0% { transform: scale(1) rotate(-1deg); }
+      100% { transform: scale(1.08) rotate(1deg); }
+    }
+
+    /* ==========================================================================
+       13. RESPONSIVE DESIGN & ACCESSIBILITY
+       ========================================================================== */
+    @media (max-width: 768px) {
+      .hero-title { font-size: 3rem; }
+      .hero-title .name-highlight { font-size: 3.8rem; }
+      .hero-poetic-sub { font-size: 1.2rem; }
+      .section-title { font-size: 2.2rem; }
+      .letter-card { padding: 2rem 1.5rem; }
+      .border-corner { width: 80px; height: 80px; }
+      .portrait-frame-wrapper { width: 260px; height: 340px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      #petals-canvas, #particles-canvas { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Textures & Canvases -->
+  <div class="paper-texture"></div>
+  <canvas id="particles-canvas"></canvas>
+  <canvas id="petals-canvas"></canvas>
+  <div class="floating-words-container" id="floating-words"></div>
+
+  <!-- Decorative Corner Floral Borders -->
+  <svg class="border-corner top-left" viewBox="0 0 100 100" fill="none">
+    <circle cx="20" cy="20" r="15" fill="#e63946" opacity="0.8"/>
+    <circle cx="45" cy="20" r="12" fill="#ffaa00" opacity="0.8"/>
+    <circle cx="20" cy="45" r="12" fill="#ff7597" opacity="0.8"/>
+    <path d="M0,0 Q50,10 80,0 Q10,50 0,80 Z" fill="#2a9d8f" opacity="0.6"/>
+  </svg>
+  <svg class="border-corner top-right" viewBox="0 0 100 100" fill="none">
+    <circle cx="20" cy="20" r="15" fill="#e63946" opacity="0.8"/>
+    <circle cx="45" cy="20" r="12" fill="#ffaa00" opacity="0.8"/>
+    <circle cx="20" cy="45" r="12" fill="#ff7597" opacity="0.8"/>
+    <path d="M0,0 Q50,10 80,0 Q10,50 0,80 Z" fill="#2a9d8f" opacity="0.6"/>
+  </svg>
+  <svg class="border-corner bottom-left" viewBox="0 0 100 100" fill="none">
+    <circle cx="20" cy="20" r="15" fill="#e63946" opacity="0.8"/>
+    <circle cx="45" cy="20" r="12" fill="#ffaa00" opacity="0.8"/>
+    <circle cx="20" cy="45" r="12" fill="#ff7597" opacity="0.8"/>
+    <path d="M0,0 Q50,10 80,0 Q10,50 0,80 Z" fill="#2a9d8f" opacity="0.6"/>
+  </svg>
+  <svg class="border-corner bottom-right" viewBox="0 0 100 100" fill="none">
+    <circle cx="20" cy="20" r="15" fill="#e63946" opacity="0.8"/>
+    <circle cx="45" cy="20" r="12" fill="#ffaa00" opacity="0.8"/>
+    <circle cx="20" cy="45" r="12" fill="#ff7597" opacity="0.8"/>
+    <path d="M0,0 Q50,10 80,0 Q10,50 0,80 Z" fill="#2a9d8f" opacity="0.6"/>
+  </svg>
+
+  <!-- Main Content Layout -->
+  <div class="content-wrapper">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <span class="hero-badge">🌸 शिक्षक दिवस की हार्दिक शुभकामनाएँ 🌸</span>
+      <h1 class="hero-title">
+        आदरणीया
+        <span class="name-highlight">रंजना देवी जी</span>
+      </h1>
+      <p class="hero-poetic-sub">
+        हिंदी की वह शिक्षिका, जिन्होंने शब्दों में संस्कार और पाठों में जीवन सिखाया।
+      </p>
+      <p class="hero-english-sub">
+        “Celebrating the teacher who made every word meaningful.”
+      </p>
+      <a href="#tribute" class="cta-button">
+        🌸 उनके लिए एक विशेष संदेश पढ़ें
+      </a>
+    </section>
+
+    <!-- TEACHER PORTRAIT SECTION -->
+    <section class="portrait-section">
+      <div class="portrait-frame-wrapper">
+        <img src="images/ranjanamaam.jpeg" alt="रंजना देवी जी - हमारी प्रिय हिंदी शिक्षिका" class="w-full h-full object-cover rounded-[190px_190px_12px_12px]" />
+      </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="hindi-divider">🪷 🪷 🪷</div>
+
+    <!-- TRIBUTE LETTER SECTION -->
+    <section id="tribute">
+      <div class="letter-card">
+        <h2 class="letter-heading">प्रिय रंजना देवी जी,</h2>
+        <div class="letter-body">
+          <p>
+            सादर प्रणाम। शिक्षक दिवस के इस पावन अवसर पर हम आपको हृदय की गहराइयों से नमन करते हैं। आपकी कक्षा केवल हिंदी व्याकरण या साहित्य की कक्षा नहीं थी, वह भारतीय संस्कृति, संवेदना और मूल्यों का एक अद्भुत संगम थी।
+          </p>
+          <p>
+            आपने जिस सहजता और प्रेम से हमें कबीर के दोहे, तुलसी की चौपाइयाँ और आधुनिक कवियों की भावनाएँ समझाईं, उसने हमारे भीतर हिंदी भाषा के प्रति एक अटूट प्रेम जगा दिया।
+          </p>
+
+          <div class="ink-highlight-box">
+            <span class="ink-text">
+              “आपने हमें केवल हिंदी नहीं सिखाई, आपने हमें शब्दों में भाव और जीवन में अर्थ ढूँढना सिखाया।”
+            </span>
+          </div>
+
+          <p>
+            कठिन से कठिन पाठ को भी अपनी मधुर आवाज़ और आत्मीयता से सरल बना देना आपकी सबसे बड़ी विशेषता रही है। आपने हमें अपनी बात को स्पष्टता और आत्मविश्वास के साथ कहना सिखाया।
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LESSONS LEARNED SECTION -->
+    <section>
+      <h2 class="section-title">आपसे हमने क्या सीखा?</h2>
+      <p class="section-subtitle">आपकी कक्षा में मिली वह सीख, जो किताबों से परे हमारे जीवन का मार्गदर्शन करती है।</p>
+      
+      <div class="cards-grid">
+        <div class="lesson-card">
+          <div class="card-icon">🌱</div>
+          <h3 class="card-title">ज्ञान</h3>
+          <p class="card-quote">“हर प्रश्न के पीछे एक नई सीख छिपी होती है।”</p>
+        </div>
+
+        <div class="lesson-card">
+          <div class="card-icon">🪷</div>
+          <h3 class="card-title">संस्कार</h3>
+          <p class="card-quote">“शिक्षा वही है जो हमारे व्यवहार में दिखाई दे।”</p>
+        </div>
+
+        <div class="lesson-card">
+          <div class="card-icon">✍️</div>
+          <h3 class="card-title">भाषा</h3>
+          <p class="card-quote">“शब्द केवल बोले नहीं जाते, महसूस भी किए जाते हैं।”</p>
+        </div>
+
+        <div class="lesson-card">
+          <div class="card-icon">📚</div>
+          <h3 class="card-title">साहित्य</h3>
+          <p class="card-quote">“कहानियाँ और कविताएँ हमें जीवन को नए दृष्टिकोण से देखना सिखाती हैं।”</p>
+        </div>
+
+        <div class="lesson-card">
+          <div class="card-icon">🌟</div>
+          <h3 class="card-title">आत्मविश्वास</h3>
+          <p class="card-quote">“आपके प्रोत्साहन ने हमें अपनी आवाज़ पर विश्वास करना सिखाया।”</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LITERATURE LIBRARY SECTION -->
+    <section>
+      <div class="library-wrapper">
+        <h2 class="section-title" style="margin-bottom: 0.5rem;">शब्दों से संसार सजाने वाली शिक्षिका</h2>
+        <p class="section-subtitle" style="margin-bottom: 1.5rem;">हिंदी साहित्य की अनमोल धरोहरों से हमारा परिचय कराने के लिए आभार</p>
+        
+        <div class="literature-pills">
+          <div class="lit-pill">📖 कविता</div>
+          <div class="lit-pill">✒️ कहानी</div>
+          <div class="lit-pill">📜 साहित्य</div>
+          <div class="lit-pill">🔤 व्याकरण</div>
+          <div class="lit-pill">🗣️ भाषा</div>
+          <div class="lit-pill">💡 अभिव्यक्ति</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDENT GRATITUDE WALL -->
+    <section>
+      <h2 class="section-title">छात्रों की ओर से — धन्यवाद!</h2>
+      <p class="section-subtitle">किसी भी संदेश पर क्लिक करके उसे विस्तार से पढ़ें</p>
+
+      <div class="wall-grid">
+        <div class="note-card" style="--note-rotate: -2deg;" onclick="openNoteModal(this)">
+          <p class="note-text">“धन्यवाद मैम, हमें हमेशा प्रोत्साहित करने के लिए।”</p>
+        </div>
+
+        <div class="note-card" style="--note-rotate: 1.5deg;" onclick="openNoteModal(this)">
+          <p class="note-text">“आपकी कक्षा की बातें किताबों से कहीं आगे तक जाती हैं।”</p>
+        </div>
+
+        <div class="note-card" style="--note-rotate: -1deg;" onclick="openNoteModal(this)">
+          <p class="note-text">“आपने हिंदी को केवल विषय नहीं, भावना बना दिया।”</p>
+        </div>
+
+        <div class="note-card" style="--note-rotate: 2deg;" onclick="openNoteModal(this)">
+          <p class="note-text">“आपसे पढ़ना हमेशा एक सुंदर अनुभव रहा।”</p>
+        </div>
+
+        <div class="note-card" style="--note-rotate: -2.5deg;" onclick="openNoteModal(this)">
+          <p class="note-text">“आप जैसी शिक्षिका मिलना हमारे लिए सौभाग्य है।”</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL TRIBUTE SECTION -->
+    <section class="final-section">
+      <div class="diya-container">
+        <div class="diya-flame"></div>
+        <div class="diya-base"></div>
+      </div>
+
+      <h2 class="section-title" style="font-size: 3.2rem;">धन्यवाद, रंजना देवी जी।</h2>
+      
+      <p class="hero-poetic-sub" style="max-width: 800px; margin-top: 2rem;">
+        “आपके पढ़ाए हुए शब्द शायद हमारी किताबों में रह जाएँ,<br>
+        लेकिन आपके दिए हुए संस्कार हमारे जीवन में हमेशा रहेंगे।”
+      </p>
+
+      <div class="hindi-divider" style="margin: 3rem 0;">🌸 🌸 🌸</div>
+
+      <p style="font-size: 1.4rem; color: var(--gold-light); font-weight: 600;">
+        आप हमारी शिक्षिका ही नहीं, हमारी प्रेरणा हैं।
+      </p>
+
+      <button class="finale-trigger-btn" onclick="triggerFinale()">
+        ✨ आदरणीय शिक्षिका को विशेष नमन (अंतिम दृश्य)
+      </button>
+    </section>
+
+  </div>
+
+  <!-- Gratitude Wall Modal -->
+  <div class="modal-overlay" id="noteModal" onclick="closeNoteModal()">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <p class="modal-text" id="modalContent"></p>
+      <button class="close-modal-btn" onclick="closeNoteModal()">बंद करें 🌸</button>
+    </div>
+  </div>
+
+  <!-- Cinematic Finale Curtain Overlay -->
+  <div class="finale-overlay" id="finaleOverlay">
+    <div class="finale-symbol">ॐ</div>
+    <h1 class="finale-title">रंजना देवी जी</h1>
+    <p class="finale-sub">आपको सादर नमन। 🌸</p>
+    <button class="close-modal-btn" style="margin-top: 3rem;" onclick="closeFinale()">वापस जाएँ</button>
+  </div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT LOGIC
+       ========================================================================== -->
+  <script>
+    /* --------------------------------------------------------------------------
+       1. FLOATING DEVANAGARI WORDS GENERATOR
+       -------------------------------------------------------------------------- */
+    const hindiWords = [
+      "ज्ञान", "संस्कार", "साहित्य", "भाषा", "प्रेरणा", "शिक्षा", 
+      "सम्मान", "संस्कृति", "सत्य", "साहस", "करुणा", "स्वप्न", 
+      "विश्वास", "मेहनत", "सफलता", "कविता", "कहानी", "शब्द", "गुरु", "आशीर्वाद"
+    ];
+
+    const wordsContainer = document.getElementById('floating-words');
+
+    function createFloatingWords() {
+      const isMobile = window.innerWidth < 768;
+      const count = isMobile ? 10 : 22;
+
+      for (let i = 0; i < count; i++) {
+        const span = document.createElement('span');
+        span.className = 'floating-word';
+        span.innerText = hindiWords[Math.floor(Math.random() * hindiWords.length)];
+        
+        const left = Math.random() * 90;
+        const duration = 18 + Math.random() * 22;
+        const delay = Math.random() * 15;
+        const fontSize = 1.2 + Math.random() * 1.5;
+        const opacity = 0.12 + Math.random() * 0.2;
+        const rotate = (Math.random() - 0.5) * 30;
+
+        span.style.left = `${left}%`;
+        span.style.animationDuration = `${duration}s`;
+        span.style.animationDelay = `${delay}s`;
+        span.style.fontSize = `${fontSize}rem`;
+        span.style.setProperty('--target-opacity', opacity);
+        span.style.setProperty('--target-rotate', `${rotate}deg`);
+
+        wordsContainer.appendChild(span);
+      }
+    }
+
+    /* --------------------------------------------------------------------------
+       2. CANVAS 1: GOLDEN PARTICLES CANVAS
+       -------------------------------------------------------------------------- */
+    const pCanvas = document.getElementById('particles-canvas');
+    const pCtx = pCanvas.getContext('2d');
+    let pWidth, pHeight;
+    let particles = [];
+
+    function initParticlesCanvas() {
+      pWidth = pCanvas.width = window.innerWidth;
+      pHeight = pCanvas.height = window.innerHeight;
+      particles = [];
+      const numParticles = window.innerWidth < 768 ? 25 : 60;
+
+      for (let i = 0; i < numParticles; i++) {
+        particles.push({
+          x: Math.random() * pWidth,
+          y: Math.random() * pHeight,
+          radius: Math.random() * 2 + 0.5,
+          color: 'rgba(244, 196, 48, ' + (Math.random() * 0.5 + 0.2) + ')',
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: -Math.random() * 0.5 - 0.2
+        });
+      }
+    }
+
+    function animateParticles() {
+      pCtx.clearRect(0, 0, pWidth, pHeight);
+      particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.y < 0) {
+          p.y = pHeight;
+          p.x = Math.random() * pWidth;
+        }
+
+        pCtx.beginPath();
+        pCtx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        pCtx.fillStyle = p.color;
+        pCtx.fill();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+
+    /* --------------------------------------------------------------------------
+       3. CANVAS 2: ANIMATED FALLING FLOWER PETALS
+       -------------------------------------------------------------------------- */
+    const petalCanvas = document.getElementById('petals-canvas');
+    const petalCtx = petalCanvas.getContext('2d');
+    let petalWidth, petalHeight;
+    let petals = [];
+
+    function initPetalsCanvas() {
+      petalWidth = petalCanvas.width = window.innerWidth;
+      petalHeight = petalCanvas.height = window.innerHeight;
+      petals = [];
+      const numPetals = window.innerWidth < 768 ? 12 : 28;
+
+      const colors = ['#ff7597', '#e63946', '#ffaa00', '#ffffff'];
+
+      for (let i = 0; i < numPetals; i++) {
+        petals.push({
+          x: Math.random() * petalWidth,
+          y: Math.random() * petalHeight,
+          size: Math.random() * 8 + 6,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          speedY: Math.random() * 1.2 + 0.6,
+          speedX: Math.random() * 0.8 - 0.4,
+          angle: Math.random() * 360,
+          spin: (Math.random() - 0.5) * 2
+        });
+      }
+    }
+
+    function animatePetals() {
+      petalCtx.clearRect(0, 0, petalWidth, petalHeight);
+
+      petals.forEach(p => {
+        p.y += p.speedY;
+        p.x += Math.sin(p.y * 0.01) + p.speedX;
+        p.angle += p.spin;
+
+        if (p.y > petalHeight + 20) {
+          p.y = -20;
+          p.x = Math.random() * petalWidth;
+        }
+
+        petalCtx.save();
+        petalCtx.translate(p.x, p.y);
+        petalCtx.rotate((p.angle * Math.PI) / 180);
+        
+        // Draw Petal Shape
+        petalCtx.beginPath();
+        petalCtx.moveTo(0, 0);
+        petalCtx.quadraticCurveTo(p.size, -p.size, 0, -p.size * 2);
+        petalCtx.quadraticCurveTo(-p.size, -p.size, 0, 0);
+        petalCtx.fillStyle = p.color;
+        petalCtx.globalOpacity = 0.7;
+        petalCtx.fill();
+        
+        petalCtx.restore();
+      });
+
+      requestAnimationFrame(animatePetals);
+    }
+
+    /* --------------------------------------------------------------------------
+       4. INTERACTIVE MODAL & CINEMATIC FINALE LOGIC
+       -------------------------------------------------------------------------- */
+    function openNoteModal(cardEl) {
+      const text = cardEl.querySelector('.note-text').innerText;
+      document.getElementById('modalContent').innerText = text;
+      document.getElementById('noteModal').classList.add('active');
+    }
+
+    function closeNoteModal() {
+      document.getElementById('noteModal').classList.remove('active');
+    }
+
+    function triggerFinale() {
+      document.getElementById('finaleOverlay').classList.add('active');
+    }
+
+    function closeFinale() {
+      document.getElementById('finaleOverlay').classList.remove('active');
+    }
+
+    /* --------------------------------------------------------------------------
+       5. INITIALIZATION & RESIZE EVENT LISTENERS
+       -------------------------------------------------------------------------- */
+    window.addEventListener('DOMContentLoaded', () => {
+      createFloatingWords();
+      initParticlesCanvas();
+      animateParticles();
+      initPetalsCanvas();
+      animatePetals();
+    });
+
+    window.addEventListener('resize', () => {
+      initParticlesCanvas();
+      initPetalsCanvas();
+    });
+  </script>
+</body>
+</html>

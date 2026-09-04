@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Happy Teacher's Day | Samarnath Sir</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 215, 150, 0.18), transparent 25%),
+        radial-gradient(circle at 80% 80%, rgba(190, 130, 255, 0.15), transparent 25%),
+        linear-gradient(135deg, #160b2b, #281044, #120820);
+
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ---------------- FLOWERS ---------------- */
+
+    .flower-container {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .flower {
+      position: absolute;
+      top: -60px;
+      font-size: 25px;
+      animation: fall linear infinite;
+      opacity: 0.85;
+      filter: drop-shadow(0 0 8px rgba(255, 180, 220, 0.7));
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-80px) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      50% {
+        transform: translateY(50vh) translateX(70px) rotate(180deg);
+      }
+
+      100% {
+        transform: translateY(110vh) translateX(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* ---------------- MAIN CARD ---------------- */
+
+    .page {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 20px;
+    }
+
+    .card {
+      width: min(950px, 95%);
+      text-align: center;
+      padding: 55px 40px;
+      border-radius: 35px;
+
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border: 1px solid rgba(255, 255, 255, 0.18);
+
+      box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.5),
+        inset 0 0 40px rgba(255, 255, 255, 0.04);
+
+      animation: cardAppear 1.5s ease forwards;
+    }
+
+    @keyframes cardAppear {
+      from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* ---------------- TITLE ---------------- */
+
+    .small-title {
+      color: #ffd6ec;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 82px);
+      line-height: 1;
+      margin-bottom: 15px;
+
+      background: linear-gradient(
+        90deg,
+        #fff4b8,
+        #ffd0e8,
+        #d9b8ff,
+        #fff4b8
+      );
+
+      background-size: 300%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+
+      animation: shine 5s linear infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        background-position: 0%;
+      }
+
+      100% {
+        background-position: 300%;
+      }
+    }
+
+    .teacher-name {
+      font-size: clamp(30px, 5vw, 52px);
+      color: #ffffff;
+      margin-bottom: 30px;
+
+      text-shadow:
+        0 0 10px rgba(255, 205, 235, 0.5),
+        0 0 25px rgba(210, 150, 255, 0.3);
+    }
+
+    /* ---------------- PHOTO ---------------- */
+
+    .photo-wrapper {
+      width: 230px;
+      height: 230px;
+      margin: 30px auto;
+      border-radius: 50%;
+      padding: 7px;
+
+      background: linear-gradient(
+        135deg,
+        #ffd86b,
+        #ff9acb,
+        #c58aff,
+        #ffd86b
+      );
+
+      background-size: 300% 300%;
+      animation: borderGlow 5s ease infinite;
+
+      box-shadow:
+        0 0 30px rgba(255, 173, 220, 0.45),
+        0 0 70px rgba(180, 130, 255, 0.25);
+    }
+
+    @keyframes borderGlow {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .teacher-photo {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+
+      background:
+        linear-gradient(135deg, #34204e, #1c102e);
+
+      border: 5px solid #1b0e2d;
+    }
+
+    /* ---------------- MESSAGE ---------------- */
+
+    .message {
+      max-width: 750px;
+      margin: 35px auto;
+      font-size: 19px;
+      line-height: 1.9;
+      color: #f7eefa;
+    }
+
+    .highlight {
+      color: #ffd477;
+      font-weight: bold;
+    }
+
+    /* ---------------- QUOTE ---------------- */
+
+    .quote-box {
+      max-width: 720px;
+      margin: 40px auto;
+      padding: 30px;
+
+      border-left: 3px solid #ffd477;
+      border-right: 3px solid #d99aff;
+
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+
+      box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .quote-mark {
+      font-size: 60px;
+      color: #ffd477;
+      line-height: 0.5;
+    }
+
+    #quote {
+      min-height: 80px;
+      margin-top: 15px;
+      font-size: 23px;
+      line-height: 1.6;
+      font-style: italic;
+      color: #fff4fb;
+    }
+
+    .author {
+      margin-top: 15px;
+      color: #dcb6ff;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    /* ---------------- ENGLISH THEME ---------------- */
+
+    .english-theme {
+      margin: 35px auto;
+      max-width: 700px;
+      padding: 25px;
+
+      border-radius: 20px;
+
+      background: rgba(255, 211, 125, 0.07);
+      border: 1px solid rgba(255, 215, 150, 0.2);
+    }
+
+    .english-theme h2 {
+      color: #ffd477;
+      margin-bottom: 15px;
+      font-size: 25px;
+    }
+
+    .english-theme p {
+      color: #eadff3;
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    /* ---------------- BUTTON ---------------- */
+
+    .wish-button {
+      border: none;
+      outline: none;
+
+      margin-top: 25px;
+      padding: 16px 35px;
+
+      border-radius: 50px;
+
+      color: #291239;
+      background: linear-gradient(
+        135deg,
+        #ffd477,
+        #ffb7dc
+      );
+
+      font-size: 17px;
+      font-weight: bold;
+      font-family: Georgia, serif;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 8px 30px rgba(255, 190, 220, 0.3);
+
+      transition: 0.3s ease;
+    }
+
+    .wish-button:hover {
+      transform: translateY(-5px) scale(1.04);
+
+      box-shadow:
+        0 12px 40px rgba(255, 190, 220, 0.55);
+    }
+
+    /* ---------------- FOOTER ---------------- */
+
+    footer {
+      margin-top: 35px;
+      color: #cdb9da;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .heart {
+      color: #ff91c8;
+      animation: heartbeat 1.5s infinite;
+      display: inline-block;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.3);
+      }
+    }
+
+    /* ---------------- RESPONSIVE ---------------- */
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 40px 20px;
+      }
+
+      .photo-wrapper {
+        width: 190px;
+        height: 190px;
+      }
+
+      .message {
+        font-size: 17px;
+      }
+
+      #quote {
+        font-size: 19px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Animated flowers -->
+  <div class="flower-container" id="flowers"></div>
+
+  <main class="page">
+
+    <section class="card">
+
+      <div class="small-title">
+        A Tribute to a Wonderful Teacher
+      </div>
+
+      <h1>Happy Teacher's Day</h1>
+
+      <div class="teacher-name">
+        Samarnath Sir
+      </div>
+
+
+      <!-- =========================================
+           TEACHER PHOTO
+           
+           Replace "teacher-photo.jpg" with your
+           teacher's actual photo file name.
+           ========================================= -->
+
+      <div class="photo-wrapper">
+        <img
+          src="images/samarnath.jpg"
+          alt="Photo of Samarnath Sir"
+          class="teacher-photo"
+        >
+      </div>
+
+
+      <div class="message">
+
+        <p>
+          Dear <span class="highlight">Samarnath Sir</span>,
+        </p>
+
+        <p>
+          Some teachers teach lessons,
+          but extraordinary teachers teach us
+          <span class="highlight">how to see the world differently.</span>
+        </p>
+
+        <p>
+          Your words have helped turn pages into stories,
+          sentences into ideas, and literature into
+          something we can truly feel.
+        </p>
+
+        <p>
+          Thank you for making the English language
+          more than just a subject —
+          <span class="highlight">
+            you made it a window to imagination.
+          </span>
+        </p>
+
+      </div>
+
+
+      <!-- English Literature Quote -->
+
+      <div class="quote-box">
+
+        <div class="quote-mark">“</div>
+
+        <div id="quote"></div>
+
+        <div class="author">
+          — A little thought from your student
+        </div>
+
+      </div>
+
+
+      <!-- English subject section -->
+
+      <div class="english-theme">
+
+        <h2>📖 The Beauty of English</h2>
+
+        <p>
+          A great teacher is like a great author:
+          they leave a beautiful story behind in the
+          hearts and minds of their readers.
+        </p>
+
+        <p>
+          Sir, every lesson with you adds another
+          meaningful chapter to our journey.
+        </p>
+
+      </div>
+
+
+      <button class="wish-button" onclick="showWish()">
+        🌸 Click for a Special Wish 🌸
+      </button>
+
+
+      <footer>
+        Made with <span class="heart">♥</span>
+        gratitude and respect for
+        <strong>Samarnath Sir</strong>
+      </footer>
+
+    </section>
+
+  </main>
+
+
+  <script>
+
+    /* =========================================
+       BEAUTIFUL ENGLISH-INSPIRED QUOTES
+       ========================================= */
+
+    const quotes = [
+      "A teacher plants the seeds of knowledge that bloom throughout a lifetime.",
+      
+      "The best teachers do not simply give us answers; they teach us how to ask better questions.",
+      
+      "Every great story begins with words, and every great journey begins with a teacher.",
+      
+      "A teacher's influence is a chapter that never truly ends.",
+      
+      "Books may teach us about life, but great teachers teach us how to understand it.",
+      
+      "A beautiful lesson may last an hour, but its meaning can last forever."
+    ];
+
+    let quoteIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    const quoteElement = document.getElementById("quote");
+
+    function typeQuote() {
+
+      const currentQuote = quotes[quoteIndex];
+
+      if (!deleting) {
+
+        quoteElement.textContent =
+          currentQuote.substring(0, charIndex + 1);
+
+        charIndex++;
+
+        if (charIndex === currentQuote.length) {
+
+          deleting = true;
+
+          setTimeout(typeQuote, 2500);
+
+          return;
+        }
+
+      } else {
+
+        quoteElement.textContent =
+          currentQuote.substring(0, charIndex - 1);
+
+        charIndex--;
+
+        if (charIndex === 0) {
+
+          deleting = false;
+
+          quoteIndex++;
+
+          if (quoteIndex >= quotes.length) {
+            quoteIndex = 0;
+          }
+        }
+      }
+
+      setTimeout(typeQuote, deleting ? 35 : 55);
+    }
+
+    typeQuote();
+
+
+    /* =========================================
+       CREATE FALLING FLOWERS
+       ========================================= */
+
+    const flowerContainer =
+      document.getElementById("flowers");
+
+    const flowerSymbols = [
+      "🌸",
+      "🌺",
+      "🌷",
+      "🌼",
+      "💮",
+      "✿"
+    ];
+
+    function createFlower() {
+
+      const flower =
+        document.createElement("div");
+
+      flower.classList.add("flower");
+
+      flower.innerHTML =
+        flowerSymbols[
+          Math.floor(
+            Math.random() * flowerSymbols.length
+          )
+        ];
+
+      flower.style.left =
+        Math.random() * 100 + "vw";
+
+      flower.style.fontSize =
+        (15 + Math.random() * 25) + "px";
+
+      flower.style.animationDuration =
+        (6 + Math.random() * 8) + "s";
+
+      flower.style.animationDelay =
+        Math.random() * 5 + "s";
+
+      flowerContainer.appendChild(flower);
+
+      setTimeout(() => {
+        flower.remove();
+      }, 15000);
+    }
+
+    setInterval(createFlower, 350);
+
+    /* Create some flowers immediately */
+    for (let i = 0; i < 15; i++) {
+      setTimeout(createFlower, i * 200);
+    }
+
+
+    /* =========================================
+       SPECIAL WISH BUTTON
+       ========================================= */
+
+    function showWish() {
+
+      const message =
+        "🌸 Happy Teacher's Day, Samarnath Sir! 🌸\n\n" +
+        "Thank you for inspiring us to read between the lines, " +
+        "think beyond the words, and write our own beautiful stories.\n\n" +
+        "May your life always be filled with the same joy " +
+        "and inspiration that you bring to your students. ❤️";
+
+      alert(message);
+
+      createCelebration();
+    }
+
+
+    /* =========================================
+       EXTRA FLOWER CELEBRATION
+       ========================================= */
+
+    function createCelebration() {
+
+      for (let i = 0; i < 30; i++) {
+
+        setTimeout(() => {
+
+          const flower =
+            document.createElement("div");
+
+          flower.classList.add("flower");
+
+          flower.innerHTML =
+            flowerSymbols[
+              Math.floor(
+                Math.random() *
+                flowerSymbols.length
+              )
+            ];
+
+          flower.style.left =
+            Math.random() * 100 + "vw";
+
+          flower.style.top =
+            Math.random() * 30 + "vh";
+
+          flower.style.fontSize =
+            (20 + Math.random() * 30) + "px";
+
+          flower.style.animationDuration =
+            (3 + Math.random() * 4) + "s";
+
+          flowerContainer.appendChild(flower);
+
+          setTimeout(() => {
+            flower.remove();
+          }, 7000);
+
+        }, i * 80);
+      }
+    }
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Teachers' Day - Mr. Price Ji</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-brown: #2b170e;
+            --brown: #4b2e20;
+            --coffee: #6f4934;
+            --caramel: #a8754f;
+            --cream: #f5e6d0;
+            --gold: #d8a75d;
+            --light: #fff5e6;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--light);
+            background:
+                radial-gradient(circle at 20% 20%, #6f4934 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, #5a3928 0%, transparent 30%),
+                linear-gradient(135deg, #1d0d07, #4b2e20, #24120b);
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        .background {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(216, 167, 93, 0.12);
+            animation: float 12s infinite ease-in-out;
+        }
+
+        .circle:nth-child(1) {
+            width: 180px;
+            height: 180px;
+            left: 5%;
+            top: 15%;
+        }
+
+        .circle:nth-child(2) {
+            width: 280px;
+            height: 280px;
+            right: 5%;
+            top: 10%;
+            animation-delay: 2s;
+        }
+
+        .circle:nth-child(3) {
+            width: 120px;
+            height: 120px;
+            left: 40%;
+            bottom: 5%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-40px) scale(1.1);
+            }
+        }
+
+        /* Main container */
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        /* Top badge */
+        .badge {
+            display: inline-block;
+            padding: 10px 24px;
+            border: 1px solid var(--gold);
+            border-radius: 50px;
+            color: var(--gold);
+            letter-spacing: 4px;
+            font-size: 13px;
+            text-transform: uppercase;
+            animation: fadeDown 1s ease;
+        }
+
+        /* Heading */
+        h1 {
+            margin-top: 25px;
+            font-size: clamp(3rem, 8vw, 7rem);
+            line-height: 0.95;
+            color: var(--cream);
+            text-shadow:
+                0 0 10px rgba(216,167,93,.4),
+                0 0 35px rgba(216,167,93,.2);
+            animation: titleReveal 1.5s ease;
+        }
+
+        h1 span {
+            display: block;
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .subtitle {
+            margin-top: 25px;
+            font-size: clamp(1rem, 2vw, 1.35rem);
+            color: #e8cdb0;
+            letter-spacing: 2px;
+            animation: fadeUp 1.5s ease;
+        }
+
+        /* Teacher card */
+        .teacher-card {
+            max-width: 850px;
+            margin: 55px auto;
+            padding: 35px;
+            background: rgba(43, 23, 14, 0.72);
+            border: 1px solid rgba(216, 167, 93, .45);
+            border-radius: 25px;
+            backdrop-filter: blur(12px);
+            box-shadow:
+                0 25px 80px rgba(0,0,0,.4),
+                inset 0 0 40px rgba(216,167,93,.05);
+            animation: cardAppear 1.8s ease;
+        }
+
+        /* PHOTO AREA */
+        .photo-wrapper {
+            width: 230px;
+            height: 280px;
+            margin: 0 auto 25px;
+            padding: 8px;
+            border-radius: 20px;
+            background: linear-gradient(
+                135deg,
+                var(--gold),
+                var(--caramel),
+                var(--gold)
+            );
+            box-shadow: 0 15px 50px rgba(0,0,0,.5);
+            transition: transform .5s ease;
+        }
+
+        .photo-wrapper:hover {
+            transform: scale(1.05) rotate(-1deg);
+        }
+
+        .teacher-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 14px;
+            display: block;
+            background: #3a2116;
+        }
+
+        .photo-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #d9b995;
+            font-size: 15px;
+            padding: 20px;
+        }
+
+        .teacher-name {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--cream);
+            margin-bottom: 10px;
+        }
+
+        .teacher-name span {
+            color: var(--gold);
+        }
+
+        .subject {
+            color: #cfae91;
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* Sociology quote */
+        .quote {
+            position: relative;
+            margin: 40px auto 10px;
+            max-width: 700px;
+            padding: 30px;
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+            color: #f1dbc1;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .quote::before {
+            content: "“";
+            position: absolute;
+            left: 15px;
+            top: -30px;
+            font-size: 80px;
+            color: rgba(216,167,93,.3);
+        }
+
+        /* Sociology section */
+        .sociology {
+            margin: 70px auto;
+            max-width: 900px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 30px;
+        }
+
+        .ideas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .idea {
+            padding: 28px 20px;
+            border-radius: 18px;
+            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(216,167,93,.25);
+            transition: all .4s ease;
+        }
+
+        .idea:hover {
+            transform: translateY(-10px);
+            background: rgba(216,167,93,.1);
+            border-color: var(--gold);
+            box-shadow: 0 15px 40px rgba(0,0,0,.3);
+        }
+
+        .idea-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .idea h3 {
+            color: var(--cream);
+            margin-bottom: 10px;
+        }
+
+        .idea p {
+            color: #cdb39b;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* Final message */
+        .final-message {
+            margin-top: 70px;
+            padding: 50px 20px;
+        }
+
+        .final-message h2 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            color: var(--cream);
+        }
+
+        .final-message h2 span {
+            color: var(--gold);
+        }
+
+        .final-message p {
+            margin-top: 20px;
+            color: #d8bda1;
+            font-size: 1.1rem;
+        }
+
+        .heart {
+            display: inline-block;
+            color: #c47c52;
+            animation: heartbeat 1.4s infinite;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 30px;
+            padding: 25px;
+            color: #a98c72;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        /* Animations */
+        @keyframes titleReveal {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(.95);
+                filter: blur(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.35);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+            .container {
+                padding-top: 40px;
+            }
+
+            .teacher-card {
+                padding: 25px 15px;
+            }
+
+            .ideas {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-wrapper {
+                width: 190px;
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Animated background -->
+    <div class="background">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <main class="container">
+
+        <div class="badge">
+            A Tribute to a Teacher
+        </div>
+
+        <h1>
+            Happy
+            <span>Teachers' Day</span>
+        </h1>
+
+        <p class="subtitle">
+            To the person who taught us to see society differently.
+        </p>
+
+
+        <!-- TEACHER CARD -->
+        <section class="teacher-card">
+
+            <!--
+                ==============================
+                TEACHER PHOTO GOES HERE
+                ==============================
+
+                Put your image in the same folder as this HTML file
+                and name it:
+
+                teacher-photo.jpg
+
+                Then replace the placeholder below with:
+
+                <img src="images/princesir.jpg" alt="Prince Sir"
+                     class="teacher-photo"
+                     alt="Mr. Price Ji">
+            -->
+
+            <div class="photo-wrapper">
+                <img
+                    src="images/princesir.jpg"
+                    class="teacher-photo"
+                    alt="Mr. Price Ji">
+            </div>
+
+            <h2 class="teacher-name">
+                Mr. <span>Price Ji</span>
+            </h2>
+
+            <p class="subject">
+                Sociology • Society • Humanity
+            </p>
+
+            <div class="quote">
+                “A great teacher doesn't merely teach a subject;
+                they teach us how to understand the world.”
+            </div>
+
+        </section>
+
+
+        <!-- SOCIOLOGY SECTION -->
+        <section class="sociology">
+
+            <h2 class="section-title">
+                Sociology Through Your Teaching
+            </h2>
+
+            <div class="ideas">
+
+                <div class="idea">
+                    <div class="idea-icon">🌍</div>
+                    <h3>Society</h3>
+                    <p>
+                        You taught us that society is more than a group
+                        of people — it is a web of relationships,
+                        ideas and shared experiences.
+                    </p>
+                </div>
+
+                <div class="idea">
+                    <div class="idea-icon">🤝</div>
+                    <h3>Human Connection</h3>
+                    <p>
+                        Through sociology, you helped us understand
+                        diversity, social bonds and the importance
+                        of seeing life from another person's perspective.
+                    </p>
+                </div>
+
+                <div class="idea">
+                    <div class="idea-icon">💡</div>
+                    <h3>Critical Thinking</h3>
+                    <p>
+                        You encouraged us to question assumptions,
+                        observe society and think beyond what appears
+                        on the surface.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL MESSAGE -->
+        <section class="final-message">
+
+            <h2>
+                Thank You, <span>Mr. Price Ji</span>
+            </h2>
+
+            <p>
+                For turning classrooms into spaces of curiosity,
+                conversations into understanding, and lessons into
+                perspectives that stay with us.
+            </p>
+
+            <p style="margin-top:25px;">
+                Happy Teachers' Day
+                <span class="heart">♥</span>
+            </p>
+
+        </section>
+
+        <footer>
+            Made with respect • Sociology • Knowledge • Gratitude
+        </footer>
+
+    </main>
+
+
+    <script>
+        // Small interactive effect:
+        // Move the background circles slightly according to mouse movement.
+
+        const circles = document.querySelectorAll(".circle");
+
+        document.addEventListener("mousemove", (event) => {
+
+            const x = (event.clientX / window.innerWidth - 0.5) * 30;
+            const y = (event.clientY / window.innerHeight - 0.5) * 30;
+
+            circles.forEach((circle, index) => {
+
+                const speed = (index + 1) * 0.5;
+
+                circle.style.transform =
+                    `translate(${x * speed}px, ${y * speed}px)`;
+
+            });
+        });
+
+
+        // Gentle scroll-reveal animation
+        const elements = document.querySelectorAll(".idea");
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.2
+            }
+        );
+
+
+        elements.forEach((element, index) => {
+
+            element.style.opacity = "0";
+            element.style.transform = "translateY(30px)";
+            element.style.transition =
+                `all .8s ease ${index * 0.15}s`;
+
+            observer.observe(element);
+
+        });
+    </script>
+
+</body>
+</html>

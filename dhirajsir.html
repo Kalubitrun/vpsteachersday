@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Teacher's Day | Dhiraj Sir</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background:
+        radial-gradient(circle at 20% 20%, #47306b 0%, transparent 25%),
+        radial-gradient(circle at 80% 80%, #172d55 0%, transparent 30%),
+        linear-gradient(135deg, #080b20, #111936, #080b20);
+    overflow-x: hidden;
+}
+
+/* ---------- Animated Background ---------- */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -5;
+    overflow: hidden;
+}
+
+.moon {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    right: 8%;
+    top: 7%;
+    border-radius: 50%;
+    background: #fff4c7;
+    box-shadow:
+        0 0 30px #fff4c7,
+        0 0 80px rgba(255,244,199,.5);
+    opacity: .9;
+}
+
+.moon::after {
+    content: "";
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: #10152f;
+    left: -35px;
+    top: -15px;
+}
+
+.star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    animation: twinkle 2s infinite alternate;
+}
+
+.star:nth-child(2) { left: 10%; top: 15%; animation-delay: .2s; }
+.star:nth-child(3) { left: 25%; top: 30%; animation-delay: .8s; }
+.star:nth-child(4) { left: 42%; top: 12%; animation-delay: 1.2s; }
+.star:nth-child(5) { left: 65%; top: 25%; animation-delay: .4s; }
+.star:nth-child(6) { left: 78%; top: 50%; animation-delay: 1s; }
+.star:nth-child(7) { left: 15%; top: 70%; animation-delay: .6s; }
+.star:nth-child(8) { left: 52%; top: 65%; animation-delay: .1s; }
+.star:nth-child(9) { left: 90%; top: 30%; animation-delay: .9s; }
+.star:nth-child(10) { left: 35%; top: 85%; animation-delay: 1.4s; }
+
+@keyframes twinkle {
+    from { opacity: .2; transform: scale(.7); }
+    to { opacity: 1; transform: scale(1.5); }
+}
+
+/* ---------- Navigation ---------- */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(7, 10, 30, .65);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    color: #ffd978;
+    font-size: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #ffd978;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+    min-height: 100vh;
+    padding: 130px 8% 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 50px;
+}
+
+.hero-text {
+    max-width: 650px;
+    animation: fadeUp 1.5s ease;
+}
+
+.small-title {
+    color: #ffd978;
+    letter-spacing: 4px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(45px, 7vw, 85px);
+    line-height: 1.05;
+    background: linear-gradient(90deg, #fff, #ffd978, #fff);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shine 4s infinite linear;
+}
+
+.hero-text h2 {
+    margin-top: 15px;
+    color: #c9d8ff;
+    font-weight: 400;
+}
+
+.hero-text p {
+    margin-top: 25px;
+    line-height: 1.9;
+    color: #d9def2;
+}
+
+@keyframes shine {
+    to { background-position: 200%; }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Cartoon Teacher ---------- */
+
+.teacher-card {
+    position: relative;
+    width: 330px;
+    height: 410px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.2);
+    backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 25px 70px rgba(0,0,0,.45);
+    animation: floating 4s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-18px); }
+}
+
+.teacher {
+    position: relative;
+    width: 210px;
+    height: 310px;
+}
+
+/* Hair */
+.hair {
+    position: absolute;
+    width: 135px;
+    height: 115px;
+    left: 37px;
+    top: 5px;
+    border-radius: 55% 55% 35% 35%;
+    background: #25213b;
+    z-index: 2;
+}
+
+/* Face */
+.face {
+    position: absolute;
+    width: 115px;
+    height: 135px;
+    left: 47px;
+    top: 35px;
+    background: #f1bd91;
+    border-radius: 48% 48% 45% 45%;
+    z-index: 3;
+}
+
+/* Ears */
+.ear {
+    position: absolute;
+    width: 20px;
+    height: 35px;
+    background: #e7aa7e;
+    top: 82px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.ear.left { left: 38px; }
+.ear.right { right: 38px; }
+
+/* Hair front */
+.fringe {
+    position: absolute;
+    width: 90px;
+    height: 48px;
+    left: 58px;
+    top: 25px;
+    background: #25213b;
+    border-radius: 50%;
+    z-index: 4;
+    transform: rotate(-5deg);
+}
+
+/* Eyes */
+.eye {
+    position: absolute;
+    width: 14px;
+    height: 10px;
+    border-bottom: 3px solid #282038;
+    top: 88px;
+    z-index: 5;
+}
+
+.eye.left { left: 72px; }
+.eye.right { right: 72px; }
+
+/* Glasses */
+.glasses {
+    position: absolute;
+    width: 48px;
+    height: 27px;
+    border: 3px solid #222039;
+    border-radius: 8px;
+    top: 78px;
+    left: 55px;
+    z-index: 6;
+}
+
+.glasses.right {
+    left: 108px;
+}
+
+.glasses-line {
+    position: absolute;
+    width: 12px;
+    height: 3px;
+    background: #222039;
+    left: 99px;
+    top: 90px;
+    z-index: 7;
+}
+
+/* Nose */
+.nose {
+    position: absolute;
+    width: 10px;
+    height: 18px;
+    border-right: 2px solid #bd805f;
+    top: 100px;
+    left: 101px;
+    z-index: 5;
+}
+
+/* Smile */
+.smile {
+    position: absolute;
+    width: 35px;
+    height: 15px;
+    border-bottom: 3px solid #873e49;
+    border-radius: 50%;
+    top: 125px;
+    left: 88px;
+    z-index: 5;
+}
+
+/* Body */
+.body {
+    position: absolute;
+    width: 155px;
+    height: 145px;
+    left: 28px;
+    top: 160px;
+    background: #263c70;
+    border-radius: 45px 45px 20px 20px;
+}
+
+/* Shirt */
+.shirt {
+    position: absolute;
+    width: 70px;
+    height: 90px;
+    left: 70px;
+    top: 160px;
+    background: #f4f2e9;
+    clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+}
+
+/* Tie */
+.tie {
+    position: absolute;
+    width: 18px;
+    height: 85px;
+    left: 96px;
+    top: 160px;
+    background: #b53e58;
+    clip-path: polygon(50% 0, 100% 20%, 65% 100%, 35% 100%, 0 20%);
+    z-index: 2;
+}
+
+/* Book */
+.book {
+    position: absolute;
+    width: 100px;
+    height: 55px;
+    right: -10px;
+    bottom: 15px;
+    background: #d75b66;
+    transform: rotate(-12deg);
+    border-radius: 5px;
+    box-shadow: 0 7px 0 #872f45;
+}
+
+.book::after {
+    content: "LIBRARY";
+    position: absolute;
+    color: #ffe9a7;
+    font-size: 11px;
+    font-weight: bold;
+    left: 17px;
+    top: 20px;
+}
+
+/* ---------- Sections ---------- */
+
+section {
+    padding: 100px 8%;
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    color: #ffd978;
+    font-size: 38px;
+    margin-bottom: 50px;
+}
+
+/* Library */
+
+.library-box {
+    max-width: 1000px;
+    margin: auto;
+    padding: 45px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.15);
+    box-shadow: 0 20px 60px rgba(0,0,0,.3);
+}
+
+.library-box p {
+    color: #dce2f5;
+    line-height: 2;
+    text-align: center;
+}
+
+.bookshelf {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 35px;
+    height: 170px;
+    align-items: end;
+}
+
+.book-item {
+    width: 42px;
+    border-radius: 5px 5px 0 0;
+    animation: bookFloat 3s infinite ease-in-out;
+}
+
+.book-item:nth-child(1) { height: 120px; background:#cf5568; }
+.book-item:nth-child(2) { height: 150px; background:#5578bd; animation-delay:.3s; }
+.book-item:nth-child(3) { height: 110px; background:#e0a84e; animation-delay:.6s; }
+.book-item:nth-child(4) { height: 140px; background:#62a87a; animation-delay:.9s; }
+.book-item:nth-child(5) { height: 125px; background:#9b6ac0; animation-delay:1.2s; }
+.book-item:nth-child(6) { height: 160px; background:#d86c4f; animation-delay:1.5s; }
+.book-item:nth-child(7) { height: 115px; background:#4a9a9c; animation-delay:1.8s; }
+
+@keyframes bookFloat {
+    50% { transform: translateY(-8px); }
+}
+
+/* Quote */
+
+.quote {
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 35px;
+    border-left: 4px solid #ffd978;
+    background: rgba(255,255,255,.06);
+    border-radius: 0 20px 20px 0;
+}
+
+.quote p {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    line-height: 1.8;
+    color: #fff4d0;
+}
+
+.quote span {
+    display: block;
+    text-align: right;
+    margin-top: 15px;
+    color: #9eacd4;
+}
+
+/* Poem */
+
+.poem {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+    padding: 45px;
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.1),
+        rgba(255,255,255,.04)
+    );
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+
+.poem p {
+    line-height: 2.1;
+    color: #e4e8f7;
+    font-size: 17px;
+}
+
+/* Message */
+
+.message {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.message p {
+    font-size: 18px;
+    line-height: 2;
+    color: #dfe5fa;
+}
+
+.highlight {
+    color: #ffd978;
+    font-weight: 600;
+}
+
+/* Button */
+
+button {
+    margin-top: 35px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(90deg,#e7a94b,#ffd978);
+    color: #19152d;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 25px rgba(255,217,120,.35);
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 40px rgba(255,217,120,.65);
+}
+
+/* Hidden Surprise */
+
+#surprise {
+    display: none;
+    margin: 30px auto 0;
+    max-width: 700px;
+    color: #fff0ba;
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    line-height: 1.8;
+    animation: fadeUp 1s;
+}
+
+/* Floating pages */
+
+.page {
+    position: fixed;
+    width: 30px;
+    height: 40px;
+    background: #fff4d1;
+    opacity: .15;
+    z-index: -1;
+    animation: fly 15s linear infinite;
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(110vh) rotate(0);
+    }
+    100% {
+        transform: translateY(-120vh) rotate(360deg);
+    }
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #929abd;
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+
+footer strong {
+    color: #ffd978;
+}
+
+/* ---------- Mobile ---------- */
+
+@media(max-width: 800px) {
+
+    nav {
+        padding: 13px 5%;
+    }
+
+    nav a {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 120px;
+    }
+
+    .teacher-card {
+        width: 290px;
+        height: 370px;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .library-box,
+    .poem {
+        padding: 25px;
+    }
+
+    .quote p {
+        font-size: 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background -->
+<div class="background">
+
+    <div class="moon"></div>
+
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+
+</div>
+
+<!-- Floating Pages -->
+<div class="page" style="left:8%; animation-delay:1s;"></div>
+<div class="page" style="left:22%; animation-delay:5s;"></div>
+<div class="page" style="left:45%; animation-delay:2s;"></div>
+<div class="page" style="left:70%; animation-delay:8s;"></div>
+<div class="page" style="left:88%; animation-delay:4s;"></div>
+
+
+<!-- Navigation -->
+
+<nav>
+    <div class="logo">📚 The Library of Gratitude</div>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#library">Library</a>
+        <a href="#poem">Poem</a>
+        <a href="#message">Message</a>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <div class="small-title">
+            ✨ A SPECIAL TRIBUTE FROM THE HEART ✨
+        </div>
+
+        <h1>
+            Happy<br>
+            Teacher's Day
+        </h1>
+
+        <h2>To Our Beloved Dhiraj Sir ❤️</h2>
+
+        <p>
+            In the quiet corners of a library, thousands of books
+            wait to tell their stories. But among all those stories,
+            there is one that will always remain special —
+            the story of a teacher who taught us not only from books,
+            but from life itself.
+        </p>
+
+        <button onclick="showSurprise()">
+            📖 Open A Special Message
+        </button>
+
+        <div id="surprise">
+            "Some teachers teach lessons.<br>
+            Some teachers change lives.<br>
+            And some, like you, Dhiraj Sir,<br>
+            become a beautiful chapter in our lives."
+            ❤️
+        </div>
+
+    </div>
+
+
+    <!-- CSS Cartoon Teacher -->
+
+    <div class="teacher-card">
+
+        <div class="teacher">
+
+            <div class="hair"></div>
+
+            <div class="ear left"></div>
+            <div class="ear right"></div>
+
+            <div class="face"></div>
+
+            <div class="fringe"></div>
+
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+
+            <div class="glasses"></div>
+            <div class="glasses right"></div>
+            <div class="glasses-line"></div>
+
+            <div class="nose"></div>
+            <div class="smile"></div>
+
+            <div class="body"></div>
+            <div class="shirt"></div>
+            <div class="tie"></div>
+
+            <div class="book"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LIBRARY SECTION -->
+
+<section id="library">
+
+    <h2 class="section-title">
+        📚 The Library of Knowledge
+    </h2>
+
+    <div class="library-box">
+
+        <p>
+            A library is more than shelves filled with books.
+            It is a universe of ideas, dreams, questions and answers.
+            And a teacher is the person who gives us the courage
+            to open the right book and begin our journey.
+        </p>
+
+        <br>
+
+        <p>
+            <span class="highlight">Dhiraj Sir</span>,
+            every book we discover, every lesson we understand,
+            and every question we learn to ask is a little brighter
+            because of teachers like you.
+        </p>
+
+        <div class="bookshelf">
+            <div class="book-item"></div>
+            <div class="book-item"></div>
+            <div class="book-item"></div>
+            <div class="book-item"></div>
+            <div class="book-item"></div>
+            <div class="book-item"></div>
+            <div class="book-item"></div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- QUOTES -->
+
+<section>
+
+    <h2 class="section-title">
+        🌙 Words From The Heart
+    </h2>
+
+    <div class="quote">
+
+        <p>
+            "A great teacher is like a library —
+            always filled with knowledge,
+            always open to curious minds,
+            and always ready to guide someone
+            toward a brighter future."
+        </p>
+
+        <span>— For Dhiraj Sir</span>
+
+    </div>
+
+    <div class="quote">
+
+        <p>
+            "Books can give us knowledge,
+            but teachers teach us how to use it.
+            Thank you, Sir, for being the guiding light
+            behind our learning."
+        </p>
+
+        <span>— With deepest gratitude ❤️</span>
+
+    </div>
+
+    <div class="quote">
+
+        <p>
+            "If our life were a library,
+            you would be one of those rare books
+            we would never want to put back on the shelf."
+        </p>
+
+        <span>— A student's heartfelt thought</span>
+
+    </div>
+
+</section>
+
+
+<!-- POEM -->
+
+<section id="poem">
+
+    <h2 class="section-title">
+        ✒️ A Little Poem For Dhiraj Sir
+    </h2>
+
+    <div class="poem">
+
+        <p>
+
+            Among the shelves where stories sleep,<br>
+            You taught us dreams are ours to keep.<br>
+            Beyond each page, beyond each line,<br>
+            You showed us how our stars could shine.<br><br>
+
+            You opened doors we couldn't see,<br>
+            And made us believe in what we could be.<br>
+            With every lesson, word and smile,<br>
+            You made the journey worth the while.<br><br>
+
+            A library holds a thousand tales,<br>
+            Of distant lands and ships with sails.<br>
+            But one story stands above the rest—<br>
+            A teacher who always gave his best.<br><br>
+
+            So today, Sir, these words we say,<br>
+            With grateful hearts on Teacher's Day:<br>
+            May every chapter of your life be bright,<br>
+            Like a library glowing in the moonlight. 🌙📚
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SPECIAL MESSAGE -->
+
+<section id="message">
+
+    <h2 class="section-title">
+        💌 A Special Message For You
+    </h2>
+
+    <div class="message">
+
+        <p>
+
+            <span class="highlight">Dear Dhiraj Sir,</span>
+
+            <br><br>
+
+            There are some people who enter our lives as teachers,
+            but slowly become much more than that.
+
+            <br><br>
+
+            You have given us something much more valuable than
+            information written inside textbooks.
+            You have given us <span class="highlight">
+            curiosity, confidence, guidance and inspiration.</span>
+
+            <br><br>
+
+            Whenever we step into a library and see rows of books,
+            we are reminded that knowledge has no ending.
+            And whenever we learn something new,
+            there is a small part of your guidance behind it.
+
+            <br><br>
+
+            Years from now, we may forget some formulas,
+            dates and pages from our textbooks.
+
+            <br><br>
+
+            But we will remember the teachers who made us
+            believe that we could become better versions of ourselves.
+
+            <br><br>
+
+            <span class="highlight">
+            Thank you for being one of those teachers, Sir.
+            </span>
+
+            <br><br>
+
+            May your life always be filled with happiness,
+            respect, success and countless beautiful chapters.
+
+            <br><br>
+
+            <strong>
+                Happy Teacher's Day, Dhiraj Sir! ❤️
+            </strong>
+
+            <br>
+
+            With endless respect and gratitude,<br>
+            <span class="highlight">Your Student 📚</span>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    📚 Every book has a story.  
+    <strong>Thank you for being part of ours, Dhiraj Sir.</strong>
+
+    <br><br>
+
+    Made with ❤️, respect & gratitude
+
+</footer>
+
+
+<script>
+
+/* Special Message */
+
+function showSurprise() {
+
+    const message = document.getElementById("surprise");
+
+    if (message.style.display === "block") {
+
+        message.style.display = "none";
+
+    } else {
+
+        message.style.display = "block";
+
+        createHearts();
+
+    }
+}
+
+
+/* Floating Hearts */
+
+function createHearts() {
+
+    for (let i = 0; i < 18; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.innerHTML = "❤️";
+
+        heart.style.position = "fixed";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.bottom = "-30px";
+        heart.style.fontSize =
+            (15 + Math.random() * 20) + "px";
+        heart.style.zIndex = "200";
+        heart.style.pointerEvents = "none";
+
+        document.body.appendChild(heart);
+
+        const duration =
+            3000 + Math.random() * 3000;
+
+        heart.animate(
+            [
+                {
+                    transform:
+                        "translateY(0) rotate(0deg)",
+                    opacity: 1
+                },
+                {
+                    transform:
+                        `translateY(-110vh) rotate(${Math.random()*360}deg)`,
+                    opacity: 0
+                }
+            ],
+            {
+                duration: duration,
+                easing: "ease-out"
+            }
+        );
+
+        setTimeout(() => {
+            heart.remove();
+        }, duration);
+    }
+}
+
+
+/* Mouse Sparkles */
+
+document.addEventListener("mousemove", function(e) {
+
+    if (Math.random() > 0.85) {
+
+        const sparkle = document.createElement("span");
+
+        sparkle.innerHTML = "✦";
+
+        sparkle.style.position = "fixed";
+        sparkle.style.left = e.clientX + "px";
+        sparkle.style.top = e.clientY + "px";
+        sparkle.style.color = "#ffd978";
+        sparkle.style.pointerEvents = "none";
+        sparkle.style.zIndex = "999";
+        sparkle.style.fontSize = "12px";
+
+        document.body.appendChild(sparkle);
+
+        sparkle.animate(
+            [
+                {
+                    opacity: 1,
+                    transform: "scale(1)"
+                },
+                {
+                    opacity: 0,
+                    transform: "scale(2) translateY(-20px)"
+                }
+            ],
+            {
+                duration: 800
+            }
+        );
+
+        setTimeout(() => sparkle.remove(), 800);
+    }
+
+});
+
+
+/* Reveal sections when scrolling */
+
+const sections =
+    document.querySelectorAll("section");
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform =
+                        "translateY(0)";
+
+                }
+
+            });
+
+        },
+        { threshold: 0.15 }
+    );
+
+
+sections.forEach(section => {
+
+    section.style.opacity = "0";
+    section.style.transform = "translateY(30px)";
+    section.style.transition =
+        "opacity 1s ease, transform 1s ease";
+
+    observer.observe(section);
+
+});
+
+
+/* Welcome animation */
+
+window.addEventListener("load", () => {
+
+    document.querySelector(".hero").style.opacity = "1";
+    document.querySelector(".hero").style.transform =
+        "translateY(0)";
+
+});
+
+</script>
+
+</body>
+</html>

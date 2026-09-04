@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Teacher's Day | Vinita Ma'am 🌸</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap');
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Baloo 2', cursive;
+    color: #38254d;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at 10% 10%, #ffd9ee 0%, transparent 25%),
+        radial-gradient(circle at 90% 20%, #c9efff 0%, transparent 25%),
+        radial-gradient(circle at 50% 100%, #fff0bd 0%, transparent 30%),
+        linear-gradient(135deg, #fff7fc, #eefaff, #fffdf0);
+}
+
+
+/* =====================================================
+   ANIME BACKGROUND
+===================================================== */
+
+.sky {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -10;
+}
+
+/* Clouds */
+
+.cloud {
+    position: absolute;
+    width: 130px;
+    height: 45px;
+    background: rgba(255,255,255,.85);
+    border-radius: 50px;
+    filter: blur(.2px);
+    animation: cloudMove 30s linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 65px;
+    height: 65px;
+    left: 20px;
+    top: -30px;
+}
+
+.cloud::after {
+    width: 75px;
+    height: 75px;
+    right: 18px;
+    top: -40px;
+}
+
+.cloud1 {
+    top: 12%;
+    left: -150px;
+}
+
+.cloud2 {
+    top: 30%;
+    left: -250px;
+    transform: scale(.7);
+    animation-delay: 10s;
+}
+
+.cloud3 {
+    top: 55%;
+    left: -300px;
+    transform: scale(1.2);
+    animation-delay: 18s;
+}
+
+@keyframes cloudMove {
+    to {
+        transform: translateX(120vw);
+    }
+}
+
+
+/* =====================================================
+   STARS
+===================================================== */
+
+.star {
+    position: absolute;
+    color: #ffd34d;
+    font-size: 20px;
+    animation: starTwinkle 2s infinite alternate;
+}
+
+.star1 { top: 10%; left: 12%; }
+.star2 { top: 18%; left: 35%; animation-delay: .5s; }
+.star3 { top: 8%; right: 20%; animation-delay: 1s; }
+.star4 { top: 42%; right: 8%; animation-delay: .2s; }
+.star5 { bottom: 15%; left: 8%; animation-delay: .8s; }
+.star6 { bottom: 25%; right: 20%; animation-delay: 1.2s; }
+
+@keyframes starTwinkle {
+    from {
+        opacity: .25;
+        transform: scale(.7) rotate(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.3) rotate(20deg);
+    }
+}
+
+
+/* =====================================================
+   FLOATING EMOJIS
+===================================================== */
+
+.float-item {
+    position: fixed;
+    bottom: -60px;
+    font-size: 30px;
+    opacity: .35;
+    pointer-events: none;
+    z-index: -1;
+
+    animation: floatUp 13s linear infinite;
+}
+
+.f1 { left: 8%; animation-delay: 0s; }
+.f2 { left: 25%; animation-delay: 3s; }
+.f3 { left: 45%; animation-delay: 7s; }
+.f4 { left: 67%; animation-delay: 2s; }
+.f5 { left: 87%; animation-delay: 5s; }
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .45;
+    }
+
+    100% {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 13px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255,255,255,.78);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 2px solid rgba(255,130,190,.15);
+
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Fredoka', sans-serif;
+    color: #e85c9b;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+nav a {
+    text-decoration: none;
+    color: #573a6d;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #ec639e;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 100vh;
+
+    padding: 120px 7% 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    gap: 50px;
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.small-title {
+    color: #ef75a9;
+    letter-spacing: 4px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+h1 {
+    font-family: 'Fredoka', sans-serif;
+
+    font-size: clamp(48px, 8vw, 90px);
+
+    line-height: .95;
+
+    margin-top: 15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ed649e,
+            #9b75e8,
+            #42bde5,
+            #ed649e
+        );
+
+    background-size: 300%;
+
+    -webkit-background-clip: text;
+    color: transparent;
+
+    animation: titleColor 5s linear infinite;
+}
+
+@keyframes titleColor {
+    to {
+        background-position: 300%;
+    }
+}
+
+.hero h2 {
+    margin-top: 20px;
+    font-size: 27px;
+    color: #65457a;
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #674f78;
+}
+
+.highlight {
+    color: #e65394;
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   CARTOON TEACHER CARD
+===================================================== */
+
+.teacher-card {
+    width: 350px;
+    height: 460px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 45px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.9),
+            rgba(255,230,244,.7)
+        );
+
+    border: 4px solid white;
+
+    box-shadow:
+        0 25px 70px rgba(160,90,150,.25);
+
+    animation: teacherFloat 4s ease-in-out infinite;
+}
+
+@keyframes teacherFloat {
+    0%,100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(1deg);
+    }
+}
+
+
+/* =====================================================
+   CARTOON CHARACTER
+===================================================== */
+
+.teacher {
+    position: relative;
+    width: 230px;
+    height: 350px;
+}
+
+
+/* Hair */
+
+.hair {
+    position: absolute;
+
+    width: 155px;
+    height: 130px;
+
+    left: 38px;
+    top: 8px;
+
+    background: #3c294b;
+
+    border-radius: 55% 55% 42% 42%;
+
+    z-index: 2;
+}
+
+
+/* Face */
+
+.face {
+    position: absolute;
+
+    width: 120px;
+    height: 145px;
+
+    left: 55px;
+    top: 43px;
+
+    background: #f6c49e;
+
+    border-radius: 48% 48% 45% 45%;
+
+    z-index: 3;
+}
+
+
+/* Hair fringe */
+
+.fringe {
+    position: absolute;
+
+    width: 100px;
+    height: 60px;
+
+    left: 62px;
+    top: 30px;
+
+    background: #3c294b;
+
+    border-radius: 50%;
+
+    transform: rotate(-8deg);
+
+    z-index: 5;
+}
+
+
+/* Ears */
+
+.ear {
+    position: absolute;
+
+    width: 22px;
+    height: 40px;
+
+    top: 90px;
+
+    background: #e6ad85;
+
+    border-radius: 50%;
+
+    z-index: 1;
+}
+
+.ear.left {
+    left: 42px;
+}
+
+.ear.right {
+    right: 42px;
+}
+
+
+/* Eyes */
+
+.eye {
+    position: absolute;
+
+    width: 16px;
+    height: 11px;
+
+    border-bottom: 3px solid #34233e;
+
+    top: 96px;
+
+    z-index: 7;
+}
+
+.eye.left {
+    left: 78px;
+}
+
+.eye.right {
+    right: 78px;
+}
+
+
+/* Nose */
+
+.nose {
+    position: absolute;
+
+    width: 10px;
+    height: 18px;
+
+    border-right: 2px solid #bc765d;
+
+    left: 108px;
+    top: 108px;
+
+    z-index: 7;
+}
+
+
+/* Smile */
+
+.smile {
+    position: absolute;
+
+    width: 40px;
+    height: 18px;
+
+    border-bottom: 3px solid #9c4261;
+
+    border-radius: 50%;
+
+    left: 97px;
+    top: 132px;
+
+    z-index: 7;
+}
+
+
+/* Glasses */
+
+.glasses {
+    position: absolute;
+
+    width: 48px;
+    height: 28px;
+
+    border: 3px solid #392742;
+
+    border-radius: 8px;
+
+    left: 62px;
+    top: 87px;
+
+    z-index: 8;
+}
+
+.glasses.r {
+    left: 115px;
+}
+
+.glasses-line {
+    position: absolute;
+
+    width: 10px;
+    height: 3px;
+
+    background: #392742;
+
+    left: 106px;
+    top: 99px;
+
+    z-index: 9;
+}
+
+
+/* Body */
+
+.body {
+    position: absolute;
+
+    width: 175px;
+    height: 165px;
+
+    left: 28px;
+    top: 185px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff9dc5,
+            #c78be7
+        );
+
+    border-radius: 50px 50px 25px 25px;
+}
+
+
+/* Shirt */
+
+.shirt {
+    position: absolute;
+
+    width: 90px;
+    height: 105px;
+
+    left: 70px;
+    top: 185px;
+
+    background: #fff;
+
+    clip-path:
+        polygon(
+            20% 0,
+            80% 0,
+            100% 100%,
+            0 100%
+        );
+
+    z-index: 2;
+}
+
+
+/* Bow */
+
+.bow {
+    position: absolute;
+
+    width: 35px;
+    height: 25px;
+
+    left: 99px;
+    top: 190px;
+
+    z-index: 5;
+}
+
+.bow::before,
+.bow::after {
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+    height: 25px;
+
+    background: #ff629f;
+
+    border-radius: 50%;
+}
+
+.bow::before {
+    left: -8px;
+}
+
+.bow::after {
+    right: -8px;
+}
+
+
+/* Book in teacher hand */
+
+.book {
+    position: absolute;
+
+    width: 90px;
+    height: 65px;
+
+    right: -20px;
+    bottom: 15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6e72e9 50%,
+            #ff80aa 50%
+        );
+
+    border-radius: 8px;
+
+    transform: rotate(-10deg);
+
+    z-index: 10;
+
+    box-shadow:
+        5px 6px 0 rgba(0,0,0,.1);
+}
+
+.book::after {
+    content: "ABC";
+
+    position: absolute;
+
+    left: 23px;
+    top: 20px;
+
+    color: white;
+
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.main-button {
+    margin-top: 30px;
+
+    padding: 15px 32px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff70aa,
+            #a678ee
+        );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px
+        rgba(205,100,170,.3);
+
+    transition: .3s;
+}
+
+.main-button:hover {
+    transform: scale(1.08);
+}
+
+
+/* =====================================================
+   GENERAL SECTIONS
+===================================================== */
+
+section {
+    padding: 100px 7%;
+}
+
+.section-title {
+    text-align: center;
+
+    font-family: 'Fredoka', sans-serif;
+
+    color: #875bc5;
+
+    font-size: 42px;
+
+    margin-bottom: 50px;
+}
+
+
+/* =====================================================
+   SUBJECTS
+===================================================== */
+
+.subject-grid {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.subject {
+    padding: 28px 15px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,.82);
+
+    border: 3px solid white;
+
+    box-shadow:
+        0 15px 35px rgba(130,90,160,.12);
+
+    transition: .35s;
+}
+
+.subject:hover {
+    transform:
+        translateY(-12px)
+        rotate(1deg);
+
+    box-shadow:
+        0 20px 45px
+        rgba(130,90,160,.2);
+}
+
+.subject-icon {
+    font-size: 48px;
+}
+
+.subject h3 {
+    margin-top: 10px;
+    color: #e75e9a;
+}
+
+.subject p {
+    color: #735d81;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   QUOTES
+===================================================== */
+
+.quote-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.quote {
+    background: white;
+
+    margin: 22px 0;
+
+    padding: 30px;
+
+    border-radius:
+        0 25px 25px 0;
+
+    border-left:
+        6px solid #ff76ae;
+
+    box-shadow:
+        0 15px 35px
+        rgba(100,70,120,.1);
+}
+
+.quote p {
+    font-size: 21px;
+    line-height: 1.8;
+    color: #654875;
+}
+
+.quote span {
+    display: block;
+
+    margin-top: 12px;
+
+    text-align: right;
+
+    color: #c04e8a;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   POEM
+===================================================== */
+
+.poem {
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 45px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #fff1f8
+        );
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(140,80,140,.15);
+
+    border: 3px solid white;
+}
+
+.poem p {
+    font-size: 18px;
+    line-height: 2.1;
+    color: #674e77;
+}
+
+
+/* =====================================================
+   SONG
+===================================================== */
+
+.song {
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 45px;
+
+    text-align: center;
+
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f1edff,
+            #fff2f9
+        );
+
+    box-shadow:
+        0 20px 50px
+        rgba(130,90,170,.15);
+}
+
+.song h3 {
+    color: #8b5fd3;
+
+    font-family: 'Fredoka', sans-serif;
+
+    font-size: 30px;
+
+    margin-bottom: 25px;
+}
+
+.song p {
+    line-height: 2;
+
+    color: #614d72;
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   SPECIAL MESSAGE
+===================================================== */
+
+.message {
+    max-width: 950px;
+
+    margin: auto;
+
+    padding: 50px;
+
+    text-align: center;
+
+    border-radius: 35px;
+
+    background: rgba(255,255,255,.9);
+
+    border: 4px solid white;
+
+    box-shadow:
+        0 25px 60px
+        rgba(130,80,140,.15);
+}
+
+.message p {
+    font-size: 19px;
+
+    line-height: 2;
+
+    color: #604b70;
+}
+
+.pink {
+    color: #e25595;
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   SURPRISE
+===================================================== */
+
+#surprise {
+    display: none;
+
+    margin-top: 30px;
+
+    color: #e25093;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    animation:
+        surprise .8s ease;
+}
+
+@keyframes surprise {
+    from {
+        opacity: 0;
+        transform: scale(.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding: 45px 20px;
+
+    text-align: center;
+
+    background: #604476;
+
+    color: #fff;
+
+    font-size: 16px;
+}
+
+footer strong {
+    color: #ffd36e;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width: 850px) {
+
+    nav a {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .teacher-card {
+        width: 300px;
+        height: 410px;
+    }
+
+    .subject-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .message,
+    .poem,
+    .song {
+        padding: 25px;
+    }
+}
+
+@media(max-width: 500px) {
+
+    .subject-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .quote p {
+        font-size: 18px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     ANIME SKY
+===================================================== -->
+
+<div class="sky">
+
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+
+    <div class="star star1">✦</div>
+    <div class="star star2">✧</div>
+    <div class="star star3">✦</div>
+    <div class="star star4">✧</div>
+    <div class="star star5">✦</div>
+    <div class="star star6">✧</div>
+
+</div>
+
+
+<!-- Floating classroom objects -->
+
+<div class="float-item f1">🎈</div>
+<div class="float-item f2">🧸</div>
+<div class="float-item f3">⭐</div>
+<div class="float-item f4">📚</div>
+<div class="float-item f5">💖</div>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav>
+
+    <div class="logo">
+        🌸 VINITA MAAM'S CLASSROOM
+    </div>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#quotes">Quotes</a>
+        <a href="#poem">Poem</a>
+        <a href="#song">Song</a>
+        <a href="#message">Message</a>
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <div class="small-title">
+            ✨ A LITTLE SURPRISE FROM YOUR STUDENT ✨
+        </div>
+
+        <h1>
+            Happy<br>
+            Teacher's Day
+        </h1>
+
+        <h2>
+            🌸 To Our Wonderful Vinita Ma'am 🌸
+        </h2>
+
+        <p>
+
+            A teacher does not simply teach
+            <span class="highlight">ABC</span>,
+            numbers, colors or shapes.
+
+            <br><br>
+
+            A wonderful teacher teaches little hearts
+            how to dream, how to share,
+            how to smile, how to learn,
+            and how to become kind human beings.
+
+            <br><br>
+
+            This little webpage is a small collection
+            of love, respect and gratitude dedicated to
+            <span class="highlight">Vinita Ma'am</span>.
+
+        </p>
+
+        <button
+            class="main-button"
+            onclick="showSurprise()"
+        >
+            🎁 Open Your Surprise
+        </button>
+
+        <div id="surprise">
+
+            🌸 Ma'am, you are the
+            MAGIC behind our little classroom! ❤️
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         CARTOON TEACHER
+    ================================================== -->
+
+    <div class="teacher-card">
+
+        <div class="teacher">
+
+            <div class="hair"></div>
+
+            <div class="ear left"></div>
+            <div class="ear right"></div>
+
+            <div class="face"></div>
+
+            <div class="fringe"></div>
+
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+
+            <div class="glasses"></div>
+            <div class="glasses r"></div>
+
+            <div class="glasses-line"></div>
+
+            <div class="nose"></div>
+
+            <div class="smile"></div>
+
+            <div class="body"></div>
+
+            <div class="shirt"></div>
+
+            <div class="bow"></div>
+
+            <div class="book"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ALL SUBJECTS
+===================================================== -->
+
+<section id="subjects">
+
+    <h2 class="section-title">
+        📚 A Classroom Full Of Learning
+    </h2>
+
+    <div class="subject-grid">
+
+
+        <div class="subject">
+
+            <div class="subject-icon">🔤</div>
+
+            <h3>
+                ABC & English
+            </h3>
+
+            <p>
+                Little letters,
+                big dreams and
+                beautiful stories.
+            </p>
+
+        </div>
+
+
+        <div class="subject">
+
+            <div class="subject-icon">🔢</div>
+
+            <h3>
+                Numbers
+            </h3>
+
+            <p>
+                Teaching little minds
+                that every number
+                has a story.
+            </p>
+
+        </div>
+
+
+        <div class="subject">
+
+            <div class="subject-icon">🎨</div>
+
+            <h3>
+                Art & Colors
+            </h3>
+
+            <p>
+                Turning blank pages
+                into colorful
+                little worlds.
+            </p>
+
+        </div>
+
+
+        <div class="subject">
+
+            <div class="subject-icon">🌱</div>
+
+            <h3>
+                EVS & Nature
+            </h3>
+
+            <p>
+                Teaching children
+                to love nature
+                and everything around them.
+            </p>
+
+        </div>
+
+
+        <div class="subject">
+
+            <div class="subject-icon">🎵</div>
+
+            <h3>
+                Music
+            </h3>
+
+            <p>
+                Filling the classroom
+                with laughter,
+                songs and rhythm.
+            </p>
+
+        </div>
+
+
+        <div class="subject">
+
+            <div class="subject-icon">🏃</div>
+
+            <h3>
+                Activity
+            </h3>
+
+            <p>
+                Learning through
+                play, movement
+                and imagination.
+            </p>
+
+        </div>
+
+
+        <div class="subject">
+
+            <div class="subject-icon">📖</div>
+
+            <h3>
+                Stories
+            </h3>
+
+            <p>
+                Every story opens
+                another tiny
+                window of imagination.
+            </p>
+
+        </div>
+
+
+        <div class="subject">
+
+            <div class="subject-icon">❤️</div>
+
+            <h3>
+                Good Values
+            </h3>
+
+            <p>
+                Perhaps the most
+                important lesson:
+                being kind.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     QUOTES
+===================================================== -->
+
+<section id="quotes">
+
+    <h2 class="section-title">
+        💖 Little Words From A Big Heart
+    </h2>
+
+    <div class="quote-container">
+
+
+        <div class="quote">
+
+            <p>
+                "The best teachers don't just
+                fill little minds with knowledge;
+                they fill little hearts with
+                confidence, kindness and dreams."
+            </p>
+
+            <span>
+                — For Vinita Ma'am 🌸
+            </span>
+
+        </div>
+
+
+        <div class="quote">
+
+            <p>
+                "A child's first classroom may
+                teach letters and numbers,
+                but a loving teacher teaches
+                the language of life."
+            </p>
+
+            <span>
+                — With love ❤️
+            </span>
+
+        </div>
+
+
+        <div class="quote">
+
+            <p>
+                "Some teachers leave lessons
+                on a blackboard.
+                The special ones leave
+                beautiful memories in our hearts."
+            </p>
+
+            <span>
+                — A grateful student
+            </span>
+
+        </div>
+
+
+        <div class="quote">
+
+            <p>
+                "For little children, a teacher
+                can become a guide,
+                a storyteller, a friend,
+                and sometimes even a second home."
+            </p>
+
+            <span>
+                — Dedicated to Vinita Ma'am 🧸
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     POEM
+===================================================== -->
+
+<section id="poem">
+
+    <h2 class="section-title">
+        ✍️ A Little Poem For Vinita Ma'am
+    </h2>
+
+    <div class="poem">
+
+        <p>
+
+            Tiny hands and tiny feet,<br>
+            Little smiles that make life sweet.<br>
+            Letters, numbers, colors bright,<br>
+            You make every lesson feel just right.<br><br>
+
+            You teach us how to read and write,<br>
+            How to share and do what's right.<br>
+            You teach us kindness, love and care,<br>
+            And show us that our dreams are there.<br><br>
+
+            With every story that you tell,<br>
+            You make our little minds excel.<br>
+            With every smile and every cheer,<br>
+            You make our classroom feel so dear.<br><br>
+
+            One day we may grow big and tall,<br>
+            And maybe not remember it all.<br>
+            But somewhere deep inside our heart,<br>
+            Your lessons will always play their part.<br><br>
+
+            So on this special Teacher's Day,<br>
+            There's just one thing we want to say:<br>
+
+            <span class="pink">
+                Thank you, Vinita Ma'am,
+                for all you do,<br>
+                For every little lesson,
+                every dream you grew. ❤️
+            </span>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SONG
+===================================================== -->
+
+<section id="song">
+
+    <h2 class="section-title">
+        🎵 Our Little Teacher's Day Song
+    </h2>
+
+    <div class="song">
+
+        <h3>
+            🌈 "Thank You, Ma'am" 🌈
+        </h3>
+
+        <p>
+
+            <strong>Verse 1</strong>
+
+            <br><br>
+
+            Good morning, Ma'am,
+            we smile today,<br>
+            Because we have
+            something special to say.<br>
+            You teach us letters,
+            numbers too,<br>
+            And make every lesson
+            feel brand new.<br><br>
+
+
+            <strong>Chorus</strong>
+
+            <br><br>
+
+            Thank you, Ma'am,
+            for helping us grow,<br>
+            For every little thing
+            you help us know.<br>
+            With a smile in your classroom
+            and love in your heart,<br>
+            You help our little dreams
+            make a beautiful start.<br><br>
+
+
+            <strong>Verse 2</strong>
+
+            <br><br>
+
+            You teach us colors,
+            shapes and songs,<br>
+            You teach us kindness
+            when something goes wrong.<br>
+            You tell us stories,
+            you help us play,<br>
+            And make our classroom
+            brighter every day.<br><br>
+
+
+            <strong>Final Chorus</strong>
+
+            <br><br>
+
+            Thank you, Vinita Ma'am,
+            this song is for you,<br>
+            For all of the wonderful
+            things that you do.<br>
+            May your days be happy,
+            colorful and bright,<br>
+            Like a rainbow appearing
+            after the rain has passed by. 🌈<br><br>
+
+            <strong>
+                Happy Teacher's Day! ❤️
+            </strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SPECIAL MESSAGE
+===================================================== -->
+
+<section id="message">
+
+    <h2 class="section-title">
+        💌 A Special Message For Vinita Ma'am
+    </h2>
+
+    <div class="message">
+
+        <p>
+
+            <span class="pink">
+                Dear Vinita Ma'am,
+            </span>
+
+            <br><br>
+
+            Sometimes the smallest classrooms
+            create the biggest memories.
+
+            <br><br>
+
+            A place filled with tiny voices,
+            colorful drawings, little hands,
+            innocent questions and countless smiles
+            becomes something much more than
+            just a classroom.
+
+            <br><br>
+
+            It becomes a place where
+            childhood memories are created.
+
+            <br><br>
+
+            And behind those memories,
+            there is often a teacher.
+
+            <br><br>
+
+            <span class="pink">
+                That teacher is you.
+            </span>
+
+            <br><br>
+
+            You don't only teach us
+            ABC and 123.
+
+            You teach us how to share.
+
+            How to say "please".
+
+            How to say "thank you".
+
+            How to help our friends.
+
+            How to be brave.
+
+            How to make mistakes
+            and try again.
+
+            <br><br>
+
+            You turn ordinary lessons
+            into little adventures.
+
+            You turn questions into curiosity.
+
+            You turn mistakes into learning.
+
+            And you turn a classroom
+            into a place where little hearts
+            feel safe to dream.
+
+            <br><br>
+
+            Years from now,
+            we may forget some of the
+            worksheets and exercises.
+
+            We may forget some of the
+            letters and numbers we learned.
+
+            But we will remember
+            the teacher who smiled at us,
+            encouraged us,
+            believed in us,
+            and helped us take
+            our very first steps into
+            the world of learning.
+
+            <br><br>
+
+            <span class="pink">
+                Thank you for being
+                patient with us.
+            </span>
+
+            <br>
+
+            <span class="pink">
+                Thank you for believing in us.
+            </span>
+
+            <br>
+
+            <span class="pink">
+                Thank you for making learning fun.
+            </span>
+
+            <br>
+
+            <span class="pink">
+                And thank you for filling
+                our childhood with beautiful memories.
+            </span>
+
+            <br><br>
+
+            May your life always be filled
+            with the same happiness,
+            kindness and warmth
+            that you give to your students
+            every single day.
+
+            <br><br>
+
+            🌸🌈🧸📚🎨🔤🔢❤️
+
+            <br><br>
+
+            <strong class="pink">
+                HAPPY TEACHER'S DAY,
+                VINITA MA'AM! ❤️
+            </strong>
+
+            <br><br>
+
+            With lots of love,
+            respect and gratitude,
+
+            <br>
+
+            <span class="pink">
+                Your Student 🌸
+            </span>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    🌸 A classroom full of little dreams,
+    guided by one beautiful teacher. 🌸
+
+    <br><br>
+
+    <strong>
+        Thank you, Vinita Ma'am,
+        for helping little hearts grow. ❤️
+    </strong>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =====================================================
+   SURPRISE BUTTON
+===================================================== */
+
+function showSurprise() {
+
+    const surprise =
+        document.getElementById("surprise");
+
+    surprise.style.display = "block";
+
+    createCelebration();
+
+}
+
+
+/* =====================================================
+   CONFETTI / BALLOON CELEBRATION
+===================================================== */
+
+function createCelebration() {
+
+    const objects = [
+        "🎈",
+        "💖",
+        "🌸",
+        "⭐",
+        "🧸",
+        "🌈",
+        "✨",
+        "📚"
+    ];
+
+    for (let i = 0; i < 55; i++) {
+
+        const item =
+            document.createElement("div");
+
+        item.innerHTML =
+            objects[
+                Math.floor(
+                    Math.random() *
+                    objects.length
+                )
+            ];
+
+        item.style.position = "fixed";
+
+        item.style.left =
+            Math.random() * 100 + "vw";
+
+        item.style.top = "-50px";
+
+        item.style.fontSize =
+            (18 + Math.random() * 25) + "px";
+
+        item.style.zIndex = "5000";
+
+        item.style.pointerEvents = "none";
+
+        const duration =
+            2500 + Math.random() * 3000;
+
+        item.animate(
+
+            [
+                {
+                    transform:
+                        "translateY(0) rotate(0deg)",
+                    opacity: 1
+                },
+
+                {
+                    transform:
+                        `translateY(110vh)
+                         rotate(${Math.random()*720}deg)`,
+                    opacity: 0
+                }
+
+            ],
+
+            {
+                duration: duration,
+                easing: "ease-out"
+            }
+
+        );
+
+        document.body.appendChild(item);
+
+        setTimeout(
+            () => item.remove(),
+            duration
+        );
+    }
+}
+
+
+/* =====================================================
+   CLICK SPARKLES
+===================================================== */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        for (let i = 0; i < 5; i++) {
+
+            const sparkle =
+                document.createElement("span");
+
+            sparkle.innerHTML = "✨";
+
+            sparkle.style.position = "fixed";
+
+            sparkle.style.left =
+                event.clientX + "px";
+
+            sparkle.style.top =
+                event.clientY + "px";
+
+            sparkle.style.pointerEvents = "none";
+
+            sparkle.style.zIndex = "6000";
+
+            document.body.appendChild(sparkle);
+
+            sparkle.animate(
+
+                [
+                    {
+                        opacity: 1,
+                        transform: "scale(.5)"
+                    },
+
+                    {
+                        opacity: 0,
+                        transform:
+                            `translate(
+                                ${(Math.random()-.5)*100}px,
+                                ${(Math.random()-.5)*100}px
+                            )
+                            scale(1.8)`
+                    }
+                ],
+
+                {
+                    duration: 800
+                }
+
+            );
+
+            setTimeout(
+                () => sparkle.remove(),
+                800
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const sections =
+    document.querySelectorAll("section");
+
+const observer =
+    new IntersectionObserver(
+
+        function(entries) {
+
+            entries.forEach(
+                function(entry) {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target.style.opacity = "1";
+
+                        entry.target.style.transform =
+                            "translateY(0)";
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+            threshold: .12
+        }
+
+    );
+
+
+sections.forEach(
+    function(section) {
+
+        section.style.opacity = "0";
+
+        section.style.transform =
+            "translateY(35px)";
+
+        section.style.transition =
+            "opacity 1s ease, transform 1s ease";
+
+        observer.observe(section);
+
+    }
+);
+
+
+/* =====================================================
+   SUBJECT CARD RANDOM BOUNCE
+===================================================== */
+
+const subjects =
+    document.querySelectorAll(".subject");
+
+subjects.forEach(
+    function(subject, index) {
+
+        subject.addEventListener(
+            "mouseenter",
+            function() {
+
+                subject.style.transform =
+                    "translateY(-12px) rotate(" +
+                    (index % 2 === 0 ? "-2deg" : "2deg") +
+                    ")";
+
+            }
+        );
+
+        subject.addEventListener(
+            "mouseleave",
+            function() {
+
+                subject.style.transform =
+                    "translateY(0) rotate(0)";
+
+            }
+        );
+
+    }
+);
+
+
+/* =====================================================
+   WELCOME MESSAGE
+===================================================== */
+
+window.addEventListener(
+    "load",
+    function() {
+
+        setTimeout(
+            function() {
+
+                console.log(
+                    "🌸 Welcome to Vinita Maam's Teacher's Day page!"
+                );
+
+            },
+            500
+        );
+
+    }
+);
+
+</script>
+
+</body>
+</html>

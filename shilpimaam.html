@@ -1,0 +1,2807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Teacher's Day | Shilpi Ma'am 🎵</title>
+
+<style>
+
+/* =========================================
+   GOOGLE FONTS
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* =========================================
+   BASIC RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            #702f76 0%,
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 70%,
+            #164f72 0%,
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #080718,
+            #16112f,
+            #080a21
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   ANIME NIGHT BACKGROUND
+========================================= */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -20;
+
+    overflow: hidden;
+}
+
+
+/* Moon */
+
+.moon {
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    right: 8%;
+    top: 8%;
+
+    border-radius: 50%;
+
+    background: #fff1bd;
+
+    box-shadow:
+        0 0 30px #fff1bd,
+        0 0 80px rgba(255, 220, 130, .55);
+}
+
+.moon::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    background: #0d1028;
+
+    left: -35px;
+    top: -12px;
+}
+
+
+/* Stars */
+
+.star {
+
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px white;
+
+    animation:
+        twinkle 2s infinite alternate;
+}
+
+
+.star:nth-child(2) {
+    left: 7%;
+    top: 15%;
+}
+
+.star:nth-child(3) {
+    left: 18%;
+    top: 32%;
+    animation-delay: .4s;
+}
+
+.star:nth-child(4) {
+    left: 31%;
+    top: 10%;
+    animation-delay: .9s;
+}
+
+.star:nth-child(5) {
+    left: 47%;
+    top: 22%;
+    animation-delay: .2s;
+}
+
+.star:nth-child(6) {
+    left: 60%;
+    top: 12%;
+    animation-delay: 1s;
+}
+
+.star:nth-child(7) {
+    left: 75%;
+    top: 30%;
+    animation-delay: .5s;
+}
+
+.star:nth-child(8) {
+    left: 89%;
+    top: 20%;
+    animation-delay: 1.2s;
+}
+
+.star:nth-child(9) {
+    left: 22%;
+    top: 75%;
+    animation-delay: .7s;
+}
+
+.star:nth-child(10) {
+    left: 67%;
+    top: 80%;
+    animation-delay: .3s;
+}
+
+
+@keyframes twinkle {
+
+    from {
+        opacity: .2;
+        transform: scale(.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.6);
+    }
+}
+
+
+/* =========================================
+   FLOATING MUSIC NOTES
+========================================= */
+
+.music-note {
+
+    position: fixed;
+
+    font-size: 30px;
+
+    opacity: .15;
+
+    z-index: -5;
+
+    animation:
+        floatNotes 14s linear infinite;
+}
+
+
+.note1 {
+    left: 8%;
+}
+
+.note2 {
+    left: 28%;
+    animation-delay: 3s;
+}
+
+.note3 {
+    left: 52%;
+    animation-delay: 7s;
+}
+
+.note4 {
+    left: 78%;
+    animation-delay: 2s;
+}
+
+
+@keyframes floatNotes {
+
+    0% {
+        transform:
+            translateY(110vh)
+            rotate(0deg);
+    }
+
+    100% {
+        transform:
+            translateY(-120vh)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+nav {
+
+    position: fixed;
+
+    top: 0;
+
+    width: 100%;
+
+    padding: 15px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background:
+        rgba(5, 5, 23, .72);
+
+    backdrop-filter:
+        blur(15px);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.1);
+
+    z-index: 1000;
+}
+
+
+.logo {
+
+    font-family:
+        'Cinzel', serif;
+
+    color:
+        #ffd76a;
+
+    font-weight:
+        700;
+}
+
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    margin-left: 25px;
+
+    transition: .3s;
+}
+
+
+nav a:hover {
+
+    color:
+        #ffd76a;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    padding:
+        130px 8% 80px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-around;
+
+    gap: 60px;
+}
+
+
+.hero-text {
+
+    max-width: 650px;
+}
+
+
+.badge {
+
+    color:
+        #ffd76a;
+
+    letter-spacing:
+        4px;
+
+    font-size:
+        13px;
+
+    margin-bottom:
+        20px;
+}
+
+
+h1 {
+
+    font-family:
+        'Cinzel', serif;
+
+    font-size:
+        clamp(45px, 7vw, 85px);
+
+    line-height:
+        1.05;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #ffd76a,
+            #ff9edb,
+            #ffffff
+        );
+
+    background-size:
+        300%;
+
+    -webkit-background-clip:
+        text;
+
+    color:
+        transparent;
+
+    animation:
+        titleGlow 5s linear infinite;
+}
+
+
+@keyframes titleGlow {
+
+    to {
+        background-position:
+            300%;
+    }
+}
+
+
+.hero h2 {
+
+    margin-top:
+        18px;
+
+    color:
+        #c9d9ff;
+
+    font-size:
+        25px;
+}
+
+
+.hero p {
+
+    margin-top:
+        25px;
+
+    line-height:
+        1.9;
+
+    color:
+        #dce1f6;
+}
+
+
+/* =========================================
+   CARTOON TEACHER CARD
+========================================= */
+
+.teacher-card {
+
+    width:
+        340px;
+
+    height:
+        440px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.03)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.5);
+
+    animation:
+        floatingTeacher
+        4s ease-in-out infinite;
+}
+
+
+@keyframes floatingTeacher {
+
+    0%,100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-17px);
+    }
+}
+
+
+/* =========================================
+   CSS CARTOON
+========================================= */
+
+.teacher {
+
+    position:
+        relative;
+
+    width:
+        220px;
+
+    height:
+        340px;
+}
+
+
+/* Hair */
+
+.hair {
+
+    position:
+        absolute;
+
+    width:
+        145px;
+
+    height:
+        120px;
+
+    left:
+        38px;
+
+    top:
+        5px;
+
+    background:
+        #21172d;
+
+    border-radius:
+        55% 55%
+        40% 40%;
+
+    z-index:
+        2;
+}
+
+
+/* Face */
+
+.face {
+
+    position:
+        absolute;
+
+    width:
+        118px;
+
+    height:
+        140px;
+
+    left:
+        51px;
+
+    top:
+        38px;
+
+    background:
+        #f1bd94;
+
+    border-radius:
+        48% 48%
+        45% 45%;
+
+    z-index:
+        3;
+}
+
+
+/* Hair fringe */
+
+.fringe {
+
+    position:
+        absolute;
+
+    width:
+        95px;
+
+    height:
+        52px;
+
+    left:
+        60px;
+
+    top:
+        27px;
+
+    background:
+        #21172d;
+
+    border-radius:
+        50%;
+
+    transform:
+        rotate(-8deg);
+
+    z-index:
+        5;
+}
+
+
+/* Ears */
+
+.ear {
+
+    position:
+        absolute;
+
+    width:
+        21px;
+
+    height:
+        37px;
+
+    top:
+        85px;
+
+    background:
+        #dfa77c;
+
+    border-radius:
+        50%;
+
+    z-index:
+        2;
+}
+
+.ear.left {
+    left: 40px;
+}
+
+.ear.right {
+    right: 40px;
+}
+
+
+/* Eyes */
+
+.eye {
+
+    position:
+        absolute;
+
+    width:
+        14px;
+
+    height:
+        10px;
+
+    border-bottom:
+        3px solid #2a1e34;
+
+    top:
+        92px;
+
+    z-index:
+        7;
+}
+
+.eye.left {
+    left: 75px;
+}
+
+.eye.right {
+    right: 75px;
+}
+
+
+/* Glasses */
+
+.glasses {
+
+    position:
+        absolute;
+
+    width:
+        48px;
+
+    height:
+        28px;
+
+    border:
+        3px solid
+        #241c32;
+
+    border-radius:
+        8px;
+
+    top:
+        82px;
+
+    left:
+        58px;
+
+    z-index:
+        8;
+}
+
+.glasses.right {
+    left:
+        113px;
+}
+
+
+.glasses-line {
+
+    position:
+        absolute;
+
+    width:
+        10px;
+
+    height:
+        3px;
+
+    background:
+        #241c32;
+
+    left:
+        104px;
+
+    top:
+        94px;
+
+    z-index:
+        9;
+}
+
+
+/* Nose */
+
+.nose {
+
+    position:
+        absolute;
+
+    width:
+        10px;
+
+    height:
+        18px;
+
+    border-right:
+        2px solid
+        #bc7c5b;
+
+    left:
+        104px;
+
+    top:
+        104px;
+
+    z-index:
+        7;
+}
+
+
+/* Smile */
+
+.smile {
+
+    position:
+        absolute;
+
+    width:
+        38px;
+
+    height:
+        17px;
+
+    border-bottom:
+        3px solid
+        #853d4d;
+
+    border-radius:
+        50%;
+
+    left:
+        92px;
+
+    top:
+        128px;
+
+    z-index:
+        7;
+}
+
+
+/* Body */
+
+.body {
+
+    position:
+        absolute;
+
+    width:
+        165px;
+
+    height:
+        155px;
+
+    left:
+        28px;
+
+    top:
+        170px;
+
+    background:
+        #55366f;
+
+    border-radius:
+        45px 45px
+        20px 20px;
+}
+
+
+/* Blouse */
+
+.shirt {
+
+    position:
+        absolute;
+
+    width:
+        80px;
+
+    height:
+        95px;
+
+    left:
+        71px;
+
+    top:
+        170px;
+
+    background:
+        #f4edf4;
+
+    clip-path:
+        polygon(
+            20% 0,
+            80% 0,
+            100% 100%,
+            0 100%
+        );
+}
+
+
+/* Ribbon */
+
+.ribbon {
+
+    position:
+        absolute;
+
+    width:
+        23px;
+
+    height:
+        80px;
+
+    left:
+        100px;
+
+    top:
+        173px;
+
+    background:
+        #e65d8c;
+
+    clip-path:
+        polygon(
+            50% 0,
+            100% 20%,
+            65% 100%,
+            35% 100%,
+            0 20%
+        );
+
+    z-index:
+        3;
+}
+
+
+/* Microphone */
+
+.microphone {
+
+    position:
+        absolute;
+
+    width:
+        70px;
+
+    height:
+        70px;
+
+    right:
+        -15px;
+
+    bottom:
+        10px;
+
+    border-radius:
+        50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d7d9e8,
+            #676c91
+        );
+
+    box-shadow:
+        0 7px 0
+        #353753;
+
+    transform:
+        rotate(-15deg);
+
+    z-index:
+        10;
+}
+
+
+.microphone::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        27px;
+
+    height:
+        45px;
+
+    left:
+        21px;
+
+    top:
+        7px;
+
+    border-radius:
+        50%;
+
+    background:
+        #25243b;
+}
+
+
+.microphone::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        5px;
+
+    height:
+        40px;
+
+    left:
+        33px;
+
+    top:
+        50px;
+
+    background:
+        #555a79;
+}
+
+
+/* =========================================
+   SECTION STYLES
+========================================= */
+
+section {
+
+    padding:
+        100px 8%;
+
+    position:
+        relative;
+}
+
+
+.section-title {
+
+    text-align:
+        center;
+
+    font-family:
+        'Cinzel', serif;
+
+    color:
+        #ffd76a;
+
+    font-size:
+        38px;
+
+    margin-bottom:
+        50px;
+}
+
+
+/* =========================================
+   MUSIC STUDIO
+========================================= */
+
+.music-box {
+
+    max-width:
+        1000px;
+
+    margin:
+        auto;
+
+    padding:
+        45px;
+
+    border-radius:
+        30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.03)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.3);
+}
+
+
+.music-box p {
+
+    text-align:
+        center;
+
+    line-height:
+        2;
+
+    color:
+        #dfe5f7;
+}
+
+
+/* Piano */
+
+.piano {
+
+    margin:
+        45px auto 0;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    max-width:
+        700px;
+
+    height:
+        120px;
+
+    padding:
+        8px;
+
+    background:
+        #222238;
+
+    border-radius:
+        10px;
+}
+
+
+.key {
+
+    flex:
+        1;
+
+    height:
+        100%;
+
+    background:
+        linear-gradient(
+            white,
+            #d7d7e2
+        );
+
+    border:
+        1px solid
+        #333;
+
+    border-radius:
+        0 0 5px 5px;
+
+    transition:
+        .15s;
+}
+
+
+.key:hover {
+
+    background:
+        #ffd76a;
+
+    transform:
+        translateY(5px);
+}
+
+
+/* =========================================
+   MUSIC CARDS
+========================================= */
+
+.cards {
+
+    margin-top:
+        40px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        20px;
+}
+
+
+.card {
+
+    padding:
+        30px 20px;
+
+    text-align:
+        center;
+
+    border-radius:
+        22px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    transition:
+        .4s;
+}
+
+
+.card:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        #ffd76a;
+
+    box-shadow:
+        0 0 30px
+        rgba(255,215,106,.18);
+}
+
+
+.card .icon {
+
+    font-size:
+        40px;
+
+    margin-bottom:
+        15px;
+}
+
+
+.card h3 {
+
+    color:
+        #ffd76a;
+
+    margin-bottom:
+        10px;
+}
+
+
+.card p {
+
+    font-size:
+        14px;
+
+    line-height:
+        1.7;
+}
+
+
+/* =========================================
+   QUOTES
+========================================= */
+
+.quote {
+
+    max-width:
+        850px;
+
+    margin:
+        25px auto;
+
+    padding:
+        35px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border-left:
+        4px solid
+        #ffd76a;
+
+    border-radius:
+        0 20px 20px 0;
+}
+
+
+.quote p {
+
+    font-family:
+        'Cinzel', serif;
+
+    font-size:
+        21px;
+
+    line-height:
+        1.8;
+
+    color:
+        #fff2c7;
+}
+
+
+.quote span {
+
+    display:
+        block;
+
+    text-align:
+        right;
+
+    margin-top:
+        15px;
+
+    color:
+        #aab7d9;
+}
+
+
+/* =========================================
+   POEM
+========================================= */
+
+.poem {
+
+    max-width:
+        780px;
+
+    margin:
+        auto;
+
+    padding:
+        45px;
+
+    text-align:
+        center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.1),
+            rgba(255,255,255,.04)
+        );
+
+    border-radius:
+        30px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.3);
+}
+
+
+.poem p {
+
+    line-height:
+        2.15;
+
+    color:
+        #e4e9f7;
+
+    font-size:
+        17px;
+}
+
+
+/* =========================================
+   SONG
+========================================= */
+
+.song {
+
+    max-width:
+        780px;
+
+    margin:
+        auto;
+
+    padding:
+        45px;
+
+    border-radius:
+        30px;
+
+    text-align:
+        center;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+}
+
+
+.song h3 {
+
+    color:
+        #ff9edb;
+
+    margin-bottom:
+        25px;
+
+    font-family:
+        'Cinzel', serif;
+}
+
+
+.song p {
+
+    line-height:
+        2;
+
+    color:
+        #e4e8f6;
+}
+
+
+/* =========================================
+   SPECIAL MESSAGE
+========================================= */
+
+.message {
+
+    max-width:
+        900px;
+
+    margin:
+        auto;
+
+    text-align:
+        center;
+}
+
+
+.message p {
+
+    color:
+        #dfe5f7;
+
+    line-height:
+        2;
+
+    font-size:
+        18px;
+}
+
+
+.gold {
+
+    color:
+        #ffd76a;
+
+    font-weight:
+        600;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+button {
+
+    margin-top:
+        35px;
+
+    padding:
+        15px 35px;
+
+    border:
+        none;
+
+    border-radius:
+        50px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff7eb6,
+            #ffd76a
+        );
+
+    color:
+        #19152d;
+
+    font-size:
+        16px;
+
+    font-weight:
+        bold;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 0 25px
+        rgba(255,215,106,.35);
+
+    transition:
+        .3s;
+}
+
+
+button:hover {
+
+    transform:
+        scale(1.08);
+
+    box-shadow:
+        0 0 45px
+        rgba(255,215,106,.7);
+}
+
+
+/* =========================================
+   SECRET MESSAGE
+========================================= */
+
+#secret {
+
+    display:
+        none;
+
+    margin:
+        30px auto 0;
+
+    max-width:
+        700px;
+
+    color:
+        #fff1ba;
+
+    font-family:
+        'Cinzel', serif;
+
+    font-size:
+        22px;
+
+    line-height:
+        1.8;
+
+    animation:
+        reveal 1s;
+}
+
+
+@keyframes reveal {
+
+    from {
+        opacity: 0;
+        transform:
+            scale(.8);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            scale(1);
+    }
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    padding:
+        45px 20px;
+
+    text-align:
+        center;
+
+    color:
+        #8e98b7;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.08);
+}
+
+
+footer strong {
+
+    color:
+        #ffd76a;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width: 800px) {
+
+    nav a {
+        display:
+            none;
+    }
+
+    .hero {
+
+        flex-direction:
+            column;
+
+        text-align:
+            center;
+    }
+
+    .teacher-card {
+
+        width:
+            290px;
+
+        height:
+            390px;
+    }
+
+    .cards {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .section-title {
+
+        font-size:
+            29px;
+    }
+
+    .music-box,
+    .poem,
+    .song {
+
+        padding:
+            25px;
+    }
+
+    .quote p {
+
+        font-size:
+            18px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     ANIMATED BACKGROUND
+========================================= -->
+
+<div class="background">
+
+    <div class="moon"></div>
+
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+
+</div>
+
+
+<!-- FLOATING NOTES -->
+
+<div class="music-note note1">🎵</div>
+<div class="music-note note2">🎶</div>
+<div class="music-note note3">🎼</div>
+<div class="music-note note4">🎵</div>
+
+
+<!-- =========================================
+     NAVIGATION
+========================================= -->
+
+<nav>
+
+    <div class="logo">
+        🎵 MELODY OF GRATITUDE
+    </div>
+
+    <div>
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#music">
+            Music
+        </a>
+
+        <a href="#quotes">
+            Quotes
+        </a>
+
+        <a href="#poem">
+            Poem
+        </a>
+
+        <a href="#song">
+            Song
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="hero-text">
+
+        <div class="badge">
+            ✨ A MELODY WRITTEN FROM THE HEART ✨
+        </div>
+
+        <h1>
+
+            Happy<br>
+            Teacher's Day
+
+        </h1>
+
+        <h2>
+            🎶 To Our Wonderful Shilpi Ma'am ❤️
+        </h2>
+
+        <p>
+
+            Music is more than sounds and melodies.
+
+            It is emotion.
+
+            It is memory.
+
+            It is a language that speaks
+            when words are not enough.
+
+            <br><br>
+
+            And just like a beautiful song needs
+            someone to guide its rhythm,
+            students need a teacher who helps
+            them find their own rhythm in life.
+
+            <br><br>
+
+            For us, that special person is
+            <span class="gold">
+                Shilpi Ma'am.
+            </span>
+
+        </p>
+
+
+        <button onclick="openMessage()">
+
+            🎵 Play A Special Message
+
+        </button>
+
+
+        <div id="secret">
+
+            "Ma'am, if our life were a song,
+            you would be one of its most
+            beautiful melodies."
+
+            <br>
+
+            ❤️ Thank you for making our journey
+            sound a little more beautiful.
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         CARTOON TEACHER
+    ====================================== -->
+
+    <div class="teacher-card">
+
+        <div class="teacher">
+
+            <div class="hair"></div>
+
+            <div class="ear left"></div>
+
+            <div class="ear right"></div>
+
+            <div class="face"></div>
+
+            <div class="fringe"></div>
+
+            <div class="eye left"></div>
+
+            <div class="eye right"></div>
+
+            <div class="glasses"></div>
+
+            <div class="glasses right"></div>
+
+            <div class="glasses-line"></div>
+
+            <div class="nose"></div>
+
+            <div class="smile"></div>
+
+            <div class="body"></div>
+
+            <div class="shirt"></div>
+
+            <div class="ribbon"></div>
+
+            <div class="microphone"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     MUSIC SECTION
+========================================= -->
+
+<section id="music">
+
+    <h2 class="section-title">
+
+        🎼 The Classroom Of Music
+
+    </h2>
+
+
+    <div class="music-box">
+
+        <p>
+
+            A song is created from many different notes.
+
+            Some notes are high,
+            some are low.
+
+            Some are joyful,
+            some are emotional.
+
+            But when they come together,
+            they create something beautiful.
+
+            <br><br>
+
+            In the same way,
+            every student is different.
+
+            And a wonderful teacher knows
+            how to bring everyone's unique
+            rhythm together.
+
+            <br><br>
+
+            <span class="gold">
+
+                Thank you, Shilpi Ma'am,
+                for helping us discover
+                the music within ourselves.
+
+            </span>
+
+        </p>
+
+
+        <!-- Piano -->
+
+        <div class="piano">
+
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+
+        </div>
+
+
+        <!-- Music Cards -->
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🎵
+                </div>
+
+                <h3>
+                    RHYTHM
+                </h3>
+
+                <p>
+                    You taught us to find
+                    our own rhythm
+                    even when life becomes difficult.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🎤
+                </div>
+
+                <h3>
+                    VOICE
+                </h3>
+
+                <p>
+                    You encouraged us
+                    to express ourselves
+                    without fear.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🎼
+                </div>
+
+                <h3>
+                    MELODY
+                </h3>
+
+                <p>
+                    You showed us that
+                    every life can become
+                    a beautiful melody.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     QUOTES
+========================================= -->
+
+<section id="quotes">
+
+    <h2 class="section-title">
+
+        🌙 Words From The Heart
+
+    </h2>
+
+
+    <div class="quote">
+
+        <p>
+
+            "A teacher is like a beautiful melody:
+            you may not remember every note,
+            but the feeling remains in your heart
+            forever."
+
+        </p>
+
+        <span>
+            — For Shilpi Ma'am ❤️
+        </span>
+
+    </div>
+
+
+    <div class="quote">
+
+        <p>
+
+            "Music teaches us to listen,
+            but a great teacher teaches us
+            to listen to our own dreams."
+
+        </p>
+
+        <span>
+            — With deepest gratitude
+        </span>
+
+    </div>
+
+
+    <div class="quote">
+
+        <p>
+
+            "Some people teach from books,
+            some teach from experience,
+            but the best teachers teach
+            directly from the heart."
+
+        </p>
+
+        <span>
+            — A student's heartfelt thought
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     POEM
+========================================= -->
+
+<section id="poem">
+
+    <h2 class="section-title">
+
+        ✒️ A Poem For Shilpi Ma'am
+
+    </h2>
+
+
+    <div class="poem">
+
+        <p>
+
+            You taught us notes,
+            you taught us song,<br>
+
+            You showed us where
+            our dreams belong.<br>
+
+            Through every rhythm,
+            every tune,<br>
+
+            You made our classroom
+            brighter than the moon.<br><br>
+
+
+            When our voices
+            were afraid to rise,<br>
+
+            You gave us courage
+            to touch the skies.<br>
+
+            When we missed a note
+            or lost our way,<br>
+
+            You taught us
+            to try another day.<br><br>
+
+
+            Life has its pauses,
+            life has its beats,<br>
+
+            Sometimes bitter,
+            sometimes sweet.<br>
+
+            But with your lessons
+            inside our heart,<br>
+
+            We know every ending
+            can be a brand-new start.<br><br>
+
+
+            So today, Ma'am,
+            we want to say,<br>
+
+            Thank you on this
+            Teacher's Day.<br>
+
+            May your life be filled
+            with melodies bright,<br>
+
+            Like beautiful music
+            beneath the stars at night. 🌙🎵
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     ORIGINAL SONG
+========================================= -->
+
+<section id="song">
+
+    <h2 class="section-title">
+
+        🎤 A Song Written For You
+
+    </h2>
+
+
+    <div class="song">
+
+        <h3>
+            🎵 "Your Melody" 🎵
+        </h3>
+
+
+        <p>
+
+            <strong>
+                Verse 1
+            </strong>
+
+            <br><br>
+
+            In a room full of voices,
+            you taught us to hear,<br>
+
+            You turned every little doubt
+            into courage, not fear.<br>
+
+            With a smile and a lesson,
+            with every new day,<br>
+
+            You showed us the rhythm
+            to find our own way.<br><br>
+
+
+            <strong>
+                Chorus
+            </strong>
+
+            <br><br>
+
+            You are the melody
+            we carry inside,<br>
+
+            The gentle little rhythm
+            that stays by our side.<br>
+
+            And wherever life's music
+            may take us to roam,<br>
+
+            The lessons you gave us
+            will always feel home.<br><br>
+
+
+            <strong>
+                Verse 2
+            </strong>
+
+            <br><br>
+
+            When the music gets quiet,
+            when the road isn't clear,<br>
+
+            We'll remember your words,
+            your patience sincere.<br>
+
+            Every dream has a rhythm,
+            every heart has a song,<br>
+
+            And you taught us, dear Ma'am,
+            to keep moving along.<br><br>
+
+
+            <strong>
+                Final Chorus
+            </strong>
+
+            <br><br>
+
+            So this song is for you,
+            with our hearts shining bright,<br>
+
+            For the teacher who helped us
+            turn dreams into light.<br>
+
+            May your life keep on singing,
+            forever and true,<br>
+
+            Because one beautiful melody
+            will always be you. ❤️
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     SPECIAL MESSAGE
+========================================= -->
+
+<section id="message">
+
+    <h2 class="section-title">
+
+        💌 A Special Message For Shilpi Ma'am
+
+    </h2>
+
+
+    <div class="message">
+
+        <p>
+
+            <span class="gold">
+                Dear Shilpi Ma'am,
+            </span>
+
+            <br><br>
+
+            There are moments in life when words
+            simply aren't enough to express
+            what someone means to us.
+
+            <br><br>
+
+            So today, we would like to express it
+            through the language you understand best —
+            <span class="gold">
+                music.
+            </span>
+
+            <br><br>
+
+            Every song has a beginning,
+            a rhythm, a melody and an ending.
+
+            But the beautiful thing about music
+            is that even after the song ends,
+            its feeling can remain in our hearts.
+
+            <br><br>
+
+            That's what your teaching means to us.
+
+            <br><br>
+
+            We may not remember every single note,
+            every lesson or every word after many years.
+
+            But we will remember the confidence
+            you gave us.
+
+            We will remember your patience.
+
+            We will remember your encouragement.
+
+            And most importantly,
+            we will remember how you made learning
+            feel like something beautiful.
+
+            <br><br>
+
+            <span class="gold">
+                You didn't just teach music.
+                You taught us how to feel,
+                how to express,
+                how to listen,
+                and how to believe in ourselves.
+            </span>
+
+            <br><br>
+
+            Years from now, when we hear a beautiful song,
+            perhaps somewhere in that melody,
+            we'll remember the teacher
+            who helped us understand its magic.
+
+            <br><br>
+
+            May your life always be filled
+            with beautiful songs,
+            peaceful moments,
+            endless happiness
+            and countless reasons to smile.
+
+            <br><br>
+
+            And may the world always return
+            the same kindness and inspiration
+            that you have given to your students.
+
+            <br><br>
+
+            <strong>
+                🎵 HAPPY TEACHER'S DAY,
+                SHILPI MA'AM! ❤️
+            </strong>
+
+            <br><br>
+
+            With endless respect,
+            love and gratitude,
+
+            <br>
+
+            <span class="gold">
+                Your Student 🎶
+            </span>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    🎵 Every life has a melody.
+
+    <br>
+
+    <strong>
+        Thank you, Shilpi Ma'am,
+        for making ours more beautiful. ❤️
+    </strong>
+
+    <br><br>
+
+    Made with ❤️ • Music • Respect • Gratitude • Anime Magic
+
+</footer>
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+
+/* =========================================
+   SPECIAL MESSAGE
+========================================= */
+
+function openMessage() {
+
+    const secret =
+        document.getElementById("secret");
+
+
+    if (
+        secret.style.display === "block"
+    ) {
+
+        secret.style.display = "none";
+
+    }
+
+    else {
+
+        secret.style.display = "block";
+
+        createMusicCelebration();
+
+    }
+
+}
+
+
+/* =========================================
+   MUSIC CELEBRATION
+========================================= */
+
+function createMusicCelebration() {
+
+    const symbols = [
+
+        "🎵",
+        "🎶",
+        "🎼",
+        "❤️",
+        "✨",
+        "🎤",
+        "⭐"
+
+    ];
+
+
+    for (
+        let i = 0;
+        i < 40;
+        i++
+    ) {
+
+        const item =
+            document.createElement("div");
+
+
+        item.innerHTML =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+
+        item.style.position =
+            "fixed";
+
+
+        item.style.left =
+            Math.random() *
+            100 +
+            "vw";
+
+
+        item.style.top =
+            "-30px";
+
+
+        item.style.fontSize =
+            (
+                15 +
+                Math.random() * 25
+            ) +
+            "px";
+
+
+        item.style.zIndex =
+            "3000";
+
+
+        item.style.pointerEvents =
+            "none";
+
+
+        const duration =
+            2500 +
+            Math.random() * 3000;
+
+
+        item.animate(
+
+            [
+
+                {
+
+                    transform:
+                        "translateY(0) rotate(0deg)",
+
+                    opacity:
+                        1
+
+                },
+
+                {
+
+                    transform:
+                        `translateY(110vh)
+                         rotate(${Math.random()*720}deg)`,
+
+                    opacity:
+                        0
+
+                }
+
+            ],
+
+            {
+
+                duration:
+                    duration,
+
+                easing:
+                    "ease-out"
+
+            }
+
+        );
+
+
+        document.body.appendChild(
+            item
+        );
+
+
+        setTimeout(
+
+            () => item.remove(),
+
+            duration
+
+        );
+
+    }
+
+}
+
+
+/* =========================================
+   PIANO KEY SOUND
+========================================= */
+
+/*
+   Web Audio API creates a tiny piano-like
+   sound when a piano key is clicked.
+*/
+
+const keys =
+    document.querySelectorAll(".key");
+
+
+keys.forEach(
+    function(key, index) {
+
+        key.addEventListener(
+            "click",
+            function() {
+
+                playNote(index);
+
+            }
+        );
+
+    }
+);
+
+
+function playNote(index) {
+
+    const AudioContext =
+        window.AudioContext ||
+        window.webkitAudioContext;
+
+
+    if (!AudioContext) return;
+
+
+    const audio =
+        new AudioContext();
+
+
+    const oscillator =
+        audio.createOscillator();
+
+
+    const gain =
+        audio.createGain();
+
+
+    const frequencies = [
+
+        261.63,
+        293.66,
+        329.63,
+        349.23,
+        392.00,
+        440.00,
+        493.88,
+        523.25,
+        587.33,
+        659.25
+
+    ];
+
+
+    oscillator.frequency.value =
+        frequencies[index];
+
+
+    oscillator.type =
+        "sine";
+
+
+    gain.gain.setValueAtTime(
+        .25,
+        audio.currentTime
+    );
+
+
+    gain.gain.exponentialRampToValueAtTime(
+        .001,
+        audio.currentTime + .8
+    );
+
+
+    oscillator.connect(gain);
+
+    gain.connect(
+        audio.destination
+    );
+
+
+    oscillator.start();
+
+    oscillator.stop(
+        audio.currentTime + .8
+    );
+
+}
+
+
+/* =========================================
+   MOUSE SPARKLES
+========================================= */
+
+document.addEventListener(
+    "mousemove",
+    function(event) {
+
+        if (
+            Math.random() > .88
+        ) {
+
+            const sparkle =
+                document.createElement("span");
+
+
+            sparkle.innerHTML =
+                "♪";
+
+
+            sparkle.style.position =
+                "fixed";
+
+
+            sparkle.style.left =
+                event.clientX +
+                "px";
+
+
+            sparkle.style.top =
+                event.clientY +
+                "px";
+
+
+            sparkle.style.color =
+                "#ffd76a";
+
+
+            sparkle.style.fontSize =
+                "14px";
+
+
+            sparkle.style.pointerEvents =
+                "none";
+
+
+            sparkle.style.zIndex =
+                "4000";
+
+
+            document.body.appendChild(
+                sparkle
+            );
+
+
+            sparkle.animate(
+
+                [
+
+                    {
+
+                        opacity:
+                            1,
+
+                        transform:
+                            "scale(1)"
+
+                    },
+
+                    {
+
+                        opacity:
+                            0,
+
+                        transform:
+                            "scale(2.5) translateY(-25px)"
+
+                    }
+
+                ],
+
+                {
+
+                    duration:
+                        900
+
+                }
+
+            );
+
+
+            setTimeout(
+
+                () => sparkle.remove(),
+
+                900
+
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+const sections =
+    document.querySelectorAll(
+        "section"
+    );
+
+
+const observer =
+    new IntersectionObserver(
+
+        function(entries) {
+
+            entries.forEach(
+                function(entry) {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target.style.opacity =
+                            "1";
+
+
+                        entry.target.style.transform =
+                            "translateY(0)";
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+
+            threshold:
+                .15
+
+        }
+
+    );
+
+
+sections.forEach(
+    function(section) {
+
+        section.style.opacity =
+            "0";
+
+
+        section.style.transform =
+            "translateY(35px)";
+
+
+        section.style.transition =
+            "opacity 1s ease, transform 1s ease";
+
+
+        observer.observe(
+            section
+        );
+
+    }
+);
+
+
+/* =========================================
+   HERO LOAD ANIMATION
+========================================= */
+
+window.addEventListener(
+    "load",
+    function() {
+
+        const hero =
+            document.querySelector(
+                ".hero"
+            );
+
+
+        hero.style.opacity =
+            "1";
+
+
+        hero.style.transform =
+            "translateY(0)";
+
+    }
+);
+
+</script>
+
+</body>
+</html>

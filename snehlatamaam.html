@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Teacher's Day | Snehlata Ma'am</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Comic Sans MS", "Trebuchet MS", sans-serif;
+        min-height: 100vh;
+        overflow-x: hidden;
+        background: linear-gradient(
+            135deg,
+            #fff4c4,
+            #ffe1ec,
+            #dff7ff,
+            #e8ffd9
+        );
+        color: #4b3b47;
+    }
+
+    /* =========================
+       BACKGROUND
+    ========================== */
+
+    .background {
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    .cloud {
+        position: absolute;
+        background: white;
+        width: 150px;
+        height: 55px;
+        border-radius: 50px;
+        opacity: 0.75;
+        filter: blur(1px);
+        animation: cloudMove 25s linear infinite;
+    }
+
+    .cloud::before,
+    .cloud::after {
+        content: "";
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+    }
+
+    .cloud::before {
+        width: 70px;
+        height: 70px;
+        left: 25px;
+        bottom: 10px;
+    }
+
+    .cloud::after {
+        width: 90px;
+        height: 90px;
+        right: 20px;
+        bottom: 5px;
+    }
+
+    .cloud1 {
+        top: 10%;
+        left: -200px;
+    }
+
+    .cloud2 {
+        top: 25%;
+        left: -300px;
+        animation-delay: 8s;
+        transform: scale(0.7);
+    }
+
+    @keyframes cloudMove {
+        from {
+            transform: translateX(-200px);
+        }
+
+        to {
+            transform: translateX(calc(100vw + 400px));
+        }
+    }
+
+    /* =========================
+       BALLOONS
+    ========================== */
+
+    .balloon {
+        position: fixed;
+        width: 55px;
+        height: 70px;
+        border-radius: 50%;
+        z-index: 0;
+        animation: floatBalloon 5s ease-in-out infinite;
+    }
+
+    .balloon::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 90px;
+        background: #777;
+        top: 68px;
+        left: 50%;
+    }
+
+    .balloon::before {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 22px;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 10px solid currentColor;
+    }
+
+    .b1 {
+        left: 4%;
+        top: 25%;
+        background: #ff6b81;
+        color: #ff6b81;
+    }
+
+    .b2 {
+        right: 5%;
+        top: 18%;
+        background: #6c9cff;
+        color: #6c9cff;
+        animation-delay: 1s;
+    }
+
+    .b3 {
+        right: 10%;
+        bottom: 12%;
+        background: #ffd166;
+        color: #ffd166;
+        animation-delay: 2s;
+    }
+
+    .b4 {
+        left: 8%;
+        bottom: 10%;
+        background: #73d673;
+        color: #73d673;
+        animation-delay: 3s;
+    }
+
+    @keyframes floatBalloon {
+        0%, 100% {
+            transform: translateY(0) rotate(-3deg);
+        }
+
+        50% {
+            transform: translateY(-25px) rotate(4deg);
+        }
+    }
+
+    /* =========================
+       MAIN CARD
+    ========================== */
+
+    .wrapper {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 35px 15px;
+    }
+
+    .card {
+        width: min(950px, 95%);
+        background: rgba(255,255,255,0.88);
+        backdrop-filter: blur(12px);
+        border-radius: 35px;
+        padding: 45px 30px;
+        text-align: center;
+        box-shadow:
+            0 25px 70px rgba(89, 64, 82, 0.18),
+            inset 0 0 0 4px rgba(255,255,255,0.8);
+        border: 3px dashed #ff9fba;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* =========================
+       DECORATIONS
+    ========================== */
+
+    .corner {
+        position: absolute;
+        font-size: 42px;
+        animation: wiggle 3s ease-in-out infinite;
+    }
+
+    .corner1 {
+        top: 15px;
+        left: 20px;
+    }
+
+    .corner2 {
+        top: 15px;
+        right: 20px;
+    }
+
+    .corner3 {
+        bottom: 15px;
+        left: 20px;
+    }
+
+    .corner4 {
+        bottom: 15px;
+        right: 20px;
+    }
+
+    @keyframes wiggle {
+        0%,100% {
+            transform: rotate(-8deg);
+        }
+
+        50% {
+            transform: rotate(8deg) scale(1.1);
+        }
+    }
+
+    /* =========================
+       TOP BADGE
+    ========================== */
+
+    .badge {
+        display: inline-block;
+        padding: 10px 22px;
+        background: #ffdf70;
+        color: #6d4c41;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 6px 0 #e8b83e;
+        margin-bottom: 20px;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%,100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-7px);
+        }
+    }
+
+    /* =========================
+       TITLE
+    ========================== */
+
+    h1 {
+        font-size: clamp(42px, 8vw, 78px);
+        line-height: 1;
+        color: #ff5f87;
+        text-shadow:
+            3px 3px 0 white,
+            6px 6px 0 #ffd2df;
+        margin-bottom: 15px;
+    }
+
+    .teacher-name {
+        font-size: clamp(28px, 5vw, 48px);
+        color: #7656c9;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    .subtitle {
+        font-size: clamp(18px, 3vw, 25px);
+        color: #5c5963;
+        margin-bottom: 30px;
+    }
+
+    /* =========================
+       CLASSROOM
+    ========================== */
+
+    .classroom {
+        margin: 30px auto;
+        max-width: 750px;
+        padding: 25px;
+        border-radius: 25px;
+        background: #fff8e9;
+        border: 3px solid #ffd76a;
+        position: relative;
+    }
+
+    .board {
+        background: #6c9b68;
+        border: 8px solid #a76d43;
+        border-radius: 15px;
+        padding: 25px 15px;
+        color: white;
+        box-shadow: 0 8px 0 #74482e;
+    }
+
+    .board h2 {
+        font-size: clamp(22px, 4vw, 34px);
+        margin-bottom: 10px;
+    }
+
+    .board p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .kids {
+        font-size: 45px;
+        margin-top: 18px;
+        letter-spacing: 10px;
+        animation: kidsBounce 2s ease-in-out infinite;
+    }
+
+    @keyframes kidsBounce {
+        0%,100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-8px);
+        }
+    }
+
+    /* =========================
+       MESSAGE
+    ========================== */
+
+    .message {
+        max-width: 750px;
+        margin: 30px auto;
+        font-size: 19px;
+        line-height: 1.8;
+        color: #555;
+    }
+
+    .message strong {
+        color: #ff5f87;
+    }
+
+    /* =========================
+       HEARTS
+    ========================== */
+
+    .hearts {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        font-size: 28px;
+        margin: 20px 0;
+    }
+
+    .heart {
+        animation: heartBeat 1.5s infinite;
+    }
+
+    .heart:nth-child(2) {
+        animation-delay: .2s;
+    }
+
+    .heart:nth-child(3) {
+        animation-delay: .4s;
+    }
+
+    .heart:nth-child(4) {
+        animation-delay: .6s;
+    }
+
+    .heart:nth-child(5) {
+        animation-delay: .8s;
+    }
+
+    @keyframes heartBeat {
+        0%,100% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.35);
+        }
+    }
+
+    /* =========================
+       BUTTON
+    ========================== */
+
+    .surprise-btn {
+        border: none;
+        padding: 16px 30px;
+        border-radius: 50px;
+        background: #7656c9;
+        color: white;
+        font-family: inherit;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 7px 0 #513a91;
+        transition: .2s;
+    }
+
+    .surprise-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 0 #513a91;
+    }
+
+    .surprise-btn:active {
+        transform: translateY(4px);
+        box-shadow: 0 3px 0 #513a91;
+    }
+
+    /* =========================
+       SECRET MESSAGE
+    ========================== */
+
+    .secret {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all .8s ease;
+    }
+
+    .secret.show {
+        max-height: 400px;
+        opacity: 1;
+        margin-top: 25px;
+    }
+
+    .secret-box {
+        background: linear-gradient(
+            135deg,
+            #fff1a8,
+            #ffd9e7
+        );
+        padding: 25px;
+        border-radius: 25px;
+        border: 3px solid white;
+        box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+
+    .secret-box h3 {
+        color: #ff5f87;
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .secret-box p {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    .footer {
+        margin-top: 30px;
+        font-size: 16px;
+        color: #777;
+    }
+
+    .footer span {
+        color: #ff5f87;
+        font-weight: bold;
+    }
+
+    /* =========================
+       CONFETTI
+    ========================== */
+
+    .confetti {
+        position: fixed;
+        width: 10px;
+        height: 15px;
+        top: -20px;
+        z-index: 999;
+        animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+        to {
+            transform:
+                translateY(110vh)
+                rotate(720deg);
+            opacity: 0;
+        }
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 600px) {
+
+        .card {
+            padding: 35px 18px;
+        }
+
+        .balloon {
+            transform: scale(.65);
+        }
+
+        .corner {
+            font-size: 30px;
+        }
+
+        .classroom {
+            padding: 15px;
+        }
+
+        .board {
+            padding: 20px 10px;
+        }
+
+        .kids {
+            font-size: 32px;
+            letter-spacing: 4px;
+        }
+
+        .message {
+            font-size: 17px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     BACKGROUND
+========================== -->
+
+<div class="background">
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+</div>
+
+<!-- Balloons -->
+
+<div class="balloon b1"></div>
+<div class="balloon b2"></div>
+<div class="balloon b3"></div>
+<div class="balloon b4"></div>
+
+<!-- =========================
+     MAIN
+========================== -->
+
+<div class="wrapper">
+
+    <div class="card">
+
+        <!-- Cute corners -->
+
+        <div class="corner corner1">🌈</div>
+        <div class="corner corner2">🧸</div>
+        <div class="corner corner3">🎈</div>
+        <div class="corner corner4">🌸</div>
+
+        <!-- Badge -->
+
+        <div class="badge">
+            🌟 A Special Day for a Special Teacher 🌟
+        </div>
+
+        <!-- Main heading -->
+
+        <h1>
+            Happy Teacher's Day!
+        </h1>
+
+        <div class="teacher-name">
+            💖 Snehlata Ma'am 💖
+        </div>
+
+        <div class="subtitle">
+            The sweetest teacher for our little stars! 🌟
+        </div>
+
+        <!-- Hearts -->
+
+        <div class="hearts">
+            <span class="heart">💗</span>
+            <span class="heart">💖</span>
+            <span class="heart">💝</span>
+            <span class="heart">💖</span>
+            <span class="heart">💗</span>
+        </div>
+
+        <!-- =========================
+             CLASSROOM SECTION
+        ========================== -->
+
+        <div class="classroom">
+
+            <div class="board">
+
+                <h2>
+                    🌈 Welcome to Snehlata Ma'am's Classroom 🌈
+                </h2>
+
+                <p>
+                    Where little hands learn,
+                    little minds discover,
+                    and little hearts grow! 💕
+                </p>
+
+            </div>
+
+            <div class="kids">
+                👧🏻 🧒🏻 👦🏻 👧🏻 🧒🏻
+            </div>
+
+        </div>
+
+        <!-- =========================
+             MESSAGE
+        ========================== -->
+
+        <div class="message">
+
+            <p>
+                Dear <strong>Snehlata Ma'am</strong>,
+            </p>
+
+            <br>
+
+            <p>
+                Teaching little children is not just about
+                ABCs and 123s...
+                <br>
+                it's about filling their tiny worlds
+                with <strong>love, laughter, kindness and curiosity.</strong> 🌸
+            </p>
+
+            <br>
+
+            <p>
+                With your gentle smile,
+                caring heart and endless patience,
+                you make every little learner feel
+                <strong>safe, happy and special.</strong> 🧸✨
+            </p>
+
+            <br>
+
+            <p>
+                Thank you for turning every classroom moment
+                into a beautiful little memory. 🌈
+            </p>
+
+        </div>
+
+        <!-- =========================
+             SURPRISE
+        ========================== -->
+
+        <button class="surprise-btn" onclick="showSurprise()">
+            🎁 Click for a Little Surprise 🎁
+        </button>
+
+        <div class="secret" id="secret">
+
+            <div class="secret-box">
+
+                <h3>
+                    🌟 You Are Amazing, Ma'am! 🌟
+                </h3>
+
+                <p>
+                    Every child may forget what they learned
+                    on a particular day...
+                    but they will always remember
+                    <strong>how their teacher made them feel.</strong> ❤️
+                </p>
+
+                <br>
+
+                <p>
+                    Thank you for making little hearts smile
+                    and little minds shine! ✨
+                </p>
+
+                <div style="font-size:40px;margin-top:15px;">
+                    🥰 🌈 🧸 🎈 🌸
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <div class="footer">
+
+            Made with 💖 for
+            <span>Snehlata Ma'am</span>
+
+            <br><br>
+
+            🌸 Happy Teacher's Day! 🌸
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+    /* =========================
+       SURPRISE BUTTON
+    ========================== */
+
+    function showSurprise() {
+
+        const secret = document.getElementById("secret");
+
+        secret.classList.toggle("show");
+
+        createConfetti();
+
+        if (secret.classList.contains("show")) {
+            setTimeout(() => {
+                secret.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+            }, 300);
+        }
+    }
+
+
+    /* =========================
+       CONFETTI
+    ========================== */
+
+    function createConfetti() {
+
+        const symbols = [
+            "🌸",
+            "⭐",
+            "💖",
+            "🎈",
+            "🌈",
+            "✨",
+            "🧸",
+            "💗"
+        ];
+
+        for (let i = 0; i < 80; i++) {
+
+            const piece = document.createElement("div");
+
+            piece.className = "confetti";
+
+            piece.innerHTML =
+                symbols[Math.floor(Math.random() * symbols.length)];
+
+            piece.style.left =
+                Math.random() * 100 + "vw";
+
+            piece.style.fontSize =
+                (12 + Math.random() * 18) + "px";
+
+            piece.style.animationDuration =
+                (2 + Math.random() * 4) + "s";
+
+            piece.style.animationDelay =
+                Math.random() * 1.5 + "s";
+
+            document.body.appendChild(piece);
+
+            setTimeout(() => {
+                piece.remove();
+            }, 6500);
+        }
+    }
+
+
+    /* =========================
+       LITTLE WELCOME EFFECT
+    ========================== */
+
+    window.addEventListener("load", () => {
+
+        setTimeout(() => {
+            createConfetti();
+        }, 700);
+
+    });
+
+</script>
+
+</body>
+</html>

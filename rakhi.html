@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Teacher's Day - Rakhi Maurya Ma'am</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* Animated Colorful Background */
+            background: linear-gradient(-45deg, #ff9a9e, #fecfef, #a1c4fd, #c2e9fb, #e0c3fc);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.9), rgba(114, 9, 183, 0.9));
+            color: white;
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        header .emoji {
+            font-size: 50px;
+            margin-bottom: 15px;
+            animation: float 2s infinite ease-in-out;
+        }
+
+        header h1 {
+            font-size: 52px;
+            margin-bottom: 12px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header h2 {
+            font-size: 26px;
+            font-weight: 400;
+            color: #ffd60a;
+        }
+
+        .school {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* ANIMATIONS */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* GLASSMORPHISM CARD STYLE */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-radius: 35px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        /* TEACHER CARD */
+        .teacher-card {
+            width: 92%;
+            max-width: 950px;
+            margin: -30px auto 50px; /* Pulls it up slightly over the header */
+            padding: 45px 25px;
+            text-align: center;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .teacher-photo {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 8px solid white;
+            box-shadow: 0 0 0 5px #7209b7, 0 15px 35px rgba(114, 9, 183, 0.4);
+            margin-bottom: 25px;
+            transition: all 0.5s ease;
+        }
+
+        .teacher-photo:hover {
+            transform: scale(1.08) rotate(3deg);
+            box-shadow: 0 0 0 8px #ff006e, 0 20px 40px rgba(255, 0, 110, 0.5);
+        }
+
+        .teacher-card h2 {
+            color: #3a0ca3;
+            font-size: 42px;
+            margin-bottom: 5px;
+        }
+
+        .subject {
+            font-size: 22px;
+            color: #f72585;
+            font-weight: 600;
+        }
+
+        /* MESSAGE SECTION */
+        .message {
+            width: 92%;
+            max-width: 950px;
+            margin: 35px auto;
+            padding: 50px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .message h2 {
+            text-align: center;
+            color: #4361ee;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .message p {
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: 18px;
+            color: #2b2d42;
+        }
+
+        .message b {
+            color: #7209b7;
+            font-size: 20px;
+        }
+
+        /* SPECIAL POINTS */
+        .points {
+            width: 92%;
+            max-width: 1000px;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .point {
+            padding: 35px 25px;
+            text-align: center;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .point:hover {
+            transform: translateY(-12px) scale(1.03);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 20px 40px rgba(67, 97, 238, 0.2);
+        }
+
+        .icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+            display: inline-block;
+            animation: float 3s infinite ease-in-out;
+        }
+
+        .point h3 {
+            color: #f72585;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .point p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* BUTTON AREA */
+        .button-area {
+            text-align: center;
+            margin: 60px 0;
+            animation: fadeInUp 1s ease-out 1.2s both;
+        }
+
+        button {
+            border: none;
+            padding: 20px 40px;
+            border-radius: 50px;
+            background: linear-gradient(45deg, #ff006e, #8338ec, #3a0ca3);
+            background-size: 200% auto;
+            color: white;
+            font-size: 22px;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(131, 56, 236, 0.4);
+            transition: all 0.4s ease;
+        }
+
+        button:hover {
+            background-position: right center;
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 0, 110, 0.5);
+        }
+
+        #specialMessage {
+            margin-top: 30px;
+            min-height: 50px;
+            color: #3a0ca3;
+            font-size: 26px;
+            font-weight: 600;
+            font-family: 'Fredoka', sans-serif;
+            text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
+        }
+
+        /* FLOATING STICKERS */
+        .sticker {
+            position: fixed;
+            font-size: 45px;
+            z-index: -1;
+            opacity: 0.6;
+            animation: stickerMove 8s infinite ease-in-out alternate;
+        }
+        .s1 { top: 15%; left: 5%; }
+        .s2 { top: 50%; right: 5%; animation-delay: 2s; }
+        .s3 { top: 80%; left: 8%; animation-delay: 4s; }
+        .s4 { top: 25%; right: 10%; font-size: 35px; animation-delay: 1s;}
+
+        @keyframes stickerMove {
+            0% { transform: translateY(0) rotate(0) scale(1); }
+            100% { transform: translateY(-40px) rotate(20deg) scale(1.2); }
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 80px;
+            padding: 45px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #240046, #10002b);
+            color: white;
+            border-top-left-radius: 50% 20px;
+            border-top-right-radius: 50% 20px;
+            position: relative;
+        }
+
+        footer p {
+            margin: 10px;
+            font-size: 17px;
+        }
+        
+        .footer-highlight {
+            color: #4cc9f0;
+            font-size: 20px;
+        }
+
+        /* CONFETTI STYLES */
+        .confetti {
+            position: fixed;
+            top: -10px;
+            width: 12px;
+            height: 12px;
+            z-index: 9999;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(105vh) rotate(720deg); }
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 768px) {
+            header h1 { font-size: 38px; }
+            header h2 { font-size: 20px; }
+            .teacher-photo { width: 240px; height: 240px; }
+            .teacher-card h2 { font-size: 32px; }
+            .message { padding: 30px 20px; }
+            button { font-size: 18px; padding: 15px 30px; }
+            .sticker { display: none; } /* Hide stickers on mobile to save screen space */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sticker s1">💻</div>
+    <div class="sticker s2">✨</div>
+    <div class="sticker s3">🌸</div>
+    <div class="sticker s4">🚀</div>
+
+    <header>
+        <div class="emoji">💻 📚 ✨ 👩‍🏫 ✨ 📚 💻</div>
+        <h1>Happy Teacher's Day! 🎉</h1>
+        <h2>To Our Wonderful Computer Teacher</h2>
+        <div class="school">Varanasi Public School, Rajatalab</div>
+    </header>
+
+    <section class="teacher-card glass-card">
+        <img src="images/rakhi.jpeg" alt="Rakhi Maurya Ma'am" class="teacher-photo">
+        <h2>🌷 Rakhi Maurya Ma'am 🌷</h2>
+        <div class="subject">Our Wonderful Computer Teacher 💻📚</div>
+    </section>
+
+    <section class="message glass-card">
+        <h2>💜 A Special Message for You 💜</h2>
+        <p>Dear Rakhi Maurya Ma'am,</p>
+        <p>You are not just our Computer Teacher, you are someone who makes technology easy, interesting and fun for us. 💻😊</p>
+        <p>You teach us how computers work, how to use technology properly and how to discover something new every day. 🖥️✨</p>
+        <p>Whenever we make a mistake, you patiently help us understand what went wrong and how to improve. 🌸</p>
+        <p>Your classes give us confidence to explore computers and learn new skills. 🚀💡</p>
+        <p>Thank you for your patience, kindness and for making our computer classes so enjoyable. ❤️</p>
+        <p><b>We are very lucky to have a teacher like you!</b></p>
+        <p><b>Happy Teacher's Day, Rakhi Maurya Ma'am! 💐👩‍🏫</b></p>
+    </section>
+
+    <section class="points">
+        <div class="point glass-card">
+            <div class="icon">💻</div>
+            <h3>कंप्यूटर को आसान बनाती हैं</h3>
+            <p>आपकी वजह से कंप्यूटर सीखना हमारे लिए आसान और मजेदार हो जाता है।</p>
+        </div>
+
+        <div class="point glass-card">
+            <div class="icon">💡</div>
+            <h3>नई चीजें सिखाती हैं</h3>
+            <p>आपकी कक्षा में हमें हर दिन कुछ नया सीखने को मिलता है।</p>
+        </div>
+
+        <div class="point glass-card">
+            <div class="icon">🖥️</div>
+            <h3>तकनीक की समझ</h3>
+            <p>आप हमें तकनीक का सही और समझदारी से उपयोग करना सिखाती हैं।</p>
+        </div>
+
+        <div class="point glass-card">
+            <div class="icon">😊</div>
+            <h3>पढ़ाई को मजेदार बनाती हैं</h3>
+            <p>आपकी मुस्कान और आपका तरीका हमारी कक्षा को खुशहाल बनाता है।</p>
+        </div>
+
+        <div class="point glass-card">
+            <div class="icon">❤️</div>
+            <h3>धैर्य से समझाती हैं</h3>
+            <p>जब हमें कोई बात समझ नहीं आती, आप उसे फिर से प्यार से समझाती हैं।</p>
+        </div>
+
+        <div class="point glass-card">
+            <div class="icon">🚀</div>
+            <h3>हमें आगे बढ़ने की प्रेरणा</h3>
+            <p>आप हमें नई तकनीक सीखने और अपने सपनों को पूरा करने के लिए प्रेरित करती हैं।</p>
+        </div>
+    </section>
+
+    <div class="button-area">
+        <button onclick="triggerSurprise()">
+            💌 एक विशेष संदेश के लिए क्लिक करें 💌
+        </button>
+        <div id="specialMessage"></div>
+    </div>
+
+    <footer>
+        <p>💻 ज्ञान, तकनीक और प्रेम के साथ 💜</p>
+        <p><b class="footer-highlight">The Family of VPS</b></p>
+        <p>Website Writer: <b>EMMANUEL CHAUHAN</b></p>
+        <p>VARANASI PUBLIC SCHOOL, RAJATALAB</p>
+        <p style="margin-top: 15px; font-size: 22px;">💻 Happy Teacher's Day! 👩‍🏫💐💜</p>
+    </footer>
+
+    <script>
+        function triggerSurprise() {
+            showMessage();
+            fireConfetti();
+        }
+
+        function showMessage() {
+            const messages = [
+                "💻 आपकी वजह से कंप्यूटर सीखना बहुत मजेदार है! 💜",
+                "🌸 धन्यवाद मैम, हमें हमेशा धैर्य से सिखाने के लिए!",
+                "⭐ आपकी कक्षा में हमें हर दिन कुछ नया सीखने को मिलता है!",
+                "🚀 आप हमें नई चीजें सीखने के लिए प्रेरित करती हैं!",
+                "💐 Happy Teacher's Day, Rakhi Maurya Ma'am! ❤️"
+            ];
+
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            const messageElement = document.getElementById("specialMessage");
+            
+            // Adding a small pop effect to the text
+            messageElement.style.transform = "scale(0.8)";
+            messageElement.style.opacity = "0";
+            
+            setTimeout(() => {
+                messageElement.innerHTML = randomMessage;
+                messageElement.style.transition = "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
+                messageElement.style.transform = "scale(1)";
+                messageElement.style.opacity = "1";
+            }, 100);
+        }
+
+        // Custom Confetti Function
+        function fireConfetti() {
+            const colors = ['#ff006e', '#8338ec', '#3a0ca3', '#ffbe0b', '#fb5607', '#4cc9f0'];
+            
+            for(let i = 0; i < 75; i++) {
+                let confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                
+                // Randomize position, color, and animation duration
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                
+                // Randomize shapes (squares and thin rectangles)
+                if (Math.random() > 0.5) {
+                    confetti.style.height = '20px';
+                    confetti.style.width = '8px';
+                }
+                
+                document.body.appendChild(confetti);
+                
+                // Remove from DOM after animation completes to keep the page light
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+        }
+    </script>
+</body>
+</html>

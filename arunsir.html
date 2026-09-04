@@ -1,0 +1,1086 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Teacher's Day | ARUN Sir</title>
+
+    <style>
+        /* =====================================================
+           GLOBAL STYLES
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(0, 255, 255, 0.12), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(120, 0, 255, 0.15), transparent 30%),
+                linear-gradient(135deg, #07111f, #101a31, #090d1a);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        main {
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* =====================================================
+           FLOATING CHEMISTRY BUBBLES
+        ===================================================== */
+
+        .bubbles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .bubbles span {
+            position: absolute;
+            bottom: -100px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 75px;
+            height: 75px;
+
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(5px);
+
+            color: #9ffcff;
+            font-size: 17px;
+            font-weight: bold;
+
+            box-shadow:
+                0 0 20px rgba(0, 255, 255, 0.15),
+                inset 0 0 20px rgba(255, 255, 255, 0.05);
+
+            animation: bubbleFloat 15s linear infinite;
+        }
+
+        .bubbles span:nth-child(1) {
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .bubbles span:nth-child(2) {
+            left: 18%;
+            animation-delay: 4s;
+        }
+
+        .bubbles span:nth-child(3) {
+            left: 32%;
+            animation-delay: 8s;
+        }
+
+        .bubbles span:nth-child(4) {
+            left: 48%;
+            animation-delay: 2s;
+        }
+
+        .bubbles span:nth-child(5) {
+            left: 63%;
+            animation-delay: 6s;
+        }
+
+        .bubbles span:nth-child(6) {
+            left: 76%;
+            animation-delay: 10s;
+        }
+
+        .bubbles span:nth-child(7) {
+            left: 88%;
+            animation-delay: 3s;
+        }
+
+        .bubbles span:nth-child(8) {
+            left: 95%;
+            animation-delay: 7s;
+        }
+
+        @keyframes bubbleFloat {
+            0% {
+                transform: translateY(0) scale(0.7);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.7;
+            }
+
+            50% {
+                transform: translateY(-50vh) translateX(30px) scale(1);
+            }
+
+            100% {
+                transform: translateY(-120vh) translateX(-40px) scale(1.15);
+                opacity: 0;
+            }
+        }
+
+        /* =====================================================
+           HERO SECTION
+        ===================================================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            padding: 70px 20px 90px;
+
+            position: relative;
+        }
+
+        .flask {
+            font-size: 70px;
+            margin-bottom: 15px;
+
+            filter:
+                drop-shadow(0 0 15px rgba(0, 255, 255, 0.6));
+
+            animation: flaskFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes flaskFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(5deg);
+            }
+        }
+
+        .small-title {
+            color: #8dfaff;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 8vw, 80px);
+            line-height: 1.05;
+
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #7df9ff,
+                #ffffff
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.25);
+
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: clamp(30px, 6vw, 55px);
+            color: #ffdf73;
+
+            text-shadow:
+                0 0 10px rgba(255, 215, 0, 0.45),
+                0 0 30px rgba(255, 150, 0, 0.25);
+
+            margin-bottom: 10px;
+        }
+
+        .subject {
+            color: #c8d8ff;
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .line {
+            width: 130px;
+            height: 4px;
+            border-radius: 20px;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                #00ffff,
+                transparent
+            );
+
+            margin-bottom: 35px;
+        }
+
+        /* =====================================================
+           TEACHER PHOTO
+        ===================================================== */
+
+        .photo-container {
+            position: relative;
+            width: min(280px, 75vw);
+            aspect-ratio: 1 / 1;
+
+            margin-bottom: 30px;
+        }
+
+        .glow {
+            position: absolute;
+            inset: -15px;
+
+            border-radius: 50%;
+
+            background:
+                conic-gradient(
+                    #00ffff,
+                    #5b4dff,
+                    #ff4fd8,
+                    #00ffff
+                );
+
+            filter: blur(18px);
+            opacity: 0.65;
+
+            animation: rotateGlow 8s linear infinite;
+        }
+
+        @keyframes rotateGlow {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .photo-container::before {
+            content: "";
+            position: absolute;
+            inset: -6px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                #00ffff,
+                #6b5cff,
+                #ff4fd8
+            );
+
+            z-index: 1;
+        }
+
+        .teacher-photo {
+            position: relative;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 7px solid #10182d;
+
+            z-index: 2;
+
+            box-shadow:
+                0 0 30px rgba(0, 255, 255, 0.4),
+                0 0 70px rgba(100, 50, 255, 0.2);
+        }
+
+        .message {
+            max-width: 750px;
+
+            color: #dce8ff;
+            font-size: 20px;
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+        }
+
+        .message strong {
+            color: #ffdf73;
+        }
+
+        /* =====================================================
+           CELEBRATE BUTTON
+        ===================================================== */
+
+        #celebrateBtn {
+            border: none;
+            outline: none;
+
+            padding: 16px 30px;
+
+            border-radius: 50px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00c6ff,
+                    #0072ff,
+                    #7138ff
+                );
+
+            color: white;
+
+            font-size: 18px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 0 20px rgba(0, 200, 255, 0.3);
+
+            transition: 0.3s ease;
+        }
+
+        #celebrateBtn:hover {
+            transform: translateY(-4px) scale(1.05);
+
+            box-shadow:
+                0 0 35px rgba(0, 230, 255, 0.65);
+        }
+
+        #celebrateBtn:active {
+            transform: scale(0.96);
+        }
+
+        /* =====================================================
+           QUOTES
+        ===================================================== */
+
+        .quotes {
+            padding: 90px 20px;
+
+            background:
+                rgba(255, 255, 255, 0.025);
+
+            border-top:
+                1px solid rgba(255, 255, 255, 0.08);
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .quotes > h2 {
+            text-align: center;
+
+            font-size: clamp(28px, 5vw, 45px);
+
+            color: #8dfaff;
+
+            margin-bottom: 50px;
+
+            text-shadow:
+                0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .quote-container {
+            width: min(1100px, 100%);
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .quote-card {
+            padding: 35px 25px;
+
+            text-align: center;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.08),
+                    rgba(255, 255, 255, 0.025)
+                );
+
+            border:
+                1px solid rgba(255, 255, 255, 0.12);
+
+            backdrop-filter: blur(10px);
+
+            transition: 0.35s ease;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-10px);
+
+            border-color:
+                rgba(0, 255, 255, 0.45);
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.25),
+                0 0 25px rgba(0, 255, 255, 0.12);
+        }
+
+        .quote-card .icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .quote-card p {
+            color: #d7e2ff;
+
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .quote-card.funny {
+            border-color:
+                rgba(255, 210, 80, 0.2);
+        }
+
+        .quote-card.funny h3 {
+            color: #ffdf73;
+            margin-bottom: 15px;
+        }
+
+        /* =====================================================
+           THANK YOU SECTION
+        ===================================================== */
+
+        .thank-you {
+            width: min(900px, calc(100% - 40px));
+
+            margin: 80px auto;
+
+            padding: 60px 35px;
+
+            text-align: center;
+
+            border-radius: 35px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(0, 255, 255, 0.07),
+                    rgba(110, 50, 255, 0.08)
+                );
+
+            border:
+                1px solid rgba(255, 255, 255, 0.12);
+
+            box-shadow:
+                0 25px 80px rgba(0, 0, 0, 0.25);
+        }
+
+        .beaker {
+            font-size: 65px;
+            margin-bottom: 20px;
+
+            animation: flaskFloat 3s ease-in-out infinite;
+        }
+
+        .thank-you h2 {
+            font-size: 40px;
+            color: #ffdf73;
+
+            margin-bottom: 25px;
+        }
+
+        .thank-you p {
+            max-width: 700px;
+            margin: 15px auto;
+
+            color: #d8e3ff;
+
+            font-size: 19px;
+            line-height: 1.8;
+        }
+
+        .thank-you h3 {
+            margin-top: 30px;
+
+            font-size: 25px;
+
+            color: #ff8fdc;
+        }
+
+        .formula {
+            margin-top: 35px;
+
+            padding: 18px 20px;
+
+            border-radius: 15px;
+
+            background:
+                rgba(255, 255, 255, 0.06);
+
+            color: #9ffcff;
+
+            font-size: 18px;
+            font-weight: 700;
+
+            border:
+                1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            text-align: center;
+
+            padding: 35px 20px 50px;
+
+            color: #aebbd7;
+
+            line-height: 2;
+        }
+
+        footer p:last-child {
+            color: #ffdf73;
+            font-weight: 700;
+        }
+
+        /* =====================================================
+           CONFETTI
+        ===================================================== */
+
+        #confetti-container {
+            position: fixed;
+            inset: 0;
+
+            pointer-events: none;
+
+            overflow: hidden;
+
+            z-index: 100;
+        }
+
+        .confetti {
+            position: absolute;
+
+            width: 10px;
+            height: 18px;
+
+            top: -30px;
+
+            animation:
+                confettiFall linear forwards;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    translateY(110vh)
+                    rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* =====================================================
+           RESPONSIVE DESIGN
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .quote-container {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+
+            .hero {
+                padding-top: 50px;
+            }
+
+            .message {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .flask {
+                font-size: 55px;
+            }
+
+            .small-title {
+                font-size: 11px;
+                letter-spacing: 2px;
+            }
+
+            .subject {
+                font-size: 17px;
+            }
+
+            .photo-container {
+                width: 230px;
+            }
+
+            .thank-you {
+                padding: 45px 20px;
+            }
+
+            .thank-you h2 {
+                font-size: 32px;
+            }
+
+            .thank-you p {
+                font-size: 17px;
+            }
+
+            .formula {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         FLOATING CHEMISTRY BUBBLES
+    ====================================================== -->
+
+    <div class="bubbles">
+        <span>H₂O</span>
+        <span>CO₂</span>
+        <span>O₂</span>
+        <span>NaCl</span>
+        <span>⚗️</span>
+        <span>🧪</span>
+        <span>H⁺</span>
+        <span>OH⁻</span>
+    </div>
+
+
+    <main>
+
+        <!-- =================================================
+             HERO SECTION
+        ================================================== -->
+
+        <section class="hero">
+
+            <div class="flask">🧪</div>
+
+            <p class="small-title">
+                A SPECIAL MESSAGE FOR
+            </p>
+
+            <h1>
+                Happy Teacher's Day!
+            </h1>
+
+            <h2>
+                ARUN Sir
+            </h2>
+
+            <p class="subject">
+                Our Amazing Chemistry Teacher
+            </p>
+
+            <div class="line"></div>
+
+
+            <!-- TEACHER PHOTO -->
+
+            <div class="photo-container">
+
+                <div class="glow"></div>
+
+                <img
+                    src="images/arun.jpg"
+                    alt="ARUN Sir - Chemistry Teacher"
+                    class="teacher-photo"
+                >
+
+            </div>
+
+
+            <p class="message">
+
+                Thank you,
+                <strong>ARUN Sir</strong>,
+                for turning complicated chemistry into something
+                we can actually understand!
+
+            </p>
+
+
+            <button id="celebrateBtn">
+                🧪 Celebrate ARUN Sir 🎉
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             QUOTES SECTION
+        ================================================== -->
+
+        <section class="quotes">
+
+            <h2>
+                ⚗️ Chemistry of Great Teaching ⚗️
+            </h2>
+
+
+            <div class="quote-container">
+
+
+                <div class="quote-card">
+
+                    <div class="icon">
+                        🔬
+                    </div>
+
+                    <p>
+                        “A good teacher can inspire hope,
+                        ignite the imagination, and instill
+                        a love of learning.”
+                    </p>
+
+                </div>
+
+
+                <div class="quote-card">
+
+                    <div class="icon">
+                        ⚛️
+                    </div>
+
+                    <p>
+                        “Chemistry is not just about reactions;
+                        it is about discovering how the world works.”
+                    </p>
+
+                </div>
+
+
+                <div class="quote-card funny">
+
+                    <div class="icon">
+                        😂
+                    </div>
+
+                    <h3>
+                        Funny Chemistry Quote
+                    </h3>
+
+                    <p>
+                        “Chemistry students don't have problems...
+                        they have
+                        <strong>solutions!</strong>”
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SPECIAL MESSAGE
+        ================================================== -->
+
+        <section class="thank-you">
+
+            <div class="beaker">
+                🧪
+            </div>
+
+            <h2>
+                Dear ARUN Sir,
+            </h2>
+
+            <p>
+                You don't just teach Chemistry,
+                you make every lesson a reaction
+                worth remembering!
+            </p>
+
+            <p>
+                Your patience, knowledge and dedication
+                make learning chemistry much more exciting.
+            </p>
+
+            <h3>
+                Thank you for being an amazing teacher! ❤️
+            </h3>
+
+            <div class="formula">
+                Knowledge + Patience + ARUN Sir =
+                ⭐ Great Students ⭐
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer>
+
+            <p>
+                Made with ❤️ and a little bit of Chemistry 🧪
+            </p>
+
+            <p>
+                Happy Teacher's Day, ARUN Sir!
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- =====================================================
+         CONFETTI CONTAINER
+    ====================================================== -->
+
+    <div id="confetti-container"></div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        const celebrateBtn =
+            document.getElementById("celebrateBtn");
+
+        const confettiContainer =
+            document.getElementById("confetti-container");
+
+
+        /*
+         * CELEBRATE BUTTON
+         */
+
+        celebrateBtn.addEventListener("click", function () {
+
+            createConfetti(180);
+
+            createChemistryParticles(40);
+
+            celebrateBtn.innerHTML =
+                "🎉 Happy Teacher's Day ARUN Sir! ❤️";
+
+            celebrateBtn.style.transform =
+                "scale(1.08)";
+
+            setTimeout(function () {
+
+                celebrateBtn.style.transform =
+                    "scale(1)";
+
+            }, 300);
+
+        });
+
+
+        /*
+         * CREATE CONFETTI
+         */
+
+        function createConfetti(amount) {
+
+            const symbols = [
+                "❤️",
+                "💙",
+                "💜",
+                "💛",
+                "🧪",
+                "⚗️",
+                "⭐",
+                "✨",
+                "🎉"
+            ];
+
+            for (let i = 0; i < amount; i++) {
+
+                const piece =
+                    document.createElement("div");
+
+                piece.className =
+                    "confetti";
+
+                piece.textContent =
+                    symbols[
+                        Math.floor(
+                            Math.random() *
+                            symbols.length
+                        )
+                    ];
+
+                piece.style.left =
+                    Math.random() * 100 + "vw";
+
+                piece.style.fontSize =
+                    (12 + Math.random() * 18) + "px";
+
+                piece.style.animationDuration =
+                    (3 + Math.random() * 5) + "s";
+
+                piece.style.animationDelay =
+                    (Math.random() * 1.5) + "s";
+
+                confettiContainer.appendChild(piece);
+
+
+                setTimeout(function () {
+
+                    piece.remove();
+
+                }, 8000);
+
+            }
+        }
+
+
+        /*
+         * CHEMISTRY PARTICLES
+         */
+
+        function createChemistryParticles(amount) {
+
+            const symbols = [
+                "H₂O",
+                "CO₂",
+                "O₂",
+                "⚗️",
+                "🧪",
+                "⚛️",
+                "✨"
+            ];
+
+            for (let i = 0; i < amount; i++) {
+
+                const particle =
+                    document.createElement("div");
+
+                particle.textContent =
+                    symbols[
+                        Math.floor(
+                            Math.random() *
+                            symbols.length
+                        )
+                    ];
+
+                particle.style.position =
+                    "fixed";
+
+                particle.style.left =
+                    "50vw";
+
+                particle.style.top =
+                    "55vh";
+
+                particle.style.zIndex =
+                    "101";
+
+                particle.style.pointerEvents =
+                    "none";
+
+                particle.style.fontSize =
+                    (15 + Math.random() * 25) + "px";
+
+                particle.style.transition =
+                    "all 2.5s ease-out";
+
+                document.body.appendChild(
+                    particle
+                );
+
+
+                const angle =
+                    Math.random() *
+                    Math.PI * 2;
+
+                const distance =
+                    150 +
+                    Math.random() * 450;
+
+                const x =
+                    Math.cos(angle) *
+                    distance;
+
+                const y =
+                    Math.sin(angle) *
+                    distance;
+
+
+                requestAnimationFrame(function () {
+
+                    particle.style.transform =
+                        `translate(${x}px, ${y}px) rotate(${Math.random() * 720}deg)`;
+
+                    particle.style.opacity =
+                        "0";
+
+                });
+
+
+                setTimeout(function () {
+
+                    particle.remove();
+
+                }, 2800);
+
+            }
+        }
+
+
+        /*
+         * SMALL INITIAL CELEBRATION
+         */
+
+        window.addEventListener("load", function () {
+
+            setTimeout(function () {
+
+                createConfetti(35);
+
+            }, 700);
+
+        });
+
+    </script>
+
+</body>
+</html>
+```

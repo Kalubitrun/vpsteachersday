@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Teacher's Day - Mr. Mahesh Sharma</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: white;
+            background: linear-gradient(
+                135deg,
+                #12002f,
+                #3b0764,
+                #7e22ce,
+                #c026d3
+            );
+        }
+
+        /* Animated background */
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #facc15;
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.25;
+            top: -150px;
+            left: -150px;
+            animation: moveGlow 8s infinite alternate;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #22d3ee;
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.25;
+            bottom: -150px;
+            right: -150px;
+            animation: moveGlow2 8s infinite alternate;
+            z-index: -1;
+        }
+
+        @keyframes moveGlow {
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translate(200px, 150px);
+            }
+        }
+
+        @keyframes moveGlow2 {
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translate(-200px, -150px);
+            }
+        }
+
+        /* Main container */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 10px 22px;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+            font-size: 15px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(40px, 8vw, 80px);
+            line-height: 1.1;
+            margin-bottom: 15px;
+            background: linear-gradient(
+                90deg,
+                #fde68a,
+                #fff,
+                #f9a8d4,
+                #fde68a
+            );
+            background-size: 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                background-position: 0%;
+            }
+            100% {
+                background-position: 300%;
+            }
+        }
+
+        .subtitle {
+            font-size: clamp(18px, 3vw, 26px);
+            margin-bottom: 35px;
+            color: #fce7f3;
+        }
+
+        /* Teacher card */
+        .teacher-card {
+            width: 100%;
+            max-width: 650px;
+            margin: 30px auto;
+            padding: 35px;
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            backdrop-filter: blur(20px);
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.3),
+                inset 0 0 30px rgba(255,255,255,0.05);
+
+            animation: cardFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes cardFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Teacher photo */
+        .photo-wrapper {
+            width: 210px;
+            height: 210px;
+            margin: auto;
+            padding: 7px;
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                #facc15,
+                #f472b6,
+                #22d3ee,
+                #a855f7
+            );
+
+            animation: rotateBorder 5s linear infinite;
+        }
+
+        @keyframes rotateBorder {
+            from {
+                filter: hue-rotate(0deg);
+            }
+            to {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        .photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #30105c;
+            display: block;
+        }
+
+        .teacher-name {
+            margin-top: 25px;
+            font-size: clamp(28px, 5vw, 42px);
+            color: #fde68a;
+            text-shadow: 0 0 20px rgba(250,204,21,0.5);
+        }
+
+        .teacher-title {
+            margin-top: 8px;
+            color: #fbcfe8;
+            font-size: 17px;
+        }
+
+        /* Quote */
+        .quote-box {
+            margin: 35px auto;
+            max-width: 750px;
+            padding: 30px;
+            position: relative;
+
+            background: rgba(0,0,0,0.18);
+            border-radius: 25px;
+            border-left: 5px solid #facc15;
+        }
+
+        .quote-icon {
+            font-size: 45px;
+            color: #facc15;
+        }
+
+        .quote {
+            font-family: Georgia, serif;
+            font-size: clamp(20px, 3vw, 28px);
+            line-height: 1.6;
+            color: #fff7ed;
+            font-style: italic;
+        }
+
+        /* Message */
+        .message {
+            max-width: 800px;
+            margin: 30px auto;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #fce7f3;
+        }
+
+        /* Button */
+        button {
+            border: none;
+            outline: none;
+            cursor: pointer;
+
+            padding: 15px 35px;
+            border-radius: 50px;
+
+            font-size: 17px;
+            font-weight: bold;
+
+            color: #4c1d95;
+            background: linear-gradient(
+                135deg,
+                #fde68a,
+                #f9a8d4
+            );
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+            box-shadow:
+                0 0 30px rgba(253,230,138,0.7);
+        }
+
+        /* Hidden wish */
+        #specialWish {
+            display: none;
+            margin-top: 25px;
+            font-size: 22px;
+            color: #fde68a;
+            animation: appear 1s ease;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        footer {
+            margin-top: 45px;
+            padding: 20px;
+            color: #fbcfe8;
+            font-size: 14px;
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: fixed;
+            bottom: -30px;
+            font-size: 25px;
+            animation: floatUp linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Stars */
+        .star {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px white;
+            animation: twinkle 2s infinite alternate;
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            from {
+                opacity: 0.2;
+                transform: scale(0.5);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding-top: 30px;
+            }
+
+            .teacher-card {
+                padding: 25px 18px;
+            }
+
+            .photo-wrapper {
+                width: 170px;
+                height: 170px;
+            }
+
+            .quote-box {
+                padding: 22px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="badge">
+            🌸 TEACHER'S DAY 2026 🌸
+        </div>
+
+        <h1>Happy Teacher's Day!</h1>
+
+        <p class="subtitle">
+            To an extraordinary teacher who inspires, guides & motivates ✨
+        </p>
+
+        <div class="teacher-card">
+
+            <div class="photo-wrapper">
+                <img
+                    src="images/mahesh.jpg"
+                    alt="Mr. Mahesh Sharma"
+                    onerror="this.src='https://via.placeholder.com/400x400.png?text=Mr.+Mahesh+Sharma';"
+                >
+            </div>
+
+            <h2 class="teacher-name">
+                Mr. Mahesh Sharma
+            </h2>
+
+            <p class="teacher-title">
+                🌟 A Teacher • A Mentor • An Inspiration 🌟
+            </p>
+
+            <div class="quote-box">
+                <div class="quote-icon">❝</div>
+
+                <p class="quote">
+                    A great teacher doesn't just teach lessons;
+                    they touch hearts, inspire dreams, and shape
+                    the future.
+                </p>
+            </div>
+
+            <p class="message">
+                Dear <strong>Mr. Mahesh Sharma</strong>,<br><br>
+
+                Thank you for being more than just a teacher.
+                Your patience, wisdom, encouragement, and
+                dedication make learning a beautiful journey.
+
+                The lessons you teach go far beyond books and
+                classrooms. They become memories, values, and
+                inspiration that stay with us forever. ❤️
+            </p>
+
+            <button onclick="showWish()">
+                💐 Click for a Special Wish 💐
+            </button>
+
+            <div id="specialWish">
+                🌟 Thank You, Mr. Mahesh Sharma, for making
+                every lesson meaningful! 🌟
+                <br><br>
+                ❤️ Happy Teacher's Day! ❤️
+            </div>
+
+        </div>
+
+        <div class="quote-box">
+            <div class="quote-icon">❝</div>
+
+            <p class="quote">
+                "The influence of a good teacher can never be erased."
+            </p>
+        </div>
+
+        <footer>
+            Made with ❤️ and gratitude for Mr. Mahesh Sharma
+            <br>
+            Happy Teacher's Day! 🌷
+        </footer>
+
+    </div>
+
+
+    <script>
+
+        // Special wish button
+        function showWish() {
+
+            const wish = document.getElementById("specialWish");
+
+            wish.style.display = "block";
+
+            createHearts();
+
+            // Scroll smoothly to the wish
+            setTimeout(() => {
+                wish.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+            }, 100);
+        }
+
+
+        // Create floating hearts
+        function createHearts() {
+
+            for (let i = 0; i < 30; i++) {
+
+                const heart = document.createElement("div");
+
+                heart.classList.add("heart");
+
+                const hearts = ["❤️", "💖", "💐", "🌸", "✨", "💛"];
+
+                heart.innerHTML =
+                    hearts[Math.floor(Math.random() * hearts.length)];
+
+                heart.style.left =
+                    Math.random() * 100 + "vw";
+
+                heart.style.animationDuration =
+                    (3 + Math.random() * 4) + "s";
+
+                heart.style.fontSize =
+                    (15 + Math.random() * 25) + "px";
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 7000);
+            }
+        }
+
+
+        // Create background stars
+        function createStars() {
+
+            for (let i = 0; i < 50; i++) {
+
+                const star = document.createElement("div");
+
+                star.classList.add("star");
+
+                star.style.left =
+                    Math.random() * 100 + "vw";
+
+                star.style.top =
+                    Math.random() * 100 + "vh";
+
+                star.style.animationDelay =
+                    Math.random() * 2 + "s";
+
+                document.body.appendChild(star);
+            }
+        }
+
+
+        // Start stars
+        createStars();
+
+
+        // Occasionally create hearts
+        setInterval(() => {
+
+            if (Math.random() > 0.5) {
+                createHearts();
+            }
+
+        }, 8000);
+
+    </script>
+
+</body>
+</html>

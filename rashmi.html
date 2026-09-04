@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Happy Teachers' Day, Rashmi Ma'am 💜</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 20% 20%, #5b21b6 0%, transparent 25%),
+        radial-gradient(circle at 80% 80%, #7e22ce 0%, transparent 25%),
+        linear-gradient(135deg, #05000b, #10051c, #19062b);
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Background glowing circles */
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.25;
+      z-index: -2;
+    }
+
+    body::before {
+      background: #a855f7;
+      top: -100px;
+      left: -100px;
+    }
+
+    body::after {
+      background: #ec4899;
+      right: -100px;
+      bottom: -100px;
+    }
+
+    /* Stars / particles */
+    .particle {
+      position: fixed;
+      width: 5px;
+      height: 5px;
+      background: #d8b4fe;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #c084fc;
+      animation: floatParticle linear infinite;
+      opacity: 0.8;
+      z-index: -1;
+    }
+
+    @keyframes floatParticle {
+      from {
+        transform: translateY(110vh) scale(0.5);
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      80% {
+        opacity: 1;
+      }
+
+      to {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    /* Floating flowers */
+    .flower {
+      position: fixed;
+      font-size: 35px;
+      pointer-events: none;
+      z-index: 2;
+      animation: flowerFloat 8s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes flowerFloat {
+      0% {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 1;
+      }
+
+      85% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-15vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Main hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 1000px;
+      animation: heroAppear 1.5s ease;
+    }
+
+    @keyframes heroAppear {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .small-title {
+      color: #d8b4fe;
+      font-size: 1.1rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: 1;
+      margin-bottom: 25px;
+      background: linear-gradient(
+        90deg,
+        #ffffff,
+        #d8b4fe,
+        #c084fc,
+        #f0abfc,
+        #ffffff
+      );
+      background-size: 300%;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: gradientText 5s infinite linear;
+    }
+
+    @keyframes gradientText {
+      0% {
+        background-position: 0%;
+      }
+
+      100% {
+        background-position: 300%;
+      }
+    }
+
+    .teacher-name {
+      font-size: clamp(2rem, 5vw, 4rem);
+      color: #f5d0fe;
+      text-shadow:
+        0 0 10px #a855f7,
+        0 0 30px #9333ea,
+        0 0 60px #7e22ce;
+      margin-bottom: 25px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+      color: #e9d5ff;
+      line-height: 1.8;
+    }
+
+    /* Photo */
+    .photo-container {
+      margin: 45px auto 30px;
+      width: 230px;
+      height: 280px;
+      padding: 7px;
+      border-radius: 120px 120px 35px 35px;
+      background: linear-gradient(135deg, #a855f7, #ec4899, #facc15);
+      animation: photoGlow 3s infinite alternate;
+      position: relative;
+    }
+
+    @keyframes photoGlow {
+      from {
+        box-shadow:
+          0 0 20px #9333ea,
+          0 0 40px #7e22ce;
+      }
+
+      to {
+        box-shadow:
+          0 0 35px #d946ef,
+          0 0 70px #a855f7;
+      }
+    }
+
+    .photo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 115px 115px 30px 30px;
+      border: 4px solid #10051c;
+      display: block;
+    }
+
+    .photo-label {
+      margin-top: 15px;
+      color: #f9a8d4;
+      font-style: italic;
+    }
+
+    /* Button */
+    .surprise-btn {
+      border: none;
+      padding: 16px 35px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #9333ea, #c026d3);
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
+      transition: 0.3s;
+      margin-top: 25px;
+    }
+
+    .surprise-btn:hover {
+      transform: scale(1.08);
+      box-shadow:
+        0 0 25px #c084fc,
+        0 0 60px #9333ea;
+    }
+
+    /* Surprise message */
+    #surprise {
+      display: none;
+      max-width: 750px;
+      margin: 40px auto 0;
+      padding: 30px;
+      border: 1px solid rgba(216, 180, 254, 0.3);
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(15px);
+      animation: surpriseOpen 1s ease;
+    }
+
+    #surprise.show {
+      display: block;
+    }
+
+    @keyframes surpriseOpen {
+      from {
+        opacity: 0;
+        transform: scale(0.7) translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    #surprise h2 {
+      color: #f0abfc;
+      margin-bottom: 15px;
+    }
+
+    #surprise p {
+      color: #f3e8ff;
+      line-height: 1.9;
+      font-size: 1.1rem;
+    }
+
+    /* Quotes section */
+    .quotes-section {
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.8rem;
+      color: #e9d5ff;
+      margin-bottom: 50px;
+    }
+
+    .quotes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .quote-card {
+      padding: 35px;
+      min-height: 230px;
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(216, 180, 254, 0.2);
+      backdrop-filter: blur(15px);
+      position: relative;
+      overflow: hidden;
+      transition: 0.4s;
+    }
+
+    .quote-card::before {
+      content: "“";
+      position: absolute;
+      font-size: 150px;
+      color: rgba(192, 132, 252, 0.1);
+      top: -55px;
+      left: 10px;
+      font-family: Georgia, serif;
+    }
+
+    .quote-card:hover {
+      transform: translateY(-10px);
+      border-color: #c084fc;
+      box-shadow: 0 20px 50px rgba(126, 34, 206, 0.25);
+    }
+
+    .quote-card h3 {
+      color: #f0abfc;
+      margin-bottom: 18px;
+      font-size: 1.4rem;
+    }
+
+    .quote-card p {
+      line-height: 1.8;
+      color: #f3e8ff;
+      font-size: 1.05rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Biology card */
+    .biology {
+      grid-column: span 2;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(88, 28, 135, 0.35),
+          rgba(15, 23, 42, 0.7)
+        );
+      border: 1px solid rgba(192, 132, 252, 0.4);
+    }
+
+    .dna {
+      font-size: 45px;
+      animation: dnaSpin 4s infinite ease-in-out;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    @keyframes dnaSpin {
+      0%, 100% {
+        transform: rotate(-8deg) scale(1);
+      }
+
+      50% {
+        transform: rotate(8deg) scale(1.15);
+      }
+    }
+
+    /* Flowers section */
+    .flowers {
+      text-align: center;
+      padding: 20px;
+      font-size: 55px;
+      letter-spacing: 20px;
+      animation: flowerBounce 3s infinite ease-in-out;
+    }
+
+    @keyframes flowerBounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      color: #d8b4fe;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    footer .heart {
+      color: #f472b6;
+      animation: heartbeat 1s infinite;
+      display: inline-block;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.3);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .quotes-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .biology {
+        grid-column: span 1;
+      }
+
+      .photo-container {
+        width: 190px;
+        height: 235px;
+      }
+
+      .section-title {
+        font-size: 2.2rem;
+      }
+
+      .quote-card {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating particles -->
+  <div class="particle" style="left: 5%; animation-duration: 9s;"></div>
+  <div class="particle" style="left: 15%; animation-duration: 13s;"></div>
+  <div class="particle" style="left: 28%; animation-duration: 10s;"></div>
+  <div class="particle" style="left: 42%; animation-duration: 15s;"></div>
+  <div class="particle" style="left: 57%; animation-duration: 11s;"></div>
+  <div class="particle" style="left: 70%; animation-duration: 14s;"></div>
+  <div class="particle" style="left: 84%; animation-duration: 9s;"></div>
+  <div class="particle" style="left: 94%; animation-duration: 12s;"></div>
+
+  <!-- Floating flowers -->
+  <div class="flower" style="left: 8%; animation-delay: 1s;">🌷</div>
+  <div class="flower" style="left: 25%; animation-delay: 5s;">🌻</div>
+  <div class="flower" style="left: 45%; animation-delay: 2s;">🌷</div>
+  <div class="flower" style="left: 65%; animation-delay: 6s;">🌻</div>
+  <div class="flower" style="left: 82%; animation-delay: 3s;">🌷</div>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="small-title">
+        ✨ A Little Surprise For A Wonderful Teacher ✨
+      </div>
+
+      <h1>Happy Teachers' Day</h1>
+
+      <div class="teacher-name">
+        Rashmi Srivastav Ma'am 💜
+      </div>
+
+      <p class="subtitle">
+        To a teacher who is as sweet as sunshine,
+        as graceful as blooming flowers,
+        and as beautiful as every lesson she makes unforgettable.
+        🌷🌻
+      </p>
+
+      <!-- Teacher Photo -->
+      <div class="photo-container">
+
+        <!--
+          CHANGE "teacher.jpg" TO YOUR PHOTO FILE NAME.
+
+          Example:
+          If your photo is named rashmi.jpg,
+          change src="teacher.jpg" to src="rashmi.jpg"
+        -->
+
+        <img src="images/rashmimaam.jpeg" alt="Rashmi Srivastav Ma'am">
+
+      </div>
+
+      <div class="photo-label">
+        "A beautiful teacher who makes every day brighter." ✨
+      </div>
+
+      <button class="surprise-btn" onclick="showSurprise()">
+        💌 Open Your Surprise
+      </button>
+
+      <div id="surprise">
+
+        <h2>🌷 Dear Rashmi Ma'am 🌷</h2>
+
+        <p>
+          Some teachers teach from books,
+          but some teach from the heart.
+          You are one of those rare teachers who make
+          learning feel beautiful and memories feel priceless.
+          <br><br>
+
+          Your kindness, your graceful personality,
+          your beautiful smile, and the way you make every
+          student feel special are things that can never be
+          measured by marks or grades.
+          <br><br>
+
+          Thank you for being such a wonderful teacher.
+          May your life always bloom with happiness,
+          just like the flowers you bring into the lives
+          of your students. 💜🌻
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FLOWERS -->
+  <div class="flowers">
+    🌷 🌻 🌷 🌻 🌷
+  </div>
+
+
+  <!-- QUOTES -->
+  <section class="quotes-section">
+
+    <h2 class="section-title">
+      Words Just For You 💜
+    </h2>
+
+    <div class="quotes-grid">
+
+      <div class="quote-card">
+
+        <h3>🌷 A Beautiful Teacher</h3>
+
+        <p>
+          "A truly beautiful teacher is not remembered
+          for the lessons she taught, but for the light
+          she left behind in every student's heart."
+        </p>
+
+      </div>
+
+
+      <div class="quote-card">
+
+        <h3>🌻 Like Sunshine</h3>
+
+        <p>
+          "Some people brighten a room when they enter;
+          wonderful teachers brighten every life
+          they touch."
+        </p>
+
+      </div>
+
+
+      <div class="quote-card">
+
+        <h3>💜 Grace & Kindness</h3>
+
+        <p>
+          "Your elegance may be seen in the way you dress,
+          but your true beauty shines in the kindness,
+          patience, and love you give to your students."
+        </p>
+
+      </div>
+
+
+      <!-- BIOLOGY QUOTE -->
+      <div class="quote-card biology">
+
+        <div class="dna">🧬</div>
+
+        <h3>🧬 A Little Biology Magic</h3>
+
+        <p>
+          "If knowledge were DNA, you would be the beautiful
+          sequence that makes curiosity grow, confidence evolve,
+          and every student become a better version of themselves."
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL MESSAGE -->
+  <section style="text-align:center; padding:70px 20px;">
+
+    <div style="font-size:50px;">
+      🌷 🌻 🌷 🌻 🌷
+    </div>
+
+    <h2
+      style="
+        margin:30px 0 15px;
+        font-size:clamp(2rem,5vw,3.5rem);
+        color:#e9d5ff;
+      "
+    >
+      Thank You For Being You 💜
+    </h2>
+
+    <p
+      style="
+        max-width:700px;
+        margin:auto;
+        color:#d8b4fe;
+        line-height:1.8;
+        font-size:1.1rem;
+      "
+    >
+      Wishing you endless happiness, beautiful moments,
+      blooming flowers and countless reasons to smile.
+      <br>
+      Happy Teachers' Day, Rashmi Ma'am! 🌻💜
+    </p>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    Made with admiration & gratitude
+    <span class="heart">♥</span>
+    especially for Rashmi Ma'am.
+
+    <br><br>
+
+    🌷 Happy Teachers' Day 2026 🌷
+
+  </footer>
+
+
+  <script>
+
+    // Surprise message animation
+    function showSurprise() {
+
+      const surprise = document.getElementById("surprise");
+
+      surprise.classList.toggle("show");
+
+      if (surprise.classList.contains("show")) {
+
+        document.querySelector(".surprise-btn").innerHTML =
+          "💜 Close Surprise";
+
+        surprise.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+        createConfetti();
+
+      } else {
+
+        document.querySelector(".surprise-btn").innerHTML =
+          "💌 Open Your Surprise";
+
+      }
+    }
+
+
+    // Confetti / celebration effect
+    function createConfetti() {
+
+      const emojis = ["💜", "🌷", "🌻", "✨", "💐", "💖"];
+
+      for (let i = 0; i < 35; i++) {
+
+        const confetti = document.createElement("div");
+
+        confetti.innerHTML =
+          emojis[Math.floor(Math.random() * emojis.length)];
+
+        confetti.style.position = "fixed";
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.top = "-30px";
+        confetti.style.fontSize =
+          (15 + Math.random() * 20) + "px";
+
+        confetti.style.zIndex = "9999";
+        confetti.style.pointerEvents = "none";
+
+        document.body.appendChild(confetti);
+
+        const duration =
+          2000 + Math.random() * 3000;
+
+        const rotation =
+          Math.random() * 720 - 360;
+
+        confetti.animate(
+          [
+            {
+              transform: "translateY(0) rotate(0deg)",
+              opacity: 1
+            },
+            {
+              transform:
+                `translateY(110vh) rotate(${rotation}deg)`,
+              opacity: 0
+            }
+          ],
+          {
+            duration: duration,
+            easing: "cubic-bezier(.2,.8,.3,1)"
+          }
+        );
+
+        setTimeout(() => {
+          confetti.remove();
+        }, duration);
+      }
+    }
+
+
+    // Create additional glowing particles randomly
+    function createParticle() {
+
+      const particle = document.createElement("div");
+
+      particle.className = "particle";
+
+      particle.style.left =
+        Math.random() * 100 + "vw";
+
+      particle.style.animationDuration =
+        (8 + Math.random() * 10) + "s";
+
+      particle.style.width =
+        (2 + Math.random() * 5) + "px";
+
+      particle.style.height =
+        particle.style.width;
+
+      document.body.appendChild(particle);
+
+   setTimeout(() => {
+        particle.remove();
+      }, 18000);
+    }
+
+
+    setInterval(createParticle, 900);
+
+
+    // Small welcome effect when page loads
+    window.addEventListener("load", () => {
+
+      setTimeout(() => {
+        createConfetti();
+      }, 1200);
+
+    });
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Happy Teachers' Day | Kaushal Sir</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,600&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      color: #25211d;
+      background: #f3ead8;
+      overflow-x: hidden;
+    }
+
+
+    /* =====================================================
+       BOHO COLOUR VARIABLES
+    ===================================================== */
+
+    :root {
+      --terracotta: #c95d43;
+      --orange: #e38b45;
+      --mustard: #d8a936;
+      --sage: #718c69;
+      --teal: #367c78;
+      --cream: #f7eedc;
+      --brown: #49372c;
+      --dark: #24211d;
+      --pink: #c97970;
+    }
+
+
+    /* =====================================================
+       PAPER / BOHO BACKGROUND
+    ===================================================== */
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+
+      pointer-events: none;
+      z-index: 100;
+
+      opacity: .12;
+
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          rgba(60,40,20,.15) 0px,
+          rgba(60,40,20,.15) 1px,
+          transparent 1px,
+          transparent 5px
+        );
+    }
+
+
+    /* =====================================================
+       BOHO GEOMETRIC BACKGROUND
+    ===================================================== */
+
+    .shape {
+      position: fixed;
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    .circle-one {
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+
+      background: var(--terracotta);
+
+      top: -170px;
+      left: -150px;
+
+      opacity: .28;
+
+      animation: floatShape 8s ease-in-out infinite;
+    }
+
+    .circle-two {
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+
+      background: var(--teal);
+
+      right: -130px;
+      top: 30%;
+
+      opacity: .23;
+
+      animation: floatShape 10s ease-in-out infinite reverse;
+    }
+
+    .circle-three {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+
+      background: var(--mustard);
+
+      bottom: -120px;
+      left: 20%;
+
+      opacity: .25;
+
+      animation: floatShape 9s ease-in-out infinite;
+    }
+
+    @keyframes floatShape {
+
+      0%,100% {
+        transform: translate(0,0) rotate(0deg);
+      }
+
+      50% {
+        transform: translate(25px,-30px) rotate(8deg);
+      }
+    }
+
+
+    /* =====================================================
+       SHARP DECORATIVE LINES
+    ===================================================== */
+
+    .sharp-line {
+      position: fixed;
+
+      width: 220px;
+      height: 4px;
+
+      background: var(--terracotta);
+
+      transform: rotate(-35deg);
+
+      opacity: .55;
+
+      z-index: -1;
+    }
+
+    .line-one {
+      top: 18%;
+      left: -50px;
+    }
+
+    .line-two {
+      bottom: 22%;
+      right: -50px;
+
+      background: var(--teal);
+
+      transform: rotate(35deg);
+    }
+
+    .line-three {
+      top: 55%;
+      left: -70px;
+
+      background: var(--mustard);
+
+      transform: rotate(60deg);
+    }
+
+
+    /* =====================================================
+       NAVBAR
+    ===================================================== */
+
+    nav {
+      position: fixed;
+
+      top: 18px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      width: min(92%, 1100px);
+
+      padding: 14px 22px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      background: rgba(247,238,220,.82);
+
+      backdrop-filter: blur(16px);
+
+      border: 2px solid rgba(73,55,44,.12);
+
+      box-shadow:
+        0 15px 40px rgba(60,40,20,.12);
+
+      z-index: 1000;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+
+      font-size: 22px;
+
+      color: var(--terracotta);
+
+      font-weight: 600;
+    }
+
+    nav a {
+      color: var(--brown);
+
+      text-decoration: none;
+
+      margin-left: 25px;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: var(--terracotta);
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+
+      min-height: 100vh;
+
+      padding:
+        150px 7%
+        90px;
+
+      display: grid;
+
+      grid-template-columns:
+        1.1fr .9fr;
+
+      align-items: center;
+
+      gap: 70px;
+    }
+
+
+    /* =====================================================
+       HERO TEXT
+    ===================================================== */
+
+    .hero-text {
+      animation:
+        heroReveal 1.2s
+        cubic-bezier(.2,.8,.2,1)
+        forwards;
+    }
+
+    @keyframes heroReveal {
+
+      from {
+        opacity: 0;
+        transform:
+          translateY(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform:
+          translateY(0);
+      }
+
+    }
+
+
+    .eyebrow {
+
+      display: inline-block;
+
+      font-size: 13px;
+
+      font-weight: 800;
+
+      letter-spacing: 4px;
+
+      color: var(--teal);
+
+      margin-bottom: 20px;
+
+      position: relative;
+    }
+
+    .eyebrow::after {
+
+      content: "";
+
+      display: block;
+
+      width: 80px;
+      height: 3px;
+
+      background: var(--terracotta);
+
+      margin-top: 8px;
+
+      animation: lineGrow 1.5s ease forwards;
+    }
+
+    @keyframes lineGrow {
+
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 80px;
+      }
+
+    }
+
+
+    h1 {
+
+      font-family:
+        "DM Serif Display",
+        serif;
+
+      font-size:
+        clamp(65px,9vw,120px);
+
+      line-height: .82;
+
+      letter-spacing: -5px;
+
+      color: var(--dark);
+    }
+
+    h1 span {
+
+      display: block;
+
+      color: var(--terracotta);
+
+      font-style: italic;
+
+      margin-top: 15px;
+
+    }
+
+
+    .hero-subtitle {
+
+      margin-top: 35px;
+
+      max-width: 620px;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 20px;
+
+      line-height: 1.7;
+
+      color: #66564a;
+    }
+
+
+    /* =====================================================
+       SHARP BRUSH / LINE
+    ===================================================== */
+
+    .paint-line {
+
+      width: 320px;
+
+      height: 12px;
+
+      margin-top: 30px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--terracotta),
+          var(--orange),
+          var(--mustard)
+        );
+
+      clip-path:
+        polygon(
+          0 30%,
+          95% 0,
+          100% 55%,
+          4% 100%
+        );
+
+      animation:
+        lineSlide 2s
+        ease infinite alternate;
+    }
+
+    @keyframes lineSlide {
+
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(15px);
+      }
+
+    }
+
+
+    /* =====================================================
+       PHOTO FRAME
+    ===================================================== */
+
+    .photo-container {
+
+      position: relative;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+    }
+
+
+    .photo-frame {
+
+      width:
+        min(430px,88vw);
+
+      height: 530px;
+
+      position: relative;
+
+      padding: 14px;
+
+      background:
+        var(--brown);
+
+      box-shadow:
+        18px 25px 0 var(--terracotta),
+        35px 45px 70px
+        rgba(60,40,20,.22);
+
+      transform:
+        rotate(2deg);
+
+      animation:
+        frameFloat 5s
+        ease-in-out infinite;
+    }
+
+    @keyframes frameFloat {
+
+      0%,100% {
+        transform:
+          rotate(2deg)
+          translateY(0);
+      }
+
+      50% {
+        transform:
+          rotate(-1deg)
+          translateY(-12px);
+      }
+    }
+
+
+    .photo-inner {
+
+      width: 100%;
+      height: 100%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #e9d4b5,
+          #f8edda
+        );
+
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      overflow: hidden;
+
+      position: relative;
+    }
+
+
+    /*
+      =====================================================
+      ADD TEACHER PHOTO HERE
+
+      Replace the placeholder below with:
+
+      <img src="kaushal-sir.jpg"
+           alt="Kaushal Sir">
+
+      Put the image in the same folder
+      as index.html.
+      =====================================================
+    */
+
+
+    .photo-placeholder {
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      color: var(--brown);
+
+      font-size: 22px;
+
+      padding: 30px;
+
+    }
+
+    .photo-placeholder strong {
+
+      display: block;
+
+      font-family:
+        "DM Serif Display",
+        serif;
+
+      font-size: 40px;
+
+      color:
+        var(--terracotta);
+
+      margin-bottom: 15px;
+    }
+
+
+    .photo-inner img {
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      display: block;
+
+      filter:
+        sepia(.12)
+        saturate(.9);
+
+      transition:
+        transform 1s ease;
+    }
+
+    .photo-inner img:hover {
+
+      transform:
+        scale(1.06);
+    }
+
+
+    /* =====================================================
+       GEOMETRIC DECORATION AROUND PHOTO
+    ===================================================== */
+
+    .sun {
+
+      position: absolute;
+
+      width: 110px;
+      height: 110px;
+
+      border-radius: 50%;
+
+      background:
+        var(--mustard);
+
+      top: -55px;
+      right: -55px;
+
+      opacity: .85;
+
+      z-index: -1;
+
+      animation:
+        rotateSun 15s linear infinite;
+    }
+
+    @keyframes rotateSun {
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+
+    .arch {
+
+      position: absolute;
+
+      width: 120px;
+      height: 180px;
+
+      border:
+        7px solid var(--teal);
+
+      border-bottom: none;
+
+      border-radius:
+        80px 80px 0 0;
+
+      left: -75px;
+      bottom: 30px;
+
+      opacity: .7;
+    }
+
+
+    /* =====================================================
+       SECTION
+    ===================================================== */
+
+    .section {
+
+      padding:
+        120px 7%;
+    }
+
+
+    .section-title {
+
+      text-align: center;
+
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+
+      font-family:
+        "DM Serif Display",
+        serif;
+
+      font-size:
+        clamp(42px,6vw,75px);
+
+      color:
+        var(--dark);
+    }
+
+    .section-title p {
+
+      margin-top: 12px;
+
+      color:
+        #756456;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-style: italic;
+
+      font-size: 18px;
+    }
+
+
+    /* =====================================================
+       SOCIAL STUDIES CARDS
+    ===================================================== */
+
+    .cards {
+
+      max-width: 1150px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 25px;
+    }
+
+
+    .card {
+
+      min-height: 300px;
+
+      padding: 38px 30px;
+
+      background:
+        rgba(255,249,235,.8);
+
+      border:
+        2px solid rgba(73,55,44,.12);
+
+      position: relative;
+
+      overflow: hidden;
+
+      transition:
+        .5s ease;
+
+      box-shadow:
+        0 20px 50px
+        rgba(60,40,20,.1);
+    }
+
+
+    .card:nth-child(1) {
+      border-top:
+        8px solid var(--terracotta);
+    }
+
+    .card:nth-child(2) {
+      border-top:
+        8px solid var(--teal);
+    }
+
+    .card:nth-child(3) {
+      border-top:
+        8px solid var(--mustard);
+    }
+
+
+    .card:hover {
+
+      transform:
+        translateY(-15px)
+        rotate(-1deg);
+
+      box-shadow:
+        0 30px 70px
+        rgba(60,40,20,.18);
+    }
+
+
+    .card-number {
+
+      font-family:
+        "DM Serif Display",
+        serif;
+
+      font-size: 60px;
+
+      color:
+        rgba(73,55,44,.1);
+
+      position: absolute;
+
+      top: 5px;
+      right: 15px;
+    }
+
+
+    .card h3 {
+
+      font-family:
+        "DM Serif Display",
+        serif;
+
+      font-size: 30px;
+
+      margin-bottom: 20px;
+
+      color:
+        var(--brown);
+    }
+
+
+    .card p {
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 18px;
+
+      line-height: 1.7;
+
+      color:
+        #66564a;
+    }
+
+
+    .card-icon {
+
+      font-size: 38px;
+
+      margin-bottom: 20px;
+
+      display: block;
+
+      animation:
+        iconFloat 3s
+        ease-in-out infinite;
+    }
+
+    @keyframes iconFloat {
+
+      0%,100% {
+        transform:
+          translateY(0);
+      }
+
+      50% {
+        transform:
+          translateY(-7px);
+      }
+    }
+
+
+    /* =====================================================
+       TIMELINE / SOCIAL STUDIES
+    ===================================================== */
+
+    .timeline {
+
+      max-width: 950px;
+
+      margin:
+        auto;
+
+      position: relative;
+    }
+
+
+    .timeline::before {
+
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+
+      transform:
+        translateX(-50%);
+
+      width: 4px;
+
+      height: 100%;
+
+      background:
+        linear-gradient(
+          var(--terracotta),
+          var(--mustard),
+          var(--teal)
+        );
+    }
+
+
+    .timeline-item {
+
+      width: 50%;
+
+      padding: 25px;
+
+      position: relative;
+    }
+
+
+    .timeline-item:nth-child(odd) {
+
+      text-align: right;
+
+      padding-right: 60px;
+    }
+
+
+    .timeline-item:nth-child(even) {
+
+      margin-left: 50%;
+
+      padding-left: 60px;
+    }
+
+
+    .timeline-dot {
+
+      position: absolute;
+
+      width: 18px;
+      height: 18px;
+
+      border-radius: 50%;
+
+      background:
+        var(--terracotta);
+
+      border:
+        4px solid var(--cream);
+
+      top: 38px;
+    }
+
+
+    .timeline-item:nth-child(odd)
+    .timeline-dot {
+
+      right: -9px;
+    }
+
+
+    .timeline-item:nth-child(even)
+    .timeline-dot {
+
+      left: -9px;
+
+      background:
+        var(--teal);
+    }
+
+
+    .timeline-content {
+
+      background:
+        rgba(255,249,235,.85);
+
+      padding: 25px;
+
+      box-shadow:
+        0 15px 40px
+        rgba(60,40,20,.1);
+
+      border-left:
+        5px solid var(--terracotta);
+    }
+
+
+    .timeline-item:nth-child(even)
+    .timeline-content {
+
+      border-left:
+        5px solid var(--teal);
+    }
+
+
+    .timeline-content h3 {
+
+      font-family:
+        "DM Serif Display",
+        serif;
+
+      font-size: 28px;
+
+      color:
+        var(--brown);
+
+      margin-bottom: 10px;
+    }
+
+
+    .timeline-content p {
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      line-height: 1.7;
+
+      color:
+        #66564a;
+    }
+
+
+    /* =====================================================
+       FINAL MESSAGE
+    ===================================================== */
+
+    .message {
+
+      max-width: 1050px;
+
+      margin: auto;
+
+      padding:
+        80px 8%;
+
+      background:
+        var(--brown);
+
+      color:
+        var(--cream);
+
+      position: relative;
+
+      overflow: hidden;
+
+      box-shadow:
+        20px 20px 0 var(--terracotta),
+        40px 40px 70px
+        rgba(60,40,20,.2);
+    }
+
+
+    .message::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 350px;
+      height: 350px;
+
+      border-radius: 50%;
+
+      background:
+        var(--teal);
+
+      opacity: .3;
+
+      top: -200px;
+      right: -100px;
+    }
+
+
+    .message h2 {
+
+      font-family:
+        "DM Serif Display",
+        serif;
+
+      font-size:
+        clamp(42px,6vw,70px);
+
+      color:
+        #f1c66a;
+
+      margin-bottom: 30px;
+    }
+
+
+    .message p {
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 20px;
+
+      line-height: 1.9;
+
+      color:
+        #eadfca;
+    }
+
+
+    .signature {
+
+      margin-top: 35px;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-style: italic;
+
+      font-size: 25px;
+
+      color:
+        #f1c66a;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+
+      text-align: center;
+
+      padding:
+        80px 20px 45px;
+    }
+
+
+    footer h3 {
+
+      font-family:
+        "DM Serif Display",
+        serif;
+
+      font-size: 40px;
+
+      color:
+        var(--terracotta);
+    }
+
+
+    footer p {
+
+      margin-top: 12px;
+
+      font-size: 11px;
+
+      letter-spacing: 4px;
+
+      color:
+        #79695b;
+    }
+
+
+    /* =====================================================
+       FLOATING SYMBOLS
+    ===================================================== */
+
+    .symbol {
+
+      position: fixed;
+
+      z-index: 1;
+
+      font-size: 22px;
+
+      pointer-events: none;
+
+      opacity: .45;
+
+      animation:
+        symbolFloat
+        var(--time)
+        ease-in-out infinite;
+    }
+
+
+    @keyframes symbolFloat {
+
+      0%,100% {
+        transform:
+          translateY(0)
+          rotate(0deg);
+      }
+
+      50% {
+        transform:
+          translateY(-30px)
+          rotate(15deg);
+      }
+    }
+
+
+    /* =====================================================
+       SCROLL REVEAL
+    ===================================================== */
+
+    .reveal {
+
+      opacity: 0;
+
+      transform:
+        translateY(50px);
+
+      transition:
+        opacity 1s ease,
+        transform 1s ease;
+    }
+
+
+    .reveal.active {
+
+      opacity: 1;
+
+      transform:
+        translateY(0);
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media(max-width:850px) {
+
+      nav {
+        border-radius: 30px;
+      }
+
+      nav a {
+        display: none;
+      }
+
+      .hero {
+
+        grid-template-columns:
+          1fr;
+
+        text-align: center;
+
+        padding-top: 130px;
+      }
+
+      .hero-subtitle {
+
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .paint-line {
+
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cards {
+
+        grid-template-columns:
+          1fr;
+      }
+
+      .timeline::before {
+
+        left: 15px;
+      }
+
+      .timeline-item,
+      .timeline-item:nth-child(even) {
+
+        width: 100%;
+
+        margin-left: 0;
+
+        padding:
+          20px 20px 20px 50px;
+
+        text-align: left;
+      }
+
+      .timeline-item:nth-child(odd) {
+
+        text-align: left;
+      }
+
+      .timeline-dot,
+      .timeline-item:nth-child(odd)
+      .timeline-dot,
+      .timeline-item:nth-child(even)
+      .timeline-dot {
+
+        left: 6px;
+        right: auto;
+      }
+
+      h1 {
+
+        letter-spacing:
+          -3px;
+      }
+
+      .message {
+
+        box-shadow:
+          10px 10px 0 var(--terracotta);
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       BACKGROUND SHAPES
+  ====================================================== -->
+
+  <div class="shape circle-one"></div>
+  <div class="shape circle-two"></div>
+  <div class="shape circle-three"></div>
+
+  <div class="sharp-line line-one"></div>
+  <div class="sharp-line line-two"></div>
+  <div class="sharp-line line-three"></div>
+
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <nav>
+
+    <div class="logo">
+      Kaushal Sir • Social Studies
+    </div>
+
+    <div>
+      <a href="#home">Home</a>
+      <a href="#lessons">Lessons</a>
+      <a href="#message">Message</a>
+    </div>
+
+  </nav>
+
+
+  <!-- =====================================================
+       FLOATING SOCIAL STUDIES SYMBOLS
+  ====================================================== -->
+
+  <div class="symbol"
+       style="left:8%;top:30%;--time:6s;">
+    🗺️
+  </div>
+
+  <div class="symbol"
+       style="left:90%;top:20%;--time:7s;">
+    🏛️
+  </div>
+
+  <div class="symbol"
+       style="left:15%;top:80%;--time:8s;">
+    📜
+  </div>
+
+  <div class="symbol"
+       style="left:82%;top:72%;--time:5s;">
+    🌍
+  </div>
+
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+
+  <section class="hero" id="home">
+
+
+    <div class="hero-text">
+
+      <div class="eyebrow">
+        TEACHERS' DAY • 2026
+      </div>
+
+      <h1>
+        HAPPY
+        <span>TEACHERS' DAY</span>
+      </h1>
+
+      <div class="paint-line"></div>
+
+      <p class="hero-subtitle">
+
+        To the teacher who turns
+        <strong>history into stories,</strong>
+        geography into journeys,
+        and society into something
+        we can truly understand.
+
+        <br><br>
+
+        This little corner of the world
+        is dedicated to
+
+        <strong>Kaushal Sir.</strong>
+
+      </p>
+
+    </div>
+
+
+    <!-- =================================================
+         TEACHER PHOTO
+    ================================================== -->
+
+    <div class="photo-container">
+
+      <div class="sun"></div>
+
+      <div class="arch"></div>
+
+      <div class="photo-frame">
+
+        <div class="photo-inner">
+
+
+          <!--
+            ===============================================
+            YOUR TEACHER PHOTO GOES HERE
+
+            Replace the div below with:
+
+            <img src="kaushal-sir.jpg"
+                 alt="Kaushal Sir">
+
+            Keep "kaushal-sir.jpg" in the same
+            folder as this HTML file.
+            ===============================================
+          -->
+
+
+           <img src="images/kausalsir.jpeg" alt="Kaushal Sir">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       SOCIAL STUDIES QUOTES
+  ====================================================== -->
+
+  <section class="section" id="lessons">
+
+    <div class="section-title reveal">
+
+      <h2>
+        Lessons Beyond Books
+      </h2>
+
+      <p>
+        Because Social Studies is really about understanding life.
+      </p>
+
+    </div>
+
+
+    <div class="cards">
+
+
+      <div class="card reveal">
+
+        <span class="card-icon">
+          🗺️
+        </span>
+
+        <span class="card-number">
+          01
+        </span>
+
+        <h3>
+          Geography
+        </h3>
+
+        <p>
+          "You taught us that every map
+          is more than lines and borders —
+          it is a story of people,
+          places and possibilities."
+        </p>
+
+      </div>
+
+
+      <div class="card reveal">
+
+        <span class="card-icon">
+          🏛️
+        </span>
+
+        <span class="card-number">
+          02
+        </span>
+
+        <h3>
+          History
+        </h3>
+
+        <p>
+          "You made the past feel alive,
+          showing us that history isn't
+          just about dates — it is about
+          the people who shaped our world."
+        </p>
+
+      </div>
+
+
+      <div class="card reveal">
+
+        <span class="card-icon">
+          ⚖️
+        </span>
+
+        <span class="card-number">
+          03
+        </span>
+
+        <h3>
+          Civics
+        </h3>
+
+        <p>
+          "You taught us that citizenship
+          isn't only knowing our rights,
+          but understanding our
+          responsibilities too."
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       TIMELINE
+  ====================================================== -->
+
+  <section class="section">
+
+    <div class="section-title reveal">
+
+      <h2>
+        A Journey Through Time
+      </h2>
+
+      <p>
+        Every lesson becomes a memory.
+      </p>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+      <div class="timeline-item reveal">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+
+          <h3>
+            Yesterday
+          </h3>
+
+          <p>
+            You helped us discover
+            the stories of civilizations,
+            leaders and people who
+            changed history.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item reveal">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+
+          <h3>
+            Today
+          </h3>
+
+          <p>
+            You help us understand
+            society, democracy,
+            geography and the world
+            around us.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="timeline-item reveal">
+
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+
+          <h3>
+            Tomorrow
+          </h3>
+
+          <p>
+            Your lessons become part
+            of the way we think,
+            question, understand
+            and build our future.
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       PERSONAL MESSAGE
+  ====================================================== -->
+
+  <section class="section" id="message">
+
+    <div class="message reveal">
+
+      <h2>
+        Dear Kaushal Sir,
+      </h2>
+
+      <p>
+
+        A great Social Studies teacher does
+        more than explain chapters.
+
+        <br><br>
+
+        You teach us to look at the world
+        with curiosity — to understand where
+        we came from, where we are standing,
+        and what kind of future we can create.
+
+        <br><br>
+
+        You turned maps into adventures,
+        history into stories, and civics into
+        lessons about real life.
+
+        <br><br>
+
+        Thank you for every explanation,
+        every question you encouraged,
+        every doubt you cleared,
+        and every lesson that stayed with us
+        even after the classroom ended.
+
+        <br><br>
+
+        May your journey continue to inspire
+        hundreds of students and leave a
+        positive mark on every life you teach.
+
+      </p>
+
+      <div class="signature">
+
+        With Respect, Gratitude & Lots of Memories ❤️
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer>
+
+    <h3>
+      Happy Teachers' Day, Kaushal Sir! 🌍
+    </h3>
+
+    <p>
+      LEARN • QUESTION • UNDERSTAND • INSPIRE
+    </p>
+
+  </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script>
+
+
+    /* =====================================================
+       1. SCROLL REVEAL
+    ===================================================== */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    const observer =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add(
+                "active"
+              );
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: .15
+        }
+
+      );
+
+
+    revealElements.forEach(element => {
+
+      observer.observe(element);
+
+    });
+
+
+
+    /* =====================================================
+       2. MOUSE PARALLAX
+    ===================================================== */
+
+    document.addEventListener(
+      "mousemove",
+      (event) => {
+
+        const x =
+          (event.clientX /
+          window.innerWidth - .5);
+
+        const y =
+          (event.clientY /
+          window.innerHeight - .5);
+
+
+        document
+          .querySelectorAll(".shape")
+          .forEach((shape, index) => {
+
+            const speed =
+              (index + 1) * 8;
+
+            shape.style.transform =
+              `translate(
+                ${x * speed}px,
+                ${y * speed}px
+              )`;
+
+          });
+
+      }
+    );
+
+
+
+    /* =====================================================
+       3. CLICK PAINT SPLASH
+    ===================================================== */
+
+    const colours = [
+
+      "#c95d43",
+      "#e38b45",
+      "#d8a936",
+      "#718c69",
+      "#367c78",
+      "#c97970"
+
+    ];
+
+
+    document.addEventListener(
+      "click",
+      (event) => {
+
+
+        for (
+          let i = 0;
+          i < 15;
+          i++
+        ) {
+
+
+          const particle =
+            document.createElement("span");
+
+
+          particle.style.position =
+            "fixed";
+
+
+          particle.style.left =
+            event.clientX + "px";
+
+
+          particle.style.top =
+            event.clientY + "px";
+
+
+          const size =
+            4 + Math.random() * 12;
+
+
+          particle.style.width =
+            size + "px";
+
+
+          particle.style.height =
+            size + "px";
+
+
+          particle.style.borderRadius =
+            "50%";
+
+
+          particle.style.background =
+            colours[
+              Math.floor(
+                Math.random() *
+                colours.length
+              )
+            ];
+
+
+          particle.style.pointerEvents =
+            "none";
+
+
+          particle.style.zIndex =
+            "2000";
+
+
+          document.body.appendChild(
+            particle
+          );
+
+
+          const angle =
+            Math.random() *
+            Math.PI * 2;
+
+
+          const distance =
+            30 +
+            Math.random() * 120;
+
+
+          const x =
+            Math.cos(angle) *
+            distance;
+
+
+          const y =
+            Math.sin(angle) *
+            distance;
+
+
+          particle.animate(
+
+            [
+
+              {
+                transform:
+                  "translate(-50%,-50%) scale(1)",
+
+                opacity: 1
+              },
+
+              {
+
+                transform:
+                  `translate(
+                    calc(-50% + ${x}px),
+                    calc(-50% + ${y}px)
+                  )
+                  scale(.1)`,
+
+                opacity: 0
+
+              }
+
+            ],
+
+            {
+
+              duration:
+                600 +
+                Math.random() * 700,
+
+              easing:
+                "cubic-bezier(.2,.8,.2,1)"
+
+            }
+
+          ).onfinish = () => {
+
+            particle.remove();
+
+          };
+
+        }
+
+      }
+    );
+
+
+
+    /* =====================================================
+       4. RANDOM FLOATING SOCIAL STUDIES ICONS
+    ===================================================== */
+
+    const symbols = [
+      "🌍",
+      "🗺️",
+      "🏛️",
+      "📜",
+      "⚖️",
+      "🧭",
+      "🏺",
+      "📚"
+    ];
+
+
+    for (
+      let i = 0;
+      i < 12;
+      i++
+    ) {
+
+
+      const symbol =
+        document.createElement("div");
+
+
+      symbol.className =
+        "symbol";
+
+
+      symbol.textContent =
+        symbols[
+          Math.floor(
+            Math.random() *
+            symbols.length
+          )
+        ];
+
+
+      symbol.style.left =
+        Math.random() * 100 + "%";
+
+
+      symbol.style.top =
+        Math.random() * 100 + "%";
+
+
+      symbol.style.setProperty(
+        "--time",
+        5 +
+        Math.random() * 8 +
+        "s"
+      );
+
+
+      symbol.style.fontSize =
+        12 +
+        Math.random() * 20 +
+        "px";
+
+
+      document.body.appendChild(
+        symbol
+      );
+
+    }
+
+
+
+    /* =====================================================
+       5. CONSOLE MESSAGE
+    ===================================================== */
+
+    console.log(
+      "🌍 Happy Teachers' Day, Kaushal Sir!"
+    );
+
+    console.log(
+      "Made with respect, creativity and gratitude."
+    );
+
+
+  </script>
+
+</body>
+</html>

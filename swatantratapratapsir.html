@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Teacher's Day | Swatantra Pratap Sir (SST)</title>
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Kalam:wght@300;400;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. CORE SYSTEM & THEME VARIABLES
+       ========================================================================== */
+    :root {
+      --bg-space: #030712;
+      --bg-midnight: #0b1021;
+      --bg-indigo: #121833;
+      --card-bg: rgba(18, 24, 51, 0.7);
+      
+      --gold-primary: #f4c430;
+      --gold-light: #ffe89e;
+      --gold-glow: rgba(244, 196, 48, 0.35);
+      --saffron: #ff8c00;
+      
+      --text-cream: #fdfbf7;
+      --text-muted: #cbd5e1;
+
+      --font-display: 'Cinzel', serif;
+      --font-body: 'Outfit', sans-serif;
+      --font-handwritten: 'Kalam', cursive;
+
+      --border-radius: 16px;
+      --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-space);
+      color: var(--text-cream);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      font-size: 16px;
+    }
+
+    body {
+      position: relative;
+      min-height: 100vh;
+      line-height: 1.8;
+      background: radial-gradient(circle at 50% 20%, #171e38 0%, var(--bg-space) 80%);
+      background-attachment: fixed;
+    }
+
+    ::selection {
+      background: var(--saffron);
+      color: var(--bg-space);
+    }
+
+    h1, h2, h3 {
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      line-height: 1.3;
+    }
+
+    .eng-title {
+      font-family: var(--font-display);
+      letter-spacing: 2px;
+    }
+
+    /* Old Map Texture Overlay */
+    .map-texture {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30,30 Q90,120 180,60 T270,180 T150,270' stroke='%20%23ffffff' fill='none' stroke-width='1.5' stroke-dasharray='5,5'/%3E%3Ccircle cx='180' cy='60' r='25' stroke='%20%23ffffff' fill='none'/%3E%3Ccircle cx='90' cy='210' r='45' stroke='%20%23ffffff' fill='none'/%3E%3Cpath d='M10 150 L290 150 M150 10 L150 290' stroke='%20%23ffffff' stroke-width='0.5' opacity='0.5'/%3E%3C/svg%3E");
+    }
+
+    /* ==========================================================================
+       2. CANVASES & COSMIC BACKGROUND LAYERS
+       ========================================================================== */
+    #space-canvas, #books-canvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    #space-canvas { z-index: 1; }
+    #books-canvas { z-index: 3; }
+
+    /* ==========================================================================
+       3. FLOATING SST BOOK CORNER WIDGETS
+       ========================================================================== */
+    .book-corner {
+      position: fixed;
+      width: 100px;
+      height: 120px;
+      z-index: 12;
+      pointer-events: none;
+      filter: drop-shadow(0 6px 15px rgba(0,0,0,0.7));
+      animation: floatBook 6s ease-in-out infinite alternate;
+    }
+
+    .book-corner.top-left { top: 20px; left: 20px; }
+    .book-corner.top-right { top: 20px; right: 20px; animation-delay: -1.5s; }
+    .book-corner.bottom-left { bottom: 20px; left: 20px; animation-delay: -3s; }
+    .book-corner.bottom-right { bottom: 20px; right: 20px; animation-delay: -4.5s; }
+
+    .book-spine {
+      width: 100%;
+      height: 100%;
+      border-radius: 6px 14px 14px 6px;
+      border-left: 8px solid rgba(255,255,255,0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #fff;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .book-corner.top-left .book-spine { background: linear-gradient(135deg, #b91c1c, #881337); }
+    .book-corner.top-right .book-spine { background: linear-gradient(135deg, #1d4ed8, #1e40af); }
+    .book-corner.bottom-left .book-spine { background: linear-gradient(135deg, #047857, #065f46); }
+    .book-corner.bottom-right .book-spine { background: linear-gradient(135deg, #b45309, #78350f); }
+
+    @keyframes floatBook {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-12px) rotate(3deg); }
+    }
+
+    /* ==========================================================================
+       4. MAIN CONTAINER & SECTION STRUCTURE
+       ========================================================================== */
+    .content-wrapper {
+      position: relative;
+      z-index: 4;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.8rem;
+      color: var(--gold-primary);
+      margin-bottom: 0.8rem;
+      text-shadow: 0 0 20px rgba(244, 196, 48, 0.3);
+      font-family: var(--font-display);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 3.5rem auto;
+      font-size: 1.15rem;
+      color: var(--text-muted);
+    }
+
+    /* Divider */
+    .cosmic-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin: 3rem 0;
+      color: var(--saffron);
+    }
+
+    .cosmic-divider::before, .cosmic-divider::after {
+      content: '';
+      height: 1px;
+      width: 90px;
+      background: linear-gradient(90deg, transparent, var(--saffron), transparent);
+    }
+
+    /* ==========================================================================
+       5. HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 22px;
+      border-radius: 50px;
+      background: rgba(244, 196, 48, 0.08);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px var(--gold-glow);
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      color: var(--text-cream);
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    .hero-title .name-highlight {
+      display: block;
+      font-family: var(--font-display);
+      background: linear-gradient(135deg, #ffffff 0%, var(--gold-light) 40%, var(--saffron) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 5.2rem;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-top: 0.5rem;
+      text-shadow: 0 0 35px var(--gold-glow);
+    }
+
+    .hero-sub {
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 1.5rem auto 1rem auto;
+      font-weight: 300;
+    }
+
+    .hero-tags {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+
+    .tag-pill {
+      padding: 6px 18px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(244, 196, 48, 0.25);
+      font-size: 0.9rem;
+      color: var(--gold-light);
+      letter-spacing: 1.5px;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 40px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--saffron), #d43f00);
+      color: var(--text-cream);
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(230, 81, 0, 0.4), 0 0 20px var(--gold-glow);
+      transition: transform 0.3s var(--transition-smooth), box-shadow 0.3s ease;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 15px 40px rgba(230, 81, 0, 0.6), 0 0 30px var(--gold-primary);
+    }
+
+    /* ==========================================================================
+       6. TEACHER PORTRAIT SECTION
+       ========================================================================== */
+    .portrait-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .portrait-orbit-container {
+      position: relative;
+      width: 320px;
+      height: 320px;
+      margin: 2rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .orbit-ring {
+      position: absolute;
+      inset: -15px;
+      border: 2px dashed rgba(244, 196, 48, 0.4);
+      border-radius: 50%;
+      animation: orbitRotate 25s linear infinite;
+    }
+
+    .orbit-ring::after {
+      content: '🪐';
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font-size: 1.4rem;
+    }
+
+    @keyframes orbitRotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .portrait-frame {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      padding: 10px;
+      background: linear-gradient(135deg, var(--gold-primary), var(--saffron), #d43f00);
+      box-shadow: 0 0 50px rgba(244, 196, 48, 0.3);
+      transition: transform 0.5s var(--transition-smooth);
+    }
+
+    .portrait-frame:hover {
+      transform: scale(1.03);
+    }
+
+    .portrait-placeholder {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: var(--bg-indigo);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      border: 2px dashed rgba(244, 196, 48, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portrait-hover-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(11, 16, 33, 0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      border-radius: 50%;
+    }
+
+    .portrait-frame:hover .portrait-hover-overlay {
+      opacity: 1;
+    }
+
+    /* ==========================================================================
+       7. SECTION: YOU TAUGHT US THE WORLD
+       ========================================================================== */
+    .globe-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .rotating-globe-visual {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #2b5c8f, #0f2338 80%);
+      box-shadow: inset -20px -20px 50px rgba(0,0,0,0.8), 0 0 40px rgba(43, 92, 143, 0.6);
+      position: relative;
+      margin: 2rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      animation: pulseGlobe 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulseGlobe {
+      0% { box-shadow: inset -20px -20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(43, 92, 143, 0.4); }
+      100% { box-shadow: inset -20px -20px 50px rgba(0,0,0,0.8), 0 0 60px rgba(244, 196, 48, 0.5); }
+    }
+
+    .sst-badges-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      max-width: 800px;
+      margin-top: 2rem;
+    }
+
+    .sst-badge {
+      padding: 10px 22px;
+      border-radius: 12px;
+      background: var(--card-bg);
+      border: 1px solid rgba(244, 196, 48, 0.2);
+      backdrop-filter: blur(8px);
+      font-size: 1.05rem;
+      color: var(--text-cream);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ==========================================================================
+       8. HISTORY, GEOGRAPHY & CIVICS SECTIONS
+       ========================================================================== */
+    .interactive-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--border-radius);
+      padding: 2.2rem;
+      transition: all 0.4s var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(244, 196, 48, 0.4);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 0 20px var(--gold-glow);
+    }
+
+    .card-icon {
+      font-size: 2.8rem;
+      margin-bottom: 1.2rem;
+      display: inline-block;
+    }
+
+    .card-title-text {
+      font-size: 1.5rem;
+      color: var(--gold-light);
+      margin-bottom: 0.8rem;
+      font-family: var(--font-display);
+    }
+
+    .card-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Historical Timeline */
+    .timeline-container {
+      position: relative;
+      max-width: 800px;
+      margin: 3rem auto 0 auto;
+      padding-left: 2rem;
+      border-left: 2px solid rgba(244, 196, 48, 0.3);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.6rem;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--saffron);
+      border: 3px solid var(--bg-space);
+      box-shadow: 0 0 10px var(--gold-primary);
+    }
+
+    .timeline-era {
+      font-family: var(--font-display);
+      color: var(--gold-primary);
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+
+    .timeline-desc {
+      font-size: 1.15rem;
+      color: var(--text-cream);
+      margin-top: 0.3rem;
+    }
+
+    /* Civics Words Cloud */
+    .civics-pills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 2rem;
+    }
+
+    .civics-pill {
+      padding: 12px 26px;
+      border-radius: 50px;
+      background: rgba(244, 196, 48, 0.06);
+      border: 1px solid rgba(244, 196, 48, 0.25);
+      font-size: 1.2rem;
+      color: var(--text-cream);
+      backdrop-filter: blur(6px);
+      transition: all 0.3s ease;
+    }
+
+    .civics-pill:hover {
+      background: rgba(244, 196, 48, 0.2);
+      border-color: var(--gold-primary);
+      transform: scale(1.05);
+    }
+
+    /* ==========================================================================
+       9. STUDENT GRATITUDE GALAXY
+       ========================================================================== */
+    .stars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin-top: 2.5rem;
+    }
+
+    .star-note-card {
+      background: rgba(20, 28, 58, 0.85);
+      border: 1px solid rgba(244, 196, 48, 0.2);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      cursor: pointer;
+      transition: all 0.3s var(--transition-smooth);
+      position: relative;
+    }
+
+    .star-note-card:hover {
+      transform: scale(1.04);
+      border-color: var(--gold-primary);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6), 0 0 20px var(--gold-glow);
+    }
+
+    .star-note-quote {
+      font-family: var(--font-handwritten);
+      font-size: 1.35rem;
+      color: var(--gold-light);
+      line-height: 1.6;
+    }
+
+    /* Modal Popup */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 7, 18, 0.88);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: var(--bg-midnight);
+      border: 1px solid var(--gold-primary);
+      border-radius: var(--border-radius);
+      padding: 3rem;
+      max-width: 520px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.8), 0 0 30px var(--gold-glow);
+    }
+
+    .modal-text {
+      font-family: var(--font-handwritten);
+      font-size: 1.7rem;
+      color: var(--text-cream);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .close-modal-btn {
+      padding: 10px 28px;
+      border-radius: 50px;
+      background: var(--saffron);
+      color: var(--text-cream);
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       10. GRAND CINEMATIC QUOTE SECTION
+       ========================================================================== */
+    .grand-quote-section {
+      text-align: center;
+      padding: 8rem 1rem;
+      background: radial-gradient(circle at 50% 50%, rgba(20, 28, 58, 0.9) 0%, transparent 70%);
+    }
+
+    .grand-quote-text {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      line-height: 1.8;
+      color: var(--text-cream);
+      max-width: 850px;
+      margin: 0 auto;
+      text-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    .grand-quote-text span {
+      color: var(--gold-primary);
+      display: block;
+      margin-top: 1rem;
+    }
+
+    /* ==========================================================================
+       11. FINAL TRIBUTE & CINEMATIC FINALE OVERLAY
+       ========================================================================== */
+    .final-section {
+      text-align: center;
+      padding: 6rem 0 8rem 0;
+    }
+
+    .finale-trigger-btn {
+      margin-top: 3rem;
+      padding: 16px 36px;
+      background: transparent;
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      border-radius: 50px;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: var(--font-display);
+      letter-spacing: 1px;
+    }
+
+    .finale-trigger-btn:hover {
+      background: rgba(244, 196, 48, 0.15);
+      box-shadow: 0 0 25px var(--gold-glow);
+    }
+
+    .finale-overlay {
+      position: fixed;
+      inset: 0;
+      background: #02040a;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1.5s ease;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .finale-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .finale-name {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      color: var(--gold-primary);
+      letter-spacing: 4px;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 40px var(--gold-glow);
+    }
+
+    .finale-sub {
+      font-size: 1.8rem;
+      color: var(--text-cream);
+      font-family: var(--font-handwritten);
+    }
+
+    .audio-control-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 50;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(18, 24, 51, 0.85);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 0 15px var(--gold-glow);
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.8rem; }
+      .hero-title .name-highlight { font-size: 3.5rem; }
+      .section-title { font-size: 2.1rem; }
+      .grand-quote-text { font-size: 1.5rem; }
+      .book-corner { width: 70px; height: 90px; }
+      .portrait-orbit-container { width: 260px; height: 260px; }
+      .finale-name { font-size: 2.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Map Texture & Canvases -->
+  <div class="map-texture"></div>
+  <canvas id="space-canvas"></canvas>
+  <canvas id="books-canvas"></canvas>
+
+  <!-- Audio Toggle Button -->
+  <button class="audio-control-btn" id="audioBtn" onclick="toggleAudio()" title="Toggle Ambient Audio">🎵</button>
+
+  <!-- Floating SST Book Corner Elements -->
+  <div class="book-corner top-left">
+    <div class="book-spine">HISTORY<br>VOL. I</div>
+  </div>
+  <div class="book-corner top-right">
+    <div class="book-spine">WORLD<br>ATLAS</div>
+  </div>
+  <div class="book-corner bottom-left">
+    <div class="book-spine">CIVICS &<br>LAWS</div>
+  </div>
+  <div class="book-corner bottom-right">
+    <div class="book-spine">GLOBAL<br>ECONOMY</div>
+  </div>
+
+  <!-- CONTENT CONTAINER -->
+  <div class="content-wrapper">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <span class="hero-badge">🌍 HAPPY TEACHER'S DAY</span>
+      <h1 class="hero-title eng-title">
+        DEDICATED TO
+        <span class="name-highlight">SWATANTRA PRATAP</span>
+      </h1>
+      <p class="hero-sub">
+        “The teacher who helped us understand the world.”
+      </p>
+      <div class="hero-tags">
+        <span class="tag-pill">SST</span>
+        <span class="tag-pill">HISTORY</span>
+        <span class="tag-pill">GEOGRAPHY</span>
+        <span class="tag-pill">CIVICS</span>
+      </div>
+      <a href="#journey" class="cta-button eng-title">
+        🌍 ENTER THE JOURNEY
+      </a>
+    </section>
+
+    <!-- TEACHER PHOTO SECTION -->
+    <section class="portrait-section" id="journey">
+      <div class="portrait-orbit-container">
+        <div class="orbit-ring"></div>
+        <div class="portrait-frame">
+          <div class="portrait-placeholder">
+            <img src="swatantratpratapsir.jpeg" alt="Swatantra Pratap Sir - Our SST Teacher" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; margin: 0;">
+            
+            <div class="portrait-hover-overlay">
+              <p style="font-family: var(--font-handwritten); font-size: 1.25rem; color: var(--gold-light);">
+                “The mentor who turned pages of textbooks into journeys of global discovery.”
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cosmic-divider">🪐 📖 🌍</div>
+
+    <!-- YOU TAUGHT US THE WORLD -->
+    <section class="globe-container">
+      <h2 class="section-title">YOU TAUGHT US THE WORLD</h2>
+      <p class="section-subtitle">“Stepping beyond textbook pages, you taught us how to navigate and understand human civilization.”</p>
+
+      <div class="rotating-globe-visual">🌍</div>
+
+      <div class="sst-badges-grid">
+        <div class="sst-badge">🏛️ History</div>
+        <div class="sst-badge">🌍 Geography</div>
+        <div class="sst-badge">⚖️ Civics</div>
+        <div class="sst-badge">🗺️ Cartography</div>
+        <div class="sst-badge">🏺 Civilizations</div>
+        <div class="sst-badge">📜 World Culture</div>
+      </div>
+    </section>
+
+    <!-- HISTORY SECTION -->
+    <section>
+      <h2 class="section-title">HISTORY — THE ART OF LEARNING FROM THE PAST</h2>
+      <p class="section-subtitle">“You made history more than dates to memorize; you turned it into stories that build wisdom.”</p>
+
+      <div class="timeline-container">
+        <div class="timeline-item">
+          <div class="timeline-era">ANCIENT CIVILIZATIONS</div>
+          <div class="timeline-desc">Exploring early human settlements and ancient wisdom from the Indus Valley to Rome.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-era">MEDIEVAL ERA & EMPIRES</div>
+          <div class="timeline-desc">Architectural wonders, cultural exchanges, and trade routes across continents.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-era">FREEDOM MOVEMENTS</div>
+          <div class="timeline-desc">Inspiring struggles for independence, unity, and fundamental human rights.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-era">THE MODERN WORLD</div>
+          <div class="timeline-desc">Understanding global revolutions, diplomacy, and the birth of modern democracies.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GEOGRAPHY SECTION -->
+    <section>
+      <h2 class="section-title">GEOGRAPHY — SEEING BEYOND THE MAPS</h2>
+      <p class="section-subtitle">“Every map carries a story—you taught us how to read the landscape of our planet.”</p>
+
+      <div class="interactive-card-grid">
+        <div class="feature-card">
+          <div class="card-icon">🏔️</div>
+          <div class="card-title-text">Mountains & Rivers</div>
+          <p class="card-desc">Understanding Earth's natural landforms and the lifelines that sustain human civilization.</p>
+        </div>
+        <div class="feature-card">
+          <div class="card-icon">🗺️</div>
+          <div class="card-title-text">Cartography</div>
+          <p class="card-desc">Navigating latitudes, longitudes, and spatial dimensions across continents.</p>
+        </div>
+        <div class="feature-card">
+          <div class="card-icon">🌊</div>
+          <div class="card-title-text">Climate & Environment</div>
+          <p class="card-desc">Learning ecological responsibility and preserving the delicate balance of our ecosystem.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CIVICS SECTION -->
+    <section>
+      <h2 class="section-title">CIVICS — BECOMING RESPONSIBLE CITIZENS</h2>
+      <p class="section-subtitle">“You didn't just teach us political science; you empowered us to be thoughtful, active citizens.”</p>
+
+      <div class="civics-pills-container">
+        <div class="civics-pill">📜 Constitution</div>
+        <div class="civics-pill">⚖️ Fundamental Rights</div>
+        <div class="civics-pill">🛡️ Civic Duties</div>
+        <div class="civics-pill">🏛️ Democracy</div>
+        <div class="civics-pill">🤝 Equality</div>
+        <div class="civics-pill">⚖️ Justice</div>
+        <div class="civics-pill">🕊️ Freedom</div>
+      </div>
+    </section>
+
+    <!-- LESSONS THAT STAY WITH US -->
+    <section>
+      <h2 class="section-title">LESSONS THAT STAY WITH US</h2>
+      <p class="section-subtitle">Timeless principles that guide our journey long after the bell rings.</p>
+
+      <div class="interactive-card-grid">
+        <div class="feature-card">
+          <div class="card-icon">🌍</div>
+          <div class="card-title-text">Global Curiosity</div>
+          <p class="card-desc">“An insatiable drive to explore, question, and understand the world around us.”</p>
+        </div>
+        <div class="feature-card">
+          <div class="card-icon">🧭</div>
+          <div class="card-title-text">Broad Perspective</div>
+          <p class="card-desc">“The ability to view complex global events from multiple balanced viewpoints.”</p>
+        </div>
+        <div class="feature-card">
+          <div class="card-icon">📚</div>
+          <div class="card-title-text">Deep Knowledge</div>
+          <p class="card-desc">“Moving past simple memorization to build genuine analytical understanding.”</p>
+        </div>
+        <div class="feature-card">
+          <div class="card-icon">⚖️</div>
+          <div class="card-title-text">Civic Duty</div>
+          <p class="card-desc">“Understanding our personal responsibilities toward building a fairer society.”</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDENT GRATITUDE GALAXY -->
+    <section>
+      <h2 class="section-title">THANK YOU GALAXY</h2>
+      <p class="section-subtitle">Messages of appreciation from your students (Click any card to expand)</p>
+
+      <div class="stars-grid">
+        <div class="star-note-card" onclick="openNoteModal('Thank you Sir for making Social Studies so incredibly engaging every single day!')">
+          <p class="star-note-quote">“Thank you for making SST so engaging!”</p>
+        </div>
+        <div class="star-note-card" onclick="openNoteModal('Your classroom opened our eyes to how vast and interconnected the world truly is.')">
+          <p class="star-note-quote">“Your class made the world feel vast and exciting.”</p>
+        </div>
+        <div class="star-note-card" onclick="openNoteModal('Thank you for teaching us how to think critically and analyze events, not just memorize textbook facts.')">
+          <p class="star-note-quote">“Thank you for teaching us how to think, not just memorize.”</p>
+        </div>
+        <div class="star-note-card" onclick="openNoteModal('You showed us the real world beyond exam papers. We are forever grateful!')">
+          <p class="star-note-quote">“You showed us the real world beyond textbooks.”</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRAND QUOTE SECTION -->
+    <section class="grand-quote-section">
+      <div class="grand-quote-text">
+        “You taught us history, so we could understand the past.<br>
+        You taught us geography, so we could understand the world.<br>
+        You taught us civics, so we could understand our place within it.”
+        <span>And for that, we are forever grateful.</span>
+      </div>
+    </section>
+
+    <!-- FINAL TRIBUTE SECTION -->
+    <section class="final-section">
+      <div style="font-size: 4rem; margin-bottom: 1rem;">🌍</div>
+      <h2 class="section-title" style="font-size: 3.2rem;">THANK YOU, SWATANTRA PRATAP SIR</h2>
+      
+      <p class="section-subtitle" style="max-width: 750px; font-size: 1.25rem; margin-top: 1.5rem;">
+        “You taught us far more than Social Studies.<br>
+        You taught us to learn from history, navigate global geography,<br>
+        and embrace our civic duties with integrity.”
+      </p>
+
+      <div class="cosmic-divider">📖 📖 📖</div>
+
+      <button class="finale-trigger-btn" onclick="triggerFinale()">
+        ✨ LAUNCH CINEMATIC FINALE
+      </button>
+    </section>
+
+  </div>
+
+  <!-- Note Modal Overlay -->
+  <div class="modal-overlay" id="noteModal" onclick="closeNoteModal()">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <p class="modal-text" id="modalText"></p>
+      <button class="close-modal-btn" onclick="closeNoteModal()">Close Note 📖</button>
+    </div>
+  </div>
+
+  <!-- Cinematic Finale Overlay -->
+  <div class="finale-overlay" id="finaleOverlay">
+    <div style="font-size: 5rem; margin-bottom: 1rem;">🪐</div>
+    <div class="finale-name">SWATANTRA PRATAP</div>
+    <p class="finale-sub">OUR GUIDE THROUGH THE WORLD. 📚</p>
+    <button class="close-modal-btn" style="margin-top: 3rem;" onclick="closeFinale()">Back to Journey</button>
+  </div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT LOGIC
+       ========================================================================== -->
+  <script>
+    /* --------------------------------------------------------------------------
+       1. SPACE CANVAS: STARS & DRIFTING PLANETS
+       -------------------------------------------------------------------------- */
+    const spaceCanvas = document.getElementById('space-canvas');
+    const ctx = spaceCanvas.getContext('2d');
+    let width, height;
+    let stars = [];
+    let planets = [];
+
+    function initSpaceCanvas() {
+      width = spaceCanvas.width = window.innerWidth;
+      height = spaceCanvas.height = window.innerHeight;
+      stars = [];
+      planets = [];
+
+      const starCount = window.innerWidth < 768 ? 70 : 180;
+      for (let i = 0; i < starCount; i++) {
+        stars.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          size: Math.random() * 1.8 + 0.2,
+          opacity: Math.random(),
+          speed: Math.random() * 0.02 + 0.005
+        });
+      }
+
+      planets = [
+        { radius: 35, x: width * 0.1, y: height * 0.2, vx: 0.15, vy: 0.05, emoji: '☀️' },
+        { radius: 22, x: width * 0.85, y: height * 0.3, vx: -0.1, vy: 0.08, emoji: '🌍' },
+        { radius: 14, x: width * 0.2, y: height * 0.75, vx: 0.12, vy: -0.06, emoji: '🔴' },
+        { radius: 28, x: width * 0.78, y: height * 0.8, vx: -0.08, vy: -0.04, emoji: '🪐' }
+      ];
+    }
+
+    function drawSpace() {
+      ctx.clearRect(0, 0, width, height);
+
+      stars.forEach(star => {
+        star.opacity += star.speed;
+        if (star.opacity > 1 || star.opacity < 0) star.speed = -star.speed;
+
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${Math.abs(star.opacity)})`;
+        ctx.fill();
+      });
+
+      planets.forEach(planet => {
+        planet.x += planet.vx;
+        planet.y += planet.vy;
+
+        if (planet.x < -50 || planet.x > width + 50) planet.vx = -planet.vx;
+        if (planet.y < -50 || planet.y > height + 50) planet.vy = -planet.vy;
+
+        ctx.font = `${planet.radius * 2}px sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(planet.emoji, planet.x, planet.y);
+      });
+
+      requestAnimationFrame(drawSpace);
+    }
+
+    /* --------------------------------------------------------------------------
+       2. BOOKS CANVAS: FLOATING SST TEXTBOOKS
+       -------------------------------------------------------------------------- */
+    const booksCanvas = document.getElementById('books-canvas');
+    const bCtx = booksCanvas.getContext('2d');
+    let bWidth, bHeight;
+    let floatingBooks = [];
+
+    function initBooksCanvas() {
+      bWidth = booksCanvas.width = window.innerWidth;
+      bHeight = booksCanvas.height = window.innerHeight;
+      floatingBooks = [];
+      
+      const count = window.innerWidth < 768 ? 12 : 28;
+      const bookTypes = ['📘', '📙', '📕', '📗', '📖', '📜'];
+
+      for (let i = 0; i < count; i++) {
+        floatingBooks.push({
+          x: Math.random() * bWidth,
+          y: Math.random() * bHeight,
+          size: Math.random() * 16 + 20,
+          type: bookTypes[Math.floor(Math.random() * bookTypes.length)],
+          speedY: -(Math.random() * 0.8 + 0.3),
+          speedX: Math.random() * 0.4 - 0.2,
+          angle: Math.random() * 360,
+          rotSpeed: Math.random() * 0.4 - 0.2
+        });
+      }
+    }
+
+    function drawFloatingBooks() {
+      bCtx.clearRect(0, 0, bWidth, bHeight);
+
+      floatingBooks.forEach(b => {
+        b.y += b.speedY;
+        b.x += b.speedX;
+        b.angle += b.rotSpeed;
+
+        if (b.y < -40) {
+          b.y = bHeight + 40;
+          b.x = Math.random() * bWidth;
+        }
+
+        bCtx.save();
+        bCtx.translate(b.x, b.y);
+        bCtx.rotate((b.angle * Math.PI) / 180);
+        bCtx.font = `${b.size}px sans-serif`;
+        bCtx.textAlign = 'center';
+        bCtx.textBaseline = 'middle';
+        bCtx.globalAlpha = 0.45;
+        bCtx.fillText(b.type, 0, 0);
+        bCtx.restore();
+      });
+
+      requestAnimationFrame(drawFloatingBooks);
+    }
+
+    /* --------------------------------------------------------------------------
+       3. INTERACTIVE MODAL & AUDIO LOGIC
+       -------------------------------------------------------------------------- */
+    function openNoteModal(text) {
+      document.getElementById('modalText').innerText = text;
+      document.getElementById('noteModal').classList.add('active');
+    }
+
+    function closeNoteModal() {
+      document.getElementById('noteModal').classList.remove('active');
+    }
+
+    function triggerFinale() {
+      document.getElementById('finaleOverlay').classList.add('active');
+    }
+
+    function closeFinale() {
+      document.getElementById('finaleOverlay').classList.remove('active');
+    }
+
+    let audioCtx = null;
+    let isPlaying = false;
+
+    function toggleAudio() {
+      const btn = document.getElementById('audioBtn');
+      if (!isPlaying) {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        playAmbientCosmicSound();
+        btn.innerText = '🔊';
+        isPlaying = true;
+      } else {
+        if (audioCtx) audioCtx.suspend();
+        btn.innerText = '🎵';
+        isPlaying = false;
+      }
+    }
+
+    function playAmbientCosmicSound() {
+      if (!audioCtx) return;
+      audioCtx.resume();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(108, audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+    }
+
+    /* --------------------------------------------------------------------------
+       4. INITIALIZATION
+       -------------------------------------------------------------------------- */
+    window.addEventListener('DOMContentLoaded', () => {
+      initSpaceCanvas();
+      drawSpace();
+      initBooksCanvas();
+      drawFloatingBooks();
+    });
+
+    window.addEventListener('resize', () => {
+      initSpaceCanvas();
+      initBooksCanvas();
+    });
+  </script>
+</body>
+</html>

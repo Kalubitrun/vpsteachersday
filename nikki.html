@@ -1,0 +1,581 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Teacher's Day - Nikki Tiwari Ma'am</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Comic Sans MS", "Trebuchet MS", Arial, sans-serif;
+            background: linear-gradient(135deg, #e8fff1, #e8f7ff, #fffde7);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            padding: 45px 20px;
+            background: linear-gradient(135deg, #43aa8b, #90be6d);
+            color: white;
+            border-bottom-left-radius: 55px;
+            border-bottom-right-radius: 55px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+        }
+
+        header .emoji {
+            font-size: 45px;
+            margin-bottom: 15px;
+            animation: float 2s infinite ease-in-out;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        header h2 {
+            font-size: 25px;
+            font-weight: normal;
+        }
+
+        .school {
+            margin-top: 18px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* FLOATING ANIMATION */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        /* TEACHER CARD */
+        .teacher-card {
+            width: 92%;
+            max-width: 950px;
+            margin: 50px auto;
+            padding: 45px 25px;
+            text-align: center;
+            background: white;
+            border-radius: 35px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        /* BIG TEACHER PHOTO */
+        .teacher-photo {
+            width: 380px;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 10px solid #74c69d;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+            margin-bottom: 25px;
+            transition: 0.4s;
+        }
+
+        .teacher-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .teacher-card h2 {
+            color: #2d6a4f;
+            font-size: 38px;
+        }
+
+        .subject {
+            font-size: 22px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        /* MESSAGE */
+        .message {
+            width: 92%;
+            max-width: 950px;
+            margin: 35px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .message h2 {
+            text-align: center;
+            color: #2d6a4f;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        .message p {
+            font-size: 19px;
+            line-height: 1.9;
+            margin-bottom: 16px;
+        }
+
+        /* SPECIAL POINTS */
+        .points {
+            width: 92%;
+            max-width: 1000px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 22px;
+        }
+
+        .point {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+
+        .point:hover {
+            transform: translateY(-8px);
+        }
+
+        .icon {
+            font-size: 50px;
+            margin-bottom: 12px;
+        }
+
+        .point h3 {
+            color: #40916c;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .point p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* BUTTON */
+        .button-area {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        button {
+            border: none;
+            padding: 17px 32px;
+            border-radius: 35px;
+            background: linear-gradient(135deg, #2d6a4f, #90be6d);
+            color: white;
+            font-size: 19px;
+            font-family: inherit;
+            cursor: pointer;
+            box-shadow: 0 7px 18px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+        }
+
+        #specialMessage {
+            margin-top: 25px;
+            min-height: 40px;
+            color: #2d6a4f;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        /* FLOATING STICKERS */
+        .sticker {
+            position: fixed;
+            font-size: 40px;
+            z-index: -1;
+            animation: stickerMove 7s infinite ease-in-out;
+        }
+
+        .s1 {
+            top: 18%;
+            left: 4%;
+        }
+
+        .s2 {
+            top: 48%;
+            right: 4%;
+            animation-delay: 2s;
+        }
+
+        .s3 {
+            top: 75%;
+            left: 6%;
+            animation-delay: 4s;
+        }
+
+        @keyframes stickerMove {
+            0%, 100% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(-25px) rotate(12deg);
+            }
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 60px;
+            padding: 35px 20px;
+            text-align: center;
+            background: #1b4332;
+            color: white;
+            border-top-left-radius: 45px;
+            border-top-right-radius: 45px;
+        }
+
+        footer p {
+            margin: 9px;
+            font-size: 16px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            header h2 {
+                font-size: 18px;
+            }
+
+            .school {
+                font-size: 16px;
+            }
+
+            .teacher-photo {
+                width: 280px;
+                height: 280px;
+            }
+
+            .teacher-card h2 {
+                font-size: 29px;
+            }
+
+            .subject {
+                font-size: 18px;
+            }
+
+            .message {
+                padding: 28px 20px;
+            }
+
+            .message h2 {
+                font-size: 26px;
+            }
+
+            .message p {
+                font-size: 16px;
+            }
+
+            .sticker {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- FLOATING STICKERS -->
+    <div class="sticker s1">🌱🌸</div>
+    <div class="sticker s2">🌍⭐</div>
+    <div class="sticker s3">🍃💚</div>
+
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="emoji">
+            🌱 🌍 ✨ 👩‍🏫 ✨ 🌍 🌱
+        </div>
+
+        <h1>
+            Happy Teacher's Day! 🎉
+        </h1>
+
+        <h2>
+            To Our Wonderful EVS Teacher 🌎
+        </h2>
+
+        <div class="school">
+            VARANASI PUBLIC SCHOOL, RAJATALAB
+        </div>
+
+    </header>
+
+
+    <!-- TEACHER SECTION -->
+    <section class="teacher-card">
+
+        <!--
+            Put Nikki Tiwari Ma'am's photo
+            in the same folder as this file.
+
+            Photo name:
+            nikki-tiwari.jpg
+        -->
+
+        <img
+            src="images/nikki.jpeg"
+            alt="Nikki Tiwari Ma'am"
+            class="teacher-photo"
+        >
+
+        <h2>
+            🌷 Nikki Tiwari Ma'am 🌷
+        </h2>
+
+        <div class="subject">
+            Our Wonderful EVS Teacher 🌱📚
+        </div>
+
+    </section>
+
+
+    <!-- SPECIAL MESSAGE -->
+    <section class="message">
+
+        <h2>
+            💚 A Special Message for You 💚
+        </h2>
+
+        <p>
+            Dear Nikki Tiwari Ma'am,
+        </p>
+
+        <p>
+            You are not just our EVS teacher, but also someone
+            who helps us understand the beautiful world around us. 🌍
+        </p>
+
+        <p>
+            You teach us about plants, animals, nature, our surroundings
+            and how we can take care of our beautiful Earth. 🌱🐦
+        </p>
+
+        <p>
+            Your lessons help us understand that even small actions,
+            like keeping our surroundings clean and saving water,
+            can make a big difference. 💧🌳
+        </p>
+
+        <p>
+            Thank you for teaching us with patience, kindness
+            and a beautiful smile. 😊
+        </p>
+
+        <p>
+            Because of you, learning about our environment becomes
+            interesting, fun and meaningful. 📚✨
+        </p>
+
+        <p>
+            <b>
+                We are very lucky to have a teacher like you! ❤️
+            </b>
+        </p>
+
+        <p>
+            <b>
+                Happy Teacher's Day, Nikki Tiwari Ma'am! 💐👩‍🏫
+            </b>
+        </p>
+
+    </section>
+
+
+    <!-- SPECIAL POINTS -->
+    <section class="points">
+
+        <div class="point">
+
+            <div class="icon">🌱</div>
+
+            <h3>
+                प्रकृति से प्यार
+            </h3>
+
+            <p>
+                आप हमें पेड़-पौधों और प्रकृति की देखभाल
+                करना सिखाती हैं।
+            </p>
+
+        </div>
+
+
+        <div class="point">
+
+            <div class="icon">🌍</div>
+
+            <h3>
+                हमारी पृथ्वी
+            </h3>
+
+            <p>
+                आप हमें अपनी पृथ्वी को स्वच्छ और सुरक्षित
+                रखने का महत्व समझाती हैं।
+            </p>
+
+        </div>
+
+
+        <div class="point">
+
+            <div class="icon">🐦</div>
+
+            <h3>
+                जीव-जंतुओं की जानकारी
+            </h3>
+
+            <p>
+                आपकी कक्षा में हमें अलग-अलग जीव-जंतुओं
+                के बारे में नई बातें सीखने को मिलती हैं।
+            </p>
+
+        </div>
+
+
+        <div class="point">
+
+            <div class="icon">💧</div>
+
+            <h3>
+                पानी बचाना
+            </h3>
+
+            <p>
+                आप हमें पानी की कीमत और उसे बचाने
+                का महत्व बताती हैं।
+            </p>
+
+        </div>
+
+
+        <div class="point">
+
+            <div class="icon">😊</div>
+
+            <h3>
+                सीखना मजेदार बनाती हैं
+            </h3>
+
+            <p>
+                आपकी वजह से EVS पढ़ना हमारे लिए
+                बहुत मजेदार हो जाता है।
+            </p>
+
+        </div>
+
+
+        <div class="point">
+
+            <div class="icon">⭐</div>
+
+            <h3>
+                हमें प्रेरणा देती हैं
+            </h3>
+
+            <p>
+                आप हमें एक अच्छा विद्यार्थी और
+                जिम्मेदार नागरिक बनने की प्रेरणा देती हैं।
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SURPRISE BUTTON -->
+    <div class="button-area">
+
+        <button onclick="showMessage()">
+            💌 एक विशेष संदेश के लिए क्लिक करें
+        </button>
+
+        <div id="specialMessage"></div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            🌱 प्रकृति, ज्ञान और प्रेम के साथ 🌱
+        </p>
+
+        <p>
+            <b>
+                The Family of VPS
+            </b>
+        </p>
+
+        <p>
+            Website Writer:
+            <b>EMMANUEL CHAUHAN</b>
+        </p>
+
+        <p>
+            VARANASI PUBLIC SCHOOL, RAJATALAB
+        </p>
+
+        <p>
+            🌍 Happy Teacher's Day! 👩‍🏫💐💚
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        function showMessage() {
+
+            const messages = [
+
+                "🌱 आपकी वजह से हमें प्रकृति से प्यार करना सीखने को मिलता है! 💚",
+
+                "🌍 धन्यवाद मैम, हमें अपनी पृथ्वी की देखभाल करना सिखाने के लिए!",
+
+                "📚 आपकी EVS की कक्षा हमेशा कुछ नया सिखाती है! 😊",
+
+                "🌸 हमें आप जैसी प्यारी शिक्षिका पाकर बहुत खुशी है!",
+
+                "💐 Happy Teacher's Day, Nikki Tiwari Ma'am! ❤️"
+
+            ];
+
+            const randomMessage =
+                messages[Math.floor(Math.random() * messages.length)];
+
+            document.getElementById("specialMessage").innerHTML =
+                randomMessage;
+        }
+
+    </script>
+
+</body>
+</html>
+```

@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Happy Teachers' Day | Mr. Arvind Sir</title>
+
+  <!-- Beautiful Hindi + English fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --gold: #ffd76a;
+      --gold2: #ffb52e;
+      --cream: #fff7dc;
+      --orange: #ff7b39;
+      --red: #b91c3c;
+      --purple: #32145f;
+      --dark: #090313;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--cream);
+      font-family: "Poppins", sans-serif;
+      background:
+        radial-gradient(circle at 50% 15%, #542071 0%, transparent 28%),
+        radial-gradient(circle at 15% 80%, #40145c 0%, transparent 25%),
+        radial-gradient(circle at 90% 70%, #681c38 0%, transparent 25%),
+        linear-gradient(135deg, #090313, #170622 45%, #0b0216);
+    }
+
+    /* ---------------- PARTICLES ---------------- */
+
+    #particles {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .page {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ---------------- FLOATING HINDI WORDS ---------------- */
+
+    .floating-word {
+      position: fixed;
+      z-index: 1;
+      color: rgba(255, 215, 106, 0.13);
+      font-family: "Noto Serif Devanagari", serif;
+      font-size: clamp(25px, 4vw, 60px);
+      font-weight: 800;
+      pointer-events: none;
+      animation: floatWord 7s ease-in-out infinite;
+    }
+
+    .word1 {
+      top: 12%;
+      left: 3%;
+    }
+
+    .word2 {
+      top: 42%;
+      right: 3%;
+      animation-delay: -2s;
+    }
+
+    .word3 {
+      bottom: 12%;
+      left: 8%;
+      animation-delay: -4s;
+    }
+
+    .word4 {
+      bottom: 25%;
+      right: 8%;
+      animation-delay: -1s;
+    }
+
+    @keyframes floatWord {
+      0%, 100% {
+        transform: translateY(0) rotate(-4deg);
+      }
+      50% {
+        transform: translateY(-25px) rotate(4deg);
+      }
+    }
+
+    /* ---------------- HERO ---------------- */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      animation: heroReveal 1.5s ease forwards;
+    }
+
+    @keyframes heroReveal {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .small-title {
+      font-size: 15px;
+      letter-spacing: 5px;
+      color: var(--gold);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .teacher-day {
+      font-family: "Kalam", cursive;
+      font-size: clamp(28px, 6vw, 65px);
+      color: var(--cream);
+      text-shadow:
+        0 0 10px rgba(255, 215, 106, .5),
+        0 0 35px rgba(255, 130, 50, .3);
+    }
+
+    .main-name {
+      margin-top: 5px;
+      font-family: "Noto Serif Devanagari", serif;
+      font-size: clamp(48px, 10vw, 115px);
+      font-weight: 800;
+      line-height: 1.1;
+
+      background: linear-gradient(
+        90deg,
+        #fff1a8,
+        #ffd15c,
+        #fff,
+        #ffb83d,
+        #fff1a8
+      );
+
+      background-size: 300% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+
+      animation: goldShine 5s linear infinite;
+
+      filter: drop-shadow(0 0 20px rgba(255, 191, 55, .25));
+    }
+
+    @keyframes goldShine {
+      to {
+        background-position: 300% center;
+      }
+    }
+
+    .subtitle {
+      margin: 20px auto;
+      max-width: 750px;
+      font-family: "Noto Serif Devanagari", serif;
+      font-size: clamp(17px, 3vw, 27px);
+      line-height: 1.9;
+      color: #ffeac1;
+    }
+
+    .gold-line {
+      width: 160px;
+      height: 3px;
+      margin: 25px auto;
+      border-radius: 100px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      box-shadow: 0 0 20px var(--gold);
+    }
+
+    /* ---------------- PHOTO ---------------- */
+
+    .photo-wrapper {
+      width: 260px;
+      height: 260px;
+      margin: 45px auto 25px;
+      position: relative;
+    }
+
+    .photo-wrapper::before,
+    .photo-wrapper::after {
+      content: "";
+      position: absolute;
+      inset: -15px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 215, 106, .6);
+      animation: rotateRing 8s linear infinite;
+    }
+
+    .photo-wrapper::after {
+      inset: -28px;
+      border-style: dashed;
+      border-color: rgba(255, 122, 57, .45);
+      animation-direction: reverse;
+      animation-duration: 12s;
+    }
+
+    @keyframes rotateRing {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .teacher-photo {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+
+      /* Replace teacher.jpg with your teacher's photo */
+      background: linear-gradient(135deg, #4d1b63, #19082c);
+
+      border: 6px solid rgba(255, 244, 194, .95);
+
+      box-shadow:
+        0 0 0 8px rgba(255, 215, 106, .12),
+        0 0 35px rgba(255, 176, 48, .45),
+        0 0 90px rgba(255, 95, 51, .25);
+    }
+
+    .photo-note {
+      font-family: "Kalam", cursive;
+      color: #ffd98a;
+      font-size: 17px;
+      margin-top: 15px;
+    }
+
+    /* ---------------- BADGE ---------------- */
+
+    .badge {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      border: 1px solid rgba(255, 215, 106, .5);
+      border-radius: 100px;
+
+      background: rgba(255, 215, 106, .06);
+      backdrop-filter: blur(10px);
+
+      color: #ffe49b;
+      font-weight: 600;
+      letter-spacing: 1px;
+
+      box-shadow:
+        inset 0 0 20px rgba(255, 215, 106, .04),
+        0 0 30px rgba(255, 215, 106, .08);
+    }
+
+    /* ---------------- SECTION ---------------- */
+
+    section {
+      padding: 100px 20px;
+      position: relative;
+    }
+
+    .section-container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: "Noto Serif Devanagari", serif;
+      font-size: clamp(30px, 6vw, 55px);
+      color: #ffe39a;
+      margin-bottom: 45px;
+    }
+
+    .section-title::after {
+      content: "✦";
+      display: block;
+      font-family: sans-serif;
+      font-size: 20px;
+      color: var(--orange);
+      margin-top: 8px;
+    }
+
+    /* ---------------- QUOTE CARDS ---------------- */
+
+    .quotes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .quote-card {
+      min-height: 250px;
+      padding: 35px 25px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      text-align: center;
+
+      border: 1px solid rgba(255, 215, 106, .18);
+      border-radius: 25px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 215, 106, .09),
+          rgba(112, 35, 100, .08)
+        );
+
+      backdrop-filter: blur(15px);
+
+      box-shadow:
+        inset 0 1px rgba(255,255,255,.08),
+        0 20px 60px rgba(0,0,0,.25);
+
+      transition: .5s ease;
+    }
+
+    .quote-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      border-color: rgba(255, 215, 106, .55);
+      box-shadow:
+        0 20px 70px rgba(255, 164, 47, .15),
+        inset 0 0 30px rgba(255, 215, 106, .05);
+    }
+
+    .quote-icon {
+      font-size: 35px;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .quote {
+      font-family: "Noto Serif Devanagari", serif;
+      font-size: 20px;
+      line-height: 1.9;
+      color: #fff1d0;
+    }
+
+    .quote-card small {
+      margin-top: 20px;
+      color: #d9a8c7;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    /* ---------------- HINDI TEACHER SECTION ---------------- */
+
+    .teacher-message {
+      position: relative;
+      padding: 55px 40px;
+      text-align: center;
+
+      border-radius: 35px;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(255, 170, 50, .13),
+          transparent 55%
+        ),
+        rgba(255,255,255,.025);
+
+      border: 1px solid rgba(255,215,106,.25);
+
+      box-shadow:
+        0 30px 100px rgba(0,0,0,.3),
+        inset 0 0 50px rgba(255,215,106,.03);
+    }
+
+    .teacher-message p {
+      font-family: "Noto Serif Devanagari", serif;
+      font-size: clamp(19px, 3vw, 27px);
+      line-height: 2.1;
+      color: #ffeac4;
+    }
+
+    .highlight {
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    /* ---------------- HANDWRITTEN ---------------- */
+
+    .handwritten {
+      margin-top: 40px;
+      font-family: "Kalam", cursive;
+      font-size: clamp(25px, 5vw, 45px);
+      color: #ffcf68;
+      transform: rotate(-2deg);
+      text-shadow: 0 0 20px rgba(255, 190, 50, .35);
+    }
+
+    /* ---------------- BUTTON ---------------- */
+
+    .magic-button {
+      margin-top: 35px;
+      padding: 15px 35px;
+
+      border: 1px solid rgba(255,215,106,.6);
+      border-radius: 100px;
+
+      color: #2a0c21;
+      background: linear-gradient(135deg, #ffeaa0, #ffb936);
+
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+
+      box-shadow:
+        0 0 20px rgba(255,190,50,.35);
+
+      transition: .3s ease;
+    }
+
+    .magic-button:hover {
+      transform: scale(1.08);
+      box-shadow:
+        0 0 45px rgba(255,190,50,.65);
+    }
+
+    /* ---------------- FOOTER ---------------- */
+
+    footer {
+      padding: 50px 20px 70px;
+      text-align: center;
+      color: #cdaec6;
+    }
+
+    footer .om {
+      font-family: "Noto Serif Devanagari", serif;
+      font-size: 45px;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      font-family: "Kalam", cursive;
+      font-size: 18px;
+    }
+
+    /* ---------------- HEART PARTICLES ---------------- */
+
+    .heart {
+      position: fixed;
+      pointer-events: none;
+      z-index: 20;
+      font-size: 20px;
+      animation: heartFloat 2.5s ease-out forwards;
+    }
+
+    @keyframes heartFloat {
+      0% {
+        opacity: 1;
+        transform: translateY(0) scale(.5) rotate(0);
+      }
+
+      100% {
+        opacity: 0;
+        transform:
+          translateY(-180px)
+          translateX(var(--x))
+          scale(1.5)
+          rotate(25deg);
+      }
+    }
+
+    /* ---------------- RESPONSIVE ---------------- */
+
+    @media (max-width: 800px) {
+      .quotes {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-wrapper {
+        width: 210px;
+        height: 210px;
+      }
+
+      .teacher-message {
+        padding: 35px 20px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .small-title {
+        letter-spacing: 3px;
+        font-size: 11px;
+      }
+
+      .hero {
+        padding: 40px 15px;
+      }
+
+      section {
+        padding: 70px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Animated background -->
+  <canvas id="particles"></canvas>
+
+  <!-- Floating Hindi words -->
+  <div class="floating-word word1">ज्ञान</div>
+  <div class="floating-word word2">शिक्षा</div>
+  <div class="floating-word word3">साहित्य</div>
+  <div class="floating-word word4">संस्कार</div>
+
+
+  <main class="page">
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="small-title">
+          शिक्षक दिवस • एक विशेष समर्पण
+        </div>
+
+        <div class="teacher-day">
+          Happy Teachers' Day
+        </div>
+
+        <h1 class="main-name">
+          श्री अरविंद सर
+        </h1>
+
+        <div class="gold-line"></div>
+
+        <p class="subtitle">
+          जिन्होंने हमें केवल हिन्दी पढ़ना नहीं सिखाया,
+          <br>
+          बल्कि <span class="highlight">हिन्दी को महसूस करना</span> सिखाया।
+        </p>
+
+
+        <!-- ================= PHOTO ================= -->
+
+        <div class="photo-wrapper">
+
+          <!--
+            =============================================
+            ADD YOUR TEACHER PHOTO HERE
+
+            Put your image in the same folder as this
+            HTML file and rename it to:
+
+            teacher.jpg
+
+            OR change src="images/arvind.jpg" to your filename.
+            =============================================
+          -->
+
+          <img
+            src="images/arvind.jpg"
+            alt="Mr. Arvind Sir"
+            class="teacher-photo"
+          />
+
+        </div>
+
+        <div class="photo-note">
+          ✦ हमारे प्रिय हिन्दी शिक्षक ✦
+        </div>
+
+        <div class="badge">
+          📖 BEST HINDI TEACHER • गुरु को नमन 📖
+        </div>
+
+        <br>
+
+        <button class="magic-button" onclick="sendBlessings()">
+          ✨ एक छोटी सी शुभकामना
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= QUOTES ================= -->
+
+    <section>
+
+      <div class="section-container">
+
+        <h2 class="section-title">
+          शब्दों से दिल तक
+        </h2>
+
+        <div class="quotes">
+
+          <div class="quote-card">
+
+            <div class="quote-icon">❝</div>
+
+            <p class="quote">
+              "शिक्षक वह दीपक हैं,
+              जो स्वयं जलकर
+              दूसरों के जीवन में
+              ज्ञान का प्रकाश भरते हैं।"
+            </p>
+
+            <small>— गुरु को समर्पित</small>
+
+          </div>
+
+
+          <div class="quote-card">
+
+            <div class="quote-icon">✒</div>
+
+            <p class="quote">
+              "आपने हमें अक्षरों से
+              शब्द बनाना,
+              शब्दों से भाव और
+              भावों से जीवन समझना सिखाया।"
+            </p>
+
+            <small>— आपके विद्यार्थी</small>
+
+          </div>
+
+
+          <div class="quote-card">
+
+            <div class="quote-icon">❝</div>
+
+            <p class="quote">
+              "हिन्दी केवल एक भाषा नहीं,
+              यह हमारी भावनाओं,
+              संस्कृति और संस्कारों की
+              पहचान है।"
+            </p>
+
+            <small>— हिन्दी को नमन</small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= SPECIAL MESSAGE ================= -->
+
+    <section>
+
+      <div class="section-container">
+
+        <div class="teacher-message">
+
+          <h2 class="section-title">
+            अरविंद सर के लिए
+          </h2>
+
+          <p>
+
+            आदरणीय <span class="highlight">अरविंद सर</span>,
+
+            <br><br>
+
+            आपकी कक्षा में हमने सिर्फ
+            <span class="highlight">हिन्दी के पाठ</span> नहीं पढ़े,
+            बल्कि शब्दों के पीछे छिपी भावनाओं को समझा।
+
+            <br>
+
+            आपने हमें बताया कि एक अच्छा लेखक
+            केवल शब्द नहीं लिखता,
+            वह अपने विचारों को जीवन देता है।
+
+            <br><br>
+
+            आपकी सीख,
+            आपकी डाँट,
+            आपका मार्गदर्शन और
+            आपका विश्वास —
+            हमेशा हमारे साथ रहेगा।
+
+            <br><br>
+
+            <span class="highlight">
+              आपके जैसे शिक्षक मिलना
+              सच में सौभाग्य की बात है।
+            </span>
+
+          </p>
+
+          <div class="handwritten">
+            "गुरु का सम्मान, शब्दों में कहाँ समाए..." ❤️
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= FINAL WISH ================= -->
+
+    <section>
+
+      <div class="section-container">
+
+        <div class="teacher-message">
+
+          <div style="
+            font-size:55px;
+            margin-bottom:20px;
+          ">
+            🌸 📖 ✒️ 🌸
+          </div>
+
+          <h2 class="section-title">
+            शिक्षक दिवस की हार्दिक शुभकामनाएँ
+          </h2>
+
+          <p>
+
+            <span class="highlight">
+              आदरणीय श्री अरविंद सर,
+            </span>
+
+            <br>
+
+            आपके ज्ञान की रोशनी
+            यूँ ही अनगिनत विद्यार्थियों
+            के जीवन को प्रकाशित करती रहे।
+
+            <br><br>
+
+            <b>
+              आपका हर विद्यार्थी
+              आपकी शिक्षा की एक सुंदर कहानी बने।
+            </b>
+
+          </p>
+
+          <div class="handwritten">
+            धन्यवाद सर... 🙏
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+      <div class="om">
+        ॐ
+      </div>
+
+      <p>
+        ज्ञान • संस्कार • साहित्य • सम्मान
+      </p>
+
+      <p style="margin-top:15px; opacity:.7;">
+        Made with ❤️ for the Best Hindi Teacher
+      </p>
+
+    </footer>
+
+  </main>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+
+    /* ==========================================
+       BEAUTIFUL PARTICLE BACKGROUND
+    ========================================== */
+
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    resizeCanvas();
+
+    window.addEventListener("resize", resizeCanvas);
+
+
+    class Particle {
+
+      constructor() {
+        this.reset();
+      }
+
+      reset() {
+
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+
+        this.size = Math.random() * 2.5 + .5;
+
+        this.speedX =
+          (Math.random() - .5) * .25;
+
+        this.speedY =
+          (Math.random() - .5) * .25;
+
+        this.opacity =
+          Math.random() * .7 + .1;
+
+        const colors = [
+          "#ffd76a",
+          "#ff9e5c",
+          "#f7d58a",
+          "#ffffff"
+        ];
+
+        this.color =
+          colors[Math.floor(Math.random() * colors.length)];
+      }
+
+      update() {
+
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if (
+          this.x < 0 ||
+          this.x > canvas.width ||
+          this.y < 0 ||
+          this.y > canvas.height
+        ) {
+          this.reset();
+        }
+      }
+
+      draw() {
+
+        ctx.beginPath();
+
+        ctx.arc(
+          this.x,
+          this.y,
+          this.size,
+          0,
+          Math.PI * 2
+        );
+
+        ctx.fillStyle = this.color;
+
+        ctx.globalAlpha = this.opacity;
+
+        ctx.shadowBlur = 15;
+        ctx.shadowColor = this.color;
+
+        ctx.fill();
+
+        ctx.globalAlpha = 1;
+        ctx.shadowBlur = 0;
+      }
+    }
+
+
+    for (let i = 0; i < 100; i++) {
+      particles.push(new Particle());
+    }
+
+
+    function animateParticles() {
+
+      ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
+
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+
+      requestAnimationFrame(animateParticles);
+    }
+
+    animateParticles();
+
+
+    /* ==========================================
+       CLICK → FLOATING HEARTS & FLOWERS
+    ========================================== */
+
+    function sendBlessings() {
+
+      const symbols = [
+        "❤️",
+        "🌸",
+        "✨",
+        "📖",
+        "✒️",
+        "🙏",
+        "🌟"
+      ];
+
+      for (let i = 0; i < 30; i++) {
+
+        const heart =
+          document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.innerHTML =
+          symbols[
+            Math.floor(
+              Math.random() * symbols.length
+            )
+          ];
+
+        heart.style.left =
+          Math.random() * 100 + "vw";
+
+        heart.style.bottom =
+          "20px";
+
+        heart.style.setProperty(
+          "--x",
+          (Math.random() * 200 - 100) + "px"
+        );
+
+        heart.style.animationDuration =
+          (1.5 + Math.random() * 2) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 4000);
+      }
+
+      /* Change button text */
+
+      const button =
+        document.querySelector(".magic-button");
+
+      button.innerHTML =
+        "❤️ धन्यवाद सर! ❤️";
+
+      setTimeout(() => {
+
+        button.innerHTML =
+          "✨ एक छोटी सी शुभकामना";
+
+      }, 3000);
+    }
+
+
+    /* ==========================================
+       MOUSE GLOW EFFECT
+    ========================================== */
+
+    document.addEventListener("mousemove", (e) => {
+
+      const x =
+        (e.clientX / window.innerWidth) * 100;
+
+      const y =
+        (e.clientY / window.innerHeight) * 100;
+
+      document.body.style.background = `
+        radial-gradient(
+          circle at ${x}% ${y}%,
+          rgba(91, 32, 110, .75),
+          transparent 25%
+        ),
+        radial-gradient(
+          circle at 15% 80%,
+          #40145c 0%,
+          transparent 25%
+        ),
+        radial-gradient(
+          circle at 90% 70%,
+          #681c38 0%,
+          transparent 25%
+        ),
+        linear-gradient(
+          135deg,
+          #090313,
+          #170622 45%,
+          #0b0216
+        )
+      `;
+    });
+
+
+    /* ==========================================
+       SCROLL REVEAL
+    ========================================== */
+
+    const cards =
+      document.querySelectorAll(
+        ".quote-card, .teacher-message"
+      );
+
+    const observer =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.style.opacity = "1";
+              entry.target.style.transform =
+                "translateY(0)";
+
+            }
+
+          });
+
+        },
+        {
+          threshold: .15
+        }
+      );
+
+
+    cards.forEach(card => {
+
+      card.style.opacity = "0";
+      card.style.transform =
+        "translateY(40px)";
+      card.style.transition =
+        "opacity 1s ease, transform 1s ease";
+
+      observer.observe(card);
+
+    });
+
+  </script>
+
+</body>
+</html>

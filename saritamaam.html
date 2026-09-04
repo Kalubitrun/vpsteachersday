@@ -1,0 +1,631 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Teacher's Day | Sarita Panday Ma'am</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Comic Sans MS", "Trebuchet MS", cursive;
+            overflow-x: hidden;
+            background:
+                linear-gradient(rgba(255,255,255,.45), rgba(255,255,255,.45)),
+                #fff4c7;
+            color: #4b3b2a;
+        }
+
+        /* ---------------- BACKGROUND ---------------- */
+
+        .sky {
+            position: fixed;
+            inset: 0;
+            z-index: -5;
+            overflow: hidden;
+            background: linear-gradient(#9ee7ff, #fff3c4);
+        }
+
+        .cloud {
+            position: absolute;
+            background: white;
+            width: 120px;
+            height: 45px;
+            border-radius: 50px;
+            opacity: .8;
+            animation: cloudMove 25s linear infinite;
+        }
+
+        .cloud::before,
+        .cloud::after {
+            content: "";
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .cloud::before {
+            width: 60px;
+            height: 60px;
+            left: 20px;
+            top: -25px;
+        }
+
+        .cloud::after {
+            width: 70px;
+            height: 70px;
+            right: 15px;
+            top: -32px;
+        }
+
+        .cloud1 {
+            top: 12%;
+            left: -150px;
+        }
+
+        .cloud2 {
+            top: 28%;
+            left: -250px;
+            animation-delay: 8s;
+            transform: scale(.7);
+        }
+
+        @keyframes cloudMove {
+            from { transform: translateX(-200px); }
+            to { transform: translateX(120vw); }
+        }
+
+        /* ---------------- FLOATING SHAPES ---------------- */
+
+        .floating {
+            position: fixed;
+            font-size: 30px;
+            animation: floatAround 5s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        .f1 { left: 5%; top: 15%; }
+        .f2 { right: 7%; top: 18%; animation-delay: 1s; }
+        .f3 { left: 8%; bottom: 15%; animation-delay: 2s; }
+        .f4 { right: 8%; bottom: 13%; animation-delay: 3s; }
+
+        @keyframes floatAround {
+            0%,100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-18px) rotate(5deg); }
+        }
+
+        /* ---------------- MAIN ---------------- */
+
+        .container {
+            width: min(1000px, 92%);
+            margin: auto;
+            padding: 40px 0 70px;
+            text-align: center;
+        }
+
+        .school-board {
+            background: #315c45;
+            border: 12px solid #9b653c;
+            border-radius: 18px;
+            padding: 28px 20px;
+            box-shadow: 0 15px 0 rgba(80,45,20,.25),
+                        0 20px 35px rgba(0,0,0,.18);
+            transform: rotate(-1deg);
+            margin-bottom: 40px;
+        }
+
+        .school-board small {
+            color: #ffeaa7;
+            font-size: 18px;
+        }
+
+        .school-board h1 {
+            color: #fff;
+            font-size: clamp(35px, 7vw, 70px);
+            text-shadow: 3px 3px 0 #183b2b;
+            margin: 8px 0;
+        }
+
+        .teacher-name {
+            color: #ffcf56;
+            font-size: clamp(28px, 5vw, 48px);
+        }
+
+        /* ---------------- CARD ---------------- */
+
+        .message-card {
+            background: white;
+            border-radius: 30px;
+            padding: 35px 25px;
+            box-shadow: 0 12px 0 #ffd166,
+                        0 20px 40px rgba(0,0,0,.15);
+            border: 5px dashed #ff8fab;
+            position: relative;
+        }
+
+        .message-card::before {
+            content: "🌈";
+            position: absolute;
+            font-size: 55px;
+            top: -40px;
+            left: 20px;
+            transform: rotate(-12deg);
+        }
+
+        .message-card::after {
+            content: "🖍️";
+            position: absolute;
+            font-size: 48px;
+            bottom: -25px;
+            right: 25px;
+            transform: rotate(20deg);
+        }
+
+        .message-card h2 {
+            font-size: clamp(28px, 5vw, 45px);
+            color: #ff6392;
+            margin-bottom: 18px;
+        }
+
+        .message-card p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 19px;
+            line-height: 1.7;
+            color: #594638;
+        }
+
+        .heart {
+            display: inline-block;
+            animation: heartbeat 1.3s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%,100% { transform: scale(1); }
+            50% { transform: scale(1.25); }
+        }
+
+        /* ---------------- KG BADGES ---------------- */
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .badge {
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 17px;
+            font-weight: bold;
+            box-shadow: 0 5px 0 rgba(0,0,0,.12);
+        }
+
+        .pink { background: #ff9fba; }
+        .yellow { background: #ffe066; }
+        .blue { background: #8bd3ff; }
+        .green { background: #9be28f; }
+        .purple { background: #d4a5ff; }
+
+        /* ---------------- GIFT ---------------- */
+
+        .gift-section {
+            margin-top: 55px;
+        }
+
+        .gift-section h2 {
+            color: #ff6b6b;
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .gift-section p {
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .gift {
+            width: 190px;
+            height: 170px;
+            margin: 45px auto;
+            position: relative;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .gift:hover {
+            transform: scale(1.08) rotate(-2deg);
+        }
+
+        .gift-box {
+            position: absolute;
+            bottom: 0;
+            width: 190px;
+            height: 125px;
+            background: #ff6f91;
+            border-radius: 8px;
+            box-shadow: 0 12px 0 #d84d70;
+        }
+
+        .gift-box::after {
+            content: "";
+            position: absolute;
+            left: 78px;
+            top: 0;
+            width: 35px;
+            height: 125px;
+            background: #ffe066;
+        }
+
+        .gift-lid {
+            position: absolute;
+            top: 28px;
+            left: -8px;
+            width: 206px;
+            height: 42px;
+            background: #ff4f78;
+            border-radius: 8px;
+            z-index: 2;
+            transition: .7s;
+            box-shadow: 0 8px 0 #cf3b5d;
+        }
+
+        .gift-lid::after {
+            content: "";
+            position: absolute;
+            left: 84px;
+            top: 0;
+            width: 35px;
+            height: 42px;
+            background: #ffe066;
+        }
+
+        .bow {
+            position: absolute;
+            top: -10px;
+            left: 68px;
+            width: 75px;
+            height: 45px;
+            z-index: 4;
+        }
+
+        .bow::before,
+        .bow::after {
+            content: "";
+            position: absolute;
+            width: 38px;
+            height: 35px;
+            background: #ffe066;
+            border-radius: 50% 50% 10% 50%;
+        }
+
+        .bow::before {
+            left: 0;
+            transform: rotate(25deg);
+        }
+
+        .bow::after {
+            right: 0;
+            transform: rotate(-25deg);
+        }
+
+        .gift.open .gift-lid {
+            transform: translateY(-85px) rotate(-8deg);
+        }
+
+        /* ---------------- SECRET MESSAGE ---------------- */
+
+        .secret {
+            max-width: 700px;
+            margin: -10px auto 0;
+            background: #fff;
+            border: 4px solid #ffd166;
+            border-radius: 25px;
+            padding: 25px;
+            opacity: 0;
+            transform: scale(.7);
+            pointer-events: none;
+            transition: .7s;
+            box-shadow: 0 10px 30px rgba(0,0,0,.15);
+        }
+
+        .secret.show {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+        }
+
+        .secret h3 {
+            font-size: 30px;
+            color: #ff6392;
+            margin-bottom: 10px;
+        }
+
+        .secret p {
+            font-size: 19px;
+            line-height: 1.6;
+        }
+
+        /* ---------------- FOOTER ---------------- */
+
+        footer {
+            margin-top: 50px;
+            font-size: 18px;
+            color: #72553c;
+        }
+
+        /* ---------------- CONFETTI ---------------- */
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 18px;
+            top: -30px;
+            z-index: 100;
+            animation: fall 3s linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* ---------------- MOBILE ---------------- */
+
+        @media(max-width:600px) {
+            .container {
+                padding-top: 25px;
+            }
+
+            .school-board {
+                padding: 25px 12px;
+            }
+
+            .message-card {
+                padding: 30px 18px;
+            }
+
+            .message-card p {
+                font-size: 17px;
+            }
+
+            .gift {
+                transform: scale(.85);
+            }
+
+            .gift:hover {
+                transform: scale(.9);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sky">
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+    </div>
+
+    <!-- Floating KG decorations -->
+    <div class="floating f1">⭐</div>
+    <div class="floating f2">🎈</div>
+    <div class="floating f3">🧸</div>
+    <div class="floating f4">🌸</div>
+
+    <main class="container">
+
+        <!-- Blackboard -->
+        <section class="school-board">
+            <small>🌟 OUR LITTLE CLASSROOM 🌟</small>
+
+            <h1>Happy Teacher's Day!</h1>
+
+            <div class="teacher-name">
+                🌷 Sarita Panday Ma'am 🌷
+            </div>
+        </section>
+
+        <!-- Main Message -->
+        <section class="message-card">
+
+            <img src="images/saritamaam.jpeg" alt="Sarita Panday Ma'am" style="width: 200px; height: 200px; border-radius: 50%; border: 6px solid #ff6392; margin-bottom: 20px; object-fit: cover;">
+
+            <h2>
+                To Our Wonderful Teacher
+                <span class="heart">❤️</span>
+            </h2>
+
+            <p>
+                Dear <strong>Sarita Panday Ma'am</strong>,
+                thank you for filling our little classroom with
+                <strong>smiles, stories, learning and lots of love!</strong>
+                🌈
+            </p>
+
+            <br>
+
+            <p>
+                You make every day feel like a fun adventure.
+                Your patience, kindness and beautiful smile make
+                every little learner feel special. 🧸✨
+            </p>
+
+            <br>
+
+            <p>
+                Thank you for teaching us, caring for us,
+                encouraging us and helping us take our
+                <strong>little steps toward a big future!</strong> 🌟
+            </p>
+
+            <div class="badges">
+                <div class="badge pink">🌸 Kind Heart</div>
+                <div class="badge yellow">⭐ Super Teacher</div>
+                <div class="badge blue">🎨 Creative</div>
+                <div class="badge green">🧸 Caring</div>
+                <div class="badge purple">🌈 Amazing</div>
+            </div>
+
+        </section>
+
+        <!-- Gift -->
+        <section class="gift-section">
+
+            <h2>🎁 A Little Surprise For You!</h2>
+
+            <p>Ma'am, click the gift to open your special Teacher's Day surprise! 💝</p>
+
+            <div class="gift" id="gift">
+
+                <div class="bow"></div>
+
+                <div class="gift-lid"></div>
+
+                <div class="gift-box"></div>
+
+            </div>
+
+            <div class="secret" id="secret">
+
+                <h3>💖 Surprise! 💖</h3>
+
+                <p>
+                    Dear Sarita Panday Ma'am,
+                    <br><br>
+                    You are not just a teacher...
+                    <strong>you are a little star in every child's world! ⭐</strong>
+                    <br><br>
+                    May your classroom always be filled with
+                    laughter, tiny footsteps, curious questions
+                    and beautiful memories.
+                    🌈🧸🎨
+                    <br><br>
+                    <strong>Happy Teacher's Day, Ma'am! 🌷</strong>
+                </p>
+
+            </div>
+
+        </section>
+
+        <footer>
+            Made with lots of ❤️, smiles & crayons 🎨
+            <br>
+            For the most wonderful KG teacher!
+        </footer>
+
+    </main>
+
+    <script>
+
+        const gift = document.getElementById("gift");
+        const secret = document.getElementById("secret");
+
+        let opened = false;
+
+        gift.addEventListener("click", function () {
+
+            opened = !opened;
+
+            gift.classList.toggle("open");
+
+            if (opened) {
+                secret.classList.add("show");
+                createConfetti();
+            } else {
+                secret.classList.remove("show");
+            }
+
+        });
+
+        function createConfetti() {
+
+            const symbols = [
+                "⭐",
+                "🌸",
+                "💖",
+                "🎈",
+                "✨",
+                "🌈",
+                "🧸"
+            ];
+
+            for (let i = 0; i < 70; i++) {
+
+                const piece = document.createElement("div");
+
+                piece.className = "confetti";
+
+                piece.innerHTML =
+                    symbols[Math.floor(Math.random() * symbols.length)];
+
+                piece.style.left =
+                    Math.random() * 100 + "vw";
+
+                piece.style.fontSize =
+                    (12 + Math.random() * 20) + "px";
+
+                piece.style.animationDuration =
+                    (2 + Math.random() * 3) + "s";
+
+                piece.style.animationDelay =
+                    Math.random() * .8 + "s";
+
+                document.body.appendChild(piece);
+
+                setTimeout(() => {
+                    piece.remove();
+                }, 5000);
+            }
+        }
+
+        // Little automatic sparkle burst
+        setInterval(() => {
+
+            const sparkle = document.createElement("div");
+
+            sparkle.innerHTML = "✨";
+
+            sparkle.style.position = "fixed";
+            sparkle.style.left = Math.random() * 100 + "vw";
+            sparkle.style.top = Math.random() * 100 + "vh";
+            sparkle.style.fontSize = "18px";
+            sparkle.style.pointerEvents = "none";
+            sparkle.style.zIndex = "0";
+            sparkle.style.opacity = "0";
+
+            sparkle.animate(
+                [
+                    { opacity: 0, transform: "scale(.5)" },
+                    { opacity: 1, transform: "scale(1.3)" },
+                    { opacity: 0, transform: "scale(.5)" }
+                ],
+                {
+                    duration: 1800,
+                    easing: "ease-out"
+                }
+            );
+
+            document.body.appendChild(sparkle);
+
+            setTimeout(() => sparkle.remove(), 1800);
+
+        }, 1400);
+
+    </script>
+
+</body>
+</html>
+```

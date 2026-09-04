@@ -1,0 +1,3560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Teacher's Day | Renubala Mam</title>
+
+    <!-- =====================================================
+         FONTS
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Sacramento&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #050717;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: #9c6cff;
+            color: white;
+        }
+
+
+        /* =====================================================
+           MAGICAL SPACE BACKGROUND
+        ====================================================== */
+
+        .space {
+            position: fixed;
+            inset: 0;
+
+            z-index: -50;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(120, 80, 255, .20),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(0, 180, 255, .14),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 50% 80%,
+                    rgba(255, 100, 190, .12),
+                    transparent 35%
+                ),
+
+                linear-gradient(
+                    180deg,
+                    #040512,
+                    #090d2b 45%,
+                    #11072a
+                );
+        }
+
+
+        /* =====================================================
+           MOON
+        ====================================================== */
+
+        .moon {
+            position: fixed;
+
+            width: 175px;
+            height: 175px;
+
+            right: 8%;
+            top: 10%;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle at 35% 30%,
+                    #ffffff,
+                    #e7e0ff 40%,
+                    #9b8ed7 100%
+                );
+
+            box-shadow:
+                0 0 35px rgba(215, 205, 255, .7),
+                0 0 100px rgba(137, 105, 255, .3);
+
+            opacity: .85;
+
+            z-index: -40;
+
+            animation:
+                moonFloat 7s ease-in-out infinite;
+        }
+
+        @keyframes moonFloat {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-18px);
+            }
+        }
+
+
+        /* =====================================================
+           STARS
+        ====================================================== */
+
+        #stars {
+            position: fixed;
+            inset: 0;
+
+            z-index: -35;
+
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+
+            width: 3px;
+            height: 3px;
+
+            background: #ffffff;
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 8px #ffffff;
+
+            animation:
+                twinkle 2s infinite alternate;
+        }
+
+        @keyframes twinkle {
+
+            from {
+                opacity: .2;
+                transform: scale(.6);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+
+        /* =====================================================
+           SHOOTING STARS
+        ====================================================== */
+
+        .shooting-star {
+            position: fixed;
+
+            width: 150px;
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #ffffff,
+                    #a78bff,
+                    transparent
+                );
+
+            transform: rotate(-35deg);
+
+            opacity: 0;
+
+            z-index: -20;
+
+            animation:
+                shooting 8s linear infinite;
+        }
+
+        .shooting-star.second {
+            animation-delay: 4s;
+        }
+
+        @keyframes shooting {
+
+            0% {
+                left: 110%;
+                top: 5%;
+                opacity: 0;
+            }
+
+            8% {
+                opacity: 1;
+            }
+
+            25% {
+                left: 55%;
+                top: 35%;
+                opacity: 0;
+            }
+
+            100% {
+                left: -30%;
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
+
+        /* =====================================================
+           FLOATING MATHEMATICAL SYMBOLS
+        ====================================================== */
+
+        #mathSymbols {
+            position: fixed;
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: -10;
+
+            overflow: hidden;
+        }
+
+        .math-symbol {
+            position: absolute;
+
+            color: rgba(180, 155, 255, .25);
+
+            font-family: "Orbitron", sans-serif;
+
+            user-select: none;
+
+            animation:
+                symbolFloat linear forwards;
+        }
+
+        @keyframes symbolFloat {
+
+            0% {
+                transform:
+                    translateY(110vh)
+                    rotate(0deg);
+
+                opacity: 0;
+            }
+
+            10% {
+                opacity: .6;
+            }
+
+            100% {
+                transform:
+                    translateY(-20vh)
+                    translateX(var(--move))
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ====================================================== */
+
+        nav {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            padding:
+                17px 7%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            background:
+                rgba(4, 5, 18, .65);
+
+            backdrop-filter:
+                blur(15px);
+
+            border-bottom:
+                1px solid
+                rgba(166, 134, 255, .15);
+
+            z-index: 1000;
+        }
+
+        .logo {
+
+            font-family:
+                "Sacramento",
+                cursive;
+
+            font-size: 36px;
+
+            color: #cbb7ff;
+
+            text-shadow:
+                0 0 15px
+                rgba(153, 110, 255, .7);
+        }
+
+        nav ul {
+
+            display: flex;
+
+            gap: 30px;
+
+            list-style: none;
+        }
+
+        nav a {
+
+            text-decoration: none;
+
+            color: #bdb9d2;
+
+            font-size: 13px;
+
+            transition: .3s;
+        }
+
+        nav a:hover {
+
+            color: #c9b5ff;
+
+            text-shadow:
+                0 0 10px
+                #8c65ff;
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding:
+                130px 20px
+                80px;
+
+            position: relative;
+        }
+
+        .hero-content {
+
+            max-width: 1000px;
+
+            animation:
+                heroEnter 1.5s ease forwards;
+        }
+
+        @keyframes heroEnter {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+        .eyebrow {
+
+            font-family:
+                "Orbitron",
+                sans-serif;
+
+            font-size: 12px;
+
+            letter-spacing: 6px;
+
+            color: #9e87e9;
+
+            margin-bottom: 22px;
+
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+
+            font-family:
+                "Orbitron",
+                sans-serif;
+
+            font-size:
+                clamp(
+                    43px,
+                    9vw,
+                    100px
+                );
+
+            line-height: 1.05;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #d8caff,
+                    #8f6cff,
+                    #ffffff
+                );
+
+            background-size: 300%;
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            animation:
+                gradientMove 6s linear infinite;
+        }
+
+        @keyframes gradientMove {
+
+            0% {
+                background-position: 0%;
+            }
+
+            100% {
+                background-position: 300%;
+            }
+        }
+
+        .teacher-name {
+
+            margin-top: 25px;
+
+            font-family:
+                "Sacramento",
+                cursive;
+
+            font-size:
+                clamp(
+                    55px,
+                    8vw,
+                    95px
+                );
+
+            color: #d7c5ff;
+
+            text-shadow:
+                0 0 12px #8e63ff,
+                0 0 35px rgba(128, 88, 255, .5);
+        }
+
+        .hero-description {
+
+            max-width: 760px;
+
+            margin:
+                30px auto;
+
+            color: #aaa8c2;
+
+            font-size: 16px;
+
+            line-height: 2;
+        }
+
+
+        /* =====================================================
+           BUTTON
+        ====================================================== */
+
+        .magic-button {
+
+            padding:
+                15px 32px;
+
+            border-radius:
+                50px;
+
+            border:
+                1px solid
+                rgba(174, 143, 255, .45);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(112, 78, 255, .25),
+                    rgba(22, 20, 70, .5)
+                );
+
+            color: #e1d7ff;
+
+            font-family:
+                "Poppins";
+
+            cursor: pointer;
+
+            backdrop-filter:
+                blur(10px);
+
+            transition: .4s;
+
+            box-shadow:
+                0 0 25px
+                rgba(111, 72, 255, .15);
+        }
+
+        .magic-button:hover {
+
+            transform:
+                translateY(-5px)
+                scale(1.04);
+
+            box-shadow:
+                0 0 30px
+                rgba(135, 95, 255, .45),
+                0 0 70px
+                rgba(70, 120, 255, .15);
+        }
+
+
+        /* =====================================================
+           GENERAL SECTIONS
+        ====================================================== */
+
+        section {
+
+            padding:
+                110px 8%;
+
+            position: relative;
+        }
+
+        .section-title {
+
+            text-align: center;
+
+            font-family:
+                "Orbitron",
+                sans-serif;
+
+            font-size:
+                clamp(
+                    30px,
+                    5vw,
+                    60px
+                );
+
+            color: #d5c7ff;
+
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+
+            max-width: 760px;
+
+            margin:
+                0 auto 60px;
+
+            text-align: center;
+
+            color: #88869e;
+
+            line-height: 1.9;
+        }
+
+
+        /* =====================================================
+           TEACHER CARD
+        ====================================================== */
+
+        .teacher-card {
+
+            max-width: 1050px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                350px 1fr;
+
+            gap: 55px;
+
+            padding: 50px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(122, 87, 235, .10),
+                    rgba(255,255,255,.025)
+                );
+
+            border:
+                1px solid
+                rgba(156, 122, 255, .2);
+
+            backdrop-filter:
+                blur(18px);
+
+            box-shadow:
+                0 30px 100px
+                rgba(0,0,0,.45);
+
+            transition: .5s;
+        }
+
+        .teacher-card:hover {
+
+            transform:
+                translateY(-10px);
+
+            border-color:
+                rgba(163, 132, 255, .4);
+        }
+
+
+        /* =====================================================
+           TEACHER IMAGE
+        ====================================================== */
+
+        .image-area {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .image-frame {
+
+            width: 290px;
+            height: 370px;
+
+            padding: 8px;
+
+            border-radius:
+                150px
+                150px
+                30px
+                30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #9d73ff,
+                    #4b2ca4,
+                    #59caff,
+                    #a86cff
+                );
+
+            background-size: 300%;
+
+            animation:
+                frameAnimation
+                6s linear infinite;
+
+            box-shadow:
+                0 0 35px
+                rgba(121, 77, 255, .35);
+        }
+
+        @keyframes frameAnimation {
+
+            0% {
+                background-position: 0%;
+            }
+
+            100% {
+                background-position: 300%;
+            }
+        }
+
+        .teacher-image {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius:
+                145px
+                145px
+                25px
+                25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #1a1740,
+                    #0b0c20
+                );
+
+            display: block;
+        }
+
+
+        /* =====================================================
+           TEACHER INFORMATION
+        ====================================================== */
+
+        .teacher-info {
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+        .label {
+
+            font-family:
+                "Orbitron";
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            color: #8f76db;
+
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+        }
+
+        .teacher-info h3 {
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 65px;
+
+            color: #ddd3ff;
+
+            margin-bottom: 20px;
+        }
+
+        .teacher-info p {
+
+            color: #aaa7bd;
+
+            line-height: 1.9;
+
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           MAIN QUOTE
+        ====================================================== */
+
+        .quote-section {
+
+            text-align: center;
+        }
+
+        .quote-box {
+
+            max-width: 1050px;
+
+            margin: auto;
+
+            padding:
+                70px 55px;
+
+            border-radius: 30px;
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(113, 77, 234, .12),
+                    rgba(255,255,255,.025)
+                );
+
+            border:
+                1px solid
+                rgba(159, 126, 255, .2);
+
+            box-shadow:
+                0 25px 100px
+                rgba(0,0,0,.4);
+        }
+
+        .quote-mark {
+
+            position: absolute;
+
+            top: -30px;
+
+            left: 30px;
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size: 130px;
+
+            color: #9d78ff;
+
+            opacity: .2;
+        }
+
+        .quote {
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size:
+                clamp(
+                    27px,
+                    4vw,
+                    45px
+                );
+
+            line-height: 1.5;
+
+            color: #eee9ff;
+        }
+
+        .quote-author {
+
+            margin-top: 30px;
+
+            color: #9c83e5;
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+        }
+
+
+        /* =====================================================
+           EQUATION SHOWCASE
+        ====================================================== */
+
+        .equation-area {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .equation-card {
+
+            min-height: 220px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 30px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(255,255,255,.035);
+
+            border:
+                1px solid
+                rgba(145, 115, 238, .17);
+
+            transition: .4s;
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+        .equation-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 140px;
+            height: 140px;
+
+            border-radius: 50%;
+
+            background:
+                #7755dd;
+
+            filter:
+                blur(70px);
+
+            opacity: .08;
+
+            top: -50px;
+            right: -50px;
+        }
+
+        .equation-card:hover {
+
+            transform:
+                translateY(-10px);
+
+            border-color:
+                rgba(163, 133, 255, .4);
+
+            box-shadow:
+                0 15px 50px
+                rgba(67, 45, 140, .2);
+        }
+
+        .equation {
+
+            font-family:
+                "Orbitron";
+
+            font-size:
+                clamp(
+                    20px,
+                    3vw,
+                    30px
+                );
+
+            color: #bca9ff;
+
+            margin-bottom: 18px;
+
+            text-shadow:
+                0 0 15px
+                rgba(143, 104, 255, .5);
+        }
+
+        .equation-card h3 {
+
+            font-family:
+                "Cormorant Garamond";
+
+            font-size: 28px;
+
+            color: #ddd5f6;
+
+            margin-bottom: 10px;
+        }
+
+        .equation-card p {
+
+            color: #858397;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           MATHEMATICS TIMELINE
+        ====================================================== */
+
+        .timeline {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            position: relative;
+        }
+
+        .timeline::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            bottom: 0;
+
+            left: 50%;
+
+            width: 2px;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    #8060e8,
+                    transparent
+                );
+
+            transform:
+                translateX(-50%);
+        }
+
+        .timeline-item {
+
+            width: 50%;
+
+            padding: 25px;
+
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+
+            margin-left: 50%;
+        }
+
+        .timeline-content {
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,.035);
+
+            border:
+                1px solid
+                rgba(141, 111, 227, .15);
+
+            transition: .4s;
+        }
+
+        .timeline-content:hover {
+
+            transform:
+                scale(1.03);
+
+            border-color:
+                rgba(158, 130, 245, .4);
+        }
+
+        .timeline-dot {
+
+            position: absolute;
+
+            width: 16px;
+            height: 16px;
+
+            border-radius: 50%;
+
+            background: #a88aff;
+
+            box-shadow:
+                0 0 20px
+                #8055ff;
+
+            right: -8px;
+
+            top: 42px;
+        }
+
+        .timeline-item:nth-child(even)
+        .timeline-dot {
+
+            left: -8px;
+        }
+
+        .timeline-number {
+
+            color: #8065db;
+
+            font-family:
+                "Orbitron";
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 10px;
+        }
+
+        .timeline-content h3 {
+
+            font-family:
+                "Cormorant Garamond";
+
+            font-size: 32px;
+
+            color: #d8cdf7;
+
+            margin-bottom: 10px;
+        }
+
+        .timeline-content p {
+
+            color: #8e8b9e;
+
+            line-height: 1.8;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           HEARTFELT MESSAGE CARDS
+        ====================================================== */
+
+        .lesson-grid {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .lesson {
+
+            min-height: 290px;
+
+            padding: 35px 30px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(255,255,255,.035);
+
+            border:
+                1px solid
+                rgba(145, 114, 235, .14);
+
+            transition: .4s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .lesson:hover {
+
+            transform:
+                translateY(-10px);
+
+            border-color:
+                rgba(160, 132, 247, .4);
+        }
+
+        .lesson-icon {
+
+            font-size: 43px;
+
+            margin-bottom: 18px;
+        }
+
+        .lesson h3 {
+
+            font-family:
+                "Cormorant Garamond";
+
+            font-size: 31px;
+
+            color: #d9cff3;
+
+            margin-bottom: 12px;
+        }
+
+        .lesson p {
+
+            color: #918e9e;
+
+            font-size: 14px;
+
+            line-height: 1.85;
+        }
+
+
+        /* =====================================================
+           LETTER
+        ====================================================== */
+
+        .letter {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            padding:
+                60px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(119, 82, 226, .09),
+                    rgba(255,255,255,.025)
+                );
+
+            border:
+                1px solid
+                rgba(154, 123, 239, .18);
+
+            box-shadow:
+                0 30px 100px
+                rgba(0,0,0,.4);
+        }
+
+        .letter h3 {
+
+            font-family:
+                "Sacramento";
+
+            font-size: 60px;
+
+            color: #c4adff;
+
+            margin-bottom: 25px;
+        }
+
+        .letter p {
+
+            font-family:
+                "Cormorant Garamond";
+
+            font-size: 23px;
+
+            line-height: 1.8;
+
+            color: #c5bfd5;
+
+            margin-bottom: 22px;
+        }
+
+        .signature {
+
+            text-align: right;
+
+            font-family:
+                "Sacramento";
+
+            font-size: 48px;
+
+            color: #c5adff;
+
+            margin-top: 30px;
+        }
+
+
+        /* =====================================================
+           FINAL SECTION
+        ====================================================== */
+
+        .final {
+
+            min-height: 85vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+        }
+
+        .final h2 {
+
+            font-family:
+                "Orbitron";
+
+            font-size:
+                clamp(
+                    42px,
+                    8vw,
+                    90px
+                );
+
+            color: #ded4ff;
+
+            text-shadow:
+                0 0 30px
+                rgba(139, 99, 255, .4);
+        }
+
+        .typing {
+
+            max-width: 800px;
+
+            min-height: 70px;
+
+            margin:
+                30px auto;
+
+            font-family:
+                "Cormorant Garamond";
+
+            font-size: 27px;
+
+            line-height: 1.6;
+
+            color: #aaa4ba;
+        }
+
+
+        /* =====================================================
+           FLOATING HEARTS
+        ====================================================== */
+
+        .heart {
+
+            position: fixed;
+
+            bottom: -30px;
+
+            pointer-events: none;
+
+            z-index: 500;
+
+            animation:
+                heartRise linear forwards;
+        }
+
+        @keyframes heartRise {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    scale(.5);
+
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 1;
+            }
+
+            100% {
+
+                transform:
+                    translateY(-110vh)
+                    translateX(var(--move))
+                    rotate(25deg)
+                    scale(1.3);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =====================================================
+           PARTICLES
+        ====================================================== */
+
+        .particle {
+
+            position: fixed;
+
+            width: 4px;
+            height: 4px;
+
+            border-radius: 50%;
+
+            background: #a98aff;
+
+            pointer-events: none;
+
+            z-index: 400;
+
+            animation:
+                particleFly 2s ease-out forwards;
+        }
+
+        @keyframes particleFly {
+
+            from {
+
+                transform:
+                    translate(0,0)
+                    scale(1);
+
+                opacity: 1;
+            }
+
+            to {
+
+                transform:
+                    translate(
+                        var(--x),
+                        var(--y)
+                    )
+                    scale(0);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =====================================================
+           MUSIC BUTTON
+        ====================================================== */
+
+        .music-button {
+
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            width: 56px;
+            height: 56px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(168, 139, 255, .35);
+
+            background:
+                rgba(12, 12, 39, .85);
+
+            color: #c9b9ff;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            z-index: 1000;
+
+            backdrop-filter:
+                blur(10px);
+
+            transition: .3s;
+        }
+
+        .music-button:hover {
+
+            transform:
+                scale(1.1);
+
+            box-shadow:
+                0 0 25px
+                rgba(132, 94, 255, .5);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+
+            text-align: center;
+
+            padding:
+                45px 20px;
+
+            border-top:
+                1px solid
+                rgba(150, 120, 240, .12);
+
+            color: #656277;
+
+            font-size: 13px;
+        }
+
+        footer span {
+            color: #a48aff;
+        }
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ====================================================== */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform:
+                translateY(50px);
+
+            transition:
+                opacity 1s ease,
+                transform 1s ease;
+        }
+
+        .reveal.active {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding:
+                    15px 20px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .moon {
+
+                width: 100px;
+                height: 100px;
+
+                right: 5%;
+                top: 12%;
+            }
+
+            section {
+                padding:
+                    80px 20px;
+            }
+
+            .teacher-card {
+
+                grid-template-columns:
+                    1fr;
+
+                padding:
+                    30px 20px;
+
+                text-align: center;
+            }
+
+            .teacher-info h3 {
+                font-size: 48px;
+            }
+
+            .equation-area,
+            .lesson-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+            .timeline::before {
+
+                left: 10px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+
+                width: 100%;
+
+                margin-left: 0;
+
+                padding-left: 35px;
+            }
+
+            .timeline-dot,
+            .timeline-item:nth-child(even)
+            .timeline-dot {
+
+                left: 3px;
+
+                right: auto;
+            }
+
+            .letter {
+
+                padding:
+                    35px 25px;
+            }
+
+            .letter p {
+                font-size: 20px;
+            }
+
+            .quote-box {
+                padding:
+                    50px 25px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div class="space"></div>
+
+    <div class="moon"></div>
+
+    <div id="stars"></div>
+
+    <div id="mathSymbols"></div>
+
+    <div class="shooting-star"></div>
+    <div class="shooting-star second"></div>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <nav>
+
+        <div class="logo">
+            For Renubala Mam ✦
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="#home">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#teacher">
+                    Mam
+                </a>
+            </li>
+
+            <li>
+                <a href="#quote">
+                    Quote
+                </a>
+            </li>
+
+            <li>
+                <a href="#maths">
+                    Maths
+                </a>
+            </li>
+
+            <li>
+                <a href="#letter">
+                    Letter
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section
+        class="hero"
+        id="home">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+
+                A Little Equation Of Gratitude
+
+            </div>
+
+
+            <h1>
+
+                Happy<br>
+                Teacher's Day
+
+            </h1>
+
+
+            <div class="teacher-name">
+
+                Renubala Mam
+
+            </div>
+
+
+            <p class="hero-description">
+
+                Mathematics teaches us that even the most
+                complicated problems have solutions.
+
+                But a wonderful teacher teaches us something
+                even more beautiful — that when life itself
+                feels complicated, patience, courage and
+                perseverance can help us find our way.
+
+                This little mathematical universe is dedicated
+                to you, Mam. 💜
+
+            </p>
+
+
+            <button
+                class="magic-button"
+                onclick="showSurprise()">
+
+                ✨ Open A Special Message
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TEACHER PROFILE
+    ====================================================== -->
+
+    <section id="teacher">
+
+        <h2 class="section-title reveal">
+
+            The Teacher Behind The Equations
+
+        </h2>
+
+
+        <p class="section-subtitle reveal">
+
+            Numbers may be precise, equations may have rules,
+            but the impact of a teacher cannot be measured
+            by any formula.
+
+        </p>
+
+
+        <div class="teacher-card reveal">
+
+
+            <!-- =================================================
+                 IMAGE
+            ================================================== -->
+
+            <div class="image-area">
+
+                <div class="image-frame">
+
+                    <!--
+                    =================================================
+                    ADD YOUR PHOTO HERE
+
+                    Put any anime teacher / character picture
+                    in the same folder and name it:
+
+                        teacher.jpg
+
+                    Example folder:
+
+                        Teacher-Day/
+                        ├── index.html
+                        └── teacher.jpg
+
+                    =================================================
+                    -->
+
+                    <img
+                        src="images/renubalamaam.jpeg"
+                        alt="Anime Teacher"
+                        class="teacher-image"
+
+                        onerror="this.src='data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
+                        <svg
+                            xmlns='http://www.w3.org/2000/svg'
+                            width='600'
+                            height='750'>
+
+                            <defs>
+
+                                <linearGradient
+                                    id='background'
+                                    x1='0'
+                                    x2='1'>
+
+                                    <stop
+                                        stop-color='#251b58'/>
+
+                                    <stop
+                                        offset='1'
+                                        stop-color='#10132d'/>
+
+                                </linearGradient>
+
+                            </defs>
+
+
+                            <rect
+                                width='100%'
+                                height='100%'
+                                fill='url(#background)'/>
+
+
+                            <!-- decorative circles -->
+
+                            <circle
+                                cx='90'
+                                cy='100'
+                                r='45'
+                                fill='none'
+                                stroke='#8870ff'
+                                stroke-width='3'
+                                opacity='.35'/>
+
+                            <circle
+                                cx='510'
+                                cy='180'
+                                r='65'
+                                fill='none'
+                                stroke='#5bd6ff'
+                                stroke-width='3'
+                                opacity='.25'/>
+
+
+                            <!-- hair -->
+
+                            <circle
+                                cx='300'
+                                cy='270'
+                                r='135'
+                                fill='#16132d'/>
+
+
+                            <!-- face -->
+
+                            <circle
+                                cx='300'
+                                cy='295'
+                                r='105'
+                                fill='#e9b49d'/>
+
+
+                            <!-- hair -->
+
+                            <path
+                                d='M190 290
+                                   Q185 110 300 105
+                                   Q425 110 415 290
+                                   Q370 205 300 220
+                                   Q225 205 190 290'
+                                fill='#171328'/>
+
+
+                            <!-- eyes -->
+
+                            <ellipse
+                                cx='260'
+                                cy='295'
+                                rx='11'
+                                ry='15'
+                                fill='#201536'/>
+
+                            <ellipse
+                                cx='340'
+                                cy='295'
+                                rx='11'
+                                ry='15'
+                                fill='#201536'/>
+
+
+                            <!-- eye shine -->
+
+                            <circle
+                                cx='263'
+                                cy='291'
+                                r='3'
+                                fill='white'/>
+
+                            <circle
+                                cx='343'
+                                cy='291'
+                                r='3'
+                                fill='white'/>
+
+
+                            <!-- smile -->
+
+                            <path
+                                d='M260 350
+                                   Q300 380 340 350'
+                                fill='none'
+                                stroke='#934f5e'
+                                stroke-width='7'
+                                stroke-linecap='round'/>
+
+
+                            <!-- clothes -->
+
+                            <path
+                                d='M145 750
+                                   Q160 490 300 470
+                                   Q440 490 455 750'
+                                fill='#393174'/>
+
+
+                            <!-- collar -->
+
+                            <path
+                                d='M250 475
+                                   L300 555
+                                   L350 475'
+                                fill='#eeeeff'/>
+
+
+                            <!-- book -->
+
+                            <rect
+                                x='180'
+                                y='555'
+                                width='240'
+                                height='150'
+                                rx='12'
+                                fill='#eee8ff'/>
+
+
+                            <line
+                                x1='300'
+                                y1='555'
+                                x2='300'
+                                y2='705'
+                                stroke='#7664bb'
+                                stroke-width='3'/>
+
+
+                            <text
+                                x='300'
+                                y='615'
+                                text-anchor='middle'
+                                fill='#51418d'
+                                font-size='27'
+                                font-family='serif'>
+
+                                MATHS
+
+                            </text>
+
+
+                            <text
+                                x='300'
+                                y='650'
+                                text-anchor='middle'
+                                fill='#8b72db'
+                                font-size='22'
+                                font-family='serif'>
+
+                                ∑  π  √  ∞
+
+                            </text>
+
+
+                            <text
+                                x='300'
+                                y='680'
+                                text-anchor='middle'
+                                fill='#6e5aa9'
+                                font-size='16'
+                                font-family='serif'>
+
+                                TEACHER
+
+                            </text>
+
+
+                        </svg>
+                        `)"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 TEACHER INFORMATION
+            ================================================== -->
+
+            <div class="teacher-info">
+
+                <div class="label">
+
+                    Mathematics Teacher
+
+                </div>
+
+
+                <h3>
+
+                    Renubala Mam
+
+                </h3>
+
+
+                <p>
+
+                    Dear Mam, you have taught us that Mathematics
+                    is not simply a collection of numbers, formulas
+                    and equations.
+
+                </p>
+
+
+                <br>
+
+
+                <p>
+
+                    You have shown us that Maths is a way of
+                    thinking — a way of looking at a difficult
+                    problem and believing that somewhere,
+                    somehow, a solution exists.
+
+                </p>
+
+
+                <br>
+
+
+                <p>
+
+                    Every equation you explained, every mistake
+                    you corrected and every problem you patiently
+                    solved with us became more than a classroom
+                    lesson.
+
+                </p>
+
+
+                <br>
+
+
+                <p>
+
+                    They became little lessons in patience,
+                    discipline, confidence and never giving up.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         HEARTFELT QUOTE
+    ====================================================== -->
+
+    <section
+        id="quote"
+        class="quote-section">
+
+        <h2 class="section-title reveal">
+
+            A Quote From The Heart
+
+        </h2>
+
+
+        <div class="quote-box reveal">
+
+            <div class="quote-mark">
+                “
+            </div>
+
+
+            <p class="quote">
+
+                “A great Maths teacher does not merely teach us
+                how to solve equations; they teach us to believe
+                that every problem has a solution.
+
+                Mam, you taught us that mistakes are not failures,
+                difficult questions are not impossible,
+                and the answer may sometimes take time to find.
+
+                Just like in mathematics, life may give us
+                complicated equations, but your lessons taught
+                us to face them with patience, courage and faith.
+
+                Thank you for helping us find the answer —
+                not only on the page, but within ourselves.”
+
+            </p>
+
+
+            <div class="quote-author">
+
+                — WITH LOVE AND GRATITUDE TO RENUBALA MAM
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EQUATIONS
+    ====================================================== -->
+
+    <section id="maths">
+
+        <h2 class="section-title reveal">
+
+            The Beauty Of Mathematics
+
+        </h2>
+
+
+        <p class="section-subtitle reveal">
+
+            Behind every formula is an idea.
+            Behind every problem is a challenge.
+            And behind every student who finally understands
+            is often a teacher who refused to give up on them.
+
+        </p>
+
+
+        <div class="equation-area">
+
+
+            <div class="equation-card reveal">
+
+                <div class="equation">
+
+                    x + 0 = x
+
+                </div>
+
+                <h3>
+                    Your Guidance
+                </h3>
+
+                <p>
+
+                    Sometimes the greatest help is not changing
+                    who we are, but helping us discover what
+                    was already within us.
+
+                </p>
+
+            </div>
+
+
+            <div class="equation-card reveal">
+
+                <div class="equation">
+
+                    ∞
+
+                </div>
+
+                <h3>
+                    Your Patience
+                </h3>
+
+                <p>
+
+                    A teacher's patience cannot be measured
+                    by any finite number. It keeps giving,
+                    explaining and encouraging.
+
+                </p>
+
+            </div>
+
+
+            <div class="equation-card reveal">
+
+                <div class="equation">
+
+                    E = MC²
+
+                </div>
+
+                <h3>
+                    Your Inspiration
+                </h3>
+
+                <p>
+
+                    Knowledge has energy. Your lessons give
+                    students the energy to question, learn
+                    and discover.
+
+                </p>
+
+            </div>
+
+
+            <div class="equation-card reveal">
+
+                <div class="equation">
+
+                    √(Dreams)
+
+                </div>
+
+                <h3>
+                    Our Future
+                </h3>
+
+                <p>
+
+                    Every dream begins with a possibility.
+                    Teachers help students believe that the
+                    possibility can become reality.
+
+                </p>
+
+            </div>
+
+
+            <div class="equation-card reveal">
+
+                <div class="equation">
+
+                    ∑ Knowledge
+
+                </div>
+
+                <h3>
+                    Every Lesson
+                </h3>
+
+                <p>
+
+                    Every small lesson adds up. One day,
+                    students look back and realize how much
+                    their teacher helped them grow.
+
+                </p>
+
+            </div>
+
+
+            <div class="equation-card reveal">
+
+                <div class="equation">
+
+                    ∴ Thank You
+
+                </div>
+
+                <h3>
+                    The Answer
+                </h3>
+
+                <p>
+
+                    After every formula, every problem and
+                    every lesson, one answer remains:
+
+                    Thank you, Mam.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MATHEMATICAL LIFE TIMELINE
+    ====================================================== -->
+
+    <section>
+
+        <h2 class="section-title reveal">
+
+            The Equation Of A Teacher
+
+        </h2>
+
+
+        <p class="section-subtitle reveal">
+
+            Perhaps the most beautiful equation is the one
+            created when knowledge, patience and kindness
+            come together.
+
+        </p>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-content">
+
+                    <div class="timeline-number">
+
+                        STEP 01
+
+                    </div>
+
+                    <h3>
+
+                        Curiosity
+
+                    </h3>
+
+                    <p>
+
+                        Every mathematical journey begins with
+                        a question. You taught us that asking
+                        questions is not a weakness — it is the
+                        beginning of understanding.
+
+                    </p>
+
+                </div>
+
+                <div class="timeline-dot"></div>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-content">
+
+                    <div class="timeline-number">
+
+                        STEP 02
+
+                    </div>
+
+                    <h3>
+
+                        Practice
+
+                    </h3>
+
+                    <p>
+
+                        Mathematics teaches us that improvement
+                        comes through practice. Your lessons
+                        taught us not to fear difficult problems
+                        but to keep trying.
+
+                    </p>
+
+                </div>
+
+                <div class="timeline-dot"></div>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-content">
+
+                    <div class="timeline-number">
+
+                        STEP 03
+
+                    </div>
+
+                    <h3>
+
+                        Mistakes
+
+                    </h3>
+
+                    <p>
+
+                        A wrong answer does not mean the journey
+                        is over. Sometimes it simply tells us
+                        where we need to look again.
+
+                    </p>
+
+                </div>
+
+                <div class="timeline-dot"></div>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-content">
+
+                    <div class="timeline-number">
+
+                        STEP 04
+
+                    </div>
+
+                    <h3>
+
+                        Understanding
+
+                    </h3>
+
+                    <p>
+
+                        The most beautiful moment is when a
+                        confusing problem suddenly makes sense.
+                        Thank you for creating so many of those
+                        moments for us.
+
+                    </p>
+
+                </div>
+
+                <div class="timeline-dot"></div>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-content">
+
+                    <div class="timeline-number">
+
+                        FINAL STEP
+
+                    </div>
+
+                    <h3>
+
+                        Confidence
+
+                    </h3>
+
+                    <p>
+
+                        Eventually the student learns to solve
+                        the problem alone. That is the quiet
+                        victory of a teacher.
+
+                    </p>
+
+                </div>
+
+                <div class="timeline-dot"></div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LESSONS BEYOND MATHS
+    ====================================================== -->
+
+    <section>
+
+        <h2 class="section-title reveal">
+
+            More Than Just Mathematics
+
+        </h2>
+
+
+        <p class="section-subtitle reveal">
+
+            The best teachers leave lessons behind that
+            cannot be written on a blackboard.
+
+        </p>
+
+
+        <div class="lesson-grid">
+
+
+            <div class="lesson reveal">
+
+                <div class="lesson-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    Think Clearly
+                </h3>
+
+                <p>
+
+                    Maths taught us to break a complicated
+                    problem into smaller pieces and approach
+                    each part carefully.
+
+                    That is a skill we can carry into life.
+
+                </p>
+
+            </div>
+
+
+            <div class="lesson reveal">
+
+                <div class="lesson-icon">
+                    🌱
+                </div>
+
+                <h3>
+                    Keep Learning
+                </h3>
+
+                <p>
+
+                    There is always another problem to solve,
+                    another idea to understand and another
+                    level to reach.
+
+                    Your lessons taught us to keep growing.
+
+                </p>
+
+            </div>
+
+
+            <div class="lesson reveal">
+
+                <div class="lesson-icon">
+                    💜
+                </div>
+
+                <h3>
+                    Have Patience
+                </h3>
+
+                <p>
+
+                    Sometimes the answer doesn't come quickly.
+                    You taught us that patience is part of
+                    learning — and that understanding takes time.
+
+                </p>
+
+            </div>
+
+
+            <div class="lesson reveal">
+
+                <div class="lesson-icon">
+                    🌟
+                </div>
+
+                <h3>
+                    Believe In Yourself
+                </h3>
+
+                <p>
+
+                    A difficult question can make us doubt
+                    ourselves. Your encouragement reminds us
+                    that difficulty does not mean impossibility.
+
+                </p>
+
+            </div>
+
+
+            <div class="lesson reveal">
+
+                <div class="lesson-icon">
+                    🧩
+                </div>
+
+                <h3>
+                    Find Solutions
+                </h3>
+
+                <p>
+
+                    Every problem invites us to think differently.
+                    You taught us to search for possibilities
+                    instead of immediately accepting defeat.
+
+                </p>
+
+            </div>
+
+
+            <div class="lesson reveal">
+
+                <div class="lesson-icon">
+                    ✨
+                </div>
+
+                <h3>
+                    Never Give Up
+                </h3>
+
+                <p>
+
+                    Sometimes the solution appears after the
+                    tenth attempt. Sometimes after the hundredth.
+
+                    The important thing is to continue.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         HEARTFELT LETTER
+    ====================================================== -->
+
+    <section id="letter">
+
+        <h2 class="section-title reveal">
+
+            A Letter To Renubala Mam
+
+        </h2>
+
+
+        <div class="letter reveal">
+
+            <h3>
+
+                Dear Renubala Mam...
+
+            </h3>
+
+
+            <p>
+
+                Mathematics is often described as a subject
+                of numbers, formulas, calculations and logic.
+
+                But Mam, you taught us that behind all of those
+                numbers is something much more meaningful —
+                the ability to think.
+
+            </p>
+
+
+            <p>
+
+                You taught us that when a problem looks difficult,
+                we should not immediately decide that it is
+                impossible.
+
+                We should stop.
+
+                Think.
+
+                Try.
+
+                Make a mistake.
+
+                Try again.
+
+            </p>
+
+
+            <p>
+
+                And somehow, without even realizing it, those
+                lessons became lessons about life.
+
+            </p>
+
+
+            <p>
+
+                There are moments in life when everything feels
+                like a complicated equation.
+
+                We may not know which formula to use.
+
+                We may not know which path is correct.
+
+                Sometimes we may even be afraid of getting
+                the answer wrong.
+
+            </p>
+
+
+            <p>
+
+                But the confidence you gave us in the classroom
+                reminds us of something important:
+
+                Not knowing the answer yet does not mean
+                we are incapable of finding it.
+
+            </p>
+
+
+            <p>
+
+                Thank you for every problem you explained.
+
+                Thank you for every mistake you corrected.
+
+                Thank you for every time you patiently explained
+                something again when we didn't understand it
+                the first time.
+
+            </p>
+
+
+            <p>
+
+                Thank you for turning confusing numbers into
+                understandable ideas.
+
+                Thank you for showing us patterns where we
+                initially saw only chaos.
+
+            </p>
+
+
+            <p>
+
+                Maybe someday we will forget some formulas.
+
+                Maybe we will forget some calculations.
+
+                Maybe we will forget the exact questions
+                from our textbooks.
+
+            </p>
+
+
+            <p>
+
+                But we will remember something much more
+                important:
+
+                You taught us not to be afraid of difficult
+                problems.
+
+            </p>
+
+
+            <p>
+
+                You taught us that mistakes can be corrected.
+
+                You taught us that patience produces results.
+
+                You taught us that practice creates confidence.
+
+                And you taught us that there is often a solution
+                waiting for those who are willing to keep looking.
+
+            </p>
+
+
+            <p>
+
+                Mam, if life were a giant mathematical equation,
+                then teachers like you would be the constants
+                that help us find our way through it.
+
+            </p>
+
+
+            <p>
+
+                Your influence cannot be measured by marks,
+                percentages or numbers.
+
+                It is measured in the confidence of your students,
+                in the questions they are brave enough to ask,
+                and in the problems they are no longer afraid
+                to face.
+
+            </p>
+
+
+            <p>
+
+                On this Teacher's Day, I simply want to say:
+
+                Thank you.
+
+            </p>
+
+
+            <p>
+
+                Thank you for being patient.
+
+                Thank you for being encouraging.
+
+                Thank you for being there when a difficult
+                equation seemed impossible.
+
+            </p>
+
+
+            <p>
+
+                And most importantly, thank you for reminding
+                us that every problem deserves another attempt.
+
+            </p>
+
+
+            <p>
+
+                May you always know that your lessons continue
+                beyond the classroom.
+
+                They live in the way your students think,
+                solve problems, face challenges and believe
+                in themselves.
+
+            </p>
+
+
+            <p>
+
+                If every student is an equation still being solved,
+                then teachers are the people who help us discover
+                the variables we never knew we had.
+
+            </p>
+
+
+            <p>
+
+                And Mam, you have helped us discover many of them.
+
+            </p>
+
+
+            <div class="signature">
+
+                With Endless Gratitude ❤️
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FINAL MESSAGE
+    ====================================================== -->
+
+    <section class="final">
+
+        <div>
+
+            <div class="eyebrow">
+
+                The Final Answer
+
+            </div>
+
+
+            <h2>
+
+                Thank You,<br>
+                Renubala Mam
+
+            </h2>
+
+
+            <p
+                class="typing"
+                id="typing">
+
+            </p>
+
+
+            <button
+                class="magic-button"
+                onclick="celebrate()">
+
+                💜 Send My Teacher's Day Wishes
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MUSIC BUTTON
+    ====================================================== -->
+
+    <button
+        class="music-button"
+        onclick="musicInfo()">
+
+        🎵
+
+    </button>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        Made with
+        <span>♥</span>
+        gratitude, respect and a little mathematical magic.
+
+        <br><br>
+
+        Happy Teacher's Day,
+        <span>Renubala Mam</span>
+
+        ✦
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           CREATE STARS
+        ====================================================== */
+
+        const starsContainer =
+            document.getElementById("stars");
+
+
+        for (
+            let i = 0;
+            i < 160;
+            i++
+        ) {
+
+            const star =
+                document.createElement("div");
+
+            star.className = "star";
+
+            star.style.left =
+                Math.random() * 100 + "%";
+
+            star.style.top =
+                Math.random() * 100 + "%";
+
+            const size =
+                Math.random() * 3 + 1;
+
+            star.style.width =
+                size + "px";
+
+            star.style.height =
+                size + "px";
+
+            star.style.animationDelay =
+                Math.random() * 4 + "s";
+
+            starsContainer.appendChild(star);
+        }
+
+
+        /* =====================================================
+           MATHEMATICAL FLOATING SYMBOLS
+        ====================================================== */
+
+        const symbolsContainer =
+            document.getElementById(
+                "mathSymbols"
+            );
+
+
+        const symbols = [
+
+            "π",
+            "∞",
+            "√",
+            "∑",
+            "∫",
+            "x²",
+            "y = mx + c",
+            "Δ",
+            "θ",
+            "÷",
+            "×",
+            "+",
+            "−",
+            "=",
+            "∠",
+            "Σ",
+            "∂",
+            "f(x)",
+            "a² + b²",
+            "E = mc²"
+
+        ];
+
+
+        function createMathSymbol() {
+
+            const symbol =
+                document.createElement("div");
+
+            symbol.className =
+                "math-symbol";
+
+            symbol.innerText =
+                symbols[
+                    Math.floor(
+                        Math.random() *
+                        symbols.length
+                    )
+                ];
+
+            symbol.style.left =
+                Math.random() * 100 + "vw";
+
+            symbol.style.fontSize =
+                Math.random() * 18 + 12 + "px";
+
+            symbol.style.animationDuration =
+                Math.random() * 8 + 7 + "s";
+
+            symbol.style.setProperty(
+                "--move",
+                Math.random() * 300 - 150 + "px"
+            );
+
+            symbolsContainer.appendChild(
+                symbol
+            );
+
+
+            setTimeout(() => {
+
+                symbol.remove();
+
+            }, 16000);
+
+        }
+
+
+        setInterval(
+            createMathSymbol,
+            650
+        );
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ====================================================== */
+
+        const reveals =
+            document.querySelectorAll(
+                ".reveal"
+            );
+
+
+        function revealOnScroll() {
+
+            reveals.forEach(
+                element => {
+
+                    const position =
+                        element
+                        .getBoundingClientRect()
+                        .top;
+
+
+                    if (
+                        position <
+                        window.innerHeight - 100
+                    ) {
+
+                        element.classList.add(
+                            "active"
+                        );
+
+                    }
+
+                }
+            );
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            revealOnScroll
+        );
+
+
+        revealOnScroll();
+
+
+        /* =====================================================
+           TYPING EFFECT
+        ====================================================== */
+
+        const finalMessage =
+
+            "You taught us that every difficult problem deserves patience, every mistake deserves another attempt, and every student has the ability to discover their own answer.";
+
+
+        const typingElement =
+            document.getElementById(
+                "typing"
+            );
+
+
+        let typingIndex = 0;
+
+
+        function typeMessage() {
+
+            if (
+                typingIndex <
+                finalMessage.length
+            ) {
+
+                typingElement.innerHTML +=
+                    finalMessage.charAt(
+                        typingIndex
+                    );
+
+                typingIndex++;
+
+                setTimeout(
+                    typeMessage,
+                    40
+                );
+
+            }
+
+        }
+
+
+        setTimeout(
+            typeMessage,
+            1000
+        );
+
+
+        /* =====================================================
+           HEARTS
+        ====================================================== */
+
+        function createHeart() {
+
+            const heart =
+                document.createElement(
+                    "div"
+                );
+
+            heart.className =
+                "heart";
+
+
+            const heartList = [
+
+                "♥",
+                "♡",
+                "💜",
+                "💖",
+                "✨"
+
+            ];
+
+
+            heart.innerHTML =
+                heartList[
+                    Math.floor(
+                        Math.random() *
+                        heartList.length
+                    )
+                ];
+
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+
+            heart.style.fontSize =
+                Math.random() * 18 + 14 + "px";
+
+
+            heart.style.color =
+                Math.random() > .5
+                ? "#a88aff"
+                : "#d6c5ff";
+
+
+            heart.style.setProperty(
+                "--move",
+                Math.random() * 300 - 150 + "px"
+            );
+
+
+            heart.style.animationDuration =
+                Math.random() * 5 + 5 + "s";
+
+
+            document.body.appendChild(
+                heart
+            );
+
+
+            setTimeout(() => {
+
+                heart.remove();
+
+            }, 11000);
+
+        }
+
+
+        /* =====================================================
+           PARTICLE BURST
+        ====================================================== */
+
+        function createParticleBurst() {
+
+            for (
+                let i = 0;
+                i < 70;
+                i++
+            ) {
+
+                const particle =
+                    document.createElement(
+                        "div"
+                    );
+
+                particle.className =
+                    "particle";
+
+
+                const x =
+                    (
+                        Math.random() * 500 -
+                        250
+                    ) + "px";
+
+
+                const y =
+                    (
+                        Math.random() * 500 -
+                        250
+                    ) + "px";
+
+
+                particle.style.setProperty(
+                    "--x",
+                    x
+                );
+
+
+                particle.style.setProperty(
+                    "--y",
+                    y
+                );
+
+
+                particle.style.left =
+                    "50%";
+
+                particle.style.top =
+                    "50%";
+
+
+                particle.style.background =
+                    Math.random() > .5
+                    ? "#a88aff"
+                    : "#65dfff";
+
+
+                document.body.appendChild(
+                    particle
+                );
+
+
+                setTimeout(() => {
+
+                    particle.remove();
+
+                }, 2200);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           SURPRISE MESSAGE
+        ====================================================== */
+
+        function showSurprise() {
+
+            alert(
+
+`💜 Dear Renubala Mam,
+
+You didn't just teach us Mathematics.
+
+You taught us how to think.
+
+You taught us that a difficult problem
+is not necessarily an impossible problem.
+
+You taught us that mistakes can be corrected,
+that patience brings understanding,
+and that every solution begins
+with the courage to try.
+
+Thank you for every equation,
+every explanation,
+every correction,
+and every moment of patience.
+
+Happy Teacher's Day, Mam! 🌸
+
+Your lessons will always be
+a beautiful part of our journey.`
+
+            );
+
+
+            for (
+                let i = 0;
+                i < 30;
+                i++
+            ) {
+
+                setTimeout(
+                    createHeart,
+                    i * 70
+                );
+
+            }
+
+
+            createParticleBurst();
+
+        }
+
+
+        /* =====================================================
+           BIG CELEBRATION
+        ====================================================== */
+
+        function celebrate() {
+
+            createParticleBurst();
+
+
+            for (
+                let i = 0;
+                i < 80;
+                i++
+            ) {
+
+                setTimeout(
+                    createHeart,
+                    i * 55
+                );
+
+            }
+
+
+            const button =
+                document.querySelector(
+                    ".final .magic-button"
+                );
+
+
+            button.innerHTML =
+                "💜 Wishes Sent With Love!";
+
+
+            setTimeout(() => {
+
+                button.innerHTML =
+                    "💜 Send My Teacher's Day Wishes";
+
+            }, 4000);
+
+        }
+
+
+        /* =====================================================
+           PERIODIC HEARTS
+        ====================================================== */
+
+        setInterval(() => {
+
+            if (
+                Math.random() > .45
+            ) {
+
+                createHeart();
+
+            }
+
+        }, 4500);
+
+
+        /* =====================================================
+           MUSIC INFO
+        ====================================================== */
+
+        function musicInfo() {
+
+            alert(
+
+`🎵 OPTIONAL MUSIC
+
+For this anime Maths theme, a soft
+piano or dreamy instrumental track
+would fit beautifully.
+
+To add your own music:
+
+1. Put music.mp3 beside index.html.
+2. Add an audio element to the page.
+3. Connect it to the music button.
+
+A calm piano, fantasy or
+anime-style instrumental works best.`
+
+            );
+
+        }
+
+
+        /* =====================================================
+           MOUSE PARALLAX
+        ====================================================== */
+
+        document.addEventListener(
+            "mousemove",
+            event => {
+
+                const x =
+                    (
+                        event.clientX /
+                        window.innerWidth -
+                        .5
+                    ) * 20;
+
+
+                const y =
+                    (
+                        event.clientY /
+                        window.innerHeight -
+                        .5
+                    ) * 20;
+
+
+                const moon =
+                    document.querySelector(
+                        ".moon"
+                    );
+
+
+                moon.style.transform =
+                    `translate(
+                        ${x / 3}px,
+                        ${y / 3}px
+                    )`;
+
+            }
+        );
+
+
+    </script>
+
+</body>
+</html>

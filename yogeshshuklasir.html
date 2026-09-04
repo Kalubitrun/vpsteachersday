@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Teacher's Day | Yogesh Shukla Sir</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            min-height: 100vh;
+            color: white;
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(circle at 20% 20%, #4338ca 0%, transparent 30%),
+                radial-gradient(circle at 80% 80%, #7c3aed 0%, transparent 30%),
+                linear-gradient(135deg, #050816, #111827, #1e1b4b);
+        }
+
+        /* Floating Mathematics Symbols */
+        .math-symbol {
+            position: fixed;
+            color: rgba(255, 255, 255, 0.12);
+            font-size: 35px;
+            font-weight: bold;
+            animation: float 10s infinite ease-in-out;
+            z-index: 0;
+            user-select: none;
+        }
+
+        .s1 { top: 10%; left: 8%; animation-delay: 0s; }
+        .s2 { top: 25%; right: 10%; animation-delay: 2s; }
+        .s3 { bottom: 15%; left: 12%; animation-delay: 4s; }
+        .s4 { bottom: 25%; right: 15%; animation-delay: 1s; }
+        .s5 { top: 55%; left: 45%; animation-delay: 3s; }
+        .s6 { top: 75%; right: 45%; animation-delay: 5s; }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-35px) rotate(15deg);
+            }
+        }
+
+        /* Main Container */
+        .container {
+            position: relative;
+            z-index: 2;
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        /* Header */
+        .small-title {
+            color: #c4b5fd;
+            letter-spacing: 4px;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: clamp(45px, 8vw, 85px);
+            line-height: 1;
+            background: linear-gradient(90deg, #f9a8d4, #c4b5fd, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 3s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                filter: drop-shadow(0 0 5px rgba(196, 181, 253, .3));
+            }
+            to {
+                filter: drop-shadow(0 0 25px rgba(196, 181, 253, .7));
+            }
+        }
+
+        .subtitle {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #e5e7eb;
+        }
+
+        /* Teacher Card */
+        .teacher-card {
+            margin: 45px auto;
+            padding: 35px;
+            max-width: 700px;
+
+            background: rgba(255,255,255,0.09);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 30px;
+
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 25px 60px rgba(0,0,0,0.35),
+                inset 0 0 30px rgba(255,255,255,0.03);
+
+            transition: transform .4s ease;
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-8px);
+        }
+
+        /* Teacher Image */
+        .photo-wrapper {
+            width: 190px;
+            height: 190px;
+            margin: 0 auto 25px;
+
+            border-radius: 50%;
+            padding: 6px;
+
+            background: linear-gradient(
+                135deg,
+                #f472b6,
+                #8b5cf6,
+                #38bdf8
+            );
+
+            box-shadow: 0 0 40px rgba(139,92,246,.6);
+        }
+
+        .photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #111827;
+        }
+
+        .teacher-name {
+            font-size: 35px;
+            font-weight: 700;
+            color: #f9fafb;
+        }
+
+        .subject {
+            margin-top: 8px;
+            color: #c4b5fd;
+            font-size: 18px;
+        }
+
+        /* Quote */
+        .quote-box {
+            margin-top: 30px;
+            padding: 25px;
+
+            border-left: 4px solid #a78bfa;
+            border-radius: 15px;
+
+            background: rgba(0,0,0,0.18);
+        }
+
+        .quote {
+            font-size: 22px;
+            line-height: 1.6;
+            font-style: italic;
+            color: #f3f4f6;
+        }
+
+        .quote::before {
+            content: "“";
+            color: #c4b5fd;
+            font-size: 50px;
+            vertical-align: -20px;
+        }
+
+        .quote::after {
+            content: "”";
+            color: #c4b5fd;
+            font-size: 50px;
+            vertical-align: -20px;
+        }
+
+        /* Math Quote Cards */
+        .quotes-section {
+            margin-top: 50px;
+        }
+
+        .quotes-section h2 {
+            font-size: 30px;
+            margin-bottom: 25px;
+            color: #ddd6fe;
+        }
+
+        .quotes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .quote-card {
+            padding: 25px;
+            border-radius: 20px;
+
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+
+            transition: all .3s ease;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            background: rgba(139,92,246,0.18);
+            box-shadow: 0 15px 30px rgba(0,0,0,.25);
+        }
+
+        .formula {
+            font-size: 32px;
+            color: #93c5fd;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .quote-card p {
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        /* Button */
+        .wish-button {
+            margin-top: 40px;
+            padding: 15px 35px;
+
+            border: none;
+            border-radius: 50px;
+
+            font-size: 17px;
+            font-weight: bold;
+            color: white;
+
+            cursor: pointer;
+
+            background: linear-gradient(
+                90deg,
+                #7c3aed,
+                #ec4899
+            );
+
+            box-shadow: 0 10px 30px rgba(236,72,153,.3);
+
+            transition: all .3s ease;
+        }
+
+        .wish-button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 40px rgba(236,72,153,.5);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            top: -20px;
+            z-index: 100;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                width: 92%;
+                padding-top: 35px;
+            }
+
+            .teacher-card {
+                padding: 25px 18px;
+            }
+
+            .teacher-name {
+                font-size: 28px;
+            }
+
+            .quote {
+                font-size: 18px;
+            }
+
+            .photo-wrapper {
+                width: 160px;
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Math Symbols -->
+    <div class="math-symbol s1">π</div>
+    <div class="math-symbol s2">∑</div>
+    <div class="math-symbol s3">∞</div>
+    <div class="math-symbol s4">√</div>
+    <div class="math-symbol s5">∫</div>
+    <div class="math-symbol s6">x²</div>
+
+    <main class="container">
+
+        <div class="small-title">
+            A Special Tribute
+        </div>
+
+        <h1>Happy Teacher's Day</h1>
+
+        <p class="subtitle">
+            To an amazing teacher who makes Mathematics beautiful ❤️
+        </p>
+
+        <!-- Teacher Card -->
+        <section class="teacher-card">
+
+            <div class="photo-wrapper">
+                <!-- Replace teacher.jpg with your teacher's photo -->
+                <img src="images/yogesh.jpg" alt="Yogesh Shukla Sir" alt="Yogesh Shukla Sir">
+            </div>
+
+            <div class="teacher-name">
+                Yogesh Shukla Sir
+            </div>
+
+            <div class="subject">
+                📐 Mathematics Teacher
+            </div>
+
+            <div class="quote-box">
+                <p class="quote">
+                    A great mathematics teacher doesn't just teach us
+                    numbers and formulas; he teaches us how to find
+                    solutions even when life seems like the hardest equation.
+                </p>
+            </div>
+
+            <button class="wish-button" onclick="celebrate()">
+                🎉 Click for a Special Wish
+            </button>
+
+        </section>
+
+        <!-- Mathematics Quotes -->
+        <section class="quotes-section">
+
+            <h2>📚 Some Mathematical Thoughts for You</h2>
+
+            <div class="quotes">
+
+                <div class="quote-card">
+                    <div class="formula">∞</div>
+                    <p>
+                        Your patience, guidance and knowledge are like
+                        infinity — they have no limits.
+                    </p>
+                </div>
+
+                <div class="quote-card">
+                    <div class="formula">x + y = ❤️</div>
+                    <p>
+                        You taught us that every problem has a solution,
+                        just like every equation has an answer.
+                    </p>
+                </div>
+
+                <div class="quote-card">
+                    <div class="formula">√Success</div>
+                    <p>
+                        Behind every successful student is a teacher who
+                        patiently explains the steps to reach the answer.
+                    </p>
+                </div>
+
+                <div class="quote-card">
+                    <div class="formula">π ≈ 3.14</div>
+                    <p>
+                        Just like π goes on forever, the impact of a
+                        great teacher continues forever in a student's life.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            Made with ❤️ and a little bit of Mathematics
+            <br>
+            Happy Teacher's Day, Yogesh Shukla Sir! 🌟
+        </footer>
+
+    </main>
+
+
+    <script>
+
+        function celebrate() {
+
+            // Create confetti
+            for (let i = 0; i < 120; i++) {
+
+                const confetti = document.createElement("div");
+
+                confetti.classList.add("confetti");
+
+                const colors = [
+                    "#f472b6",
+                    "#a78bfa",
+                    "#60a5fa",
+                    "#34d399",
+                    "#facc15",
+                    "#fb7185"
+                ];
+
+                confetti.style.backgroundColor =
+                    colors[Math.floor(Math.random() * colors.length)];
+
+                confetti.style.left =
+                    Math.random() * 100 + "vw";
+
+                confetti.style.animationDuration =
+                    (Math.random() * 3 + 2) + "s";
+
+                confetti.style.width =
+                    (Math.random() * 8 + 5) + "px";
+
+                confetti.style.height =
+                    (Math.random() * 8 + 5) + "px";
+
+                document.body.appendChild(confetti);
+
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+
+            // Change button message
+            const button = document.querySelector(".wish-button");
+
+            button.innerHTML =
+                "💜 Thank You For Being An Amazing Teacher!";
+
+            button.style.background =
+                "linear-gradient(90deg, #059669, #2563eb)";
+        }
+
+    </script>
+
+</body>
+</html>

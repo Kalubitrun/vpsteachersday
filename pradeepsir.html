@@ -1,0 +1,1168 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Teacher's Day | Mr. Pradeep Sir</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #f8efd9;
+    --sand: #e8d0a9;
+    --terracotta: #c75b3d;
+    --rust: #9e4936;
+    --mustard: #e3ae3f;
+    --sage: #738567;
+    --forest: #405746;
+    --brown: #4b382d;
+    --dark: #2e2722;
+    --pink: #d79789;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    color: var(--brown);
+
+    background:
+        radial-gradient(
+            circle at 8% 12%,
+            rgba(199,91,61,.25),
+            transparent 15%
+        ),
+        radial-gradient(
+            circle at 92% 20%,
+            rgba(115,133,103,.25),
+            transparent 16%
+        ),
+        radial-gradient(
+            circle at 20% 85%,
+            rgba(227,174,63,.22),
+            transparent 18%
+        ),
+        linear-gradient(
+            135deg,
+            #f8efd9,
+            #f3dfc1
+        );
+
+    overflow-x: hidden;
+}
+
+/* Paper texture */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .13;
+    z-index: 50;
+
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            rgba(75,56,45,.15) 0px,
+            rgba(75,56,45,.15) 1px,
+            transparent 1px,
+            transparent 5px
+        );
+}
+
+/* Background circles */
+.background-shape {
+    position: fixed;
+    border-radius: 50%;
+    z-index: -2;
+    opacity: .65;
+}
+
+.shape-one {
+    width: 220px;
+    height: 220px;
+    background: var(--terracotta);
+    top: -90px;
+    left: -70px;
+    animation: floating 7s ease-in-out infinite;
+}
+
+.shape-two {
+    width: 170px;
+    height: 170px;
+    background: var(--sage);
+    bottom: -60px;
+    right: -40px;
+    animation: floating 6s ease-in-out infinite reverse;
+}
+
+.shape-three {
+    width: 80px;
+    height: 80px;
+    background: var(--mustard);
+    top: 45%;
+    right: 5%;
+    animation: floating 5s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%,100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(8deg);
+    }
+}
+
+/* Main container */
+.container {
+    width: min(1100px, 92%);
+    margin: auto;
+    padding: 50px 0;
+}
+
+/* Sports header */
+.sports-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.sports-icon {
+    font-size: 35px;
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+.sports-icon:nth-child(2) {
+    animation-delay: .5s;
+}
+
+.sports-icon:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.sports-icon:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+.sports-icon:nth-child(5) {
+    animation-delay: 2s;
+}
+
+@keyframes iconFloat {
+    0%,100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(8deg);
+    }
+}
+
+/* Header */
+.header {
+    text-align: center;
+}
+
+.eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--rust);
+}
+
+h1 {
+    font-family: "DM Serif Display", serif;
+    color: var(--dark);
+    font-size: clamp(48px, 9vw, 105px);
+    line-height: .92;
+    margin: 15px 0;
+}
+
+.teacher-name {
+    display: inline-block;
+    position: relative;
+
+    font-size: clamp(27px, 5vw, 50px);
+    font-weight: 800;
+    color: var(--terracotta);
+
+    padding: 0 14px;
+}
+
+.teacher-name::after {
+    content: "";
+    position: absolute;
+    height: 10px;
+
+    background: var(--mustard);
+
+    left: 0;
+    right: 0;
+    bottom: 4px;
+
+    z-index: -1;
+    transform: rotate(-2deg);
+}
+
+/* PE Badge */
+.pe-badge {
+    width: 125px;
+    height: 125px;
+
+    margin: 55px auto 40px;
+
+    border-radius: 50%;
+    border: 4px solid var(--brown);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--mustard);
+
+    box-shadow:
+        8px 8px 0 var(--terracotta),
+        -5px -5px 0 var(--sage);
+
+    animation: badgePulse 3s ease-in-out infinite;
+}
+
+.pe-badge .ball {
+    font-size: 38px;
+}
+
+.pe-badge span {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+@keyframes badgePulse {
+    0%,100% {
+        transform: rotate(-4deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(4deg) scale(1.06);
+    }
+}
+
+/* Teacher photo */
+.photo-section {
+    display: flex;
+    justify-content: center;
+    margin: 55px 0;
+}
+
+.photo-frame {
+    width: min(430px, 88vw);
+    height: 520px;
+
+    padding: 14px;
+
+    background: var(--cream);
+
+    border: 3px solid var(--brown);
+
+    box-shadow:
+        14px 14px 0 var(--terracotta),
+        -8px -8px 0 var(--sage);
+
+    transform: rotate(-2deg);
+
+    transition:
+        transform .5s ease,
+        box-shadow .5s ease;
+}
+
+.photo-frame:hover {
+    transform: rotate(0deg) scale(1.035);
+
+    box-shadow:
+        10px 10px 0 var(--mustard),
+        -7px -7px 0 var(--sage);
+}
+
+/*
+    IMPORTANT:
+    Your photo must be:
+    images/pradeep.jpg
+*/
+
+.teacher-photo {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border: 2px solid var(--brown);
+
+    background: var(--cream);
+}
+
+/* Photo error message */
+.photo-error {
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    border: 2px solid var(--brown);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.35) 2px,
+            transparent 3px
+        );
+
+    background-size: 18px 18px;
+}
+
+.photo-error .camera {
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+.photo-error strong {
+    font-size: 17px;
+    letter-spacing: 2px;
+}
+
+.photo-error small {
+    margin-top: 10px;
+    opacity: .7;
+}
+
+/* Message */
+.message {
+    max-width: 900px;
+
+    margin: 80px auto 40px;
+
+    padding: 50px 35px;
+
+    text-align: center;
+
+    background: rgba(248,239,217,.9);
+
+    border: 2px solid var(--brown);
+
+    box-shadow:
+        10px 10px 0 var(--mustard);
+
+    position: relative;
+}
+
+.message::before {
+    content: "⚡";
+
+    position: absolute;
+
+    top: -30px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 35px;
+
+    background: var(--cream);
+
+    padding: 0 15px;
+}
+
+.message h2 {
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(30px, 5vw, 52px);
+
+    color: var(--dark);
+
+    margin-bottom: 22px;
+}
+
+.message p {
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.highlight {
+    color: var(--terracotta);
+    font-weight: 700;
+}
+
+/* Quotes */
+.quote {
+    max-width: 950px;
+
+    margin: 65px auto;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    border-top: 3px solid var(--brown);
+    border-bottom: 3px solid var(--brown);
+}
+
+.quote p {
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(25px, 4vw, 42px);
+
+    line-height: 1.35;
+
+    color: var(--forest);
+}
+
+.quote span {
+    display: block;
+
+    margin-top: 18px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    font-size: 11px;
+
+    color: var(--terracotta);
+}
+
+/* Sports cards */
+.sports-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+    margin: 55px 0;
+}
+
+.sport-card {
+    padding: 32px 20px;
+
+    text-align: center;
+
+    border: 2px solid var(--brown);
+
+    transition: .4s ease;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.sport-card:nth-child(1) {
+    background: #e9bd72;
+}
+
+.sport-card:nth-child(2) {
+    background: #cdd9c5;
+}
+
+.sport-card:nth-child(3) {
+    background: #e7b0a4;
+}
+
+.sport-card:hover {
+    transform:
+        translateY(-12px)
+        rotate(1deg);
+
+    box-shadow:
+        8px 8px 0 var(--brown);
+}
+
+.sport-card .sport-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.sport-card h3 {
+    font-family: "DM Serif Display", serif;
+    font-size: 29px;
+}
+
+.sport-card p {
+    margin-top: 9px;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* Stripe */
+.stripe {
+    width: 100%;
+    height: 15px;
+
+    margin: 65px 0;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            var(--terracotta) 0 20px,
+            var(--mustard) 20px 40px,
+            var(--sage) 40px 60px
+        );
+
+    transform: rotate(-1deg);
+}
+
+/* Final section */
+.final {
+    text-align: center;
+
+    padding: 45px 20px 30px;
+}
+
+.final h2 {
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(42px, 7vw, 75px);
+
+    color: var(--terracotta);
+}
+
+.final p {
+    margin-top: 15px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+.signature {
+    margin-top: 30px;
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: 27px;
+
+    color: var(--brown);
+}
+
+/* Floating sports */
+.floating-sport {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 5;
+
+    animation:
+        sportFloat 8s linear forwards;
+}
+
+@keyframes sportFloat {
+    0% {
+        transform:
+            translateY(-100px)
+            translateX(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        transform:
+            translateY(50vh)
+            translateX(80px)
+            rotate(180deg);
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            translateX(-80px)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+/* Click sparks */
+.spark {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 100;
+
+    font-size: 20px;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .container {
+        padding-top: 30px;
+    }
+
+    .sports-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .message {
+        padding: 38px 22px;
+    }
+
+    .photo-frame {
+        width: min(360px, 88vw);
+        height: 450px;
+    }
+
+    .sports-top {
+        gap: 15px;
+    }
+
+    .sports-icon {
+        font-size: 28px;
+    }
+
+    .eyebrow {
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .sports-top {
+        gap: 8px;
+    }
+
+    .sports-icon {
+        font-size: 23px;
+    }
+
+    .photo-frame {
+        height: 420px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background -->
+<div class="background-shape shape-one"></div>
+<div class="background-shape shape-two"></div>
+<div class="background-shape shape-three"></div>
+
+
+<main class="container">
+
+    <!-- SPORTS ICONS -->
+    <div class="sports-top">
+        <div class="sports-icon">🏃</div>
+        <div class="sports-icon">🏆</div>
+        <div class="sports-icon">⚽</div>
+        <div class="sports-icon">🏸</div>
+        <div class="sports-icon">🏀</div>
+    </div>
+
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="eyebrow">
+            5 September • A Tribute To Our Teacher
+        </div>
+
+        <h1>
+            Happy<br>
+            Teacher's Day
+        </h1>
+
+        <div class="teacher-name">
+            Mr. Pradeep Sir
+        </div>
+
+    </header>
+
+
+    <!-- PHYSICAL EDUCATION BADGE -->
+    <div class="pe-badge">
+
+        <div class="ball">
+            🏅
+        </div>
+
+        <span>
+            PHYSICAL<br>
+            EDUCATION
+        </span>
+
+    </div>
+
+
+    <!-- TEACHER PHOTO -->
+    <section class="photo-section">
+
+        <div class="photo-frame">
+
+            <img
+                src="images/pradeep.jpg"
+                class="teacher-photo"
+                alt="Mr. Pradeep Sir"
+                onerror="
+                    this.style.display='none';
+                    document.getElementById('photoError').style.display='flex';
+                "
+            >
+
+            <div
+                id="photoError"
+                class="photo-error"
+            >
+
+                <div class="camera">
+                    📸
+                </div>
+
+                <strong>
+                    MR. PRADEEP SIR
+                </strong>
+
+                <small>
+                    Photo not found
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MESSAGE -->
+    <section class="message">
+
+        <h2>
+            The Teacher Who Taught Us
+            To Move, Play & Believe
+        </h2>
+
+        <p>
+            Dear
+            <span class="highlight">
+                Pradeep Sir
+            </span>,
+            you taught us that Physical Education
+            is not only about running faster,
+            jumping higher or winning medals.
+
+            It is about
+            <span class="highlight">
+                discipline, teamwork, confidence,
+                resilience and sportsmanship.
+            </span>
+        </p>
+
+        <br>
+
+        <p>
+            Every game teaches a lesson,
+            every challenge builds character,
+            and every effort makes us stronger.
+
+            Thank you for helping us discover
+            the athlete and the person within us.
+        </p>
+
+    </section>
+
+
+    <!-- QUOTE -->
+    <section class="quote">
+
+        <p>
+            "A great Physical Education teacher
+            doesn't just train the body —
+            they strengthen the mind,
+            build character and teach us
+            how to rise after every fall."
+        </p>
+
+        <span>
+            — For the teacher who inspires us
+        </span>
+
+    </section>
+
+
+    <!-- SPORTS VALUES -->
+    <section class="sports-grid">
+
+        <div class="sport-card">
+
+            <div class="sport-icon">
+                🏃‍♂️
+            </div>
+
+            <h3>
+                Discipline
+            </h3>
+
+            <p>
+                You taught us that progress
+                begins with consistency,
+                dedication and discipline.
+            </p>
+
+        </div>
+
+
+        <div class="sport-card">
+
+            <div class="sport-icon">
+                🤝
+            </div>
+
+            <h3>
+                Teamwork
+            </h3>
+
+            <p>
+                You showed us that the greatest
+                victories are achieved when
+                we stand and play together.
+            </p>
+
+        </div>
+
+
+        <div class="sport-card">
+
+            <div class="sport-icon">
+                🏆
+            </div>
+
+            <h3>
+                Sportsmanship
+            </h3>
+
+            <p>
+                You taught us to respect
+                the game, our opponents,
+                and most importantly ourselves.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- STRIPE -->
+    <div class="stripe"></div>
+
+
+    <!-- SECOND QUOTE -->
+    <section class="quote">
+
+        <p>
+            "Don't count the laps,
+            count the lessons.
+            Don't fear the finish line,
+            enjoy the journey."
+        </p>
+
+        <span>
+            — The spirit of Physical Education
+        </span>
+
+    </section>
+
+
+    <!-- FINAL MESSAGE -->
+    <section class="final">
+
+        <h2>
+            Thank You, Sir! ❤️
+        </h2>
+
+        <p>
+            For every practice,
+            every game,
+            every encouraging word,
+            and every lesson beyond the playground.
+
+            <br><br>
+
+            You didn't just teach us how to play —
+            <strong>
+                you taught us how to never give up.
+            </strong>
+        </p>
+
+        <div class="signature">
+            Happy Teacher's Day,
+            <br>
+            Mr. Pradeep Sir 🏆
+        </div>
+
+    </section>
+
+</main>
+
+
+<script>
+
+/* =========================================
+   FLOATING SPORTS
+========================================= */
+
+const sports = [
+    "⚽",
+    "🏀",
+    "🏐",
+    "🏸",
+    "🏅",
+    "⭐",
+    "🥇",
+    "🏆"
+];
+
+const colours = [
+    "#c75b3d",
+    "#e3ae3f",
+    "#738567",
+    "#d79789",
+    "#4b382d"
+];
+
+
+function createSportsElement() {
+
+    const element =
+        document.createElement("div");
+
+    element.classList.add(
+        "floating-sport"
+    );
+
+    element.innerText =
+        sports[
+            Math.floor(
+                Math.random() * sports.length
+            )
+        ];
+
+    element.style.left =
+        Math.random() * 100 + "vw";
+
+    element.style.fontSize =
+        (18 + Math.random() * 25) + "px";
+
+    element.style.animationDuration =
+        (6 + Math.random() * 7) + "s";
+
+    document.body.appendChild(element);
+
+
+    setTimeout(() => {
+        element.remove();
+    }, 14000);
+}
+
+
+/* Start floating sports */
+setInterval(
+    createSportsElement,
+    900
+);
+
+
+/* =========================================
+   CLICK SPARKLES
+========================================= */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        for (
+            let i = 0;
+            i < 10;
+            i++
+        ) {
+
+            const spark =
+                document.createElement("div");
+
+            spark.classList.add(
+                "spark"
+            );
+
+            spark.innerText = "✦";
+
+            spark.style.left =
+                event.clientX + "px";
+
+            spark.style.top =
+                event.clientY + "px";
+
+            spark.style.color =
+                colours[
+                    Math.floor(
+                        Math.random() *
+                        colours.length
+                    )
+                ];
+
+
+            const angle =
+                Math.PI * 2 * i / 10;
+
+            const distance =
+                40 +
+                Math.random() * 60;
+
+
+            spark.animate(
+
+                [
+                    {
+                        transform:
+                            "translate(0,0) scale(1)",
+                        opacity: 1
+                    },
+
+                    {
+                        transform:
+                            `translate(
+                                ${Math.cos(angle) * distance}px,
+                                ${Math.sin(angle) * distance}px
+                            )
+                            scale(0)`,
+
+                        opacity: 0
+                    }
+                ],
+
+                {
+                    duration: 800,
+                    easing: "ease-out"
+                }
+
+            );
+
+
+            document.body.appendChild(
+                spark
+            );
+
+
+            setTimeout(
+                () => spark.remove(),
+                850
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   PAGE ENTRANCE ANIMATION
+========================================= */
+
+window.addEventListener(
+    "load",
+    () => {
+
+        document.body.style.opacity = "0";
+
+        document.body.animate(
+
+            [
+                {
+                    opacity: 0
+                },
+
+                {
+                    opacity: 1
+                }
+            ],
+
+            {
+                duration: 1200,
+                easing: "ease-out",
+                fill: "forwards"
+            }
+
+        );
+
+    }
+);
+
+
+/* =========================================
+   PHOTO ERROR CHECK
+========================================= */
+
+const teacherPhoto =
+    document.querySelector(".teacher-photo");
+
+teacherPhoto.addEventListener(
+    "load",
+    () => {
+
+        console.log(
+            "Pradeep Sir's photo loaded successfully."
+        );
+
+    }
+);
+
+teacherPhoto.addEventListener(
+    "error",
+    () => {
+
+        console.warn(
+            "Could not load images/pradeep.jpg"
+        );
+
+    }
+);
+
+</script>
+
+</body>
+</html>
+```

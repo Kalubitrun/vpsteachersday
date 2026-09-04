@@ -1,0 +1,1850 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Teachers' Day - Anjani Ma'am</title>
+
+<style>
+
+/* =====================================================
+   BASIC
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Comic Sans MS","Trebuchet MS",sans-serif;
+    overflow-x:hidden;
+    color:#51443e;
+}
+
+/* =====================================================
+   MAIN BACKGROUND
+===================================================== */
+
+.page{
+
+    min-height:100vh;
+
+    background:
+        radial-gradient(circle at 10% 15%, #fff 0 4%, transparent 5%),
+        radial-gradient(circle at 90% 20%, #fff 0 3%, transparent 4%),
+        linear-gradient(
+            to bottom,
+            #d9c7ff 0%,
+            #f2e9ff 35%,
+            #fff4e2 35%,
+            #fffdf5 100%
+        );
+
+    position:relative;
+    overflow:hidden;
+}
+
+
+/* =====================================================
+   MUSIC BUTTON
+===================================================== */
+
+.music-box{
+
+    position:fixed;
+
+    right:20px;
+    top:20px;
+
+    z-index:1000;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    background:rgba(255,255,255,.95);
+
+    padding:10px 15px;
+
+    border-radius:50px;
+
+    box-shadow:
+        0 8px 25px rgba(100,70,100,.18);
+}
+
+.music-box button{
+
+    width:48px;
+    height:48px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#a77bca;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.music-box button:hover{
+    transform:rotate(10deg) scale(1.1);
+}
+
+.music-label{
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    color:#70587e;
+}
+
+
+/* =====================================================
+   DECORATIVE FLOWERS
+===================================================== */
+
+.flower{
+
+    position:absolute;
+
+    font-size:45px;
+
+    animation:flowerFloat 4s ease-in-out infinite;
+
+    z-index:2;
+}
+
+.flower1{
+    left:4%;
+    top:15%;
+}
+
+.flower2{
+    right:5%;
+    top:32%;
+
+    animation-delay:1s;
+}
+
+.flower3{
+    left:7%;
+    top:50%;
+
+    animation-delay:2s;
+}
+
+.flower4{
+    right:8%;
+    top:65%;
+
+    animation-delay:.5s;
+}
+
+@keyframes flowerFloat{
+
+    0%,100%{
+        transform:translateY(0) rotate(-5deg);
+    }
+
+    50%{
+        transform:translateY(-15px) rotate(7deg);
+    }
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    text-align:center;
+
+    padding:75px 20px 35px;
+
+    position:relative;
+
+    z-index:10;
+}
+
+.hero-badge{
+
+    display:inline-block;
+
+    background:#fff;
+
+    padding:11px 25px;
+
+    border-radius:30px;
+
+    color:#8b63a7;
+
+    font-weight:bold;
+
+    box-shadow:
+        0 6px 0 #d5bce5;
+
+    transform:rotate(2deg);
+}
+
+.hero h1{
+
+    margin-top:28px;
+
+    font-size:clamp(45px,8vw,88px);
+
+    line-height:.95;
+
+    color:#9a68b7;
+
+    text-shadow:
+        3px 3px white,
+        6px 6px #f4b8d5;
+
+    animation:heroBounce 2s infinite;
+}
+
+@keyframes heroBounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+.name{
+
+    margin-top:22px;
+
+    font-size:clamp(32px,5vw,58px);
+
+    color:#ef799e;
+
+    text-shadow:2px 2px white;
+}
+
+.hero-text{
+
+    max-width:720px;
+
+    margin:20px auto;
+
+    font-size:20px;
+
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   TEACHER PHOTO
+===================================================== */
+
+.teacher{
+
+    width:min(900px,92%);
+
+    margin:20px auto 70px;
+
+    position:relative;
+
+    z-index:20;
+
+    text-align:center;
+}
+
+.photo-card{
+
+    background:#fff;
+
+    padding:25px;
+
+    border-radius:45px;
+
+    box-shadow:
+        0 20px 60px rgba(120,80,120,.15);
+
+    border:7px solid #f5d5e5;
+
+    position:relative;
+}
+
+.photo-card:before{
+
+    content:"🌸";
+
+    position:absolute;
+
+    left:-22px;
+
+    top:-25px;
+
+    font-size:50px;
+}
+
+.photo-card:after{
+
+    content:"🦋";
+
+    position:absolute;
+
+    right:-25px;
+
+    bottom:-20px;
+
+    font-size:50px;
+}
+
+.photo-title{
+
+    font-size:30px;
+
+    color:#9a68b7;
+
+    margin-bottom:20px;
+}
+
+.photo-frame{
+
+    width:min(420px,90%);
+
+    height:420px;
+
+    margin:auto;
+
+    border-radius:40px;
+
+    padding:10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd8e8,
+            #d9c7ff,
+            #ffeab8
+        );
+
+    box-shadow:
+        0 12px 30px rgba(100,70,100,.2);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.photo-frame img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:32px;
+
+    display:block;
+
+    background:#fff;
+}
+
+.placeholder{
+
+    position:absolute;
+
+    inset:10px;
+
+    background:#fff9f4;
+
+    border-radius:32px;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-direction:column;
+
+    font-size:70px;
+
+    color:#9a7a87;
+}
+
+.placeholder span{
+
+    font-size:18px;
+
+    margin-top:12px;
+
+    background:white;
+
+    padding:10px 18px;
+
+    border-radius:20px;
+}
+
+.photo-caption{
+
+    margin-top:20px;
+
+    font-size:19px;
+
+    color:#755f69;
+}
+
+
+/* =====================================================
+   STORYBOOK CLASSROOM
+===================================================== */
+
+.classroom{
+
+    width:min(1050px,94%);
+
+    height:430px;
+
+    margin:auto;
+
+    position:relative;
+
+    background:#fff3cf;
+
+    border-radius:50px 50px 15px 15px;
+
+    border:8px solid #d5a86d;
+
+    box-shadow:
+        0 18px 0 rgba(100,70,40,.12);
+
+    overflow:hidden;
+}
+
+
+/* =====================================================
+   CLASSROOM WINDOW
+===================================================== */
+
+.window{
+
+    position:absolute;
+
+    left:25px;
+
+    top:35px;
+
+    width:155px;
+
+    height:155px;
+
+    background:#bdefff;
+
+    border:12px solid #d39a66;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.window:before{
+
+    content:"☀️";
+
+    position:absolute;
+
+    top:10px;
+    right:15px;
+
+    font-size:35px;
+}
+
+.window:after{
+
+    content:"🌷 🌷 🌷";
+
+    position:absolute;
+
+    bottom:8px;
+    left:12px;
+
+    font-size:25px;
+}
+
+
+/* =====================================================
+   STORY BOARD
+===================================================== */
+
+.story-board{
+
+    position:absolute;
+
+    top:35px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:53%;
+
+    height:190px;
+
+    background:#8064a5;
+
+    border:12px solid #b67b50;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 8px 0 #805337;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+}
+
+.story-board h2{
+
+    font-size:27px;
+
+    color:#fff0a8;
+
+    margin-bottom:12px;
+}
+
+.story-board p{
+
+    font-size:18px;
+
+    line-height:1.5;
+}
+
+.story-board .icons{
+
+    margin-top:12px;
+
+    font-size:28px;
+}
+
+
+/* =====================================================
+   TOYS
+===================================================== */
+
+.toy{
+
+    position:absolute;
+
+    font-size:48px;
+
+    animation:toyBounce 2s infinite;
+}
+
+.toy1{
+
+    right:35px;
+    top:45px;
+}
+
+.toy2{
+
+    right:50px;
+    top:120px;
+
+    animation-delay:.5s;
+}
+
+.toy3{
+
+    left:210px;
+    top:35px;
+
+    animation-delay:1s;
+}
+
+@keyframes toyBounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px) rotate(5deg);
+    }
+}
+
+
+/* =====================================================
+   LITTLE CHILDREN
+===================================================== */
+
+.children{
+
+    position:absolute;
+
+    bottom:-5px;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:flex-end;
+}
+
+.child{
+
+    width:130px;
+    height:190px;
+
+    position:relative;
+}
+
+.child-head{
+
+    position:absolute;
+
+    top:0;
+    left:27px;
+
+    width:76px;
+    height:76px;
+
+    background:#f4c39d;
+
+    border:3px solid #d59068;
+
+    border-radius:50%;
+
+    z-index:3;
+}
+
+.child-hair{
+
+    position:absolute;
+
+    top:-8px;
+    left:25px;
+
+    width:80px;
+    height:48px;
+
+    background:#573b32;
+
+    border-radius:50% 50% 30% 30%;
+
+    z-index:4;
+}
+
+.eye{
+
+    position:absolute;
+
+    top:34px;
+
+    width:8px;
+    height:11px;
+
+    background:#382d29;
+
+    border-radius:50%;
+}
+
+.eye.left{
+    left:20px;
+}
+
+.eye.right{
+    right:20px;
+}
+
+.smile{
+
+    position:absolute;
+
+    top:50px;
+    left:25px;
+
+    width:25px;
+    height:12px;
+
+    border-bottom:4px solid #a04f5c;
+
+    border-radius:50%;
+}
+
+.child-body{
+
+    position:absolute;
+
+    top:76px;
+    left:16px;
+
+    width:98px;
+    height:108px;
+
+    border-radius:35px 35px 15px 15px;
+
+    background:#ef799e;
+}
+
+.child:nth-child(2) .child-body{
+    background:#72cce5;
+}
+
+.child:nth-child(3) .child-body{
+    background:#f1c65b;
+}
+
+.child:nth-child(4) .child-body{
+    background:#9f83d0;
+}
+
+.child-arm{
+
+    position:absolute;
+
+    top:90px;
+
+    width:20px;
+    height:65px;
+
+    background:#f4c39d;
+
+    border-radius:20px;
+
+    z-index:2;
+}
+
+.child-arm.left{
+
+    left:1px;
+
+    transform:rotate(25deg);
+}
+
+.child-arm.right{
+
+    right:1px;
+
+    transform:rotate(-25deg);
+}
+
+.child-love{
+
+    position:absolute;
+
+    right:-5px;
+
+    top:48px;
+
+    font-size:25px;
+
+    animation:lovePulse 1.5s infinite;
+
+    z-index:5;
+}
+
+@keyframes lovePulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.3);
+    }
+}
+
+
+/* =====================================================
+   EMOTIONAL LETTER
+===================================================== */
+
+.letter{
+
+    width:min(850px,92%);
+
+    margin:75px auto;
+
+    background:#fff;
+
+    border-radius:35px;
+
+    padding:50px 35px;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:20;
+
+    box-shadow:
+        0 20px 60px rgba(100,70,100,.13);
+
+    border:4px solid #f4d7e6;
+}
+
+.letter:before{
+
+    content:"🌸";
+
+    position:absolute;
+
+    top:-35px;
+    left:30px;
+
+    font-size:50px;
+}
+
+.letter:after{
+
+    content:"🌸";
+
+    position:absolute;
+
+    bottom:-35px;
+    right:30px;
+
+    font-size:50px;
+}
+
+.letter-icon{
+
+    font-size:55px;
+}
+
+.letter h2{
+
+    margin:15px 0 20px;
+
+    color:#ef799e;
+
+    font-size:34px;
+}
+
+.letter p{
+
+    font-family:Georgia,serif;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    color:#665952;
+}
+
+.signature{
+
+    margin-top:28px;
+
+    color:#8c62a9;
+
+    font-size:25px;
+
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   SURPRISE
+===================================================== */
+
+.surprise-button{
+
+    margin-top:30px;
+
+    border:none;
+
+    padding:16px 32px;
+
+    background:#9a68b7;
+
+    color:white;
+
+    border-radius:40px;
+
+    font-family:inherit;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 7px 0 #704b87;
+
+    transition:.2s;
+}
+
+.surprise-button:hover{
+
+    transform:translateY(-4px);
+}
+
+.surprise-button:active{
+
+    transform:translateY(4px);
+
+    box-shadow:
+        0 3px 0 #704b87;
+}
+
+.surprise{
+
+    display:none;
+
+    margin-top:30px;
+
+    padding:28px;
+
+    background:#fff2b8;
+
+    border-radius:25px;
+
+    animation:appear .7s ease;
+}
+
+.surprise.show{
+    display:block;
+}
+
+.surprise h3{
+
+    color:#8c62a9;
+
+    font-size:28px;
+
+    margin-bottom:12px;
+}
+
+.surprise p{
+
+    font-family:"Comic Sans MS",sans-serif;
+
+    font-size:18px;
+
+    line-height:1.6;
+}
+
+@keyframes appear{
+
+    from{
+        opacity:0;
+        transform:scale(.7);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    margin-top:20px;
+
+    background:#eadcff;
+
+    padding:45px 20px 60px;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:20;
+}
+
+.footer-icons{
+
+    font-size:40px;
+
+    margin-bottom:18px;
+}
+
+footer p{
+
+    color:#705b79;
+
+    font-size:18px;
+}
+
+.footer-love{
+
+    margin-top:12px;
+
+    font-size:16px;
+}
+
+
+/* =====================================================
+   FLOATING BUTTERFLIES / HEARTS
+===================================================== */
+
+.floating{
+
+    position:fixed;
+
+    bottom:-50px;
+
+    z-index:500;
+
+    pointer-events:none;
+
+    animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+
+    from{
+
+        transform:
+            translateY(0)
+            rotate(0)
+            scale(.8);
+
+        opacity:1;
+    }
+
+    to{
+
+        transform:
+            translateY(-110vh)
+            rotate(25deg)
+            scale(1.7);
+
+        opacity:0;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .music-label{
+        display:none;
+    }
+
+    .hero{
+        padding-top:90px;
+    }
+
+    .hero-text{
+        font-size:17px;
+    }
+
+    .photo-frame{
+        height:350px;
+    }
+
+    .classroom{
+        height:340px;
+    }
+
+    .story-board{
+
+        width:65%;
+
+        height:140px;
+
+        padding:15px;
+    }
+
+    .story-board h2{
+        font-size:18px;
+    }
+
+    .story-board p{
+        font-size:12px;
+    }
+
+    .story-board .icons{
+        font-size:18px;
+    }
+
+    .window{
+        transform:scale(.7);
+        transform-origin:left top;
+    }
+
+    .toy{
+        display:none;
+    }
+
+    .child{
+        transform:scale(.68);
+        margin:-15px;
+    }
+
+    .flower{
+        font-size:30px;
+    }
+
+    .letter{
+        padding:35px 20px;
+    }
+
+    .letter p{
+        font-size:17px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+<!-- =====================================================
+     MUSIC
+===================================================== -->
+
+<div class="music-box">
+
+    <button
+        id="musicButton"
+        onclick="toggleMusic()"
+    >
+        ▶️
+    </button>
+
+    <div class="music-label">
+        🎵 Little Classroom Music
+    </div>
+
+</div>
+
+
+<!--
+==========================================================
+MUSIC FILE
+
+Put your music file in the same folder and name it:
+
+music.mp3
+
+Example:
+
+anjani-teachers-day/
+│
+├── anjani-maam.html
+├── anjani-maam.jpg
+└── music.mp3
+==========================================================
+-->
+
+<audio
+    id="backgroundMusic"
+    loop
+>
+
+    <source
+        src="music.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+<!-- =====================================================
+     DECORATIVE FLOWERS
+===================================================== -->
+
+<div class="flower flower1">🌸</div>
+<div class="flower flower2">🌼</div>
+<div class="flower flower3">🌷</div>
+<div class="flower flower4">🌺</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-badge">
+
+        🦋 A Little World of Love & Learning 🦋
+
+    </div>
+
+    <h1>
+
+        Happy Teachers' Day!
+
+    </h1>
+
+    <div class="name">
+
+        🌷 Anjani Ma'am 🌷
+
+    </div>
+
+    <p class="hero-text">
+
+        To a wonderful nursery teacher who turns
+        little classrooms into magical worlds,
+        where every child can smile, learn,
+        play and dream. 🧸✨
+
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     PHOTO
+===================================================== -->
+
+<section class="teacher">
+
+    <div class="photo-card">
+
+        <div class="photo-title">
+
+            👩‍🏫 Our Wonderful Anjani Ma'am 👩‍🏫
+
+        </div>
+
+        <div class="photo-frame">
+
+            <!--
+            =================================================
+            ADD ANJANI MAAM'S PHOTO
+
+            Rename her picture:
+
+            anjani-maam.jpg
+
+            Put it beside this HTML file.
+            =================================================
+            -->
+
+            <img
+                src="images/anjani.jpeg"
+                alt="Anjani Ma'am"
+                onerror="photoError()"
+            >
+
+            <div
+                class="placeholder"
+                id="placeholder"
+            >
+
+                👩‍🏫
+
+                <span>
+                    Add Anjani Ma'am's Photo
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="photo-caption">
+
+            🌸 A smile that makes little hearts feel safe. 🌸
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NURSERY STORYBOOK CLASSROOM
+===================================================== -->
+
+<section class="classroom">
+
+
+    <!-- WINDOW -->
+
+    <div class="window"></div>
+
+
+    <!-- STORY BOARD -->
+
+    <div class="story-board">
+
+        <h2>
+
+            📖 Anjani Ma'am's Little Classroom
+
+        </h2>
+
+        <p>
+
+            Once upon a time...
+            there was a classroom full of
+            smiles, stories and tiny dreams. ❤️
+
+        </p>
+
+        <div class="icons">
+
+            🧸 🌈 🖍️ ⭐ 🌸
+
+        </div>
+
+    </div>
+
+
+    <!-- TOYS -->
+
+    <div class="toy toy1">
+        🧸
+    </div>
+
+    <div class="toy toy2">
+        🪁
+    </div>
+
+    <div class="toy toy3">
+        ⭐
+    </div>
+
+
+    <!-- CHILDREN -->
+
+    <div class="children">
+
+
+        <!-- CHILD 1 -->
+
+        <div class="child">
+
+            <div class="child-hair"></div>
+
+            <div class="child-head">
+
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+
+                <div class="smile"></div>
+
+            </div>
+
+            <div class="child-body"></div>
+
+            <div class="child-arm left"></div>
+            <div class="child-arm right"></div>
+
+            <div class="child-love">
+                ❤️
+            </div>
+
+        </div>
+
+
+        <!-- CHILD 2 -->
+
+        <div class="child">
+
+            <div class="child-hair"></div>
+
+            <div class="child-head">
+
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+
+                <div class="smile"></div>
+
+            </div>
+
+            <div class="child-body"></div>
+
+            <div class="child-arm left"></div>
+            <div class="child-arm right"></div>
+
+            <div class="child-love">
+                🌸
+            </div>
+
+        </div>
+
+
+        <!-- CHILD 3 -->
+
+        <div class="child">
+
+            <div class="child-hair"></div>
+
+            <div class="child-head">
+
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+
+                <div class="smile"></div>
+
+            </div>
+
+            <div class="child-body"></div>
+
+            <div class="child-arm left"></div>
+            <div class="child-arm right"></div>
+
+            <div class="child-love">
+                ⭐
+            </div>
+
+        </div>
+
+
+        <!-- CHILD 4 -->
+
+        <div class="child">
+
+            <div class="child-hair"></div>
+
+            <div class="child-head">
+
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+
+                <div class="smile"></div>
+
+            </div>
+
+            <div class="child-body"></div>
+
+            <div class="child-arm left"></div>
+            <div class="child-arm right"></div>
+
+            <div class="child-love">
+                💖
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EMOTIONAL LETTER
+===================================================== -->
+
+<section class="letter">
+
+    <div class="letter-icon">
+
+        💌
+
+    </div>
+
+    <h2>
+
+        Dear Anjani Ma'am,
+
+    </h2>
+
+    <p>
+
+        Little children may not always know
+        how to say <strong>Thank You</strong>...
+
+        <br><br>
+
+        But their smiles,
+        their tiny hugs,
+        their excited little voices,
+        and their sparkling eyes
+        say it every day.
+
+        <br><br>
+
+        You don't just teach them
+        their ABCs and 123s.
+
+        <br>
+
+        <strong>
+            You teach them kindness.
+        </strong>
+
+        <br>
+
+        <strong>
+            You teach them confidence.
+        </strong>
+
+        <br>
+
+        <strong>
+            You teach them how beautiful
+            the world can be.
+        </strong>
+
+        <br><br>
+
+        Every story you tell,
+        every little hand you hold,
+        every tear you wipe,
+        and every smile you create
+        becomes a precious childhood memory.
+
+        <br><br>
+
+        <strong>
+            Thank you for making their little world
+            a happier and brighter place. ❤️
+        </strong>
+
+    </p>
+
+
+    <div class="signature">
+
+        With tiny hugs & lots of love,
+
+        <br>
+
+        🧒👧 Your Little Learners 💕
+
+
+    </div>
+
+
+    <button
+        class="surprise-button"
+        onclick="showSurprise()"
+    >
+
+        🎁 Open a Little Surprise
+
+    </button>
+
+
+    <div
+        class="surprise"
+        id="surprise"
+    >
+
+        <h3>
+
+            🌈 A Message From Little Hearts 🌈
+
+        </h3>
+
+        <p>
+
+            "Dear Ma'am,
+
+            <br><br>
+
+            Thank you for teaching us,
+            playing with us,
+            listening to our little stories
+            and making us smile.
+
+            <br><br>
+
+            We may be small,
+            but our love for you is VERY BIG! ❤️
+
+            <br><br>
+
+            Happy Teachers' Day, Anjani Ma'am!
+
+            <br><br>
+
+            🧸🌸🧒👧❤️🌈
+
+            "
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-icons">
+
+        🦋 🌸 🧸 🌈 🖍️ ❤️ 👩‍🏫 ⭐
+
+    </div>
+
+    <p>
+
+        Happy Teachers' Day,
+        <strong>Anjani Ma'am</strong>! 🌷
+
+    </p>
+
+    <p class="footer-love">
+
+        Thank you for filling little hearts
+        with love, laughter and learning. 💕
+
+    </p>
+
+</footer>
+
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   MUSIC
+===================================================== */
+
+const music =
+    document.getElementById("backgroundMusic");
+
+const musicButton =
+    document.getElementById("musicButton");
+
+
+function toggleMusic(){
+
+    if(music.paused){
+
+        music.play();
+
+        musicButton.innerHTML = "⏸️";
+
+    }else{
+
+        music.pause();
+
+        musicButton.innerHTML = "▶️";
+
+    }
+
+}
+
+
+/* =====================================================
+   PHOTO FALLBACK
+===================================================== */
+
+function photoError(){
+
+    document.querySelector(
+        ".photo-frame img"
+    ).style.display = "none";
+
+    document.getElementById(
+        "placeholder"
+    ).style.display = "flex";
+
+}
+
+
+/* =====================================================
+   SURPRISE
+===================================================== */
+
+function showSurprise(){
+
+    const surprise =
+        document.getElementById("surprise");
+
+    surprise.classList.toggle("show");
+
+    createFloating(35);
+
+}
+
+
+/* =====================================================
+   FLOATING ELEMENTS
+===================================================== */
+
+function createFloating(number){
+
+    const symbols = [
+
+        "❤️",
+        "💖",
+        "💕",
+        "🌸",
+        "🌷",
+        "🦋",
+        "✨",
+        "⭐",
+        "🧸"
+
+    ];
+
+
+    for(
+        let i=0;
+        i<number;
+        i++
+    ){
+
+        const item =
+            document.createElement("div");
+
+        item.className =
+            "floating";
+
+        item.innerText =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+        item.style.left =
+            Math.random()*100+"vw";
+
+        item.style.fontSize =
+            (18 + Math.random()*28)+"px";
+
+        item.style.animationDuration =
+            (4 + Math.random()*4)+"s";
+
+        document.body.appendChild(item);
+
+
+        setTimeout(()=>{
+
+            item.remove();
+
+        },8500);
+
+    }
+
+}
+
+
+/* =====================================================
+   AUTOMATIC BUTTERFLIES
+===================================================== */
+
+setInterval(()=>{
+
+    createFloating(1);
+
+},1500);
+
+
+/* =====================================================
+   CLICK SPARKLES
+===================================================== */
+
+document.addEventListener(
+    "click",
+    function(e){
+
+        if(
+            e.target.tagName === "BUTTON"
+        ){
+            return;
+        }
+
+
+        const sparkle =
+            document.createElement("div");
+
+        sparkle.innerText =
+            "✨";
+
+        sparkle.style.position =
+            "fixed";
+
+        sparkle.style.left =
+            e.clientX+"px";
+
+        sparkle.style.top =
+            e.clientY+"px";
+
+        sparkle.style.fontSize =
+            "25px";
+
+        sparkle.style.pointerEvents =
+            "none";
+
+        sparkle.style.zIndex =
+            "9999";
+
+
+        document.body.appendChild(
+            sparkle
+        );
+
+
+        sparkle.animate(
+
+            [
+
+                {
+                    transform:"scale(.5)",
+                    opacity:1
+                },
+
+                {
+                    transform:
+                        "scale(2) translateY(-35px)",
+                    opacity:0
+                }
+
+            ],
+
+            {
+                duration:700,
+                easing:"ease-out"
+            }
+
+        );
+
+
+        setTimeout(()=>{
+
+            sparkle.remove();
+
+        },700);
+
+    }
+);
+
+</script>
+
+</body>
+</html>
+```

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Happy Teachers' Day | Mrs. Archana Mishra</title>
+
+  <!-- Hindi / Devanagari Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Noto Sans Devanagari", sans-serif;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 25%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.12), transparent 25%),
+        linear-gradient(135deg, #650000, #a90000, #e40000);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       BACKGROUND PARTICLES
+    ========================== */
+
+    .background {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      animation: float 8s infinite ease-in-out;
+    }
+
+    .circle:nth-child(1) {
+      width: 180px;
+      height: 180px;
+      left: -50px;
+      top: 10%;
+    }
+
+    .circle:nth-child(2) {
+      width: 280px;
+      height: 280px;
+      right: -100px;
+      top: 40%;
+      animation-delay: 2s;
+    }
+
+    .circle:nth-child(3) {
+      width: 120px;
+      height: 120px;
+      left: 30%;
+      bottom: -40px;
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        transform: translateY(-40px) scale(1.08);
+      }
+    }
+
+    /* =========================
+       MAIN CONTAINER
+    ========================== */
+
+    .container {
+      position: relative;
+      z-index: 2;
+      width: 92%;
+      max-width: 1050px;
+      margin: auto;
+      padding: 35px 0 60px;
+    }
+
+    /* =========================
+       TOP BADGE
+    ========================== */
+
+    .badge {
+      width: fit-content;
+      margin: auto;
+      padding: 9px 22px;
+      border: 1px solid rgba(255,255,255,0.6);
+      border-radius: 50px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+      font-size: 14px;
+      letter-spacing: 2px;
+      animation: fadeDown 1s ease;
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px 30px;
+    }
+
+    .small-title {
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #ffe5e5;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .main-title {
+      margin-top: 12px;
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(55px, 10vw, 105px);
+      color: white;
+      line-height: 1;
+      text-shadow:
+        0 0 10px rgba(255,255,255,0.5),
+        0 0 30px rgba(255,120,120,0.4);
+      animation: titleGlow 2.5s infinite alternate;
+    }
+
+    @keyframes titleGlow {
+      from {
+        text-shadow:
+          0 0 10px rgba(255,255,255,0.3),
+          0 0 25px rgba(255,100,100,0.3);
+      }
+      to {
+        text-shadow:
+          0 0 20px rgba(255,255,255,0.9),
+          0 0 50px rgba(255,120,120,0.8);
+      }
+    }
+
+    .teacher-name {
+      margin-top: 15px;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .teacher-name span {
+      color: #ffd1d1;
+    }
+
+    .divider {
+      width: 120px;
+      height: 3px;
+      background: white;
+      margin: 25px auto;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "✦";
+      position: absolute;
+      top: -13px;
+      color: white;
+      font-size: 18px;
+    }
+
+    .divider::before {
+      left: -25px;
+    }
+
+    .divider::after {
+      right: -25px;
+    }
+
+    /* =========================
+       PHOTO CARD
+    ========================== */
+
+    .photo-section {
+      display: flex;
+      justify-content: center;
+      margin: 25px 0 40px;
+    }
+
+    .photo-frame {
+      width: min(330px, 85vw);
+      height: 400px;
+      padding: 10px;
+      background: white;
+      border-radius: 25px;
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.35),
+        0 0 35px rgba(255,255,255,0.25);
+      transform: rotate(-2deg);
+      transition: 0.5s ease;
+      animation: photoAppear 1.5s ease;
+    }
+
+    .photo-frame:hover {
+      transform: rotate(0deg) scale(1.04);
+    }
+
+    @keyframes photoAppear {
+      from {
+        opacity: 0;
+        transform: scale(0.7) rotate(-10deg);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) rotate(-2deg);
+      }
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+      display: block;
+    }
+
+    /* =========================
+       MESSAGE CARD
+    ========================== */
+
+    .message-card {
+      max-width: 850px;
+      margin: auto;
+      padding: 40px 35px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.35);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .message-card h2 {
+      font-size: 30px;
+      margin-bottom: 22px;
+    }
+
+    .message-card p {
+      font-size: 19px;
+      line-height: 2;
+      color: #fff7f7;
+    }
+
+    .highlight {
+      color: #ffd0d0;
+      font-weight: 700;
+    }
+
+    /* =========================
+       HINDI QUOTES
+    ========================== */
+
+    .quotes {
+      margin-top: 35px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .quote {
+      padding: 28px 20px;
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: 0.4s ease;
+    }
+
+    .quote:hover {
+      background: white;
+      color: #9b0000;
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    }
+
+    .quote p {
+      font-size: 18px;
+      line-height: 1.8;
+      font-weight: 600;
+    }
+
+    /* =========================
+       SPECIAL HINDI LINE
+    ========================== */
+
+    .special-line {
+      text-align: center;
+      margin: 55px auto 30px;
+      max-width: 850px;
+    }
+
+    .special-line .hindi {
+      font-size: clamp(25px, 4vw, 38px);
+      line-height: 1.7;
+      font-weight: 700;
+    }
+
+    .special-line .english {
+      margin-top: 15px;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      color: #ffdcdc;
+      font-size: 18px;
+    }
+
+    /* =========================
+       BUTTON
+    ========================== */
+
+    .wish-button {
+      display: block;
+      margin: 35px auto 0;
+      padding: 15px 35px;
+      border: none;
+      border-radius: 50px;
+      background: white;
+      color: #a00000;
+      font-size: 17px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .wish-button:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 30px white;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      text-align: center;
+      margin-top: 55px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      color: #ffe1e1;
+      font-size: 15px;
+    }
+
+    /* =========================
+       FLOATING PETALS
+    ========================== */
+
+    .petal {
+      position: fixed;
+      top: -30px;
+      color: white;
+      font-size: 20px;
+      z-index: 10;
+      pointer-events: none;
+      animation: fall linear forwards;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      to {
+        transform:
+          translateY(110vh)
+          translateX(100px)
+          rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 750px) {
+      .quotes {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-frame {
+        height: 370px;
+      }
+
+      .message-card {
+        padding: 30px 20px;
+      }
+
+      .message-card p {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div class="background">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+
+  <main class="container">
+
+    <!-- Badge -->
+    <div class="badge">
+      ✦ विशेष समर्पण ✦
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+
+      <div class="small-title">
+        Happy Teachers' Day
+      </div>
+
+      <h1 class="main-title">
+        Thank You
+      </h1>
+
+      <h2 class="teacher-name">
+        Mrs. <span>Archana Mishra</span>
+      </h2>
+
+      <div class="divider"></div>
+
+      <p style="font-size:18px; color:#ffeaea;">
+        ज्ञान • संस्कार • साहित्य • प्रेरणा
+      </p>
+
+    </section>
+
+    <!-- =========================
+         TEACHER PHOTO
+         Replace image filename
+    ========================== -->
+
+    <section class="photo-section">
+
+      <div class="photo-frame">
+
+        <!--
+          YOUR PHOTO GOES HERE
+
+          Put your teacher's photo in the same folder
+          and name it: archana-mishra.jpg
+        -->
+
+        <img
+          src="images/archanamaam.jpeg"
+          alt="Mrs. Archana Mishra">
+
+      </div>
+
+    </section>
+
+    <!-- Message -->
+    <section class="message-card">
+
+      <h2>🌹 आदरणीय मैम के लिए 🌹</h2>
+
+      <p>
+        हिंदी केवल एक भाषा नहीं,
+        बल्कि हमारी <span class="highlight">भावनाओं, संस्कृति और संस्कारों</span>
+        की पहचान है।
+        <br><br>
+
+        आपने हमें केवल शब्दों को पढ़ना नहीं सिखाया,
+        बल्कि उन शब्दों में छिपी
+        <span class="highlight">भावनाओं को समझना</span> भी सिखाया।
+        <br><br>
+
+        आपकी शिक्षा ने हमारी सोच को दिशा दी,
+        हमारी भाषा को सुंदर बनाया
+        और हमारे व्यक्तित्व में
+        आत्मविश्वास का रंग भरा।
+      </p>
+
+    </section>
+
+    <!-- Hindi Quotes -->
+    <section class="quotes">
+
+      <div class="quote">
+        <p>
+          "शब्दों को अर्थ आपने दिया,<br>
+          सपनों को उड़ान आपने दी।"
+        </p>
+      </div>
+
+      <div class="quote">
+        <p>
+          "हिंदी के हर अक्षर में<br>
+          आपने ज्ञान की रोशनी जलाई।"
+        </p>
+      </div>
+
+      <div class="quote">
+        <p>
+          "गुरु वह दीप है,<br>
+          जो स्वयं जलकर<br>
+          दूसरों का मार्ग प्रकाशित करता है।"
+        </p>
+      </div>
+
+    </section>
+
+    <!-- Special Aesthetic Line -->
+    <section class="special-line">
+
+      <div class="hindi">
+        "जहाँ शब्दों में संवेदना हो,<br>
+        वहाँ शिक्षा जीवन बन जाती है।"
+      </div>
+
+      <div class="english">
+        — Because a great teacher doesn't just teach a subject,
+        they leave a beautiful mark on the heart.
+      </div>
+
+    </section>
+
+    <!-- Button -->
+    <button class="wish-button" onclick="showWish()">
+      ❤️ एक विशेष संदेश
+    </button>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        Made with ❤️ and respect for
+        <strong>Mrs. Archana Mishra</strong>
+      </p>
+
+      <p style="margin-top:8px;">
+        ✦ Happy Teachers' Day ✦
+      </p>
+    </footer>
+
+  </main>
+
+  <script>
+
+    /* =========================
+       SPECIAL WISH
+    ========================== */
+
+    function showWish() {
+
+      alert(
+        "🌹 आदरणीय Mrs. Archana Mishra Ma'am 🌹\n\n" +
+        "आपका मार्गदर्शन हमारे लिए अनमोल है।\n" +
+        "हिंदी के शब्दों से लेकर जीवन के मूल्यों तक,\n" +
+        "आपने हमें बहुत कुछ सिखाया है।\n\n" +
+        "Happy Teachers' Day! ❤️"
+      );
+
+      createPetals(25);
+    }
+
+
+    /* =========================
+       FLOATING PETALS
+    ========================== */
+
+    function createPetal() {
+
+      const petal = document.createElement("div");
+
+      petal.className = "petal";
+
+      const symbols = ["❤", "✦", "❀", "🌹", "•"];
+
+      petal.innerHTML =
+        symbols[Math.floor(Math.random() * symbols.length)];
+
+      petal.style.left =
+        Math.random() * 100 + "vw";
+
+      petal.style.fontSize =
+        (12 + Math.random() * 18) + "px";
+
+      petal.style.animationDuration =
+        (4 + Math.random() * 6) + "s";
+
+      document.body.appendChild(petal);
+
+      setTimeout(() => {
+        petal.remove();
+      }, 10000);
+    }
+
+
+    function createPetals(amount = 1) {
+
+      for (let i = 0; i < amount; i++) {
+
+        setTimeout(() => {
+          createPetal();
+        }, i * 100);
+
+      }
+
+    }
+
+
+    /* Automatically create petals */
+
+    setInterval(() => {
+
+      createPetal();
+
+    }, 900);
+
+
+    /* =========================
+       MOUSE SPARKLE EFFECT
+    ========================== */
+
+    document.addEventListener("mousemove", function(e) {
+
+      if (Math.random() > 0.88) {
+
+        const sparkle = document.createElement("div");
+
+        sparkle.innerHTML = "✦";
+
+        sparkle.style.position = "fixed";
+        sparkle.style.left = e.clientX + "px";
+        sparkle.style.top = e.clientY + "px";
+        sparkle.style.color = "white";
+        sparkle.style.pointerEvents = "none";
+        sparkle.style.zIndex = "999";
+        sparkle.style.fontSize = "12px";
+
+        document.body.appendChild(sparkle);
+
+        sparkle.animate(
+          [
+            {
+              transform: "scale(0)",
+              opacity: 1
+            },
+            {
+              transform: "scale(1.8) translateY(-20px)",
+              opacity: 0
+            }
+          ],
+          {
+            duration: 700,
+            easing: "ease-out"
+          }
+        );
+
+        setTimeout(() => {
+          sparkle.remove();
+        }, 700);
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,914 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Teacher's Day | Shivam Sir</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    font-family:'Inter',sans-serif;
+    color:#fff;
+    background:#050914;
+    overflow-x:hidden;
+}
+
+/* ================= BACKGROUND ================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-5;
+
+    background:
+        radial-gradient(circle at 15% 20%,rgba(30,100,255,.18),transparent 30%),
+        radial-gradient(circle at 85% 75%,rgba(255,183,77,.12),transparent 30%),
+        linear-gradient(135deg,#030611,#081224 55%,#02050c);
+}
+
+.grid{
+    position:fixed;
+    inset:0;
+    z-index:-4;
+    opacity:.12;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
+
+    background-size:55px 55px;
+
+    mask-image:linear-gradient(to bottom,black,transparent);
+}
+
+/* ================= FLOATING LIGHTS ================= */
+
+.light{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(80px);
+    z-index:-3;
+    pointer-events:none;
+}
+
+.light.one{
+    width:280px;
+    height:280px;
+    background:#155eef;
+    top:-100px;
+    left:-100px;
+}
+
+.light.two{
+    width:250px;
+    height:250px;
+    background:#d99220;
+    right:-100px;
+    bottom:5%;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:28px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:20;
+}
+
+.logo{
+    font-size:14px;
+    letter-spacing:4px;
+    font-weight:700;
+    color:#e8c77b;
+}
+
+.nav-date{
+    font-size:12px;
+    letter-spacing:2px;
+    color:rgba(255,255,255,.55);
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    padding:130px 7% 70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-inner{
+    width:100%;
+    max-width:1200px;
+
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:80px;
+    align-items:center;
+}
+
+/* ================= LEFT ================= */
+
+.eyebrow{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    color:#e8c77b;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:4px;
+    text-transform:uppercase;
+
+    margin-bottom:24px;
+}
+
+.eyebrow::before{
+    content:"";
+    width:45px;
+    height:1px;
+    background:#e8c77b;
+}
+
+h1{
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(58px,7vw,105px);
+    line-height:.92;
+    font-weight:400;
+    letter-spacing:-3px;
+}
+
+h1 span{
+    display:block;
+    color:#e8c77b;
+}
+
+.intro{
+    margin-top:30px;
+    max-width:570px;
+
+    font-size:18px;
+    line-height:1.9;
+    font-weight:300;
+    color:rgba(255,255,255,.67);
+}
+
+.teacher-name{
+    margin-top:35px;
+
+    font-size:clamp(30px,4vw,48px);
+    font-weight:700;
+    letter-spacing:-1px;
+}
+
+.teacher-role{
+    margin-top:8px;
+
+    color:#e8c77b;
+    font-size:14px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+/* ================= PHOTO ================= */
+
+.photo-area{
+    display:flex;
+    justify-content:center;
+    position:relative;
+}
+
+.photo-card{
+    width:min(390px,85vw);
+    height:500px;
+
+    position:relative;
+
+    padding:10px;
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(145deg,
+        rgba(232,199,123,.9),
+        rgba(255,255,255,.15) 35%,
+        rgba(232,199,123,.4));
+
+    box-shadow:
+        0 40px 100px rgba(0,0,0,.6),
+        0 0 80px rgba(232,199,123,.08);
+
+    transform:rotate(2deg);
+
+    transition:.6s ease;
+}
+
+.photo-card:hover{
+    transform:rotate(0deg) translateY(-10px);
+}
+
+.photo-inner{
+    height:100%;
+    width:100%;
+
+    overflow:hidden;
+    border-radius:17px;
+
+    background:#111827;
+    position:relative;
+}
+
+.photo-inner::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 55%,
+            rgba(0,0,0,.7)
+        );
+}
+
+.teacher-photo{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    object-position:center top;
+
+    display:block;
+
+    transition:transform 1s ease;
+}
+
+.photo-card:hover .teacher-photo{
+    transform:scale(1.04);
+}
+
+/* photo label */
+
+.photo-label{
+    position:absolute;
+    bottom:25px;
+    left:28px;
+    z-index:5;
+}
+
+.photo-label small{
+    display:block;
+    color:#e8c77b;
+    letter-spacing:3px;
+    font-size:10px;
+    margin-bottom:5px;
+}
+
+.photo-label strong{
+    font-size:22px;
+}
+
+/* ================= DECORATION ================= */
+
+.number{
+    position:absolute;
+    top:-40px;
+    right:-25px;
+
+    font-family:'DM Serif Display',serif;
+    font-size:130px;
+
+    color:rgba(255,255,255,.025);
+
+    pointer-events:none;
+}
+
+/* ================= MESSAGE ================= */
+
+.message-section{
+    padding:80px 7% 120px;
+}
+
+.message-box{
+    max-width:1000px;
+    margin:auto;
+
+    padding:70px;
+
+    border-top:1px solid rgba(232,199,123,.35);
+    border-bottom:1px solid rgba(232,199,123,.2);
+
+    text-align:center;
+}
+
+.message-box .small{
+    color:#e8c77b;
+    font-size:12px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+}
+
+.message-box h2{
+    margin-top:20px;
+
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(38px,5vw,62px);
+    font-weight:400;
+}
+
+.message-box p{
+    max-width:760px;
+    margin:28px auto 0;
+
+    font-size:17px;
+    line-height:2;
+
+    color:rgba(255,255,255,.62);
+}
+
+/* ================= QUOTE ================= */
+
+.quote{
+    padding:100px 7%;
+
+    text-align:center;
+}
+
+.quote-mark{
+    font-family:'DM Serif Display',serif;
+    font-size:100px;
+    line-height:.5;
+    color:#e8c77b;
+    opacity:.5;
+}
+
+.quote p{
+    max-width:800px;
+    margin:20px auto;
+
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(25px,4vw,42px);
+    line-height:1.35;
+}
+
+.quote span{
+    color:#e8c77b;
+    font-size:12px;
+    letter-spacing:4px;
+}
+
+/* ================= BUTTON ================= */
+
+.button-area{
+    text-align:center;
+    padding-bottom:100px;
+}
+
+.celebrate{
+    position:relative;
+
+    border:1px solid rgba(232,199,123,.6);
+    background:rgba(232,199,123,.06);
+
+    color:#e8c77b;
+
+    padding:17px 34px;
+
+    border-radius:50px;
+
+    font-family:inherit;
+    font-weight:600;
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+    transition:.4s ease;
+}
+
+.celebrate:hover{
+    background:#e8c77b;
+    color:#07101e;
+
+    box-shadow:
+        0 0 35px rgba(232,199,123,.25);
+
+    transform:translateY(-3px);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    text-align:center;
+
+    padding:30px;
+
+    border-top:1px solid rgba(255,255,255,.06);
+
+    color:rgba(255,255,255,.35);
+
+    font-size:12px;
+    letter-spacing:1px;
+}
+
+/* ================= PARTICLES ================= */
+
+.particle{
+    position:fixed;
+
+    width:3px;
+    height:3px;
+
+    border-radius:50%;
+
+    background:#e8c77b;
+
+    pointer-events:none;
+    z-index:-1;
+
+    animation:rise linear forwards;
+}
+
+@keyframes rise{
+    from{
+        transform:translateY(0);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.8;
+    }
+
+    to{
+        transform:translateY(-100vh);
+        opacity:0;
+    }
+}
+
+/* ================= REVEAL ================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:1s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:850px){
+
+    nav{
+        padding:22px 6%;
+    }
+
+    .nav-date{
+        display:none;
+    }
+
+    .hero{
+        padding:120px 6% 70px;
+    }
+
+    .hero-inner{
+        grid-template-columns:1fr;
+        gap:60px;
+        text-align:center;
+    }
+
+    .eyebrow{
+        justify-content:center;
+    }
+
+    .intro{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .teacher-role{
+        margin-bottom:10px;
+    }
+
+    .photo-area{
+        order:-1;
+    }
+
+    .photo-card{
+        height:430px;
+    }
+
+    .message-box{
+        padding:55px 20px;
+    }
+}
+
+@media(max-width:450px){
+
+    h1{
+        font-size:53px;
+    }
+
+    .photo-card{
+        height:390px;
+    }
+
+    .intro{
+        font-size:16px;
+    }
+
+    .message-box h2{
+        font-size:38px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="grid"></div>
+
+<div class="light one"></div>
+<div class="light two"></div>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="logo">A TRIBUTE TO A TEACHER</div>
+    <div class="nav-date">05 • SEPTEMBER • 2026</div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-inner">
+
+    <!-- TEXT -->
+
+    <div class="hero-text reveal">
+
+        <div class="eyebrow">
+            Teachers' Day
+        </div>
+
+        <h1>
+            Happy
+            <span>Teacher's Day</span>
+        </h1>
+
+        <p class="intro">
+            To the teacher who turns lines of code into ideas,
+            problems into possibilities, and classrooms into
+            places where curiosity comes alive.
+        </p>
+
+        <div class="teacher-name">
+            Shivam Sir
+        </div>
+
+        <div class="teacher-role">
+            Computer Teacher
+        </div>
+
+    </div>
+
+
+    <!-- PHOTO -->
+
+    <div class="photo-area reveal">
+
+        <div class="number">
+            05
+        </div>
+
+        <div class="photo-card">
+
+            <div class="photo-inner">
+
+                <img
+                    src="/images/shivam.jpg"
+                    alt="Shivam Sir"
+                    class="teacher-photo"
+                >
+
+                <div class="photo-label">
+
+                    <small>WITH GRATITUDE</small>
+
+                    <strong>Shivam Sir</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- MESSAGE -->
+
+<section class="message-section reveal">
+
+<div class="message-box">
+
+    <div class="small">
+        A Message From Your Students
+    </div>
+
+    <h2>
+        Thank You For Inspiring Us.
+    </h2>
+
+    <p>
+        Dear Shivam Sir, your lessons go beyond computers and
+        technology. You encourage us to ask questions, solve
+        problems, experiment with new ideas and never be afraid
+        of making mistakes.
+        <br><br>
+        Your patience, guidance and dedication make a difference
+        every single day. We are grateful for everything you teach
+        us — both inside and outside the classroom.
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- QUOTE -->
+
+<section class="quote reveal">
+
+    <div class="quote-mark">“</div>
+
+    <p>
+        The best teachers don't just teach lessons.
+        They leave a lasting impression on the people
+        they teach.
+    </p>
+
+    <span>— WITH RESPECT & GRATITUDE</span>
+
+</section>
+
+
+<!-- BUTTON -->
+
+<div class="button-area reveal">
+
+    <button class="celebrate" onclick="celebrate()">
+        ✦ A Little Surprise For Shivam Sir
+    </button>
+
+</div>
+
+
+<footer>
+    MADE WITH ❤️ FOR SHIVAM SIR • HAPPY TEACHER'S DAY
+</footer>
+
+
+<script>
+
+/* ================= PAGE REVEAL ================= */
+
+const reveals =
+document.querySelectorAll(".reveal");
+
+const observer =
+new IntersectionObserver(
+(entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+},
+{
+    threshold:.15
+});
+
+reveals.forEach(el=>{
+    observer.observe(el);
+});
+
+
+/* ================= FLOATING PARTICLES ================= */
+
+function createParticle(){
+
+    const p =
+    document.createElement("div");
+
+    p.className="particle";
+
+    p.style.left =
+    Math.random()*100+"vw";
+
+    p.style.bottom="-10px";
+
+    const size =
+    Math.random()*3+1;
+
+    p.style.width=size+"px";
+    p.style.height=size+"px";
+
+    p.style.animationDuration =
+    (5+Math.random()*7)+"s";
+
+    document.body.appendChild(p);
+
+    setTimeout(()=>{
+        p.remove();
+    },12000);
+}
+
+setInterval(createParticle,500);
+
+
+/* ================= CELEBRATION ================= */
+
+function celebrate(){
+
+    const messages=[
+        "Thank You, Shivam Sir ❤️",
+        "You Inspire Us ✨",
+        "Happy Teacher's Day 🎓",
+        "You're An Amazing Teacher 🌟"
+    ];
+
+    const popup=
+    document.createElement("div");
+
+    popup.innerHTML=`
+        <div style="
+            position:fixed;
+            inset:0;
+            z-index:1000;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:rgba(2,5,12,.82);
+            backdrop-filter:blur(12px);
+            animation:fadeIn .4s ease;
+        ">
+
+            <div style="
+                text-align:center;
+                padding:55px 30px;
+                max-width:600px;
+                width:90%;
+                border:1px solid rgba(232,199,123,.5);
+                border-radius:25px;
+                background:linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.09),
+                    rgba(255,255,255,.025)
+                );
+                box-shadow:0 30px 100px rgba(0,0,0,.6);
+            ">
+
+                <div style="
+                    font-size:55px;
+                    margin-bottom:20px;
+                ">
+                    🎓
+                </div>
+
+                <h2 style="
+                    font-family:'DM Serif Display',serif;
+                    font-size:clamp(34px,6vw,55px);
+                    font-weight:400;
+                    color:#e8c77b;
+                    margin-bottom:20px;
+                ">
+                    ${messages[
+                        Math.floor(
+                            Math.random()*messages.length
+                        )
+                    ]}
+                </h2>
+
+                <p style="
+                    color:rgba(255,255,255,.65);
+                    line-height:1.8;
+                    font-size:16px;
+                ">
+                    Thank you for making learning
+                    exciting, meaningful and unforgettable.
+                </p>
+
+                <button onclick="this.closest('div[style]').parentElement.remove()"
+                style="
+                    margin-top:30px;
+                    padding:12px 28px;
+                    border-radius:30px;
+                    border:1px solid #e8c77b;
+                    background:transparent;
+                    color:#e8c77b;
+                    cursor:pointer;
+                    font-weight:600;
+                ">
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+    `;
+
+    document.body.appendChild(popup);
+
+    /* Confetti */
+
+    for(let i=0;i<80;i++){
+
+        const confetti=
+        document.createElement("div");
+
+        confetti.style.position="fixed";
+        confetti.style.width="6px";
+        confetti.style.height="6px";
+        confetti.style.left="50%";
+        confetti.style.top="50%";
+        confetti.style.zIndex="1100";
+        confetti.style.background=
+        `hsl(${Math.random()*360},80%,65%)`;
+        confetti.style.borderRadius="50%";
+
+        const angle=
+        Math.random()*Math.PI*2;
+
+        const distance=
+        100+Math.random()*500;
+
+        const x=
+        Math.cos(angle)*distance;
+
+        const y=
+        Math.sin(angle)*distance;
+
+        confetti.animate(
+            [
+                {
+                    transform:"translate(0,0) scale(1)",
+                    opacity:1
+                },
+                {
+                    transform:
+                    `translate(${x}px,${y}px) rotate(720deg)`,
+                    opacity:0
+                }
+            ],
+            {
+                duration:1000+Math.random()*1000,
+                easing:"cubic-bezier(.1,.7,.2,1)"
+            }
+        );
+
+        document.body.appendChild(confetti);
+
+        setTimeout(()=>{
+            confetti.remove();
+        },2200);
+    }
+}
+
+</script>
+
+</body>
+</html>
+```
