@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ragini Ma'am - Our Mother Teacher</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #fff4d6, #ffe4f0, #e1f5ff);
+    color: #4a2c20;
+}
+
+/* Floating background hearts */
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 25px;
+    animation: floatHeart linear infinite;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Main container */
+.container {
+    position: relative;
+    z-index: 2;
+    width: 92%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 35px 0 50px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 15px 40px rgba(120,70,80,0.15);
+    backdrop-filter: blur(8px);
+}
+
+.badge {
+    display: inline-block;
+    background: #ff8fab;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.header h1 {
+    font-size: clamp(40px, 7vw, 72px);
+    color: #9c4d69;
+    margin-bottom: 8px;
+}
+
+.header h2 {
+    color: #7a5260;
+    font-size: clamp(20px, 3vw, 30px);
+}
+
+.header p {
+    max-width: 750px;
+    margin: 20px auto 0;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Teacher section */
+.teacher-section {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Teacher card */
+.teacher-card {
+    background: rgba(255,255,255,0.88);
+    border-radius: 30px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(80,50,50,0.15);
+    transition: 0.4s;
+}
+
+.teacher-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Photo placeholder */
+.photo {
+    width: 190px;
+    height: 190px;
+    margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 7px solid #ffd166;
+    background: linear-gradient(135deg, #ffe8ef, #fff4d6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-placeholder {
+    font-size: 70px;
+}
+
+.teacher-card h3 {
+    margin-top: 20px;
+    font-size: 30px;
+    color: #9c4d69;
+}
+
+.teacher-card .role {
+    color: #d17b96;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 8px 0 15px;
+}
+
+.teacher-card p {
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* Krishna section */
+.krishna-section {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #d9f3ff, #fff1c9);
+    border-radius: 30px;
+    min-height: 500px;
+    box-shadow: 0 15px 35px rgba(60,100,130,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.krishna-title {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    color: #315b8a;
+}
+
+.krishna-title h2 {
+    font-size: 28px;
+}
+
+.krishna-title p {
+    margin-top: 7px;
+}
+
+/* LEGO Krishna */
+.lego-krishna {
+    position: relative;
+    width: 190px;
+    height: 300px;
+    margin-top: 15px;
+    animation: krishnaDance 2s ease-in-out infinite;
+}
+
+@keyframes krishnaDance {
+    0%,100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+/* Head */
+.head {
+    position: absolute;
+    width: 95px;
+    height: 95px;
+    background: #65b8e8;
+    border-radius: 25px 25px 38px 38px;
+    left: 47px;
+    top: 15px;
+    border: 4px solid #2474a8;
+}
+
+/* Hair */
+.hair {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    background: #252525;
+    left: 55px;
+    top: 3px;
+    border-radius: 50% 50% 10px 10px;
+}
+
+/* Face */
+.eye {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #222;
+    border-radius: 50%;
+    top: 53px;
+}
+
+.eye.left {
+    left: 68px;
+}
+
+.eye.right {
+    left: 108px;
+}
+
+.smile {
+    position: absolute;
+    width: 30px;
+    height: 15px;
+    border-bottom: 4px solid #222;
+    border-radius: 50%;
+    top: 75px;
+    left: 80px;
+}
+
+/* Peacock feather */
+.feather {
+    position: absolute;
+    top: -35px;
+    left: 105px;
+    width: 20px;
+    height: 65px;
+    background: #39a96b;
+    border-radius: 50%;
+    transform: rotate(25deg);
+    border: 3px solid #247b52;
+}
+
+.feather::after {
+    content: "●";
+    position: absolute;
+    color: #2878bd;
+    font-size: 18px;
+    top: 8px;
+    left: 2px;
+}
+
+/* Body */
+.body {
+    position: absolute;
+    width: 110px;
+    height: 115px;
+    background: #f5c542;
+    left: 40px;
+    top: 108px;
+    border-radius: 18px;
+    border: 4px solid #b88918;
+}
+
+/* Legs */
+.leg {
+    position: absolute;
+    width: 35px;
+    height: 85px;
+    background: #65b8e8;
+    border: 4px solid #2474a8;
+    border-radius: 12px;
+    top: 215px;
+}
+
+.leg.left {
+    left: 52px;
+    transform: rotate(10deg);
+}
+
+.leg.right {
+    right: 52px;
+    transform: rotate(-10deg);
+}
+
+/* Arms */
+.arm {
+    position: absolute;
+    width: 32px;
+    height: 105px;
+    background: #65b8e8;
+    border: 4px solid #2474a8;
+    border-radius: 15px;
+    top: 112px;
+}
+
+.arm.left {
+    left: 12px;
+    transform: rotate(35deg);
+}
+
+.arm.right {
+    right: 12px;
+    transform: rotate(-35deg);
+}
+
+/* Flute */
+.flute {
+    position: absolute;
+    width: 130px;
+    height: 10px;
+    background: #d99538;
+    border: 3px solid #9a6018;
+    top: 142px;
+    left: 32px;
+    transform: rotate(-12deg);
+    z-index: 10;
+    border-radius: 10px;
+}
+
+.flute::before,
+.flute::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #5b3712;
+    border-radius: 50%;
+    top: -1px;
+}
+
+.flute::before {
+    left: 35px;
+}
+
+.flute::after {
+    left: 65px;
+}
+
+/* Musical notes */
+.note {
+    position: absolute;
+    font-size: 30px;
+    color: #527eae;
+    animation: notes 2s ease-in-out infinite;
+}
+
+.note.one {
+    right: 25px;
+    top: 180px;
+}
+
+.note.two {
+    left: 25px;
+    top: 230px;
+    animation-delay: .6s;
+}
+
+.note.three {
+    right: 60px;
+    top: 280px;
+    animation-delay: 1s;
+}
+
+@keyframes notes {
+    0% {
+        transform: translateY(20px) rotate(-10deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50px) rotate(10deg);
+        opacity: 0;
+    }
+}
+
+/* Message */
+.message {
+    margin-top: 35px;
+    background: rgba(255,255,255,0.9);
+    padding: 35px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(70,50,50,0.12);
+}
+
+.message h2 {
+    color: #9c4d69;
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+.message p {
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.highlight {
+    color: #d14d72;
+    font-weight: bold;
+}
+
+/* Button */
+button {
+    margin-top: 22px;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 50px;
+    background: #ff7fa2;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #e85d83;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #765b63;
+    font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .teacher-section {
+        grid-template-columns: 1fr;
+    }
+
+    .header p {
+        font-size: 16px;
+    }
+
+    .krishna-section {
+        min-height: 480px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+<div class="heart" style="left:10%; animation-duration:9s;">💗</div>
+<div class="heart" style="left:25%; animation-duration:12s;">✨</div>
+<div class="heart" style="left:45%; animation-duration:10s;">💖</div>
+<div class="heart" style="left:65%; animation-duration:14s;">🌸</div>
+<div class="heart" style="left:85%; animation-duration:11s;">💗</div>
+
+<div class="container">
+
+    <section class="header">
+        <div class="badge">HAPPY TEACHER'S DAY 🌸</div>
+
+        <h1>Ragini Ma'am</h1>
+
+        <h2>Our Mother Teacher ❤️</h2>
+
+        <p>
+            A teacher who doesn't just teach lessons,
+            but teaches us how to live, grow, dream and become better human beings.
+        </p>
+    </section>
+
+
+    <section class="teacher-section">
+
+        <!-- Teacher Card -->
+        <div class="teacher-card">
+
+            <div class="photo">
+                <!--
+                    To add Ragini Ma'am's photo:
+                    put the image at images/ragini.jpeg
+                    and remove the emoji below.
+                -->
+
+                <img src="images/ragini.jpeg"
+                     alt="Ragini Ma'am"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+
+                <div class="photo-placeholder" style="display:none;">
+                    👩‍🏫
+                </div>
+            </div>
+
+            <h3>Ragini Ma'am</h3>
+
+            <div class="role">
+                🌷 Our Mother Teacher 🌷
+            </div>
+
+            <p>
+                You guide us with patience, care for us like a mother,
+                and inspire us to become the best version of ourselves.
+            </p>
+
+        </div>
+
+
+        <!-- Krishna Animation -->
+        <div class="krishna-section">
+
+            <div class="krishna-title">
+                <h2>🦚 Krishna's Flute for Our Teacher 🎶</h2>
+                <p>A little LEGO-style Krishna dancing with music</p>
+            </div>
+
+            <div class="lego-krishna">
+
+                <div class="hair"></div>
+                <div class="head"></div>
+
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+                <div class="smile"></div>
+
+                <div class="feather"></div>
+
+                <div class="body"></div>
+
+                <div class="arm left"></div>
+                <div class="arm right"></div>
+
+                <div class="flute"></div>
+
+                <div class="leg left"></div>
+                <div class="leg right"></div>
+
+            </div>
+
+            <div class="note one">♪</div>
+            <div class="note two">♫</div>
+            <div class="note three">♪</div>
+
+        </div>
+
+    </section>
+
+
+    <section class="message">
+
+        <h2>💐 Thank You, Ragini Ma'am 💐</h2>
+
+        <p>
+            Dear <span class="highlight">Ragini Ma'am</span>,
+            thank you for being more than just a teacher.
+            Your kindness, guidance and care make our classroom
+            feel like a second home.
+            <br><br>
+
+            Just like a mother always wants the best for her children,
+            <span class="highlight">you always want the best for us.</span>
+            <br><br>
+
+            May your life always be filled with happiness,
+            respect, love and beautiful moments. 🌸
+        </p>
+
+        <button onclick="showBlessing()">
+            🦚 Click for Krishna's Blessing
+        </button>
+
+        <div id="blessing"></div>
+
+    </section>
+
+
+    <footer>
+        Made with ❤️ for Ragini Ma'am
+    </footer>
+
+</div>
+
+
+<script>
+
+/* Krishna blessing button */
+function showBlessing() {
+
+    const blessing = document.getElementById("blessing");
+
+    blessing.innerHTML = `
+        <div style="
+            margin-top:20px;
+            padding:18px;
+            border-radius:20px;
+            background:#fff4cc;
+            color:#73521b;
+            font-size:18px;
+            animation: appear .7s ease;
+        ">
+            🦚✨ May Lord Krishna bless Ragini Ma'am
+            with endless happiness, peace and joy. ✨🦚
+            <br><br>
+            🎶 Keep spreading your beautiful music of kindness! 🎶
+        </div>
+    `;
+}
+
+
+/* Small floating flowers */
+setInterval(() => {
+
+    const flower = document.createElement("div");
+
+    flower.innerHTML = ["🌸","✨","💗","🦚","🌼"][
+        Math.floor(Math.random() * 5)
+    ];
+
+    flower.style.position = "fixed";
+    flower.style.left = Math.random() * 100 + "%";
+    flower.style.bottom = "-30px";
+    flower.style.fontSize = (15 + Math.random() * 20) + "px";
+    flower.style.zIndex = "1";
+    flower.style.pointerEvents = "none";
+
+    document.body.appendChild(flower);
+
+    flower.animate(
+        [
+            {
+                transform: "translateY(0) rotate(0deg)",
+                opacity: 0
+            },
+            {
+                transform: "translateY(-100vh) rotate(360deg)",
+                opacity: 1
+            }
+        ],
+        {
+            duration: 7000 + Math.random() * 5000,
+            easing: "linear"
+        }
+    ).onfinish = () => flower.remove();
+
+}, 1500);
+
+</script>
+
+</body>
+</html>

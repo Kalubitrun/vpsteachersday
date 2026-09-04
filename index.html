@@ -1468,6 +1468,107 @@
 
 
         /* =========================================================
+           CONTACT US CARD
+        ========================================================= */
+
+        .contact-card {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 22px;
+            flex-wrap: wrap;
+            padding: 24px 30px;
+            margin: 8px 0;
+            border-radius: 27px;
+            text-decoration: none;
+            color: #ffffff;
+            background: linear-gradient(135deg, #45218b, #6c3fc5, #ec407a);
+            box-shadow: 0 16px 38px rgba(80,40,130,0.22);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: "💌";
+            position: absolute;
+            left: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 42px;
+            opacity: 0.22;
+        }
+
+        .contact-card::after {
+            content: "✨";
+            position: absolute;
+            right: 24px;
+            top: 10px;
+            font-size: 28px;
+            animation: sparkle 1.8s ease-in-out infinite;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-7px) scale(1.01);
+            box-shadow: 0 24px 50px rgba(80,40,130,0.30);
+        }
+
+        .contact-card-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-card-title {
+            font-family: "Baloo 2", cursive;
+            font-size: 30px;
+            font-weight: 800;
+        }
+
+        .contact-card-text {
+            margin-top: 3px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.88);
+        }
+
+        .contact-card-button {
+            position: relative;
+            z-index: 2;
+            padding: 12px 22px;
+            border-radius: 30px;
+            background: #ffffff;
+            color: #5b2ca0;
+            font-size: 14px;
+            font-weight: 800;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover .contact-card-button {
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 700px) {
+            .contact-card {
+                gap: 12px;
+                padding: 22px 16px;
+            }
+
+            .contact-card-title {
+                font-size: 25px;
+            }
+
+            .contact-card-text {
+                font-size: 12px;
+            }
+
+            .contact-card::before {
+                display: none;
+            }
+        }
+
+        /* =========================================================
            NO RESULTS
         ========================================================= */
 
@@ -1698,6 +1799,132 @@
             }
         }
 
+
+
+        /* =========================================================
+           WE BUILT THIS WEBSITE BANNER
+        ========================================================= */
+        .website-banner {
+            position: relative;
+            margin: 10px auto 48px;
+            width: min(900px, 100%);
+            min-height: 135px;
+            padding: 26px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            text-align: center;
+            border-radius: 30px;
+            background: linear-gradient(135deg, rgba(255,255,255,.92), rgba(255,244,218,.9), rgba(248,240,255,.92));
+            border: 2px solid rgba(108,63,197,.22);
+            box-shadow: 0 20px 55px rgba(108,63,197,.18);
+            overflow: hidden;
+            animation: websiteBannerIn .9s ease both, websiteBannerFloat 4s ease-in-out 1s infinite;
+        }
+
+        .website-banner::before {
+            content: "🪷";
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            font-size: 27px;
+            animation: sparkle 1.8s ease-in-out infinite;
+        }
+
+        .website-banner::after {
+            content: "✨";
+            position: absolute;
+            right: 22px;
+            bottom: 10px;
+            font-size: 27px;
+            animation: sparkle 2s ease-in-out infinite reverse;
+        }
+
+        .website-banner-krishna {
+            font-size: 32px;
+            white-space: nowrap;
+            animation: krishnaPlay 2.2s ease-in-out infinite;
+        }
+
+        .website-banner-text {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            color: #4d4160;
+        }
+
+        .website-banner-text strong {
+            font-family: "Baloo 2", cursive;
+            font-size: clamp(21px, 3vw, 30px);
+            color: var(--purple);
+        }
+
+        .website-banner-text span {
+            font-size: 13px;
+            color: #71817c;
+            font-weight: 600;
+        }
+
+        .website-banner-link {
+            position: relative;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 23px;
+            border-radius: 35px;
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6c3fc5, #ec407a, #ff9800);
+            background-size: 200% 200%;
+            box-shadow: 0 10px 25px rgba(108,63,197,.28);
+            animation: buttonGlow 2.5s ease-in-out infinite;
+            transition: .3s ease;
+        }
+
+        .website-banner-link:hover {
+            transform: translateY(-5px) scale(1.05);
+            animation: none;
+        }
+
+        @keyframes websiteBannerIn {
+            from { opacity: 0; transform: translateY(25px) scale(.94); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes websiteBannerFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @keyframes krishnaPlay {
+            0%, 100% { transform: rotate(-3deg) translateY(0); }
+            50% { transform: rotate(3deg) translateY(-7px) scale(1.08); }
+        }
+
+        @media (max-width: 700px) {
+            .website-banner {
+                padding: 22px 15px;
+                gap: 10px;
+            }
+            .website-banner-krishna {
+                width: 100%;
+                font-size: 27px;
+            }
+            .website-banner-text strong {
+                font-size: 21px;
+            }
+            .website-banner-text span {
+                font-size: 11px;
+            }
+            .website-banner-link {
+                width: 100%;
+            }
+        }
 
         /* =========================================================
            RESPONSIVE
@@ -2136,7 +2363,7 @@
                     class="stat-number"
                     id="totalTeachers"
                 >
-                    52
+                    53
                 </span>
 
                 <span class="stat-label">
@@ -2168,7 +2395,7 @@
                     class="stat-number"
                     id="maamCount"
                 >
-                    25
+                    26
                 </span>
 
                 <span class="stat-label">
@@ -3001,6 +3228,31 @@
                 </span>
 
             </a>
+
+
+            <!-- WE BUILT THIS WEBSITE BANNER -->
+        <div class="website-banner">
+            <div class="website-banner-krishna" aria-hidden="true">
+                🪈 🦚
+            </div>
+            <div class="website-banner-text">
+                <strong>✨ We built this website with Sandeep Sir ✨</strong>
+                <span>Made with learning, creativity and lots of love for our teachers!</span>
+            </div>
+            <a href="sandeepsir.html" class="website-banner-link">
+                🌟 Click here to know us →
+            </a>
+        </div>
+
+
+            <!-- SUNITA MA'AM -->
+            <a href="sunitamaam.html" class="teacher-card" data-type="maam" data-name="Sunita Ma'am">
+                <div class="teacher-icon">👩‍🏫</div>
+                <div class="teacher-name">Sunita Ma'am</div>
+                <span class="teacher-badge badge-maam">Ma'am</span>
+                <span class="visit">✨ Visit Teacher's Page →</span>
+            </a>
+
 
 
 

@@ -1,0 +1,525 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arti Sharma Ma'am | Hindi Teacher</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", Arial, sans-serif;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top left, #fff1c7 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #ffd6e7 0%, transparent 35%),
+                linear-gradient(135deg, #fff8ed, #fce8ef);
+            color: #3b2430;
+            overflow-x: hidden;
+        }
+
+        /* Floating background particles */
+        .particle {
+            position: fixed;
+            font-size: 25px;
+            opacity: 0.25;
+            animation: float 7s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .p1 { top: 12%; left: 8%; animation-delay: 0s; }
+        .p2 { top: 30%; right: 8%; animation-delay: 2s; }
+        .p3 { bottom: 15%; left: 12%; animation-delay: 4s; }
+        .p4 { bottom: 25%; right: 15%; animation-delay: 1s; }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-25px) rotate(10deg);
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 1050px;
+            margin: auto;
+            padding: 30px 20px 50px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            animation: fadeDown 1s ease;
+        }
+
+        .small-title {
+            display: inline-block;
+            padding: 8px 18px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.75);
+            border: 1px solid #e7b7c6;
+            color: #a33d62;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(38px, 7vw, 72px);
+            color: #7d2347;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            margin-top: 12px;
+            font-size: clamp(17px, 3vw, 23px);
+            color: #8b596c;
+        }
+
+        /* Main Card */
+        .teacher-card {
+            position: relative;
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 45px;
+            align-items: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 30px;
+            box-shadow: 0 25px 70px rgba(125, 35, 71, 0.15);
+            overflow: hidden;
+            animation: fadeUp 1.1s ease;
+        }
+
+        .teacher-card::before {
+            content: "";
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: #ffd6df;
+            opacity: 0.35;
+            top: -120px;
+            right: -100px;
+        }
+
+        .teacher-card::after {
+            content: "अ";
+            position: absolute;
+            font-family: Georgia, serif;
+            font-size: 180px;
+            color: rgba(125, 35, 71, 0.035);
+            bottom: -45px;
+            right: 25px;
+            font-weight: bold;
+            pointer-events: none;
+        }
+
+        /* Image */
+        .photo-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .photo-ring {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            padding: 9px;
+            background: linear-gradient(135deg, #b52f5c, #f0a56b, #b52f5c);
+            box-shadow:
+                0 15px 40px rgba(125, 35, 71, 0.25),
+                0 0 0 10px rgba(255, 255, 255, 0.65);
+            animation: gentlePulse 3s infinite ease-in-out;
+        }
+
+        .photo-ring img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            background: #f7e8ed;
+        }
+
+        @keyframes gentlePulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.025);
+            }
+        }
+
+        /* Content */
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .teacher-name {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(34px, 5vw, 54px);
+            color: #7d2347;
+            margin-bottom: 5px;
+        }
+
+        .role {
+            color: #b13d65;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 22px;
+        }
+
+        .quote {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(20px, 3vw, 27px);
+            line-height: 1.55;
+            color: #533340;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            color: #745965;
+            line-height: 1.8;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        /* Hindi Quote Box */
+        .hindi-box {
+            padding: 20px;
+            border-left: 5px solid #b52f5c;
+            border-radius: 12px;
+            background: linear-gradient(
+                90deg,
+                rgba(181, 47, 92, 0.09),
+                rgba(240, 165, 107, 0.08)
+            );
+            margin-bottom: 25px;
+        }
+
+        .hindi-box p {
+            font-family: Georgia, "Noto Serif Devanagari", serif;
+            font-size: 20px;
+            line-height: 1.7;
+            color: #66243e;
+        }
+
+        /* Button */
+        .wish-btn {
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 25px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #9f2852, #d95777);
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(159, 40, 82, 0.25);
+            transition: 0.3s ease;
+        }
+
+        .wish-btn:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(159, 40, 82, 0.35);
+        }
+
+        .wish-btn:active {
+            transform: scale(0.96);
+        }
+
+        /* Hidden message */
+        .message {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.6s ease;
+        }
+
+        .message.show {
+            max-height: 300px;
+            opacity: 1;
+            margin-top: 22px;
+        }
+
+        .message p {
+            padding: 18px;
+            border-radius: 15px;
+            background: #fff7fa;
+            border: 1px solid #f0ced9;
+            line-height: 1.7;
+            color: #653f4d;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #8c6673;
+            font-size: 14px;
+            animation: fadeUp 1.5s ease;
+        }
+
+        footer strong {
+            color: #9f2852;
+        }
+
+        /* Heart animation */
+        .heart {
+            display: inline-block;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.25);
+            }
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-35px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            top: -20px;
+            width: 10px;
+            height: 10px;
+            z-index: 999;
+            pointer-events: none;
+            animation: fall 3s linear forwards;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-20px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 850px) {
+            .teacher-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 30px 22px;
+                gap: 30px;
+            }
+
+            .photo-ring {
+                width: 270px;
+                height: 270px;
+            }
+
+            .hindi-box {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .container {
+                padding: 20px 12px 35px;
+            }
+
+            .teacher-card {
+                border-radius: 22px;
+            }
+
+            .photo-ring {
+                width: 220px;
+                height: 220px;
+            }
+
+            .teacher-name {
+                font-size: 35px;
+            }
+
+            .description {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Hindi symbols -->
+    <div class="particle p1">अ</div>
+    <div class="particle p2">✦</div>
+    <div class="particle p3">क</div>
+    <div class="particle p4">✿</div>
+
+    <div class="container">
+
+        <header>
+            <div class="small-title">Happy Teacher's Day</div>
+            <h1>एक सुंदर श्रद्धांजलि</h1>
+            <p class="subtitle">A special tribute to a wonderful Hindi teacher</p>
+        </header>
+
+        <main class="teacher-card">
+
+            <!-- Teacher Photo -->
+            <div class="photo-wrapper">
+                <div class="photo-ring">
+                    <img
+                        src="images/artisharmamaam.jpeg"
+                        alt="Arti Sharma Ma'am"
+                        onerror="this.onerror=null; this.src='https://via.placeholder.com/500x500?text=Arti+Sharma+Maam';"
+                    >
+                </div>
+            </div>
+
+            <!-- Teacher Information -->
+            <div class="content">
+
+                <h2 class="teacher-name">Arti Sharma Ma'am</h2>
+
+                <div class="role">
+                    हिन्दी शिक्षिका • Hindi Teacher
+                </div>
+
+                <p class="quote">
+                    "A great teacher doesn't just teach a subject —
+                    she inspires a love for learning."
+                </p>
+
+                <div class="hindi-box">
+                    <p>
+                        "शब्दों से ज्ञान मिलता है, और एक अच्छे शिक्षक
+                        से जीवन को सही दिशा मिलती है।"
+                    </p>
+                </div>
+
+                <p class="description">
+                    Thank you, Arti Sharma Ma'am, for making Hindi more
+                    meaningful, expressive and beautiful. Your guidance,
+                    patience and dedication inspire students to learn,
+                    understand and appreciate the beauty of our language.
+                </p>
+
+                <button class="wish-btn" onclick="showWish()">
+                    💐 Click for a Special Wish
+                </button>
+
+                <div class="message" id="wishMessage">
+                    <p>
+                        🌸 <strong>प्रिय Arti Sharma Ma'am,</strong><br><br>
+                        आपके ज्ञान, स्नेह और मार्गदर्शन के लिए
+                        दिल से धन्यवाद। आपने हमें केवल हिन्दी नहीं,
+                        बल्कि शब्दों की शक्ति और भावनाओं की सुंदरता
+                        को समझना भी सिखाया है।
+                        <br><br>
+                        <strong>Happy Teacher's Day! ❤️</strong>
+                    </p>
+                </div>
+
+            </div>
+        </main>
+
+        <footer>
+            Made with <span class="heart">❤️</span> for
+            <strong>Arti Sharma Ma'am</strong>
+        </footer>
+
+    </div>
+
+    <script>
+        function showWish() {
+            const message = document.getElementById("wishMessage");
+            const button = document.querySelector(".wish-btn");
+
+            message.classList.toggle("show");
+
+            if (message.classList.contains("show")) {
+                button.innerHTML = "❤️ A Wish From Your Students";
+
+                createConfetti();
+            } else {
+                button.innerHTML = "💐 Click for a Special Wish";
+            }
+        }
+
+        function createConfetti() {
+            const symbols = ["🌸", "✨", "💐", "❤️", "🌺", "✦"];
+
+            for (let i = 0; i < 35; i++) {
+                const confetti = document.createElement("div");
+
+                confetti.className = "confetti";
+                confetti.innerHTML =
+                    symbols[Math.floor(Math.random() * symbols.length)];
+
+                confetti.style.left = Math.random() * 100 + "vw";
+                confetti.style.fontSize =
+                    (12 + Math.random() * 15) + "px";
+
+                confetti.style.animationDuration =
+                    (2 + Math.random() * 2) + "s";
+
+                document.body.appendChild(confetti);
+
+                setTimeout(() => {
+                    confetti.remove();
+                }, 4500);
+            }
+        }
+
+        // Small entrance effect
+        window.addEventListener("load", () => {
+            document.body.classList.add("loaded");
+        });
+    </script>
+
+</body>
+</html>
+```
